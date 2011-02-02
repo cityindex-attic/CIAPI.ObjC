@@ -1,0 +1,29 @@
+This document gives an overview of project phase progress. It's a rough gauge, and the sections don't necessarily correspond exactly to code modules, but it does give an "at a glance" progress report.
+
+REST Toolkit
+
+  Core framework structure
+  [--------------------] 0%
+
+  REST Request model
+  [--------------------] 0%
+
+  JSON Parsing
+  [--------------------] 0%
+
+  JSON to native type framework
+  [--------------------] 0%
+
+  COMET Streaming
+  [--------------------] 0%
+
+CIAPI
+
+  Core entrypoints
+  [--------------------] 0%
+
+  Strongly typed interface for requests
+  [--------------------] 0%
+
+  Strong types for returned data
+  [--------------------] 0%

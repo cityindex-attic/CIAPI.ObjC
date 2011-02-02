@@ -7,8 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0705D1B112F1E88700E609CB /* RESTClient.h in Headers */ = {isa = PBXBuildFile; fileRef = 0705D1AF12F1E88700E609CB /* RESTClient.h */; };
-		0705D1B212F1E88700E609CB /* RESTClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 0705D1B012F1E88700E609CB /* RESTClient.m */; };
 		075DF8C212F1EE7D00C16AAA /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 075DF8C112F1EE7D00C16AAA /* CoreGraphics.framework */; };
 		075DF8C712F1EF1400C16AAA /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 075DF8C612F1EF1400C16AAA /* Foundation.framework */; };
 		075DF8C912F1EF1400C16AAA /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 075DF8C812F1EF1400C16AAA /* UIKit.framework */; };
@@ -24,6 +22,49 @@
 		07BFE71E12F1EBC300DEDC65 /* CityPadAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 07BFE6EC12F1EAF700DEDC65 /* CityPadAppDelegate.m */; };
 		07BFE72012F1EBC300DEDC65 /* CityPadViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 07BFE6EE12F1EAF700DEDC65 /* CityPadViewController.m */; };
 		07BFE72112F1EBC500DEDC65 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 07BFE6F012F1EAF700DEDC65 /* main.m */; };
+		07BFF2BC12FA0A8200A2E84B /* RKResourceClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 07BFF2BB12FA0A8200A2E84B /* RKResourceClient.m */; };
+		07BFF2BD12FA0A8200A2E84B /* RKResourceClient.h in Headers */ = {isa = PBXBuildFile; fileRef = 07BFF2BA12FA0A8200A2E84B /* RKResourceClient.h */; };
+		07BFF2BE12FA0A8200A2E84B /* RKResourceClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 07BFF2BB12FA0A8200A2E84B /* RKResourceClient.m */; };
+		07BFF2C112FA0A8F00A2E84B /* RKResourceRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 07BFF2C012FA0A8F00A2E84B /* RKResourceRequest.m */; };
+		07BFF2C212FA0A8F00A2E84B /* RKResourceRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = 07BFF2BF12FA0A8F00A2E84B /* RKResourceRequest.h */; };
+		07BFF2C312FA0A8F00A2E84B /* RKResourceRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 07BFF2C012FA0A8F00A2E84B /* RKResourceRequest.m */; };
+		07BFF2C712FA0A9A00A2E84B /* RKRequestQueuingPolicy.h in Headers */ = {isa = PBXBuildFile; fileRef = 07BFF2C412FA0A9A00A2E84B /* RKRequestQueuingPolicy.h */; };
+		07BFF2CB12FA0AAB00A2E84B /* RKResourceRequestToken.m in Sources */ = {isa = PBXBuildFile; fileRef = 07BFF2CA12FA0AAB00A2E84B /* RKResourceRequestToken.m */; };
+		07BFF2CC12FA0AAB00A2E84B /* RKResourceRequestToken.h in Headers */ = {isa = PBXBuildFile; fileRef = 07BFF2C912FA0AAB00A2E84B /* RKResourceRequestToken.h */; };
+		07BFF2CD12FA0AAB00A2E84B /* RKResourceRequestToken.m in Sources */ = {isa = PBXBuildFile; fileRef = 07BFF2CA12FA0AAB00A2E84B /* RKResourceRequestToken.m */; };
+		07BFF2D112FA0AB500A2E84B /* RKResourceRequestDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 07BFF2CE12FA0AB500A2E84B /* RKResourceRequestDelegate.h */; };
+		07BFF2D612FA0AC100A2E84B /* RKResourceParsePolicy.h in Headers */ = {isa = PBXBuildFile; fileRef = 07BFF2D312FA0AC100A2E84B /* RKResourceParsePolicy.h */; };
+		07BFF2DB12FA0ACA00A2E84B /* RKResourceRequestPolicy.h in Headers */ = {isa = PBXBuildFile; fileRef = 07BFF2D812FA0ACA00A2E84B /* RKResourceRequestPolicy.h */; };
+		07BFF2DE12FA0ADA00A2E84B /* RKResourceRequestType.h in Headers */ = {isa = PBXBuildFile; fileRef = 07BFF2DD12FA0ADA00A2E84B /* RKResourceRequestType.h */; };
+		07BFF2E112FA0AE200A2E84B /* RKResource.m in Sources */ = {isa = PBXBuildFile; fileRef = 07BFF2E012FA0AE200A2E84B /* RKResource.m */; };
+		07BFF2E212FA0AE200A2E84B /* RKResource.h in Headers */ = {isa = PBXBuildFile; fileRef = 07BFF2DF12FA0AE200A2E84B /* RKResource.h */; };
+		07BFF2E312FA0AE200A2E84B /* RKResource.m in Sources */ = {isa = PBXBuildFile; fileRef = 07BFF2E012FA0AE200A2E84B /* RKResource.m */; };
+		07BFF2E612FA0AEF00A2E84B /* RKSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 07BFF2E512FA0AEF00A2E84B /* RKSource.m */; };
+		07BFF2E712FA0AEF00A2E84B /* RKSource.h in Headers */ = {isa = PBXBuildFile; fileRef = 07BFF2E412FA0AEF00A2E84B /* RKSource.h */; };
+		07BFF2E812FA0AEF00A2E84B /* RKSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 07BFF2E512FA0AEF00A2E84B /* RKSource.m */; };
+		07BFF2EA12FA0B0C00A2E84B /* RKRequestCancelationResult.h in Headers */ = {isa = PBXBuildFile; fileRef = 07BFF2E912FA0B0C00A2E84B /* RKRequestCancelationResult.h */; };
+		07BFF2EE12FA0B2800A2E84B /* RKResourceCachePolicy.h in Headers */ = {isa = PBXBuildFile; fileRef = 07BFF2EB12FA0B2800A2E84B /* RKResourceCachePolicy.h */; };
+		07BFF2F212FA0B3600A2E84B /* RKResourceResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 07BFF2F112FA0B3600A2E84B /* RKResourceResponse.m */; };
+		07BFF2F312FA0B3600A2E84B /* RKResourceResponse.h in Headers */ = {isa = PBXBuildFile; fileRef = 07BFF2F012FA0B3600A2E84B /* RKResourceResponse.h */; };
+		07BFF2F412FA0B3600A2E84B /* RKResourceResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 07BFF2F112FA0B3600A2E84B /* RKResourceResponse.m */; };
+		07BFF30612FA0BB100A2E84B /* RKStreamingClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 07BFF30512FA0BB100A2E84B /* RKStreamingClient.m */; };
+		07BFF30712FA0BB100A2E84B /* RKStreamingClient.h in Headers */ = {isa = PBXBuildFile; fileRef = 07BFF30412FA0BB100A2E84B /* RKStreamingClient.h */; };
+		07BFF30812FA0BB100A2E84B /* RKStreamingClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 07BFF30512FA0BB100A2E84B /* RKStreamingClient.m */; };
+		07BFF30A12FA0BC300A2E84B /* RKStreamingRequestDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 07BFF30912FA0BC300A2E84B /* RKStreamingRequestDelegate.h */; };
+		07BFF30D12FA0BE800A2E84B /* RKStreamingRequestToken.m in Sources */ = {isa = PBXBuildFile; fileRef = 07BFF30C12FA0BE800A2E84B /* RKStreamingRequestToken.m */; };
+		07BFF30E12FA0BE800A2E84B /* RKStreamingRequestToken.h in Headers */ = {isa = PBXBuildFile; fileRef = 07BFF30B12FA0BE800A2E84B /* RKStreamingRequestToken.h */; };
+		07BFF30F12FA0BE800A2E84B /* RKStreamingRequestToken.m in Sources */ = {isa = PBXBuildFile; fileRef = 07BFF30C12FA0BE800A2E84B /* RKStreamingRequestToken.m */; };
+		07BFF31112FA0C0500A2E84B /* RKResourceClientDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 07BFF31012FA0C0500A2E84B /* RKResourceClientDelegate.h */; };
+		07BFF31412FA0C2400A2E84B /* RKStreamedItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 07BFF31312FA0C2400A2E84B /* RKStreamedItem.m */; };
+		07BFF31512FA0C2400A2E84B /* RKStreamedItem.h in Headers */ = {isa = PBXBuildFile; fileRef = 07BFF31212FA0C2400A2E84B /* RKStreamedItem.h */; };
+		07BFF31612FA0C2400A2E84B /* RKStreamedItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 07BFF31312FA0C2400A2E84B /* RKStreamedItem.m */; };
+		07BFF31812FA0C3200A2E84B /* RKStreamingRequestPolicy.h in Headers */ = {isa = PBXBuildFile; fileRef = 07BFF31712FA0C3200A2E84B /* RKStreamingRequestPolicy.h */; };
+		07BFF31A12FA0C3F00A2E84B /* RKStreamParsingPolicy.h in Headers */ = {isa = PBXBuildFile; fileRef = 07BFF31912FA0C3F00A2E84B /* RKStreamParsingPolicy.h */; };
+		07BFF31C12FA0C4E00A2E84B /* RKStreamingClientDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 07BFF31B12FA0C4E00A2E84B /* RKStreamingClientDelegate.h */; };
+		07BFF31F12FA0C5800A2E84B /* RKStreamingRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 07BFF31E12FA0C5800A2E84B /* RKStreamingRequest.m */; };
+		07BFF32012FA0C5800A2E84B /* RKStreamingRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = 07BFF31D12FA0C5800A2E84B /* RKStreamingRequest.h */; };
+		07BFF32112FA0C5800A2E84B /* RKStreamingRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 07BFF31E12FA0C5800A2E84B /* RKStreamingRequest.m */; };
+		07BFF32312FA0D4200A2E84B /* RESTKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 07BFF32212FA0D4200A2E84B /* RESTKit.h */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,8 +86,6 @@
 
 /* Begin PBXFileReference section */
 		0705D1A512F1E70000E609CB /* libCIAPI.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libCIAPI.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		0705D1AF12F1E88700E609CB /* RESTClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RESTClient.h; sourceTree = "<group>"; };
-		0705D1B012F1E88700E609CB /* RESTClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RESTClient.m; sourceTree = "<group>"; };
 		0705D1BA12F1E8B600E609CB /* CIAPITests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CIAPITests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0705D1CD12F1E91600E609CB /* CityPad.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CityPad.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0705D1D812F1E95000E609CB /* CIAPITests-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "CIAPITests-Info.plist"; sourceTree = "<group>"; };
@@ -63,6 +102,39 @@
 		07BFE6EF12F1EAF700DEDC65 /* CityPadViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CityPadViewController.xib; sourceTree = "<group>"; };
 		07BFE6F012F1EAF700DEDC65 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		07BFE6F112F1EAF700DEDC65 /* MainWindow.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainWindow.xib; sourceTree = "<group>"; };
+		07BFF2BA12FA0A8200A2E84B /* RKResourceClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RKResourceClient.h; sourceTree = "<group>"; };
+		07BFF2BB12FA0A8200A2E84B /* RKResourceClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RKResourceClient.m; sourceTree = "<group>"; };
+		07BFF2BF12FA0A8F00A2E84B /* RKResourceRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RKResourceRequest.h; sourceTree = "<group>"; };
+		07BFF2C012FA0A8F00A2E84B /* RKResourceRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RKResourceRequest.m; sourceTree = "<group>"; };
+		07BFF2C412FA0A9A00A2E84B /* RKRequestQueuingPolicy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RKRequestQueuingPolicy.h; sourceTree = "<group>"; };
+		07BFF2C912FA0AAB00A2E84B /* RKResourceRequestToken.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RKResourceRequestToken.h; sourceTree = "<group>"; };
+		07BFF2CA12FA0AAB00A2E84B /* RKResourceRequestToken.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RKResourceRequestToken.m; sourceTree = "<group>"; };
+		07BFF2CE12FA0AB500A2E84B /* RKResourceRequestDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RKResourceRequestDelegate.h; sourceTree = "<group>"; };
+		07BFF2D312FA0AC100A2E84B /* RKResourceParsePolicy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RKResourceParsePolicy.h; sourceTree = "<group>"; };
+		07BFF2D812FA0ACA00A2E84B /* RKResourceRequestPolicy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RKResourceRequestPolicy.h; sourceTree = "<group>"; };
+		07BFF2DD12FA0ADA00A2E84B /* RKResourceRequestType.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RKResourceRequestType.h; sourceTree = "<group>"; };
+		07BFF2DF12FA0AE200A2E84B /* RKResource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RKResource.h; sourceTree = "<group>"; };
+		07BFF2E012FA0AE200A2E84B /* RKResource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RKResource.m; sourceTree = "<group>"; };
+		07BFF2E412FA0AEF00A2E84B /* RKSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RKSource.h; sourceTree = "<group>"; };
+		07BFF2E512FA0AEF00A2E84B /* RKSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RKSource.m; sourceTree = "<group>"; };
+		07BFF2E912FA0B0C00A2E84B /* RKRequestCancelationResult.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RKRequestCancelationResult.h; sourceTree = "<group>"; };
+		07BFF2EB12FA0B2800A2E84B /* RKResourceCachePolicy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RKResourceCachePolicy.h; sourceTree = "<group>"; };
+		07BFF2F012FA0B3600A2E84B /* RKResourceResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RKResourceResponse.h; sourceTree = "<group>"; };
+		07BFF2F112FA0B3600A2E84B /* RKResourceResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RKResourceResponse.m; sourceTree = "<group>"; };
+		07BFF30412FA0BB100A2E84B /* RKStreamingClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RKStreamingClient.h; sourceTree = "<group>"; };
+		07BFF30512FA0BB100A2E84B /* RKStreamingClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RKStreamingClient.m; sourceTree = "<group>"; };
+		07BFF30912FA0BC300A2E84B /* RKStreamingRequestDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RKStreamingRequestDelegate.h; sourceTree = "<group>"; };
+		07BFF30B12FA0BE800A2E84B /* RKStreamingRequestToken.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RKStreamingRequestToken.h; sourceTree = "<group>"; };
+		07BFF30C12FA0BE800A2E84B /* RKStreamingRequestToken.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RKStreamingRequestToken.m; sourceTree = "<group>"; };
+		07BFF31012FA0C0500A2E84B /* RKResourceClientDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RKResourceClientDelegate.h; sourceTree = "<group>"; };
+		07BFF31212FA0C2400A2E84B /* RKStreamedItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RKStreamedItem.h; sourceTree = "<group>"; };
+		07BFF31312FA0C2400A2E84B /* RKStreamedItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RKStreamedItem.m; sourceTree = "<group>"; };
+		07BFF31712FA0C3200A2E84B /* RKStreamingRequestPolicy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RKStreamingRequestPolicy.h; sourceTree = "<group>"; };
+		07BFF31912FA0C3F00A2E84B /* RKStreamParsingPolicy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RKStreamParsingPolicy.h; sourceTree = "<group>"; };
+		07BFF31B12FA0C4E00A2E84B /* RKStreamingClientDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RKStreamingClientDelegate.h; sourceTree = "<group>"; };
+		07BFF31D12FA0C5800A2E84B /* RKStreamingRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RKStreamingRequest.h; sourceTree = "<group>"; };
+		07BFF31E12FA0C5800A2E84B /* RKStreamingRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RKStreamingRequest.m; sourceTree = "<group>"; };
+		07BFF32212FA0D4200A2E84B /* RESTKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RESTKit.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -140,8 +212,12 @@
 		0705D1AE12F1E86400E609CB /* RESTKit */ = {
 			isa = PBXGroup;
 			children = (
-				0705D1AF12F1E88700E609CB /* RESTClient.h */,
-				0705D1B012F1E88700E609CB /* RESTClient.m */,
+				07BFF2B812FA0A0E00A2E84B /* ResourceClient */,
+				07BFF2B912FA0A0E00A2E84B /* StreamingClient */,
+				07BFF32212FA0D4200A2E84B /* RESTKit.h */,
+				07BFF2E412FA0AEF00A2E84B /* RKSource.h */,
+				07BFF2E512FA0AEF00A2E84B /* RKSource.m */,
+				07BFF2E912FA0B0C00A2E84B /* RKRequestCancelationResult.h */,
 			);
 			path = RESTKit;
 			sourceTree = "<group>";
@@ -175,6 +251,49 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		07BFF2B812FA0A0E00A2E84B /* ResourceClient */ = {
+			isa = PBXGroup;
+			children = (
+				07BFF2C412FA0A9A00A2E84B /* RKRequestQueuingPolicy.h */,
+				07BFF2D312FA0AC100A2E84B /* RKResourceParsePolicy.h */,
+				07BFF2D812FA0ACA00A2E84B /* RKResourceRequestPolicy.h */,
+				07BFF2EB12FA0B2800A2E84B /* RKResourceCachePolicy.h */,
+				07BFF31012FA0C0500A2E84B /* RKResourceClientDelegate.h */,
+				07BFF2CE12FA0AB500A2E84B /* RKResourceRequestDelegate.h */,
+				07BFF2BA12FA0A8200A2E84B /* RKResourceClient.h */,
+				07BFF2BB12FA0A8200A2E84B /* RKResourceClient.m */,
+				07BFF2BF12FA0A8F00A2E84B /* RKResourceRequest.h */,
+				07BFF2C012FA0A8F00A2E84B /* RKResourceRequest.m */,
+				07BFF2C912FA0AAB00A2E84B /* RKResourceRequestToken.h */,
+				07BFF2CA12FA0AAB00A2E84B /* RKResourceRequestToken.m */,
+				07BFF2DD12FA0ADA00A2E84B /* RKResourceRequestType.h */,
+				07BFF2DF12FA0AE200A2E84B /* RKResource.h */,
+				07BFF2E012FA0AE200A2E84B /* RKResource.m */,
+				07BFF2F012FA0B3600A2E84B /* RKResourceResponse.h */,
+				07BFF2F112FA0B3600A2E84B /* RKResourceResponse.m */,
+			);
+			path = ResourceClient;
+			sourceTree = "<group>";
+		};
+		07BFF2B912FA0A0E00A2E84B /* StreamingClient */ = {
+			isa = PBXGroup;
+			children = (
+				07BFF30412FA0BB100A2E84B /* RKStreamingClient.h */,
+				07BFF30512FA0BB100A2E84B /* RKStreamingClient.m */,
+				07BFF30912FA0BC300A2E84B /* RKStreamingRequestDelegate.h */,
+				07BFF30B12FA0BE800A2E84B /* RKStreamingRequestToken.h */,
+				07BFF30C12FA0BE800A2E84B /* RKStreamingRequestToken.m */,
+				07BFF31212FA0C2400A2E84B /* RKStreamedItem.h */,
+				07BFF31312FA0C2400A2E84B /* RKStreamedItem.m */,
+				07BFF31712FA0C3200A2E84B /* RKStreamingRequestPolicy.h */,
+				07BFF31912FA0C3F00A2E84B /* RKStreamParsingPolicy.h */,
+				07BFF31B12FA0C4E00A2E84B /* RKStreamingClientDelegate.h */,
+				07BFF31D12FA0C5800A2E84B /* RKStreamingRequest.h */,
+				07BFF31E12FA0C5800A2E84B /* RKStreamingRequest.m */,
+			);
+			path = StreamingClient;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -182,9 +301,31 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0705D1B112F1E88700E609CB /* RESTClient.h in Headers */,
 				07BFE6F212F1EAF700DEDC65 /* CityPadAppDelegate.h in Headers */,
 				07BFE6F412F1EAF700DEDC65 /* CityPadViewController.h in Headers */,
+				07BFF2BD12FA0A8200A2E84B /* RKResourceClient.h in Headers */,
+				07BFF2C212FA0A8F00A2E84B /* RKResourceRequest.h in Headers */,
+				07BFF2C712FA0A9A00A2E84B /* RKRequestQueuingPolicy.h in Headers */,
+				07BFF2CC12FA0AAB00A2E84B /* RKResourceRequestToken.h in Headers */,
+				07BFF2D112FA0AB500A2E84B /* RKResourceRequestDelegate.h in Headers */,
+				07BFF2D612FA0AC100A2E84B /* RKResourceParsePolicy.h in Headers */,
+				07BFF2DB12FA0ACA00A2E84B /* RKResourceRequestPolicy.h in Headers */,
+				07BFF2DE12FA0ADA00A2E84B /* RKResourceRequestType.h in Headers */,
+				07BFF2E212FA0AE200A2E84B /* RKResource.h in Headers */,
+				07BFF2E712FA0AEF00A2E84B /* RKSource.h in Headers */,
+				07BFF2EA12FA0B0C00A2E84B /* RKRequestCancelationResult.h in Headers */,
+				07BFF2EE12FA0B2800A2E84B /* RKResourceCachePolicy.h in Headers */,
+				07BFF2F312FA0B3600A2E84B /* RKResourceResponse.h in Headers */,
+				07BFF30712FA0BB100A2E84B /* RKStreamingClient.h in Headers */,
+				07BFF30A12FA0BC300A2E84B /* RKStreamingRequestDelegate.h in Headers */,
+				07BFF30E12FA0BE800A2E84B /* RKStreamingRequestToken.h in Headers */,
+				07BFF31112FA0C0500A2E84B /* RKResourceClientDelegate.h in Headers */,
+				07BFF31512FA0C2400A2E84B /* RKStreamedItem.h in Headers */,
+				07BFF31812FA0C3200A2E84B /* RKStreamingRequestPolicy.h in Headers */,
+				07BFF31A12FA0C3F00A2E84B /* RKStreamParsingPolicy.h in Headers */,
+				07BFF31C12FA0C4E00A2E84B /* RKStreamingClientDelegate.h in Headers */,
+				07BFF32012FA0C5800A2E84B /* RKStreamingRequest.h in Headers */,
+				07BFF32312FA0D4200A2E84B /* RESTKit.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -312,10 +453,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0705D1B212F1E88700E609CB /* RESTClient.m in Sources */,
 				07BFE6F312F1EAF700DEDC65 /* CityPadAppDelegate.m in Sources */,
 				07BFE6F512F1EAF700DEDC65 /* CityPadViewController.m in Sources */,
 				07BFE6F612F1EAF700DEDC65 /* main.m in Sources */,
+				07BFF2BE12FA0A8200A2E84B /* RKResourceClient.m in Sources */,
+				07BFF2C312FA0A8F00A2E84B /* RKResourceRequest.m in Sources */,
+				07BFF2CD12FA0AAB00A2E84B /* RKResourceRequestToken.m in Sources */,
+				07BFF2E312FA0AE200A2E84B /* RKResource.m in Sources */,
+				07BFF2E812FA0AEF00A2E84B /* RKSource.m in Sources */,
+				07BFF2F412FA0B3600A2E84B /* RKResourceResponse.m in Sources */,
+				07BFF30812FA0BB100A2E84B /* RKStreamingClient.m in Sources */,
+				07BFF30F12FA0BE800A2E84B /* RKStreamingRequestToken.m in Sources */,
+				07BFF31612FA0C2400A2E84B /* RKStreamedItem.m in Sources */,
+				07BFF32112FA0C5800A2E84B /* RKStreamingRequest.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -324,6 +474,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				075DF8E612F1EFB000C16AAA /* RESTClientTests.m in Sources */,
+				07BFF2BC12FA0A8200A2E84B /* RKResourceClient.m in Sources */,
+				07BFF2C112FA0A8F00A2E84B /* RKResourceRequest.m in Sources */,
+				07BFF2CB12FA0AAB00A2E84B /* RKResourceRequestToken.m in Sources */,
+				07BFF2E112FA0AE200A2E84B /* RKResource.m in Sources */,
+				07BFF2E612FA0AEF00A2E84B /* RKSource.m in Sources */,
+				07BFF2F212FA0B3600A2E84B /* RKResourceResponse.m in Sources */,
+				07BFF30612FA0BB100A2E84B /* RKStreamingClient.m in Sources */,
+				07BFF30D12FA0BE800A2E84B /* RKStreamingRequestToken.m in Sources */,
+				07BFF31412FA0C2400A2E84B /* RKStreamedItem.m in Sources */,
+				07BFF31F12FA0C5800A2E84B /* RKStreamingRequest.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
