@@ -1,0 +1,548 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0705D1B112F1E88700E609CB /* RESTClient.h in Headers */ = {isa = PBXBuildFile; fileRef = 0705D1AF12F1E88700E609CB /* RESTClient.h */; };
+		0705D1B212F1E88700E609CB /* RESTClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 0705D1B012F1E88700E609CB /* RESTClient.m */; };
+		075DF8C212F1EE7D00C16AAA /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 075DF8C112F1EE7D00C16AAA /* CoreGraphics.framework */; };
+		075DF8C712F1EF1400C16AAA /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 075DF8C612F1EF1400C16AAA /* Foundation.framework */; };
+		075DF8C912F1EF1400C16AAA /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 075DF8C812F1EF1400C16AAA /* UIKit.framework */; };
+		075DF8D912F1EF6F00C16AAA /* libCIAPI.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0705D1A512F1E70000E609CB /* libCIAPI.a */; };
+		075DF8E612F1EFB000C16AAA /* RESTClientTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 075DF8E512F1EFB000C16AAA /* RESTClientTests.m */; };
+		07BFE6F212F1EAF700DEDC65 /* CityPadAppDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 07BFE6EB12F1EAF700DEDC65 /* CityPadAppDelegate.h */; };
+		07BFE6F312F1EAF700DEDC65 /* CityPadAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 07BFE6EC12F1EAF700DEDC65 /* CityPadAppDelegate.m */; };
+		07BFE6F412F1EAF700DEDC65 /* CityPadViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 07BFE6ED12F1EAF700DEDC65 /* CityPadViewController.h */; };
+		07BFE6F512F1EAF700DEDC65 /* CityPadViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 07BFE6EE12F1EAF700DEDC65 /* CityPadViewController.m */; };
+		07BFE6F612F1EAF700DEDC65 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 07BFE6F012F1EAF700DEDC65 /* main.m */; };
+		07BFE71412F1EBBB00DEDC65 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 07BFE6F112F1EAF700DEDC65 /* MainWindow.xib */; };
+		07BFE71712F1EBBD00DEDC65 /* CityPadViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 07BFE6EF12F1EAF700DEDC65 /* CityPadViewController.xib */; };
+		07BFE71E12F1EBC300DEDC65 /* CityPadAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 07BFE6EC12F1EAF700DEDC65 /* CityPadAppDelegate.m */; };
+		07BFE72012F1EBC300DEDC65 /* CityPadViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 07BFE6EE12F1EAF700DEDC65 /* CityPadViewController.m */; };
+		07BFE72112F1EBC500DEDC65 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 07BFE6F012F1EAF700DEDC65 /* main.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		075DF9A212F1F98300C16AAA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0705D18F12F1E6C700E609CB /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 0705D1A412F1E70000E609CB;
+			remoteInfo = CIAPI;
+		};
+		075DF9A412F1F99A00C16AAA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0705D18F12F1E6C700E609CB /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 0705D1A412F1E70000E609CB;
+			remoteInfo = CIAPI;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		0705D1A512F1E70000E609CB /* libCIAPI.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libCIAPI.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		0705D1AF12F1E88700E609CB /* RESTClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RESTClient.h; sourceTree = "<group>"; };
+		0705D1B012F1E88700E609CB /* RESTClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RESTClient.m; sourceTree = "<group>"; };
+		0705D1BA12F1E8B600E609CB /* CIAPITests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CIAPITests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
+		0705D1CD12F1E91600E609CB /* CityPad.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CityPad.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		0705D1D812F1E95000E609CB /* CIAPITests-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "CIAPITests-Info.plist"; sourceTree = "<group>"; };
+		0705D1D912F1E95A00E609CB /* CityPad-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "CityPad-Info.plist"; sourceTree = "<group>"; };
+		075DF8C112F1EE7D00C16AAA /* CoreGraphics.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		075DF8C612F1EF1400C16AAA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		075DF8C812F1EF1400C16AAA /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		075DF8E412F1EFB000C16AAA /* RESTClientTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RESTClientTests.h; sourceTree = "<group>"; };
+		075DF8E512F1EFB000C16AAA /* RESTClientTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RESTClientTests.m; sourceTree = "<group>"; };
+		07BFE6EB12F1EAF700DEDC65 /* CityPadAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CityPadAppDelegate.h; sourceTree = "<group>"; };
+		07BFE6EC12F1EAF700DEDC65 /* CityPadAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CityPadAppDelegate.m; sourceTree = "<group>"; };
+		07BFE6ED12F1EAF700DEDC65 /* CityPadViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CityPadViewController.h; sourceTree = "<group>"; };
+		07BFE6EE12F1EAF700DEDC65 /* CityPadViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CityPadViewController.m; sourceTree = "<group>"; };
+		07BFE6EF12F1EAF700DEDC65 /* CityPadViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CityPadViewController.xib; sourceTree = "<group>"; };
+		07BFE6F012F1EAF700DEDC65 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		07BFE6F112F1EAF700DEDC65 /* MainWindow.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainWindow.xib; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		0705D1A312F1E70000E609CB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0705D1B712F1E8B600E609CB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0705D1CB12F1E91600E609CB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				075DF8C212F1EE7D00C16AAA /* CoreGraphics.framework in Frameworks */,
+				075DF8C712F1EF1400C16AAA /* Foundation.framework in Frameworks */,
+				075DF8C912F1EF1400C16AAA /* UIKit.framework in Frameworks */,
+				075DF8D912F1EF6F00C16AAA /* libCIAPI.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		0705D18D12F1E6C700E609CB = {
+			isa = PBXGroup;
+			children = (
+				0705D1AB12F1E7F700E609CB /* CIAPI */,
+				0705D1AD12F1E83500E609CB /* CityPad */,
+				0705D1A612F1E70000E609CB /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		0705D1A612F1E70000E609CB /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				0705D1A512F1E70000E609CB /* libCIAPI.a */,
+				0705D1BA12F1E8B600E609CB /* CIAPITests.octest */,
+				0705D1CD12F1E91600E609CB /* CityPad.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		0705D1AB12F1E7F700E609CB /* CIAPI */ = {
+			isa = PBXGroup;
+			children = (
+				0705D1C012F1E8C600E609CB /* Tests */,
+				0705D1AE12F1E86400E609CB /* RESTKit */,
+			);
+			path = CIAPI;
+			sourceTree = "<group>";
+		};
+		0705D1AD12F1E83500E609CB /* CityPad */ = {
+			isa = PBXGroup;
+			children = (
+				075DF8F312F1F0B700C16AAA /* UI */,
+				07BFE84912F1ECB100DEDC65 /* Frameworks */,
+				0705D1D912F1E95A00E609CB /* CityPad-Info.plist */,
+				07BFE6EB12F1EAF700DEDC65 /* CityPadAppDelegate.h */,
+				07BFE6EC12F1EAF700DEDC65 /* CityPadAppDelegate.m */,
+				07BFE6ED12F1EAF700DEDC65 /* CityPadViewController.h */,
+				07BFE6EE12F1EAF700DEDC65 /* CityPadViewController.m */,
+				07BFE6F012F1EAF700DEDC65 /* main.m */,
+			);
+			path = CityPad;
+			sourceTree = "<group>";
+		};
+		0705D1AE12F1E86400E609CB /* RESTKit */ = {
+			isa = PBXGroup;
+			children = (
+				0705D1AF12F1E88700E609CB /* RESTClient.h */,
+				0705D1B012F1E88700E609CB /* RESTClient.m */,
+			);
+			path = RESTKit;
+			sourceTree = "<group>";
+		};
+		0705D1C012F1E8C600E609CB /* Tests */ = {
+			isa = PBXGroup;
+			children = (
+				0705D1D812F1E95000E609CB /* CIAPITests-Info.plist */,
+				075DF8E412F1EFB000C16AAA /* RESTClientTests.h */,
+				075DF8E512F1EFB000C16AAA /* RESTClientTests.m */,
+			);
+			path = Tests;
+			sourceTree = "<group>";
+		};
+		075DF8F312F1F0B700C16AAA /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				07BFE6F112F1EAF700DEDC65 /* MainWindow.xib */,
+				07BFE6EF12F1EAF700DEDC65 /* CityPadViewController.xib */,
+			);
+			name = UI;
+			sourceTree = "<group>";
+		};
+		07BFE84912F1ECB100DEDC65 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				075DF8C112F1EE7D00C16AAA /* CoreGraphics.framework */,
+				075DF8C612F1EF1400C16AAA /* Foundation.framework */,
+				075DF8C812F1EF1400C16AAA /* UIKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		0705D1A112F1E70000E609CB /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0705D1B112F1E88700E609CB /* RESTClient.h in Headers */,
+				07BFE6F212F1EAF700DEDC65 /* CityPadAppDelegate.h in Headers */,
+				07BFE6F412F1EAF700DEDC65 /* CityPadViewController.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		0705D1A412F1E70000E609CB /* CIAPI */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0705D1A912F1E70000E609CB /* Build configuration list for PBXNativeTarget "CIAPI" */;
+			buildPhases = (
+				0705D1A112F1E70000E609CB /* Headers */,
+				0705D1A212F1E70000E609CB /* Sources */,
+				0705D1A312F1E70000E609CB /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = CIAPI;
+			productName = CIAPI;
+			productReference = 0705D1A512F1E70000E609CB /* libCIAPI.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		0705D1B912F1E8B600E609CB /* CIAPITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0705D1BF12F1E8B700E609CB /* Build configuration list for PBXNativeTarget "CIAPITests" */;
+			buildPhases = (
+				0705D1B512F1E8B600E609CB /* Resources */,
+				0705D1B612F1E8B600E609CB /* Sources */,
+				0705D1B712F1E8B600E609CB /* Frameworks */,
+				0705D1B812F1E8B600E609CB /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				075DF9A312F1F98300C16AAA /* PBXTargetDependency */,
+			);
+			name = CIAPITests;
+			productName = CIAPITests;
+			productReference = 0705D1BA12F1E8B600E609CB /* CIAPITests.octest */;
+			productType = "com.apple.product-type.bundle";
+		};
+		0705D1CC12F1E91600E609CB /* CityPad */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0705D1D412F1E91600E609CB /* Build configuration list for PBXNativeTarget "CityPad" */;
+			buildPhases = (
+				0705D1C912F1E91600E609CB /* Resources */,
+				0705D1CA12F1E91600E609CB /* Sources */,
+				0705D1CB12F1E91600E609CB /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				075DF9A512F1F99A00C16AAA /* PBXTargetDependency */,
+			);
+			name = CityPad;
+			productName = CityPad;
+			productReference = 0705D1CD12F1E91600E609CB /* CityPad.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		0705D18F12F1E6C700E609CB /* Project object */ = {
+			isa = PBXProject;
+			buildConfigurationList = 0705D19212F1E6C700E609CB /* Build configuration list for PBXProject "CIAPI.ObjC" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				English,
+				Japanese,
+				French,
+				German,
+			);
+			mainGroup = 0705D18D12F1E6C700E609CB;
+			productRefGroup = 0705D1A612F1E70000E609CB /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				0705D1A412F1E70000E609CB /* CIAPI */,
+				0705D1B912F1E8B600E609CB /* CIAPITests */,
+				0705D1CC12F1E91600E609CB /* CityPad */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		0705D1B512F1E8B600E609CB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0705D1C912F1E91600E609CB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				07BFE71412F1EBBB00DEDC65 /* MainWindow.xib in Resources */,
+				07BFE71712F1EBBD00DEDC65 /* CityPadViewController.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		0705D1B812F1E8B600E609CB /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		0705D1A212F1E70000E609CB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0705D1B212F1E88700E609CB /* RESTClient.m in Sources */,
+				07BFE6F312F1EAF700DEDC65 /* CityPadAppDelegate.m in Sources */,
+				07BFE6F512F1EAF700DEDC65 /* CityPadViewController.m in Sources */,
+				07BFE6F612F1EAF700DEDC65 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0705D1B612F1E8B600E609CB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				075DF8E612F1EFB000C16AAA /* RESTClientTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0705D1CA12F1E91600E609CB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				07BFE71E12F1EBC300DEDC65 /* CityPadAppDelegate.m in Sources */,
+				07BFE72012F1EBC300DEDC65 /* CityPadViewController.m in Sources */,
+				07BFE72112F1EBC500DEDC65 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		075DF9A312F1F98300C16AAA /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 0705D1A412F1E70000E609CB /* CIAPI */;
+			targetProxy = 075DF9A212F1F98300C16AAA /* PBXContainerItemProxy */;
+		};
+		075DF9A512F1F99A00C16AAA /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 0705D1A412F1E70000E609CB /* CIAPI */;
+			targetProxy = 075DF9A412F1F99A00C16AAA /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		0705D19012F1E6C700E609CB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COPY_PHASE_STRIP = NO;
+			};
+			name = Debug;
+		};
+		0705D19112F1E6C700E609CB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COPY_PHASE_STRIP = YES;
+			};
+			name = Release;
+		};
+		0705D1A712F1E70000E609CB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = NO;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				PREBINDING = NO;
+				PRODUCT_NAME = CIAPI;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		0705D1A812F1E70000E609CB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_ENABLE_FIX_AND_CONTINUE = NO;
+				PREBINDING = NO;
+				PRODUCT_NAME = CIAPI;
+				SDKROOT = iphoneos;
+				ZERO_LINK = NO;
+			};
+			name = Release;
+		};
+		0705D1BD12F1E8B700E609CB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				COPY_PHASE_STRIP = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
+					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
+				);
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_FIX_AND_CONTINUE = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				INFOPLIST_FILE = "CIAPI/Tests/CIAPITests-Info.plist";
+				OTHER_LDFLAGS = (
+					"-framework",
+					Foundation,
+					"-framework",
+					SenTestingKit,
+				);
+				PREBINDING = NO;
+				PRODUCT_NAME = CIAPITests;
+				SDKROOT = iphoneos;
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Debug;
+		};
+		0705D1BE12F1E8B700E609CB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				FRAMEWORK_SEARCH_PATHS = (
+					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
+					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
+				);
+				GCC_ENABLE_FIX_AND_CONTINUE = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				INFOPLIST_FILE = "CIAPITests-Info.plist";
+				OTHER_LDFLAGS = (
+					"-framework",
+					Foundation,
+					"-framework",
+					SenTestingKit,
+					"-framework",
+					UIKit,
+				);
+				PREBINDING = NO;
+				PRODUCT_NAME = CIAPITests;
+				SDKROOT = iphoneos;
+				WRAPPER_EXTENSION = octest;
+				ZERO_LINK = NO;
+			};
+			name = Release;
+		};
+		0705D1D212F1E91600E609CB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_UNIVERSAL_IPHONE_OS)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/UIKit.framework/Headers/UIKit.h";
+				INFOPLIST_FILE = "CityPad/CityPad-Info.plist";
+				INSTALL_PATH = "$(HOME)/Applications";
+				OTHER_LDFLAGS = (
+					"-framework",
+					Foundation,
+					"-framework",
+					UIKit,
+				);
+				PREBINDING = NO;
+				PRODUCT_NAME = CityPad;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = 2;
+			};
+			name = Debug;
+		};
+		0705D1D312F1E91600E609CB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_ENABLE_FIX_AND_CONTINUE = NO;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/UIKit.framework/Headers/UIKit.h";
+				INFOPLIST_FILE = "CityPad-Info.plist";
+				INSTALL_PATH = "$(HOME)/Applications";
+				OTHER_LDFLAGS = (
+					"-framework",
+					Foundation,
+					"-framework",
+					UIKit,
+				);
+				PREBINDING = NO;
+				PRODUCT_NAME = CityPad;
+				SDKROOT = iphoneos;
+				ZERO_LINK = NO;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		0705D19212F1E6C700E609CB /* Build configuration list for PBXProject "CIAPI.ObjC" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0705D19012F1E6C700E609CB /* Debug */,
+				0705D19112F1E6C700E609CB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		0705D1A912F1E70000E609CB /* Build configuration list for PBXNativeTarget "CIAPI" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0705D1A712F1E70000E609CB /* Debug */,
+				0705D1A812F1E70000E609CB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		0705D1BF12F1E8B700E609CB /* Build configuration list for PBXNativeTarget "CIAPITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0705D1BD12F1E8B700E609CB /* Debug */,
+				0705D1BE12F1E8B700E609CB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		0705D1D412F1E91600E609CB /* Build configuration list for PBXNativeTarget "CityPad" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0705D1D212F1E91600E609CB /* Debug */,
+				0705D1D312F1E91600E609CB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 0705D18F12F1E6C700E609CB /* Project object */;
+}
