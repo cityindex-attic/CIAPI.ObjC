@@ -9,6 +9,22 @@
 /* Begin PBXBuildFile section */
 		075E8E411342724900C85B9B /* CIClient.h in Headers */ = {isa = PBXBuildFile; fileRef = 075E8E3F1342724900C85B9B /* CIClient.h */; };
 		075E8E421342724900C85B9B /* CIClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 075E8E401342724900C85B9B /* CIClient.m */; };
+		07D54CFB1342737800DD2A60 /* LSClient.h in Headers */ = {isa = PBXBuildFile; fileRef = 07D54CEB1342737800DD2A60 /* LSClient.h */; };
+		07D54CFC1342737800DD2A60 /* LSClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 07D54CEC1342737800DD2A60 /* LSClient.m */; };
+		07D54CFD1342737800DD2A60 /* LSException.h in Headers */ = {isa = PBXBuildFile; fileRef = 07D54CED1342737800DD2A60 /* LSException.h */; };
+		07D54CFE1342737800DD2A60 /* LSException.m in Sources */ = {isa = PBXBuildFile; fileRef = 07D54CEE1342737800DD2A60 /* LSException.m */; };
+		07D54CFF1342737800DD2A60 /* LSListener.h in Headers */ = {isa = PBXBuildFile; fileRef = 07D54CEF1342737800DD2A60 /* LSListener.h */; };
+		07D54D001342737800DD2A60 /* LSMode.h in Headers */ = {isa = PBXBuildFile; fileRef = 07D54CF01342737800DD2A60 /* LSMode.h */; };
+		07D54D011342737800DD2A60 /* LSSession.h in Headers */ = {isa = PBXBuildFile; fileRef = 07D54CF11342737800DD2A60 /* LSSession.h */; };
+		07D54D021342737800DD2A60 /* LSSession.m in Sources */ = {isa = PBXBuildFile; fileRef = 07D54CF21342737800DD2A60 /* LSSession.m */; };
+		07D54D031342737800DD2A60 /* LSSession+Internals.h in Headers */ = {isa = PBXBuildFile; fileRef = 07D54CF31342737800DD2A60 /* LSSession+Internals.h */; };
+		07D54D041342737800DD2A60 /* LSSession+Internals.m in Sources */ = {isa = PBXBuildFile; fileRef = 07D54CF41342737800DD2A60 /* LSSession+Internals.m */; };
+		07D54D051342737800DD2A60 /* LSSessionOptions.h in Headers */ = {isa = PBXBuildFile; fileRef = 07D54CF51342737800DD2A60 /* LSSessionOptions.h */; };
+		07D54D061342737800DD2A60 /* LSSessionOptions.m in Sources */ = {isa = PBXBuildFile; fileRef = 07D54CF61342737800DD2A60 /* LSSessionOptions.m */; };
+		07D54D071342737800DD2A60 /* LSSessionOptions+Internals.h in Headers */ = {isa = PBXBuildFile; fileRef = 07D54CF71342737800DD2A60 /* LSSessionOptions+Internals.h */; };
+		07D54D081342737800DD2A60 /* LSSessionOptions+Internals.m in Sources */ = {isa = PBXBuildFile; fileRef = 07D54CF81342737800DD2A60 /* LSSessionOptions+Internals.m */; };
+		07D54D091342737800DD2A60 /* LSUnchangedValue.h in Headers */ = {isa = PBXBuildFile; fileRef = 07D54CF91342737800DD2A60 /* LSUnchangedValue.h */; };
+		07D54D0A1342737800DD2A60 /* LSUnchangedValue.m in Sources */ = {isa = PBXBuildFile; fileRef = 07D54CFA1342737800DD2A60 /* LSUnchangedValue.m */; };
 		07DEFE461342710E00CFA705 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07DEFE451342710E00CFA705 /* Foundation.framework */; };
 		07DEFE511342710E00CFA705 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07DEFE501342710E00CFA705 /* UIKit.framework */; };
 		07DEFE521342710E00CFA705 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07DEFE451342710E00CFA705 /* Foundation.framework */; };
@@ -103,6 +119,22 @@
 		075E8E16134271BF00C85B9B /* RestKit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RestKit.xcodeproj; path = ../RestKit/RestKit.xcodeproj; sourceTree = "<group>"; };
 		075E8E3F1342724900C85B9B /* CIClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CIClient.h; sourceTree = "<group>"; };
 		075E8E401342724900C85B9B /* CIClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CIClient.m; sourceTree = "<group>"; };
+		07D54CEB1342737800DD2A60 /* LSClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LSClient.h; path = "../Lightstreamer/Lightstreamer explorer/iStreamLight/LSClient.h"; sourceTree = "<group>"; };
+		07D54CEC1342737800DD2A60 /* LSClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LSClient.m; path = "../Lightstreamer/Lightstreamer explorer/iStreamLight/LSClient.m"; sourceTree = "<group>"; };
+		07D54CED1342737800DD2A60 /* LSException.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LSException.h; path = "../Lightstreamer/Lightstreamer explorer/iStreamLight/LSException.h"; sourceTree = "<group>"; };
+		07D54CEE1342737800DD2A60 /* LSException.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LSException.m; path = "../Lightstreamer/Lightstreamer explorer/iStreamLight/LSException.m"; sourceTree = "<group>"; };
+		07D54CEF1342737800DD2A60 /* LSListener.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LSListener.h; path = "../Lightstreamer/Lightstreamer explorer/iStreamLight/LSListener.h"; sourceTree = "<group>"; };
+		07D54CF01342737800DD2A60 /* LSMode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LSMode.h; path = "../Lightstreamer/Lightstreamer explorer/iStreamLight/LSMode.h"; sourceTree = "<group>"; };
+		07D54CF11342737800DD2A60 /* LSSession.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LSSession.h; path = "../Lightstreamer/Lightstreamer explorer/iStreamLight/LSSession.h"; sourceTree = "<group>"; };
+		07D54CF21342737800DD2A60 /* LSSession.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LSSession.m; path = "../Lightstreamer/Lightstreamer explorer/iStreamLight/LSSession.m"; sourceTree = "<group>"; };
+		07D54CF31342737800DD2A60 /* LSSession+Internals.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "LSSession+Internals.h"; path = "../Lightstreamer/Lightstreamer explorer/iStreamLight/LSSession+Internals.h"; sourceTree = "<group>"; };
+		07D54CF41342737800DD2A60 /* LSSession+Internals.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "LSSession+Internals.m"; path = "../Lightstreamer/Lightstreamer explorer/iStreamLight/LSSession+Internals.m"; sourceTree = "<group>"; };
+		07D54CF51342737800DD2A60 /* LSSessionOptions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LSSessionOptions.h; path = "../Lightstreamer/Lightstreamer explorer/iStreamLight/LSSessionOptions.h"; sourceTree = "<group>"; };
+		07D54CF61342737800DD2A60 /* LSSessionOptions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LSSessionOptions.m; path = "../Lightstreamer/Lightstreamer explorer/iStreamLight/LSSessionOptions.m"; sourceTree = "<group>"; };
+		07D54CF71342737800DD2A60 /* LSSessionOptions+Internals.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "LSSessionOptions+Internals.h"; path = "../Lightstreamer/Lightstreamer explorer/iStreamLight/LSSessionOptions+Internals.h"; sourceTree = "<group>"; };
+		07D54CF81342737800DD2A60 /* LSSessionOptions+Internals.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "LSSessionOptions+Internals.m"; path = "../Lightstreamer/Lightstreamer explorer/iStreamLight/LSSessionOptions+Internals.m"; sourceTree = "<group>"; };
+		07D54CF91342737800DD2A60 /* LSUnchangedValue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LSUnchangedValue.h; path = "../Lightstreamer/Lightstreamer explorer/iStreamLight/LSUnchangedValue.h"; sourceTree = "<group>"; };
+		07D54CFA1342737800DD2A60 /* LSUnchangedValue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LSUnchangedValue.m; path = "../Lightstreamer/Lightstreamer explorer/iStreamLight/LSUnchangedValue.m"; sourceTree = "<group>"; };
 		07DEFE421342710E00CFA705 /* libCIAPI.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libCIAPI.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		07DEFE451342710E00CFA705 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		07DEFE491342710E00CFA705 /* CIAPI-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CIAPI-Prefix.pch"; sourceTree = "<group>"; };
@@ -156,10 +188,34 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		07D54CEA1342734D00DD2A60 /* iStreamLight */ = {
+			isa = PBXGroup;
+			children = (
+				07D54CEB1342737800DD2A60 /* LSClient.h */,
+				07D54CEC1342737800DD2A60 /* LSClient.m */,
+				07D54CED1342737800DD2A60 /* LSException.h */,
+				07D54CEE1342737800DD2A60 /* LSException.m */,
+				07D54CEF1342737800DD2A60 /* LSListener.h */,
+				07D54CF01342737800DD2A60 /* LSMode.h */,
+				07D54CF11342737800DD2A60 /* LSSession.h */,
+				07D54CF21342737800DD2A60 /* LSSession.m */,
+				07D54CF31342737800DD2A60 /* LSSession+Internals.h */,
+				07D54CF41342737800DD2A60 /* LSSession+Internals.m */,
+				07D54CF51342737800DD2A60 /* LSSessionOptions.h */,
+				07D54CF61342737800DD2A60 /* LSSessionOptions.m */,
+				07D54CF71342737800DD2A60 /* LSSessionOptions+Internals.h */,
+				07D54CF81342737800DD2A60 /* LSSessionOptions+Internals.m */,
+				07D54CF91342737800DD2A60 /* LSUnchangedValue.h */,
+				07D54CFA1342737800DD2A60 /* LSUnchangedValue.m */,
+			);
+			name = iStreamLight;
+			sourceTree = "<group>";
+		};
 		07DEFE371342710E00CFA705 = {
 			isa = PBXGroup;
 			children = (
 				075E8E16134271BF00C85B9B /* RestKit.xcodeproj */,
+				07D54CEA1342734D00DD2A60 /* iStreamLight */,
 				07DEFE471342710E00CFA705 /* CIAPI */,
 				07DEFE581342710E00CFA705 /* CIAPITests */,
 				07DEFE441342710E00CFA705 /* Frameworks */,
@@ -232,6 +288,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				075E8E411342724900C85B9B /* CIClient.h in Headers */,
+				07D54CFB1342737800DD2A60 /* LSClient.h in Headers */,
+				07D54CFD1342737800DD2A60 /* LSException.h in Headers */,
+				07D54CFF1342737800DD2A60 /* LSListener.h in Headers */,
+				07D54D001342737800DD2A60 /* LSMode.h in Headers */,
+				07D54D011342737800DD2A60 /* LSSession.h in Headers */,
+				07D54D031342737800DD2A60 /* LSSession+Internals.h in Headers */,
+				07D54D051342737800DD2A60 /* LSSessionOptions.h in Headers */,
+				07D54D071342737800DD2A60 /* LSSessionOptions+Internals.h in Headers */,
+				07D54D091342737800DD2A60 /* LSUnchangedValue.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -410,6 +475,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				075E8E421342724900C85B9B /* CIClient.m in Sources */,
+				07D54CFC1342737800DD2A60 /* LSClient.m in Sources */,
+				07D54CFE1342737800DD2A60 /* LSException.m in Sources */,
+				07D54D021342737800DD2A60 /* LSSession.m in Sources */,
+				07D54D041342737800DD2A60 /* LSSession+Internals.m in Sources */,
+				07D54D061342737800DD2A60 /* LSSessionOptions.m in Sources */,
+				07D54D081342737800DD2A60 /* LSSessionOptions+Internals.m in Sources */,
+				07D54D0A1342737800DD2A60 /* LSUnchangedValue.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
