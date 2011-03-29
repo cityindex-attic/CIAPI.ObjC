@@ -1,0 +1,7 @@
+//
+// Prefix header for all source files of the 'CIAPI' target in the 'CIAPI' project
+//
+
+#ifdef __OBJC__
+    #import <Foundation/Foundation.h>
+#endif

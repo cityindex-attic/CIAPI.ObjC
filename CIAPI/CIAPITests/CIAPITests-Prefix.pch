@@ -1,0 +1,7 @@
+//
+// Prefix header for all source files of the 'CIAPITests' target in the 'CIAPITests' project
+//
+
+#ifdef __OBJC__
+    #import <UIKit/UIKit.h>
+#endif

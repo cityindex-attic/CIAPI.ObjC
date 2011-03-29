@@ -1,0 +1,394 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		07DEFE461342710E00CFA705 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07DEFE451342710E00CFA705 /* Foundation.framework */; };
+		07DEFE511342710E00CFA705 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07DEFE501342710E00CFA705 /* UIKit.framework */; };
+		07DEFE521342710E00CFA705 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07DEFE451342710E00CFA705 /* Foundation.framework */; };
+		07DEFE541342710E00CFA705 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07DEFE531342710E00CFA705 /* CoreGraphics.framework */; };
+		07DEFE571342710E00CFA705 /* libCIAPI.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 07DEFE421342710E00CFA705 /* libCIAPI.a */; };
+		07DEFE5D1342710E00CFA705 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 07DEFE5B1342710E00CFA705 /* InfoPlist.strings */; };
+		07DEFE601342710E00CFA705 /* CIAPITests.h in Resources */ = {isa = PBXBuildFile; fileRef = 07DEFE5F1342710E00CFA705 /* CIAPITests.h */; };
+		07DEFE621342710E00CFA705 /* CIAPITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 07DEFE611342710E00CFA705 /* CIAPITests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		07DEFE551342710E00CFA705 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 07DEFE391342710E00CFA705 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 07DEFE411342710E00CFA705;
+			remoteInfo = CIAPI;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		07DEFE421342710E00CFA705 /* libCIAPI.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libCIAPI.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		07DEFE451342710E00CFA705 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		07DEFE491342710E00CFA705 /* CIAPI-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CIAPI-Prefix.pch"; sourceTree = "<group>"; };
+		07DEFE4F1342710E00CFA705 /* CIAPITests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CIAPITests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
+		07DEFE501342710E00CFA705 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		07DEFE531342710E00CFA705 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		07DEFE5A1342710E00CFA705 /* CIAPITests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "CIAPITests-Info.plist"; sourceTree = "<group>"; };
+		07DEFE5C1342710E00CFA705 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		07DEFE5E1342710E00CFA705 /* CIAPITests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CIAPITests-Prefix.pch"; sourceTree = "<group>"; };
+		07DEFE5F1342710E00CFA705 /* CIAPITests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CIAPITests.h; sourceTree = "<group>"; };
+		07DEFE611342710E00CFA705 /* CIAPITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CIAPITests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		07DEFE3F1342710E00CFA705 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				07DEFE461342710E00CFA705 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		07DEFE4B1342710E00CFA705 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				07DEFE511342710E00CFA705 /* UIKit.framework in Frameworks */,
+				07DEFE521342710E00CFA705 /* Foundation.framework in Frameworks */,
+				07DEFE541342710E00CFA705 /* CoreGraphics.framework in Frameworks */,
+				07DEFE571342710E00CFA705 /* libCIAPI.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		07DEFE371342710E00CFA705 = {
+			isa = PBXGroup;
+			children = (
+				07DEFE471342710E00CFA705 /* CIAPI */,
+				07DEFE581342710E00CFA705 /* CIAPITests */,
+				07DEFE441342710E00CFA705 /* Frameworks */,
+				07DEFE431342710E00CFA705 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		07DEFE431342710E00CFA705 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				07DEFE421342710E00CFA705 /* libCIAPI.a */,
+				07DEFE4F1342710E00CFA705 /* CIAPITests.octest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		07DEFE441342710E00CFA705 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				07DEFE451342710E00CFA705 /* Foundation.framework */,
+				07DEFE501342710E00CFA705 /* UIKit.framework */,
+				07DEFE531342710E00CFA705 /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		07DEFE471342710E00CFA705 /* CIAPI */ = {
+			isa = PBXGroup;
+			children = (
+				07DEFE481342710E00CFA705 /* Supporting Files */,
+			);
+			path = CIAPI;
+			sourceTree = "<group>";
+		};
+		07DEFE481342710E00CFA705 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				07DEFE491342710E00CFA705 /* CIAPI-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		07DEFE581342710E00CFA705 /* CIAPITests */ = {
+			isa = PBXGroup;
+			children = (
+				07DEFE5F1342710E00CFA705 /* CIAPITests.h */,
+				07DEFE611342710E00CFA705 /* CIAPITests.m */,
+				07DEFE591342710E00CFA705 /* Supporting Files */,
+			);
+			path = CIAPITests;
+			sourceTree = "<group>";
+		};
+		07DEFE591342710E00CFA705 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				07DEFE5A1342710E00CFA705 /* CIAPITests-Info.plist */,
+				07DEFE5B1342710E00CFA705 /* InfoPlist.strings */,
+				07DEFE5E1342710E00CFA705 /* CIAPITests-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		07DEFE401342710E00CFA705 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		07DEFE411342710E00CFA705 /* CIAPI */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 07DEFE651342710E00CFA705 /* Build configuration list for PBXNativeTarget "CIAPI" */;
+			buildPhases = (
+				07DEFE3E1342710E00CFA705 /* Sources */,
+				07DEFE3F1342710E00CFA705 /* Frameworks */,
+				07DEFE401342710E00CFA705 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = CIAPI;
+			productName = CIAPI;
+			productReference = 07DEFE421342710E00CFA705 /* libCIAPI.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		07DEFE4E1342710E00CFA705 /* CIAPITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 07DEFE681342710E00CFA705 /* Build configuration list for PBXNativeTarget "CIAPITests" */;
+			buildPhases = (
+				07DEFE4A1342710E00CFA705 /* Sources */,
+				07DEFE4B1342710E00CFA705 /* Frameworks */,
+				07DEFE4C1342710E00CFA705 /* Resources */,
+				07DEFE4D1342710E00CFA705 /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				07DEFE561342710E00CFA705 /* PBXTargetDependency */,
+			);
+			name = CIAPITests;
+			productName = CIAPITests;
+			productReference = 07DEFE4F1342710E00CFA705 /* CIAPITests.octest */;
+			productType = "com.apple.product-type.bundle";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		07DEFE391342710E00CFA705 /* Project object */ = {
+			isa = PBXProject;
+			buildConfigurationList = 07DEFE3C1342710E00CFA705 /* Build configuration list for PBXProject "CIAPI" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 07DEFE371342710E00CFA705;
+			productRefGroup = 07DEFE431342710E00CFA705 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				07DEFE411342710E00CFA705 /* CIAPI */,
+				07DEFE4E1342710E00CFA705 /* CIAPITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		07DEFE4C1342710E00CFA705 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				07DEFE5D1342710E00CFA705 /* InfoPlist.strings in Resources */,
+				07DEFE601342710E00CFA705 /* CIAPITests.h in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		07DEFE4D1342710E00CFA705 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		07DEFE3E1342710E00CFA705 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		07DEFE4A1342710E00CFA705 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				07DEFE621342710E00CFA705 /* CIAPITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		07DEFE561342710E00CFA705 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 07DEFE411342710E00CFA705 /* CIAPI */;
+			targetProxy = 07DEFE551342710E00CFA705 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		07DEFE5B1342710E00CFA705 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				07DEFE5C1342710E00CFA705 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		07DEFE631342710E00CFA705 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = DEBUG;
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvmgcc42;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		07DEFE641342710E00CFA705 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvmgcc42;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				SDKROOT = iphoneos;
+			};
+			name = Release;
+		};
+		07DEFE661342710E00CFA705 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				DSTROOT = /tmp/CIAPI.dst;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "CIAPI/CIAPI-Prefix.pch";
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		07DEFE671342710E00CFA705 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				DSTROOT = /tmp/CIAPI.dst;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "CIAPI/CIAPI-Prefix.pch";
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		07DEFE691342710E00CFA705 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "CIAPITests/CIAPITests-Prefix.pch";
+				INFOPLIST_FILE = "CIAPITests/CIAPITests-Info.plist";
+				OTHER_LDFLAGS = (
+					"-framework",
+					SenTestingKit,
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Debug;
+		};
+		07DEFE6A1342710E00CFA705 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "CIAPITests/CIAPITests-Prefix.pch";
+				INFOPLIST_FILE = "CIAPITests/CIAPITests-Info.plist";
+				OTHER_LDFLAGS = (
+					"-framework",
+					SenTestingKit,
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		07DEFE3C1342710E00CFA705 /* Build configuration list for PBXProject "CIAPI" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				07DEFE631342710E00CFA705 /* Debug */,
+				07DEFE641342710E00CFA705 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		07DEFE651342710E00CFA705 /* Build configuration list for PBXNativeTarget "CIAPI" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				07DEFE661342710E00CFA705 /* Debug */,
+				07DEFE671342710E00CFA705 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		07DEFE681342710E00CFA705 /* Build configuration list for PBXNativeTarget "CIAPITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				07DEFE691342710E00CFA705 /* Debug */,
+				07DEFE6A1342710E00CFA705 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 07DEFE391342710E00CFA705 /* Project object */;
+}
