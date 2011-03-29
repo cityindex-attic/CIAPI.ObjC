@@ -1,8 +1,8 @@
-This document gives an overview of project phase progress. It's a rough gauge, and the sections don't necessarily correspond exactly to code modules, but it does give an "at a glance" progress report.
+General project status
 
-Major TODOs:
-
-Change name from RESTKit! Despite searching for Objective C REST helper libraries, I never found restkit.org, so when choosing the name, didn't think to check it was free. I also need to check how much might be already done within that livrary, which doesn't look too bad.
+Dependencies:
+  RESTKit
+  Lightstreamer
 
 REST Toolkit
 

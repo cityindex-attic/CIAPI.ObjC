@@ -1,0 +1,3 @@
+[submodule "RestKit"]
+	path = RestKit
+	url = git@github.com:archgrove/RestKit.git
