@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		075E8E411342724900C85B9B /* CIClient.h in Headers */ = {isa = PBXBuildFile; fileRef = 075E8E3F1342724900C85B9B /* CIClient.h */; };
+		075E8E421342724900C85B9B /* CIClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 075E8E401342724900C85B9B /* CIClient.m */; };
 		07DEFE461342710E00CFA705 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07DEFE451342710E00CFA705 /* Foundation.framework */; };
 		07DEFE511342710E00CFA705 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07DEFE501342710E00CFA705 /* UIKit.framework */; };
 		07DEFE521342710E00CFA705 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07DEFE451342710E00CFA705 /* Foundation.framework */; };
@@ -18,6 +20,76 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		075E8E2A134271BF00C85B9B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 075E8E16134271BF00C85B9B /* RestKit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 253A07FC1255161B00976E89;
+			remoteInfo = RestKitNetwork;
+		};
+		075E8E2C134271BF00C85B9B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 075E8E16134271BF00C85B9B /* RestKit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 253A08031255162C00976E89;
+			remoteInfo = RestKitObjectMapping;
+		};
+		075E8E2E134271BF00C85B9B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 075E8E16134271BF00C85B9B /* RestKit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 253A080C12551D3000976E89;
+			remoteInfo = RestKitSupport;
+		};
+		075E8E30134271BF00C85B9B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 075E8E16134271BF00C85B9B /* RestKit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 2590E64F125231F600531FA8;
+			remoteInfo = "RestKitJSONParser+YAJL";
+		};
+		075E8E32134271BF00C85B9B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 075E8E16134271BF00C85B9B /* RestKit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 2590E66B1252353700531FA8;
+			remoteInfo = "RestKitJSONParser+SBJSON";
+		};
+		075E8E34134271BF00C85B9B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 075E8E16134271BF00C85B9B /* RestKit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 73057FD11331AD2E001908EE;
+			remoteInfo = "RestKitJSONParser+JSONKit";
+		};
+		075E8E36134271BF00C85B9B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 075E8E16134271BF00C85B9B /* RestKit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 25BD43BD1340315800DBACDD;
+			remoteInfo = "RestKitXMLParser+Libxml";
+		};
+		075E8E38134271BF00C85B9B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 075E8E16134271BF00C85B9B /* RestKit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 253A081412551D5300976E89;
+			remoteInfo = RestKitCoreData;
+		};
+		075E8E3A134271BF00C85B9B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 075E8E16134271BF00C85B9B /* RestKit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 2523360511E79F090048F9B4;
+			remoteInfo = RestKitThree20;
+		};
+		075E8E3C134271BF00C85B9B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 075E8E16134271BF00C85B9B /* RestKit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 3F6C39A510FE5C95008F47C5;
+			remoteInfo = UISpec;
+		};
 		07DEFE551342710E00CFA705 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 07DEFE391342710E00CFA705 /* Project object */;
@@ -28,6 +100,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		075E8E16134271BF00C85B9B /* RestKit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RestKit.xcodeproj; path = ../RestKit/RestKit.xcodeproj; sourceTree = "<group>"; };
+		075E8E3F1342724900C85B9B /* CIClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CIClient.h; sourceTree = "<group>"; };
+		075E8E401342724900C85B9B /* CIClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CIClient.m; sourceTree = "<group>"; };
 		07DEFE421342710E00CFA705 /* libCIAPI.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libCIAPI.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		07DEFE451342710E00CFA705 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		07DEFE491342710E00CFA705 /* CIAPI-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CIAPI-Prefix.pch"; sourceTree = "<group>"; };
@@ -64,9 +139,27 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		075E8E17134271BF00C85B9B /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				075E8E2B134271BF00C85B9B /* libRestKitNetwork.a */,
+				075E8E2D134271BF00C85B9B /* libRestKitObjectMapping.a */,
+				075E8E2F134271BF00C85B9B /* libRestKitSupport.a */,
+				075E8E31134271BF00C85B9B /* libRestKitJSONParserYAJL.a */,
+				075E8E33134271BF00C85B9B /* libRestKitJSONParserSBJSON.a */,
+				075E8E35134271BF00C85B9B /* libRestKitJSONParserJSONKit.a */,
+				075E8E37134271BF00C85B9B /* libRestKitXMLParserLibxml.a */,
+				075E8E39134271BF00C85B9B /* libRestKitCoreData.a */,
+				075E8E3B134271BF00C85B9B /* libRestKitThree20.a */,
+				075E8E3D134271BF00C85B9B /* UISpec.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		07DEFE371342710E00CFA705 = {
 			isa = PBXGroup;
 			children = (
+				075E8E16134271BF00C85B9B /* RestKit.xcodeproj */,
 				07DEFE471342710E00CFA705 /* CIAPI */,
 				07DEFE581342710E00CFA705 /* CIAPITests */,
 				07DEFE441342710E00CFA705 /* Frameworks */,
@@ -97,6 +190,8 @@
 			isa = PBXGroup;
 			children = (
 				07DEFE481342710E00CFA705 /* Supporting Files */,
+				075E8E3F1342724900C85B9B /* CIClient.h */,
+				075E8E401342724900C85B9B /* CIClient.m */,
 			);
 			path = CIAPI;
 			sourceTree = "<group>";
@@ -136,6 +231,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				075E8E411342724900C85B9B /* CIClient.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -193,6 +289,12 @@
 			mainGroup = 07DEFE371342710E00CFA705;
 			productRefGroup = 07DEFE431342710E00CFA705 /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 075E8E17134271BF00C85B9B /* Products */;
+					ProjectRef = 075E8E16134271BF00C85B9B /* RestKit.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				07DEFE411342710E00CFA705 /* CIAPI */,
@@ -200,6 +302,79 @@
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		075E8E2B134271BF00C85B9B /* libRestKitNetwork.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libRestKitNetwork.a;
+			remoteRef = 075E8E2A134271BF00C85B9B /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		075E8E2D134271BF00C85B9B /* libRestKitObjectMapping.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libRestKitObjectMapping.a;
+			remoteRef = 075E8E2C134271BF00C85B9B /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		075E8E2F134271BF00C85B9B /* libRestKitSupport.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libRestKitSupport.a;
+			remoteRef = 075E8E2E134271BF00C85B9B /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		075E8E31134271BF00C85B9B /* libRestKitJSONParserYAJL.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libRestKitJSONParserYAJL.a;
+			remoteRef = 075E8E30134271BF00C85B9B /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		075E8E33134271BF00C85B9B /* libRestKitJSONParserSBJSON.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libRestKitJSONParserSBJSON.a;
+			remoteRef = 075E8E32134271BF00C85B9B /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		075E8E35134271BF00C85B9B /* libRestKitJSONParserJSONKit.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libRestKitJSONParserJSONKit.a;
+			remoteRef = 075E8E34134271BF00C85B9B /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		075E8E37134271BF00C85B9B /* libRestKitXMLParserLibxml.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libRestKitXMLParserLibxml.a;
+			remoteRef = 075E8E36134271BF00C85B9B /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		075E8E39134271BF00C85B9B /* libRestKitCoreData.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libRestKitCoreData.a;
+			remoteRef = 075E8E38134271BF00C85B9B /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		075E8E3B134271BF00C85B9B /* libRestKitThree20.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libRestKitThree20.a;
+			remoteRef = 075E8E3A134271BF00C85B9B /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		075E8E3D134271BF00C85B9B /* UISpec.app */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.application;
+			path = UISpec.app;
+			remoteRef = 075E8E3C134271BF00C85B9B /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		07DEFE4C1342710E00CFA705 /* Resources */ = {
@@ -234,6 +409,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				075E8E421342724900C85B9B /* CIClient.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -379,6 +555,7 @@
 				07DEFE671342710E00CFA705 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		07DEFE681342710E00CFA705 /* Build configuration list for PBXNativeTarget "CIAPITests" */ = {
 			isa = XCConfigurationList;
@@ -387,6 +564,7 @@
 				07DEFE6A1342710E00CFA705 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
