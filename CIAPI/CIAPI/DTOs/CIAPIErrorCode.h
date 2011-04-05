@@ -8,7 +8,17 @@
 
 #import <Foundation/Foundation.h>
 
+enum CIAPIErrorCode
+{
+    CIAPIErrorForbidden = 403,
+    CIAPIErrorInternalServerError = 500,
+    CIAPIErrorInvalidParameterType = 4000,
+    CIAPIErrorParameterMissing = 4001,
+    CIAPIErrorInvalidParameterValue = 4002,
+    CIAPIErrorInvalidJsonRequest = 4003,
+    CIAPIErrorInvalidJsonRequestCaseFormat = 4004,
+    // The credentials used to authenticate are invalid.  Either the username, password or both are incorrect
+    CIAPIErrorInvalidCredentials = 4010
+};
 
-@protocol CIAPIErrorCode <NSObject>
 
-@end
