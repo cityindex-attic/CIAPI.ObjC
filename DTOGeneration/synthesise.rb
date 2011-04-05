@@ -1,7 +1,8 @@
 #!/usr/bin/ruby
 
 # This is a very hacky script to turn the DTO schema file into 
-# Objective C DTO wrappers
+# Objective C DTO wrappers. It doesn't get it 100% right, but the manual
+# fixes are then trivial
 
 # We use the JSON gem to parse the DTO schema
 require 'rubygems'
@@ -30,9 +31,17 @@ def isObject(item)
   return !["int", "BOOL"].include?(item);
 end
 
+def isNSType(item)
+  return item.start_with?("NS");
+end
+
 def APIifyName(text)
   if text == nil
     return "";
+  end
+
+  if (!isObject(text) || isNSType(text))
+    return text;
   end
 
   if (text.end_with?("DTO"))
@@ -47,10 +56,25 @@ def createDTOHeader(directory, dtoHash)
     f.write "// Generated on %s\n" % DateTime.now
     f.write "#import <Foundation/Foundation.h>\n\n";
 
+    myName = APIifyName(dtoHash["id"]);
+
+    if (dtoHash.has_key?("properties"))
+      dtoHash["properties"].each do |key, value|
+        if (value.has_key?("$ref"))
+          importName = APIifyName(value["$ref"][2..-1]);
+          if (importName != myName)
+            f.write "#import \"%s.h\"\n" % APIifyName(value["$ref"][2..-1]);
+          end
+        end
+      end
+    end
+
+    f.write "\n";
+
     extends = dtoTypeToNSType(dtoHash);
 
     f.write "//" + dtoHash["description"] + "\n";
-    f.write "@interface %s : %s \n" % [APIifyName(dtoHash["id"]), extends];
+    f.write "@interface %s : %s \n" % [myName, extends];
     f.write "{\n";
 
     if (dtoHash.has_key?("properties"))
@@ -92,15 +116,8 @@ def createDTOImpl(directory, dtoHash)
   File.open("%s/%s.m" % [directory, APIifyName(dtoHash["id"])], "w") do |f|
     f.write "#import \"%s.h\"\n\n" % APIifyName(dtoHash["id"]);
 
-    if (dtoHash.has_key?("properties"))
-      dtoHash["properties"].each do |key, value|
-        if (value.has_key?("$ref"))
-          f.write "#import \"%s.h\"\n" % APIifyName(value["$ref"][2..-1]);
-        end
-      end
-    end
+    f.write "@implementation %s\n\n" % APIifyName(dtoHash["id"]);
 
-    f.write "\n";
 
     if (dtoHash.has_key?("properties"))
       dtoHash["properties"].each do |key, value|
@@ -108,9 +125,7 @@ def createDTOImpl(directory, dtoHash)
       end
     end
 
-    f.write "\n@implementation %s\n" % APIifyName(dtoHash["id"]);
-    f.write "{\n";
-    f.write "}";
+    f.write "\n@end";
   end
 end
 
