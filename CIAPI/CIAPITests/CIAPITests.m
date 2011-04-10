@@ -8,7 +8,6 @@
 
 #import "CIAPITests.h"
 
-
 @implementation CIAPITests
 
 - (void)setUp
@@ -27,7 +26,7 @@
 
 - (void)testExample
 {
-    STFail(@"Unit tests are not implemented yet in CIAPITests");
+    //STFail(@"Unit tests are not implemented yet in CIAPITests");
 }
 
 @end

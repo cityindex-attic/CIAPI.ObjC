@@ -1,4 +1,4 @@
-// Generated on 2011-04-05T16:57:43+01:00
+// Generated on 2011-04-10T20:58:17+01:00
 #import "CIAPIApiStopLimitResponse.h"
 #import "CIAPIErrorResponse.h"
 #import "CIAPIListStopLimitOrderHistoryResponse.h"

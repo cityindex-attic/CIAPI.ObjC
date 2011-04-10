@@ -1,12 +1,14 @@
-// Generated on 2011-04-05T16:57:43+01:00
+// Generated on 2011-04-10T20:58:17+01:00
 #import <Foundation/Foundation.h>
+
+#import <RestKit/RestKit.h>
 
 #import "CIAPIApiBasicStopLimitOrder.h"
 #import "CIAPIApiBasicStopLimitOrder.h"
 #import "CIAPIApiBasicStopLimitOrder.h"
 
 //TODO
-@interface CIAPIApiActiveStopLimitOrder : NSObject 
+@interface CIAPIApiActiveStopLimitOrder : NSObject<RKObjectMappable> 
 {
   NSString *LastChangedDateTimeUTC;
   NSString *Status;

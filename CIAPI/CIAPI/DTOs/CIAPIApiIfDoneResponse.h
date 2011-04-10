@@ -1,11 +1,13 @@
-// Generated on 2011-04-05T16:57:43+01:00
+// Generated on 2011-04-10T20:58:17+01:00
 #import <Foundation/Foundation.h>
+
+#import <RestKit/RestKit.h>
 
 #import "CIAPIApiStopLimitResponse.h"
 #import "CIAPIApiStopLimitResponse.h"
 
 //TODO
-@interface CIAPIApiIfDoneResponse : NSObject 
+@interface CIAPIApiIfDoneResponse : NSObject<RKObjectMappable> 
 {
   CIAPIApiStopLimitResponse *Stop;
   CIAPIApiStopLimitResponse *Limit;

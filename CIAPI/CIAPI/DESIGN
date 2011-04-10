@@ -1,0 +1,10 @@
+CIAPIAuthenticator
+
+CIAPIClient
+  (id)makeRequest:(CIAPIRequest*)request
+  (CIAPIRequestToken*)makeRequest:(CIAPIRequest*)request withDelegate:
+  (CIAPIRequestToken*)makeRequest:(CIAPIRequest*)request withBlock:
+  (CIAPICancelationResult)cancelRequest:(CIAPIRequestToken*)token
+
+CIAPIRequest
+  requestType

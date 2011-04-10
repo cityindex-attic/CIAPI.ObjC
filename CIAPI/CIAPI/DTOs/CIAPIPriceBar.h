@@ -1,9 +1,11 @@
-// Generated on 2011-04-05T16:57:43+01:00
+// Generated on 2011-04-10T20:58:17+01:00
 #import <Foundation/Foundation.h>
+
+#import <RestKit/RestKit.h>
 
 
 //The details of a specific price bar, useful for plotting candlestick charts
-@interface CIAPIPriceBar : NSObject 
+@interface CIAPIPriceBar : NSObject<RKObjectMappable> 
 {
   NSNumber *Open;
   NSString *BarDate;
