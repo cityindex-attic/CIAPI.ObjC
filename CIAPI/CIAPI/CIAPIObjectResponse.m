@@ -11,4 +11,10 @@
 
 @implementation CIAPIObjectResponse
 
+- (BOOL)setupFromDictionary:(NSDictionary*)dictionary error:(NSError**)error
+{
+    assert(FALSE);
+    return FALSE;
+}
+
 @end

@@ -8,7 +8,15 @@
 
 #import <Foundation/Foundation.h>
 
+#import "CIAPIAuthenticator.h"
+
+@class CIAPIAuthenticator;
 
 @protocol CIAPIAuthenticatorDelegate <NSObject>
+
+@optional
+
+- (void)authenticationSucceeded:(CIAPIAuthenticator*)authenticator;
+- (void)authenticationFailed:(CIAPIAuthenticator*)authenticator error:(NSError*)error;
 
 @end

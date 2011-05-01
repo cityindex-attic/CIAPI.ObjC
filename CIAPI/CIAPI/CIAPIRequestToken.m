@@ -11,4 +11,31 @@
 
 @implementation CIAPIRequestToken
 
+- (CIAPIRequestToken*)initWithRequest:(CIAPIObjectRequest*)objRequest delegate:(id<CIAPIRequestDelegate>)delegate
+{
+    self = [super init];
+    
+    if (self)
+    {
+        requestObject = [objRequest retain];
+        callbackDelegate = delegate;
+        attemptCount = 0;
+    }
+    
+    return self;
+}
+- (CIAPIRequestToken*)initWithRequest:(CIAPIObjectRequest*)objRequest block:(CIAPIRequestCallback)block;
+{
+    self = [super init];
+    
+    if (self)
+    {
+        requestObject = [objRequest retain];
+        callbackBlock = block;
+        attemptCount = 0;
+    }
+    
+    return self;
+}
+
 @end

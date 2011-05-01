@@ -8,9 +8,19 @@
 
 #import <Foundation/Foundation.h>
 
+#import "CIAPIObjectResponse.h"
 
-@interface CIAPIObjectListResponse : NSObject {
-    
+@interface CIAPIObjectListResponse : CIAPIObjectResponse<NSFastEnumeration> {
+    NSArray *array;
 }
+
+@property (readonly) NSArray *array;
+
+- (BOOL)setupFromDictionary:(NSDictionary*)dictionary error:(NSError**)error;
+
+- (Class)contentsClass;
+
+- (NSUInteger)count;
+- (id)objectAtIndex:(NSUInteger)index;
 
 @end

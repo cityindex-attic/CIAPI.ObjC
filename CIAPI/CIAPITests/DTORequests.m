@@ -7,27 +7,44 @@
 //
 
 #import "DTORequests.h"
+#import "CIAPIAuthenticator.h"
 
+
+#import "CIAPIGetClientAndTradingAccountRequest.h"
+#import "CIAPIAccountInformationResponse.h"
+#import "CIAPITradingAccount.h"
 
 @implementation DTORequests
 
-#if USE_APPLICATION_UNIT_TEST     // all code under test is in the iPhone Application
-
-- (void)testAppDelegate {
+- (void) setUp
+{
+    CIAPIAuthenticator *authenticator = [[CIAPIAuthenticator alloc] init];
+    [authenticator authenticateWithUserNameSynchronously:@"DM189301" password:@"password" error:nil];
     
-    id yourApplicationDelegate = [[UIApplication sharedApplication] delegate];
-    STAssertNotNil(yourApplicationDelegate, @"UIApplication failed to find the AppDelegate");
+    client = [authenticator.client retain];
     
+    [authenticator release];
 }
 
-#else                           // all code under test must be linked into the Unit Test bundle
-
-- (void)testMath {
-    
-    STAssertTrue((1+1)==2, @"Compiler isn't feeling well today :-(" );
-    
+- (void) tearDown
+{
+    [client release];
 }
 
-#endif
+- (void)testAccountInformation
+{
+    STAssertNotNil(client, @"Client setup must have failed");
+    
+    CIAPIGetClientAndTradingAccountRequest *request = [[CIAPIGetClientAndTradingAccountRequest alloc] init];    
+    CIAPIAccountInformationResponse *resp = [client makeRequest:request error:nil];
+    
+    STAssertNotNil(resp, @"Response should not be nil");
+    
+    STAssertEquals(resp.ClientAccountId, 0, @"Client account id should be 0"); 
+    STAssertEqualObjects(resp.ClientAccountCurrency, @"GBP", @"Client currency should be GBP");
+    
+    STAssertEquals((int)[resp.TradingAccounts count], 2, @"The account should have 2 associated trading accounts");
+    STAssertEqualObjects([[resp.TradingAccounts objectAtIndex:1] TradingAccountCode], @"DM354556", @"The second account should be this code");
+}
 
 @end

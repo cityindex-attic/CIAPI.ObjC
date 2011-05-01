@@ -6,9 +6,30 @@
 //  Copyright 2011 __MyCompanyName__. All rights reserved.
 //
 
-#import "GetClientAndTradingAccountRequest.h"
+#import "CIAPIGetClientAndTradingAccountRequest.h"
 
+#import "CIAPIAccountInformationResponse.h"
 
-@implementation GetClientAndTradingAccountRequest
+@implementation CIAPIGetClientAndTradingAccountRequest
+
+- (enum CIAPIRequestType)requestType
+{
+    return CIAPIRequestGET;
+}
+
+- (NSDictionary*)propertiesForRequest
+{
+    return [NSDictionary dictionary];
+}
+
+- (NSString*)urlTemplate
+{
+    return @"/UserAccount/ClientAndTradingAccount";
+}
+
+- (Class)responseClass
+{
+    return [CIAPIAccountInformationResponse class];
+}
 
 @end

@@ -8,8 +8,9 @@
 
 #import <Foundation/Foundation.h>
 
+#import "CIAPIObjectRequest.h"
 
-@interface GetClientAndTradingAccountRequest : CIAPIObjectRequest {
+@interface CIAPIGetClientAndTradingAccountRequest : CIAPIObjectRequest {
     
 }
 

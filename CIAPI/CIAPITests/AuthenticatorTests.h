@@ -14,12 +14,10 @@
 #import <UIKit/UIKit.h>
 
 
-
-
 @interface AuthenticatorTests : SenTestCase {
     
 }
 
-- (void)testAuthenticate;
+- (void)testSynchronousAuthentication;
 
 @end

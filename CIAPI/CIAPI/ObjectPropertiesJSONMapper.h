@@ -13,4 +13,11 @@
     
 }
 
+/** Determine all the properties declared on a class and it's superclasses (excluding NSObject)
+ 
+ @param cls The class to search for properties
+ @return An autoreleased array of NSString elements, describing the property names
+ */
++ (NSArray*)classPropertyNames:(Class)cls;
+
 @end

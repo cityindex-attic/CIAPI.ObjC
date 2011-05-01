@@ -7,10 +7,18 @@
 //
 
 #import <Foundation/Foundation.h>
-
+#import "CIAPIObjectRequest.h"
 
 @interface CIAPIRequestToken : NSObject {
-    @private
+    CIAPIRequestCallback callbackBlock;
+    id<CIAPIRequestDelegate> callbackDelegate;
+    CIAPIObjectRequest *requestObject;
+    
+    RKRequest *underlyingRequest;
+    int attemptCount;
 }
+
+- (CIAPIRequestToken*)initWithRequest:(CIAPIObjectRequest*)objRequest delegate:(id<CIAPIRequestDelegate>)delegate;
+- (CIAPIRequestToken*)initWithRequest:(CIAPIObjectRequest*)objRequest block:(CIAPIRequestCallback)block;
 
 @end

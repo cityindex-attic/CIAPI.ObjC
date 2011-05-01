@@ -8,7 +8,10 @@
 
 #import <Foundation/Foundation.h>
 
-
 @protocol CIAPIRequestDelegate <NSObject>
+@optional
+
+- (void)requestSucceeded:(id)request result:(id)result;
+- (void)requestFailed:(id)request error:(NSError**)error;
 
 @end

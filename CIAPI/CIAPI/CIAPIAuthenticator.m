@@ -6,6 +6,8 @@
 //  Copyright 2011 __MyCompanyName__. All rights reserved.
 //
 
+#import "RestKit/RestKit.h"
+
 #import "CIAPIAuthenticator.h"
 #import "CIAPIConfigConstants.h"
 
@@ -13,7 +15,13 @@
 #import "CIAPILogOnRequest.h"
 
 
+
 @implementation CIAPIAuthenticator
+
+@synthesize client;
+
+@synthesize delegate;
+@synthesize block;
 
 - (id)init
 {
@@ -21,7 +29,8 @@
     
     if (self)
     {
-        rkManager = [[RKObjectManager objectManagerWithBaseURL:CIAPI_BASE_URI] retain];
+        rkClient = [[RKClient clientWithBaseURL:CIAPI_BASE_URI] retain];
+        client = nil;
     }
     
     return self;
@@ -29,49 +38,108 @@
 
 - (void)dealloc
 {
-    [rkManager dealloc];
-    
+    [client release];
+    [rkClient release];
+    [request cancel];
+    [request release];
+    [block release];
+
     [super dealloc];
 }
 
-- (CIAPIClient*)authenticateWithUserName:(NSString*)userName password:(NSString*)password error:(NSError**)error
+- (BOOL)authenticateWithUserNameSynchronously:(NSString*)userName password:(NSString*)password error:(NSError**)error;
 {
-    CIAPILogOnRequest *loRequest = [[CIAPILogOnRequest alloc] init];
+    request = [self _buildRequestWithUsername:userName password:password];    
+    RKResponse *response = [request sendSynchronously];
+    
+    [self _setupClientOrError:response error:error];
+    
+    [request release];
+        
+    return TRUE;
+}
+
+- (void)authenticateWithUserName:(NSString*)userName password:(NSString*)password
+{
+    [request cancel];
+    [request release];
+    
+    request = [self _buildRequestWithUsername:userName password:password];
+    [request send];
+}
+
+- (void)request:(RKRequest*)_request didLoadResponse:(RKResponse*)response
+{
+    NSError *error = nil;
+    
+    if (![self _setupClientOrError:response error:&error])
+    {
+        if (delegate)
+            [delegate authenticationFailed:self error:error];
+        
+        if (block)
+            block(self, error);
+    }
+    else
+    {    
+        if (delegate)
+            [delegate authenticationSucceeded:self];
+        
+        if (block)
+            block(self, nil);
+    }
+    
+    [request release];
+    request = nil;
+}
+
+- (void)request:(RKRequest*)_request didFailLoadWithError:(NSError*)error
+{
+    if (delegate)
+        [delegate authenticationFailed:self error:error];
+    
+    if (block)
+        block(self, error);
+    
+    [request release];
+    request = nil;
+}
+
+- (RKRequest*)_buildRequestWithUsername:(NSString*)userName password:(NSString*)password
+{
+    CIAPILogOnRequest *loRequest = [[[CIAPILogOnRequest alloc] init] autorelease];
     loRequest.UserName = userName;
     loRequest.Password = password;
     
-    RKObjectLoader *loader = [rkManager objectLoaderWithResourcePath:@"session" delegate:self];
-
-    loader.params = [RKJSONSerialization JSONSerializationWithObject:[loRequest propertiesForSerialization]];
-    loader.method = RKRequestMethodPOST;
-    loader.objectClass = [CIAPICreateSessionResponse class];
+    request = [[rkClient requestWithResourcePath:@"session" delegate:self] retain];
+    request.method = RKRequestMethodPOST;
+    request.params = [RKJSONSerialization JSONSerializationWithObject:[loRequest propertiesForSerialization]];
     
-    [loader sendSynchronously];
+    // A little bit hacky to carry information in the request, but good enough to get off the ground prototyping with
+    request.userData = userName;
     
-    return nil;
+    return request;
 }
 
-- (CIAPIRequest*)authenticateWithUserName:(NSString*)userName password:(NSString*)password delegate:(id<CIAPIAuthenticatorDelegate>)delegate
+- (BOOL)_setupClientOrError:(RKResponse*)response error:(NSError**)error
 {
-    return nil;
+    id bodyObj = [response bodyAsJSON];
+    NSString *sessionID = [bodyObj objectForKey:@"Session"];
+    
+    if (bodyObj == nil || sessionID == nil)
+    {
+        // TODO: Setup errors properly
+        if (*error)
+            *error = [NSError errorWithDomain:@"TODO" code:0 userInfo:nil];
+        
+        return FALSE;
+    }
+    
+    [client release];
+    client = [[CIAPIClient alloc] initWithUsername:response.request.userData sessionID:sessionID];
+
+    return YES;
 }
 
-- (CIAPIRequest*)authenticateWithUserName:(NSString*)userName password:(NSString*)password block:(CIAPIAuthenticatorCallback)callback
-{
-    return nil;
-}
-
-- (void)objectLoader:(RKObjectLoader*)objectLoader didLoadObjects:(NSArray*)objects
-{
-    NSLog(@"Succeeded with %@", objects);    
-}
-
-/**
- * Sent when an object loaded failed to load the collection due to an error
- */
-- (void)objectLoader:(RKObjectLoader*)objectLoader didFailWithError:(NSError*)error
-{
-    NSLog(@"Failed with %@", error);
-}
 
 @end

@@ -8,9 +8,18 @@
 
 #import <Foundation/Foundation.h>
 
+#import "CIAPIObjectResponse.h"
 
-@interface CIAPITradingAccount : NSObject {
-    
+@interface CIAPITradingAccount : CIAPIObjectResponse {
+    int TradingAccountId;
+    NSString *TradingAccountCode;
+    NSString *TradingAccountStatus;
+    NSString *TradingAccountType;
 }
+
+@property (readonly) int TradingAccountId;
+@property (readonly) NSString *TradingAccountCode;
+@property (readonly) NSString *TradingAccountStatus;
+@property (readonly) NSString *TradingAccountType;
 
 @end

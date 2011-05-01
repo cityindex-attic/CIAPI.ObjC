@@ -13,4 +13,6 @@
     
 }
 
+- (BOOL)setupFromDictionary:(NSDictionary*)dictionary error:(NSError**)error;
+
 @end

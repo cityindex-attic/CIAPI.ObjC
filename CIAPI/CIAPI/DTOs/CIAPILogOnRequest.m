@@ -28,8 +28,8 @@
 - (NSDictionary*)propertiesForSerialization
 {
   NSMutableDictionary *mappings = [NSMutableDictionary dictionary];
-  [mappings setValue:@"UserName" forKey:@"UserName"];
-  [mappings setValue:@"Password" forKey:@"Password"];
+  [mappings setValue:self.UserName forKey:@"UserName"];
+    [mappings setValue:self.Password forKey:@"Password"];
 
   return mappings;
 }

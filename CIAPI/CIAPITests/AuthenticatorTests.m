@@ -13,11 +13,13 @@
 
 @implementation AuthenticatorTests
 
-- (void)testAuthenticate
+- (void)testSynchronousAuthentication
 {
     CIAPIAuthenticator *auth = [[CIAPIAuthenticator alloc] init];
     
-    [auth authenticateWithUserName:@"DM189301" password:@"password" error:nil];
+    [auth authenticateWithUserNameSynchronously:@"DM189301" password:@"password" error:nil];
+    
+    STAssertNotNil(auth.client, @"Client should not be nil after good synchronous authentication!");
 }
 
 @end
