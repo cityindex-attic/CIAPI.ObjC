@@ -1,0 +1,39 @@
+//
+//  CIAPI<% code.write(objName) %>Request.m
+//  CIAPI
+//
+//  Copyright 2011 Adam Wright/CityIndex. All rights reserved.
+//
+
+#import "CIAPI<% code.write(objName) %>Request.h"
+#import "<% code.write(apiName(obj.returns["$ref"])) %>.h"
+
+@implementation CIAPIGetClientAndTradingAccountRequest
+
+<% for (parameter in obj.parameters) { %>
+@synthesize <% code.write(obj.parameters[parameter].name) %>;
+<% } %>
+
+- (enum CIAPIRequestType)requestType
+{
+    return CIAPIRequest<% code.write(obj.transport) %>;
+}
+
+- (NSDictionary*)propertiesForRequest
+{
+    return [NSDictionary dictionaryWithObjects: <% for (parameter in obj.parameters) { %> @"<% code.write(obj.parameters[parameter].name) %>", <% code.write(obj.parameters[parameter].name) %>, <% } %>nil];
+}
+
+- (NSString*)urlTemplate
+{
+    return @"<% code.write(obj.target + obj.uriTemplate) %>";
+}
+
+- (Class)responseClass
+{
+    return [<% code.write(apiName(obj.returns["$ref"])) %> class];
+}
+
+@end
+
+<% fileName = "CIAPI" + objName + "Request.m" %>

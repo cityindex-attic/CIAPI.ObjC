@@ -1,0 +1,8 @@
+//
+//  CIAPI<% code.write(objName) %>Response.h
+//  CIAPI
+//
+//  Copyright 2011 Adam Wright/CityIndex. All rights reserved.
+//
+
+<% fileName = "CIAPI" + apiName(objName) + "Response.h" %>

@@ -1,0 +1,25 @@
+//
+//  CIAPI<% code.write(objName) %>Request.h
+//  CIAPI
+//
+//  Copyright 2011 Adam Wright/CityIndex. All rights reserved.
+//
+
+#import <Foundation/Foundation.h>
+
+#import "CIAPIObjectRequest.h"
+
+<% code.write(lineSplit(77, "// ", obj.description)) %> 
+@interface CIAPI<% code.write(objName) %>Request : CIAPIObjectRequest {
+<% for (parameter in obj.parameters) { %>
+  id <% code.write(obj.parameters[parameter].name) %>;
+<% } %>
+}
+
+<% for (parameter in obj.parameters) { %>
+  // <% code.write(obj.parameters[parameter].description) %> 
+  @property (retain) id <% code.write(obj.parameters[parameter].name) %>;
+<% } %>
+
+@end
+<% fileName = "CIAPI" + objName + "Request.h" %>

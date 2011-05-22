@@ -1,0 +1,9 @@
+@interface <% code.write(obj.id) %> : NSObject
+
+<% for (prop in obj.properties) { %>
+    id <% code.write(prop) %>;
+<% } %>
+
+@end
+
+<% fileName = obj.id + ".h" %>
