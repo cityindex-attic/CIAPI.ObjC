@@ -6,4 +6,4 @@
 //  Copyright 2011 __MyCompanyName__. All rights reserved.
 //
 
-#define TEST_REQUESTS 0
+#define TEST_REQUESTS 1

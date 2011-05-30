@@ -18,18 +18,24 @@
 
 - (void) setUp
 {
+#if TEST_REQUESTS
     CIAPIAuthenticator *authenticator = [[CIAPIAuthenticator alloc] init];
     [authenticator authenticateWithUserNameSynchronously:@"DM189301" password:@"password" error:nil];
     
     client = [authenticator.client retain];
     
     [authenticator release];
+#endif
 }
 
 - (void) tearDown
 {
+#if TEST_REQUESTS
     [client release];
+#endif
 }
+
+#if TEST_REQUESTS
 
 - (void)testAccountInformation
 {
@@ -40,11 +46,13 @@
     
     STAssertNotNil(resp, @"Response should not be nil");
     
-    STAssertEquals(resp.ClientAccountId, 0, @"Client account id should be 0"); 
+    STAssertEquals(resp.ClientAccountId, 400133748, @"Client account id should be 400133748"); 
     STAssertEqualObjects(resp.ClientAccountCurrency, @"GBP", @"Client currency should be GBP");
     
     STAssertEquals((int)[resp.TradingAccounts count], 2, @"The account should have 2 associated trading accounts");
     STAssertEqualObjects([[resp.TradingAccounts objectAtIndex:1] TradingAccountCode], @"DM354556", @"The second account should be this code");
 }
+
+#endif
 
 @end

@@ -14,10 +14,16 @@
 
 #import "CIAPIClient.h"
 
+#import "TestControl.h"
+
 @interface DTORequests : SenTestCase {
     CIAPIClient *client;
 }
 
+#if TEST_REQUESTS
+
 - (void)testAccountInformation;
+
+#endif
 
 @end

@@ -13,6 +13,8 @@
 
 @implementation AuthenticatorTests
 
+#if TEST_REQUESTS
+
 - (void)testSynchronousAuthentication
 {
     CIAPIAuthenticator *auth = [[CIAPIAuthenticator alloc] init];
@@ -21,5 +23,7 @@
     
     STAssertNotNil(auth.client, @"Client should not be nil after good synchronous authentication!");
 }
+
+#endif
 
 @end

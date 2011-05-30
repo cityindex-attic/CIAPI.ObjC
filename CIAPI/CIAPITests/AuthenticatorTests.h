@@ -13,11 +13,16 @@
 #import <SenTestingKit/SenTestingKit.h>
 #import <UIKit/UIKit.h>
 
+#import "TestControl.h"
 
 @interface AuthenticatorTests : SenTestCase {
     
 }
 
+#if TEST_REQUESTS
+
 - (void)testSynchronousAuthentication;
+
+#endif
 
 @end
