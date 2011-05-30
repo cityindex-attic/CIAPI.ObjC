@@ -14,6 +14,9 @@
 #import "CIAPIAccountInformationResponse.h"
 #import "CIAPITradingAccount.h"
 
+#import "CIAPIListNewsHeadlinesRequest.h"
+#import "CIAPIListNewsHeadlinesResponse.h"
+
 @implementation DTORequests
 
 - (void) setUp
@@ -51,6 +54,19 @@
     
     STAssertEquals((int)[resp.TradingAccounts count], 2, @"The account should have 2 associated trading accounts");
     STAssertEqualObjects([[resp.TradingAccounts objectAtIndex:1] TradingAccountCode], @"DM354556", @"The second account should be this code");
+}
+
+- (void)testNewsHeadlines
+{
+    STAssertNotNil(client, @"Client setup must have failed");
+    
+    CIAPIListNewsHeadlinesRequest *request = [[CIAPIListNewsHeadlinesRequest alloc] init];
+    request.category = @"uk";
+    request.maxResults = 20;
+    CIAPIListNewsHeadlinesResponse *resp = [client makeRequest:request error:nil];
+    
+    STAssertNotNil(resp, @"Response should not be nil");
+    STAssertEquals([resp count], (NSUInteger)20, @"There really should be 20 UK news stories!"); 
 }
 
 #endif
