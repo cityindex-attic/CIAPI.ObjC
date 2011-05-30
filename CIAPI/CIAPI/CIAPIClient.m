@@ -79,6 +79,7 @@
     else
     {
         // Is this an error object, or just an explosion?
+        NSLog(@"Failed request: Target URL was %@, body is %@", response.URL, [response bodyAsString]);
     }
     
     return nil;

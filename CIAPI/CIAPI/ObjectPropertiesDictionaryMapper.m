@@ -124,6 +124,7 @@
         // Need to check how much of this happens automatically with KVC
         if ([propDesc.propertyType isNonStringObject])
         {
+            // TODO: This will need special handling for array objects
             id subObject = [obj valueForKey:property];
             [mappingResult setObject:[self objectPropertiesToDictionary:subObject] forKey:property];
         }
@@ -134,7 +135,11 @@
         }
         else if ([propDesc.propertyType isNumeric] || [propDesc.propertyType isString])
         {
-            [mappingResult setObject:[obj valueForKey:property] forKey:property];
+            id propValue = [obj valueForKey:property];
+            
+            // TODO: If the values are nil, we send nothing. Is this right?
+            if (propValue != nil)
+                [mappingResult setObject:propValue forKey:property];
         }
         else
         {
