@@ -5,9 +5,11 @@
 //  Copyright 2011 Adam Wright/CityIndex. All rights reserved.
 //
 
+
 #import <Foundation/Foundation.h>
 
 #import "CIAPIObjectRequest.h"
+
 
 // <p>Queries for a specified trading account's active stop / limit orders.</p> 
 // <p>This uri is intended to be used to support a grid in a UI. One usage patte
@@ -18,10 +20,10 @@
 // rmat.</p>
  
 @interface CIAPIListActiveStopLimitOrdersRequest : CIAPIObjectRequest {
-  id tradingAccountId;
+ NSInteger tradingAccountId;
 }
 
-  // The trading account to get orders for. 
-  @property (retain) id tradingAccountId;
+// The trading account to get orders for. 
+@property  NSInteger tradingAccountId;
 
 @end

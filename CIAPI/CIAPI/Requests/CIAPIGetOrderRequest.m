@@ -6,20 +6,17 @@
 //
 
 #import "CIAPIGetOrderRequest.h"
+
 #import "CIAPIGetOrderResponse.h"
 
-@implementation CIAPIGetClientAndTradingAccountRequest
+@implementation CIAPIGetOrderRequest
 
 @synthesize orderId;
+
 
 - (enum CIAPIRequestType)requestType
 {
     return CIAPIRequestGET;
-}
-
-- (NSDictionary*)propertiesForRequest
-{
-    return [NSDictionary dictionaryWithObjects:  @"orderId", orderId, nil];
 }
 
 - (NSString*)urlTemplate

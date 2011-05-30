@@ -6,20 +6,16 @@
 //
 
 #import "CIAPIGetChartingEnabledRequest.h"
-#import "CIAPIBoolean.h"
 
-@implementation CIAPIGetClientAndTradingAccountRequest
 
-@synthesize id;
+@implementation CIAPIGetChartingEnabledRequest
+
+@synthesize ident;
+
 
 - (enum CIAPIRequestType)requestType
 {
     return CIAPIRequestGET;
-}
-
-- (NSDictionary*)propertiesForRequest
-{
-    return [NSDictionary dictionaryWithObjects:  @"id", id, nil];
 }
 
 - (NSString*)urlTemplate
@@ -29,7 +25,7 @@
 
 - (Class)responseClass
 {
-    return [CIAPIBoolean class];
+    return [NSNumber class];
 }
 
 @end

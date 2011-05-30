@@ -6,21 +6,18 @@
 //
 
 #import "CIAPIListTradeHistoryRequest.h"
+
 #import "CIAPIListTradeHistoryResponse.h"
 
-@implementation CIAPIGetClientAndTradingAccountRequest
+@implementation CIAPIListTradeHistoryRequest
 
 @synthesize tradingAccountId;
 @synthesize maxResults;
 
+
 - (enum CIAPIRequestType)requestType
 {
     return CIAPIRequestGET;
-}
-
-- (NSDictionary*)propertiesForRequest
-{
-    return [NSDictionary dictionaryWithObjects:  @"tradingAccountId", tradingAccountId,  @"maxResults", maxResults, nil];
 }
 
 - (NSString*)urlTemplate

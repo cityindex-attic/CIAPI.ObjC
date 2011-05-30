@@ -6,20 +6,16 @@
 //
 
 #import "CIAPIGetTermsAndConditionsRequest.h"
-#import "CIAPIString.h"
 
-@implementation CIAPIGetClientAndTradingAccountRequest
+
+@implementation CIAPIGetTermsAndConditionsRequest
 
 @synthesize clientaccount;
+
 
 - (enum CIAPIRequestType)requestType
 {
     return CIAPIRequestGET;
-}
-
-- (NSDictionary*)propertiesForRequest
-{
-    return [NSDictionary dictionaryWithObjects:  @"clientaccount", clientaccount, nil];
 }
 
 - (NSString*)urlTemplate
@@ -29,7 +25,7 @@
 
 - (Class)responseClass
 {
-    return [CIAPIString class];
+    return [NSString class];
 }
 
 @end

@@ -6,19 +6,16 @@
 //
 
 #import "CIAPIUpdateOrderRequest.h"
+
 #import "CIAPITradeOrderResponse.h"
 
-@implementation CIAPIGetClientAndTradingAccountRequest
+@implementation CIAPIUpdateOrderRequest
+
 
 
 - (enum CIAPIRequestType)requestType
 {
     return CIAPIRequestPOST;
-}
-
-- (NSDictionary*)propertiesForRequest
-{
-    return [NSDictionary dictionaryWithObjects: nil];
 }
 
 - (NSString*)urlTemplate

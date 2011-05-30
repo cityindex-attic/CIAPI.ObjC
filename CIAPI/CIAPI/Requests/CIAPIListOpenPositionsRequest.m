@@ -6,20 +6,17 @@
 //
 
 #import "CIAPIListOpenPositionsRequest.h"
+
 #import "CIAPIListOpenPositionsResponse.h"
 
-@implementation CIAPIGetClientAndTradingAccountRequest
+@implementation CIAPIListOpenPositionsRequest
 
 @synthesize tradingAccountId;
+
 
 - (enum CIAPIRequestType)requestType
 {
     return CIAPIRequestGET;
-}
-
-- (NSDictionary*)propertiesForRequest
-{
-    return [NSDictionary dictionaryWithObjects:  @"tradingAccountId", tradingAccountId, nil];
 }
 
 - (NSString*)urlTemplate

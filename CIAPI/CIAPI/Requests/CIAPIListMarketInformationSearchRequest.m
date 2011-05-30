@@ -6,9 +6,10 @@
 //
 
 #import "CIAPIListMarketInformationSearchRequest.h"
+
 #import "CIAPIListMarketInformationSearchResponse.h"
 
-@implementation CIAPIGetClientAndTradingAccountRequest
+@implementation CIAPIListMarketInformationSearchRequest
 
 @synthesize searchByMarketCode;
 @synthesize searchByMarketName;
@@ -18,14 +19,10 @@
 @synthesize query;
 @synthesize maxResults;
 
+
 - (enum CIAPIRequestType)requestType
 {
     return CIAPIRequestGET;
-}
-
-- (NSDictionary*)propertiesForRequest
-{
-    return [NSDictionary dictionaryWithObjects:  @"searchByMarketCode", searchByMarketCode,  @"searchByMarketName", searchByMarketName,  @"spreadProductType", spreadProductType,  @"cfdProductType", cfdProductType,  @"binaryProductType", binaryProductType,  @"query", query,  @"maxResults", maxResults, nil];
 }
 
 - (NSString*)urlTemplate

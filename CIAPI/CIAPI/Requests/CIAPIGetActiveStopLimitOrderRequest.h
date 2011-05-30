@@ -5,9 +5,11 @@
 //  Copyright 2011 Adam Wright/CityIndex. All rights reserved.
 //
 
+
 #import <Foundation/Foundation.h>
 
 #import "CIAPIObjectRequest.h"
+
 
 // <p>Queries for a active stop limit order with a specified order id. It will r
 // eturn a null value if the order doesn't exist, or is not an active stop limit
@@ -21,10 +23,10 @@
 // href="#">GetOrder</a><p>
  
 @interface CIAPIGetActiveStopLimitOrderRequest : CIAPIObjectRequest {
-  id orderId;
+ NSString* orderId;
 }
 
-  // The requested order id. 
-  @property (retain) id orderId;
+// The requested order id. 
+@property (retain) NSString* orderId;
 
 @end

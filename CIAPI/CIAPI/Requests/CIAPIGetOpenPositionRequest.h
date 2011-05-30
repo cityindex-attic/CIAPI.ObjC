@@ -5,9 +5,11 @@
 //  Copyright 2011 Adam Wright/CityIndex. All rights reserved.
 //
 
+
 #import <Foundation/Foundation.h>
 
 #import "CIAPIObjectRequest.h"
+
 
 // <p>Queries for a trade / open position with a specified order id. It will ret
 // urn a null value if the order doesn't exist, or is not a trade / open positio
@@ -21,10 +23,10 @@
 // ><p>
  
 @interface CIAPIGetOpenPositionRequest : CIAPIObjectRequest {
-  id orderId;
+ NSString* orderId;
 }
 
-  // The requested order id. 
-  @property (retain) id orderId;
+// The requested order id. 
+@property (retain) NSString* orderId;
 
 @end

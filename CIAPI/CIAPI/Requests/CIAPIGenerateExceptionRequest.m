@@ -6,20 +6,17 @@
 //
 
 #import "CIAPIGenerateExceptionRequest.h"
+
 #import "CIAPIErrorResponse.h"
 
-@implementation CIAPIGetClientAndTradingAccountRequest
+@implementation CIAPIGenerateExceptionRequest
 
 @synthesize errorCode;
+
 
 - (enum CIAPIRequestType)requestType
 {
     return CIAPIRequestGET;
-}
-
-- (NSDictionary*)propertiesForRequest
-{
-    return [NSDictionary dictionaryWithObjects:  @"errorCode", errorCode, nil];
 }
 
 - (NSString*)urlTemplate

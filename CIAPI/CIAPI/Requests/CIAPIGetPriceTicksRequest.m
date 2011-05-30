@@ -6,21 +6,18 @@
 //
 
 #import "CIAPIGetPriceTicksRequest.h"
+
 #import "CIAPIGetPriceTickResponse.h"
 
-@implementation CIAPIGetClientAndTradingAccountRequest
+@implementation CIAPIGetPriceTicksRequest
 
 @synthesize marketId;
 @synthesize priceTicks;
 
+
 - (enum CIAPIRequestType)requestType
 {
     return CIAPIRequestGET;
-}
-
-- (NSDictionary*)propertiesForRequest
-{
-    return [NSDictionary dictionaryWithObjects:  @"marketId", marketId,  @"priceTicks", priceTicks, nil];
 }
 
 - (NSString*)urlTemplate

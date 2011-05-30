@@ -6,20 +6,22 @@
 //
 
 #import "CIAPIListMarketInformationRequest.h"
+
 #import "CIAPIListMarketInformationResponse.h"
 
-@implementation CIAPIGetClientAndTradingAccountRequest
+@implementation CIAPIListMarketInformationRequest
 
 @synthesize MarketIds;
+
+- (Class)propertyTypeHintForName:(NSString*)name
+{
+  if ([name isEqualToString:@"MarketIds"]) return [NSNumber class];
+  return nil;
+}
 
 - (enum CIAPIRequestType)requestType
 {
     return CIAPIRequestPOST;
-}
-
-- (NSDictionary*)propertiesForRequest
-{
-    return [NSDictionary dictionaryWithObjects:  @"MarketIds", MarketIds, nil];
 }
 
 - (NSString*)urlTemplate

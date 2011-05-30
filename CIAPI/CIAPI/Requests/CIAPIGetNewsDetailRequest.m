@@ -6,20 +6,17 @@
 //
 
 #import "CIAPIGetNewsDetailRequest.h"
+
 #import "CIAPIGetNewsDetailResponse.h"
 
-@implementation CIAPIGetClientAndTradingAccountRequest
+@implementation CIAPIGetNewsDetailRequest
 
 @synthesize storyId;
+
 
 - (enum CIAPIRequestType)requestType
 {
     return CIAPIRequestGET;
-}
-
-- (NSDictionary*)propertiesForRequest
-{
-    return [NSDictionary dictionaryWithObjects:  @"storyId", storyId, nil];
 }
 
 - (NSString*)urlTemplate

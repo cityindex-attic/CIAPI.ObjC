@@ -6,21 +6,18 @@
 //
 
 #import "CIAPILogOnRequest.h"
+
 #import "CIAPILogOnResponse.h"
 
-@implementation CIAPIGetClientAndTradingAccountRequest
+@implementation CIAPILogOnRequest
 
 @synthesize UserName;
 @synthesize Password;
 
+
 - (enum CIAPIRequestType)requestType
 {
     return CIAPIRequestPOST;
-}
-
-- (NSDictionary*)propertiesForRequest
-{
-    return [NSDictionary dictionaryWithObjects:  @"UserName", UserName,  @"Password", Password, nil];
 }
 
 - (NSString*)urlTemplate

@@ -5,17 +5,19 @@
 //  Copyright 2011 Adam Wright/CityIndex. All rights reserved.
 //
 
+
 #import <Foundation/Foundation.h>
 
 #import "CIAPIObjectRequest.h"
 
+
 // Get the detail of a specific news story
  
 @interface CIAPIGetNewsDetailRequest : CIAPIObjectRequest {
-  id storyId;
+ NSString* storyId;
 }
 
-  // The news story Id 
-  @property (retain) id storyId;
+// The news story Id 
+@property (retain) NSString* storyId;
 
 @end

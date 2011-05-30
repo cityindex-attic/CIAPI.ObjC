@@ -5,9 +5,11 @@
 //  Copyright 2011 Adam Wright/CityIndex. All rights reserved.
 //
 
+
 #import <Foundation/Foundation.h>
 
 #import "CIAPIObjectRequest.h"
+
 
 // <p>Queries for a specified trading account's stop / limit order history. The 
 // result set will include <b>only orders that were originally stop / limit orde
@@ -17,13 +19,13 @@
 // rs).</p>
  
 @interface CIAPIListStopLimitOrderHistoryRequest : CIAPIObjectRequest {
-  id tradingAccountId;
-  id maxResults;
+ NSInteger tradingAccountId;
+ NSInteger maxResults;
 }
 
-  // The trading account to get orders for. 
-  @property (retain) id tradingAccountId;
-  // the maximum results to return. 
-  @property (retain) id maxResults;
+// The trading account to get orders for. 
+@property  NSInteger tradingAccountId;
+// the maximum results to return. 
+@property  NSInteger maxResults;
 
 @end

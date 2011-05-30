@@ -6,9 +6,11 @@
 //
 
 #import "CIAPIOrderRequest.h"
+
+#import "CIAPIIfDone.h"
 #import "CIAPITradeOrderResponse.h"
 
-@implementation CIAPIGetClientAndTradingAccountRequest
+@implementation CIAPIOrderRequest
 
 @synthesize OrderId;
 @synthesize MarketId;
@@ -27,14 +29,15 @@
 @synthesize Guaranteed;
 @synthesize TriggerPrice;
 
+- (Class)propertyTypeHintForName:(NSString*)name
+{
+  if ([name isEqualToString:@"IfDone"]) return [CIAPIIfDone class];
+  return nil;
+}
+
 - (enum CIAPIRequestType)requestType
 {
     return CIAPIRequestPOST;
-}
-
-- (NSDictionary*)propertiesForRequest
-{
-    return [NSDictionary dictionaryWithObjects:  @"OrderId", OrderId,  @"MarketId", MarketId,  @"Currency", Currency,  @"AutoRollover", AutoRollover,  @"Direction", Direction,  @"Quantity", Quantity,  @"BidPrice", BidPrice,  @"OfferPrice", OfferPrice,  @"AuditId", AuditId,  @"TradingAccountId", TradingAccountId,  @"IfDone", IfDone,  @"OcoOrder", OcoOrder,  @"Applicability", Applicability,  @"ExpiryDateTimeUTC", ExpiryDateTimeUTC,  @"Guaranteed", Guaranteed,  @"TriggerPrice", TriggerPrice, nil];
 }
 
 - (NSString*)urlTemplate

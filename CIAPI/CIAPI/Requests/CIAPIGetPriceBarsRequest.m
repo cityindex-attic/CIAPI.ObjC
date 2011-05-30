@@ -6,23 +6,20 @@
 //
 
 #import "CIAPIGetPriceBarsRequest.h"
+
 #import "CIAPIGetPriceBarResponse.h"
 
-@implementation CIAPIGetClientAndTradingAccountRequest
+@implementation CIAPIGetPriceBarsRequest
 
 @synthesize marketId;
 @synthesize interval;
 @synthesize span;
 @synthesize priceBars;
 
+
 - (enum CIAPIRequestType)requestType
 {
     return CIAPIRequestGET;
-}
-
-- (NSDictionary*)propertiesForRequest
-{
-    return [NSDictionary dictionaryWithObjects:  @"marketId", marketId,  @"interval", interval,  @"span", span,  @"priceBars", priceBars, nil];
 }
 
 - (NSString*)urlTemplate

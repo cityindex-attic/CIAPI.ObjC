@@ -6,21 +6,18 @@
 //
 
 #import "CIAPIDeleteSessionRequest.h"
+
 #import "CIAPILogOffResponse.h"
 
-@implementation CIAPIGetClientAndTradingAccountRequest
+@implementation CIAPIDeleteSessionRequest
 
 @synthesize userName;
 @synthesize session;
 
+
 - (enum CIAPIRequestType)requestType
 {
     return CIAPIRequestPOST;
-}
-
-- (NSDictionary*)propertiesForRequest
-{
-    return [NSDictionary dictionaryWithObjects:  @"userName", userName,  @"session", session, nil];
 }
 
 - (NSString*)urlTemplate

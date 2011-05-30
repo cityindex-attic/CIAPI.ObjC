@@ -5,9 +5,11 @@
 //  Copyright 2011 Adam Wright/CityIndex. All rights reserved.
 //
 
+
 #import <Foundation/Foundation.h>
 
 #import "CIAPIObjectRequest.h"
+
 
 // Get historic price bars in OHLC (open, high, low, close) format, suitable for
 //  plotting candlestick chartsReturns price bars in ascending order up to the c
@@ -19,19 +21,19 @@
 // ory?interval=DAY&span=1&pricebars=10
  
 @interface CIAPIGetPriceBarsRequest : CIAPIObjectRequest {
-  id marketId;
-  id interval;
-  id span;
-  id priceBars;
+ NSString* marketId;
+ NSString* interval;
+ NSInteger span;
+ NSString* priceBars;
 }
 
-  // The marketId 
-  @property (retain) id marketId;
-  // The pricebar interval 
-  @property (retain) id interval;
-  // The number of each interval per pricebar. 
-  @property (retain) id span;
-  // The total number of pricebars to return 
-  @property (retain) id priceBars;
+// The marketId 
+@property (retain) NSString* marketId;
+// The pricebar interval 
+@property (retain) NSString* interval;
+// The number of each interval per pricebar. 
+@property  NSInteger span;
+// The total number of pricebars to return 
+@property (retain) NSString* priceBars;
 
 @end

@@ -5,17 +5,19 @@
 //  Copyright 2011 Adam Wright/CityIndex. All rights reserved.
 //
 
+
 #import <Foundation/Foundation.h>
 
 #import "CIAPIObjectRequest.h"
 
+
 // <p>Queries for market information.</p>
  
 @interface CIAPIListMarketInformationRequest : CIAPIObjectRequest {
-  id MarketIds;
+ NSArray* MarketIds;
 }
 
-  // The list of market ids 
-  @property (retain) id MarketIds;
+// The list of market ids 
+@property (retain) NSArray* MarketIds;
 
 @end

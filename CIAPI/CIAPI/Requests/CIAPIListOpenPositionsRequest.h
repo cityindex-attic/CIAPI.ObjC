@@ -5,9 +5,11 @@
 //  Copyright 2011 Adam Wright/CityIndex. All rights reserved.
 //
 
+
 #import <Foundation/Foundation.h>
 
 #import "CIAPIObjectRequest.h"
+
 
 // <p>Queries for a specified trading account's trades / open positions.</p> <p>
 // This uri is intended to be used to support a grid in a UI. One usage pattern 
@@ -17,10 +19,10 @@
 // tes on the order stream to get the updated data in this format.</p>
  
 @interface CIAPIListOpenPositionsRequest : CIAPIObjectRequest {
-  id tradingAccountId;
+ NSInteger tradingAccountId;
 }
 
-  // The trading account to get orders for. 
-  @property (retain) id tradingAccountId;
+// The trading account to get orders for. 
+@property  NSInteger tradingAccountId;
 
 @end

@@ -6,19 +6,16 @@
 //
 
 #import "CIAPIGetClientAndTradingAccountRequest.h"
+
 #import "CIAPIAccountInformationResponse.h"
 
 @implementation CIAPIGetClientAndTradingAccountRequest
 
 
+
 - (enum CIAPIRequestType)requestType
 {
     return CIAPIRequestGET;
-}
-
-- (NSDictionary*)propertiesForRequest
-{
-    return [NSDictionary dictionaryWithObjects: nil];
 }
 
 - (NSString*)urlTemplate

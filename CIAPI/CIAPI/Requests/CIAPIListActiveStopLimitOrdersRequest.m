@@ -6,20 +6,17 @@
 //
 
 #import "CIAPIListActiveStopLimitOrdersRequest.h"
+
 #import "CIAPIListActiveStopLimitOrderResponse.h"
 
-@implementation CIAPIGetClientAndTradingAccountRequest
+@implementation CIAPIListActiveStopLimitOrdersRequest
 
 @synthesize tradingAccountId;
+
 
 - (enum CIAPIRequestType)requestType
 {
     return CIAPIRequestGET;
-}
-
-- (NSDictionary*)propertiesForRequest
-{
-    return [NSDictionary dictionaryWithObjects:  @"tradingAccountId", tradingAccountId, nil];
 }
 
 - (NSString*)urlTemplate

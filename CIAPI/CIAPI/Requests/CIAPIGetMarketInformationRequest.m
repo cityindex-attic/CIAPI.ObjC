@@ -6,20 +6,17 @@
 //
 
 #import "CIAPIGetMarketInformationRequest.h"
+
 #import "CIAPIGetMarketInformationResponse.h"
 
-@implementation CIAPIGetClientAndTradingAccountRequest
+@implementation CIAPIGetMarketInformationRequest
 
 @synthesize marketId;
+
 
 - (enum CIAPIRequestType)requestType
 {
     return CIAPIRequestGET;
-}
-
-- (NSDictionary*)propertiesForRequest
-{
-    return [NSDictionary dictionaryWithObjects:  @"marketId", marketId, nil];
 }
 
 - (NSString*)urlTemplate

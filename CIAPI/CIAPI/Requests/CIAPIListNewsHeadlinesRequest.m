@@ -6,21 +6,18 @@
 //
 
 #import "CIAPIListNewsHeadlinesRequest.h"
+
 #import "CIAPIListNewsHeadlinesResponse.h"
 
-@implementation CIAPIGetClientAndTradingAccountRequest
+@implementation CIAPIListNewsHeadlinesRequest
 
 @synthesize category;
 @synthesize maxResults;
 
+
 - (enum CIAPIRequestType)requestType
 {
     return CIAPIRequestGET;
-}
-
-- (NSDictionary*)propertiesForRequest
-{
-    return [NSDictionary dictionaryWithObjects:  @"category", category,  @"maxResults", maxResults, nil];
 }
 
 - (NSString*)urlTemplate

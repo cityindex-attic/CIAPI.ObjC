@@ -6,21 +6,18 @@
 //
 
 #import "CIAPICancelOrderRequest.h"
+
 #import "CIAPITradeOrderResponse.h"
 
-@implementation CIAPIGetClientAndTradingAccountRequest
+@implementation CIAPICancelOrderRequest
 
 @synthesize OrderId;
 @synthesize TradingAccountId;
 
+
 - (enum CIAPIRequestType)requestType
 {
     return CIAPIRequestPOST;
-}
-
-- (NSDictionary*)propertiesForRequest
-{
-    return [NSDictionary dictionaryWithObjects:  @"OrderId", OrderId,  @"TradingAccountId", TradingAccountId, nil];
 }
 
 - (NSString*)urlTemplate
