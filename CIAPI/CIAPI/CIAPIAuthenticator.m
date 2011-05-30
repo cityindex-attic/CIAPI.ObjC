@@ -11,10 +11,8 @@
 #import "CIAPIAuthenticator.h"
 #import "CIAPIConfigConstants.h"
 
-#import "CIAPICreateSessionResponse.h"
-#import "CIAPILogOnRequest.h"
-
-
+#import "Requests/CIAPILogOnRequest.h"
+#import "Responses/CIAPILogOnResponse.h"
 
 @implementation CIAPIAuthenticator
 
@@ -113,7 +111,7 @@
     
     request = [[rkClient requestWithResourcePath:@"session" delegate:self] retain];
     request.method = RKRequestMethodPOST;
-    request.params = [RKJSONSerialization JSONSerializationWithObject:[loRequest propertiesForSerialization]];
+    request.params = [RKJSONSerialization JSONSerializationWithObject:[loRequest propertiesForRequest]];
     
     // A little bit hacky to carry information in the request, but good enough to get off the ground prototyping with
     request.userData = userName;
@@ -129,7 +127,7 @@
     if (bodyObj == nil || sessionID == nil)
     {
         // TODO: Setup errors properly
-        if (*error)
+        if (error)
             *error = [NSError errorWithDomain:@"TODO" code:0 userInfo:nil];
         
         return FALSE;
