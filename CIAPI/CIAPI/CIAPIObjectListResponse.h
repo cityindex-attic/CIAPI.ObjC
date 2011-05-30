@@ -11,14 +11,13 @@
 #import "CIAPIObjectResponse.h"
 
 @interface CIAPIObjectListResponse : CIAPIObjectResponse<NSFastEnumeration> {
+@private
     NSArray *array;
 }
 
 @property (readonly) NSArray *array;
 
 - (BOOL)setupFromDictionary:(NSDictionary*)dictionary error:(NSError**)error;
-
-- (Class)contentsClass;
 
 - (NSUInteger)count;
 - (id)objectAtIndex:(NSUInteger)index;

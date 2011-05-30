@@ -15,29 +15,20 @@
 
 - (BOOL)setupFromDictionary:(NSDictionary*)dictionary error:(NSError**)error
 {
-    NSMutableArray *tempArray = [NSMutableArray array];
+    // Note the property key for the array (i.e. the only property)
+    NSString *arrayPropertyName = [[dictionary allKeys] objectAtIndex:0];
     
-    for (id itemJSON in dictionary)
+    if (arrayPropertyName == nil)
     {
-        id item = [[[[self contentsClass] alloc] init] autorelease];
-        
-        if (![item setupFromDictionary:itemJSON error:error])
-        {
-            return NO;
-        }
-        
-        [tempArray addObject:item];
+        // TODO: Error handling
+        return NO;
     }
-    
-    array = [[NSArray arrayWithArray:tempArray] retain];
-    
-    return YES;
-}
 
-- (Class)contentsClass
-{
-    assert(FALSE);
-    return nil;
+    BOOL result = [super setupFromDictionary:dictionary error:error];
+    
+    array = [self valueForKey:arrayPropertyName];
+    
+    return result;
 }
 
 - (NSUInteger)count
