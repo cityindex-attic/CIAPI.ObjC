@@ -7,108 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		07599400136C69C90040D454 /* ObjectPropertiesJSONMapper.h in Headers */ = {isa = PBXBuildFile; fileRef = 075993FE136C69C90040D454 /* ObjectPropertiesJSONMapper.h */; };
-		07599401136C69C90040D454 /* ObjectPropertiesJSONMapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 075993FF136C69C90040D454 /* ObjectPropertiesJSONMapper.m */; };
+		07599400136C69C90040D454 /* ObjectPropertiesDictionaryMapper.h in Headers */ = {isa = PBXBuildFile; fileRef = 075993FE136C69C90040D454 /* ObjectPropertiesDictionaryMapper.h */; };
+		07599401136C69C90040D454 /* ObjectPropertiesDictionaryMapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 075993FF136C69C90040D454 /* ObjectPropertiesDictionaryMapper.m */; };
 		07599404136D8DCE0040D454 /* CIAPIObjectResponse.h in Headers */ = {isa = PBXBuildFile; fileRef = 07599402136D8DCE0040D454 /* CIAPIObjectResponse.h */; };
 		07599405136D8DCE0040D454 /* CIAPIObjectResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 07599403136D8DCE0040D454 /* CIAPIObjectResponse.m */; };
-		07599408136D8F670040D454 /* CIAPIGetClientAndTradingAccountRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = 07599406136D8F670040D454 /* CIAPIGetClientAndTradingAccountRequest.h */; };
-		07599409136D8F670040D454 /* CIAPIGetClientAndTradingAccountRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 07599407136D8F670040D454 /* CIAPIGetClientAndTradingAccountRequest.m */; };
-		0759940E136D905A0040D454 /* CIAPIAccountInformationResponse.h in Headers */ = {isa = PBXBuildFile; fileRef = 0759940C136D905A0040D454 /* CIAPIAccountInformationResponse.h */; };
-		0759940F136D905A0040D454 /* CIAPIAccountInformationResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 0759940D136D905A0040D454 /* CIAPIAccountInformationResponse.m */; };
-		07599413136D91170040D454 /* CIAPITradingAccount.h in Headers */ = {isa = PBXBuildFile; fileRef = 07599411136D91170040D454 /* CIAPITradingAccount.h */; };
-		07599414136D91170040D454 /* CIAPITradingAccount.m in Sources */ = {isa = PBXBuildFile; fileRef = 07599412136D91170040D454 /* CIAPITradingAccount.m */; };
 		07599417136D92A00040D454 /* DTORequests.h in Headers */ = {isa = PBXBuildFile; fileRef = 07599415136D92A00040D454 /* DTORequests.h */; };
 		07599419136D94800040D454 /* DTORequests.m in Sources */ = {isa = PBXBuildFile; fileRef = 07599416136D92A00040D454 /* DTORequests.m */; };
 		0759941C136DB62C0040D454 /* CIAPIObjectListResponse.h in Headers */ = {isa = PBXBuildFile; fileRef = 0759941A136DB62C0040D454 /* CIAPIObjectListResponse.h */; };
 		0759941D136DB62C0040D454 /* CIAPIObjectListResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 0759941B136DB62C0040D454 /* CIAPIObjectListResponse.m */; };
-		075A1FAE134B717D0012A094 /* CIAPIApiActiveStopLimitOrder.h in Headers */ = {isa = PBXBuildFile; fileRef = 075A1F57134B717D0012A094 /* CIAPIApiActiveStopLimitOrder.h */; };
-		075A1FAF134B717D0012A094 /* CIAPIApiActiveStopLimitOrder.m in Sources */ = {isa = PBXBuildFile; fileRef = 075A1F58134B717D0012A094 /* CIAPIApiActiveStopLimitOrder.m */; };
-		075A1FB0134B717D0012A094 /* CIAPIApiBasicStopLimitOrder.h in Headers */ = {isa = PBXBuildFile; fileRef = 075A1F59134B717D0012A094 /* CIAPIApiBasicStopLimitOrder.h */; };
-		075A1FB1134B717D0012A094 /* CIAPIApiBasicStopLimitOrder.m in Sources */ = {isa = PBXBuildFile; fileRef = 075A1F5A134B717D0012A094 /* CIAPIApiBasicStopLimitOrder.m */; };
-		075A1FB2134B717D0012A094 /* CIAPIApiIfDoneResponse.h in Headers */ = {isa = PBXBuildFile; fileRef = 075A1F5B134B717D0012A094 /* CIAPIApiIfDoneResponse.h */; };
-		075A1FB3134B717D0012A094 /* CIAPIApiIfDoneResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 075A1F5C134B717D0012A094 /* CIAPIApiIfDoneResponse.m */; };
-		075A1FB4134B717D0012A094 /* CIAPIApiOpenPosition.h in Headers */ = {isa = PBXBuildFile; fileRef = 075A1F5D134B717D0012A094 /* CIAPIApiOpenPosition.h */; };
-		075A1FB5134B717D0012A094 /* CIAPIApiOpenPosition.m in Sources */ = {isa = PBXBuildFile; fileRef = 075A1F5E134B717D0012A094 /* CIAPIApiOpenPosition.m */; };
-		075A1FB6134B717D0012A094 /* CIAPIApiOrderResponse.h in Headers */ = {isa = PBXBuildFile; fileRef = 075A1F5F134B717D0012A094 /* CIAPIApiOrderResponse.h */; };
-		075A1FB7134B717D0012A094 /* CIAPIApiOrderResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 075A1F60134B717D0012A094 /* CIAPIApiOrderResponse.m */; };
-		075A1FB8134B717D0012A094 /* CIAPIApiQuoteResponse.h in Headers */ = {isa = PBXBuildFile; fileRef = 075A1F61134B717D0012A094 /* CIAPIApiQuoteResponse.h */; };
-		075A1FB9134B717D0012A094 /* CIAPIApiQuoteResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 075A1F62134B717D0012A094 /* CIAPIApiQuoteResponse.m */; };
-		075A1FBA134B717D0012A094 /* CIAPIApiStopLimitOrderHistory.h in Headers */ = {isa = PBXBuildFile; fileRef = 075A1F63134B717D0012A094 /* CIAPIApiStopLimitOrderHistory.h */; };
-		075A1FBB134B717D0012A094 /* CIAPIApiStopLimitOrderHistory.m in Sources */ = {isa = PBXBuildFile; fileRef = 075A1F64134B717D0012A094 /* CIAPIApiStopLimitOrderHistory.m */; };
-		075A1FBC134B717D0012A094 /* CIAPIApiStopLimitResponse.h in Headers */ = {isa = PBXBuildFile; fileRef = 075A1F65134B717D0012A094 /* CIAPIApiStopLimitResponse.h */; };
-		075A1FBD134B717D0012A094 /* CIAPIApiStopLimitResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 075A1F66134B717D0012A094 /* CIAPIApiStopLimitResponse.m */; };
-		075A1FBE134B717D0012A094 /* CIAPIApiTradeHistory.h in Headers */ = {isa = PBXBuildFile; fileRef = 075A1F67134B717D0012A094 /* CIAPIApiTradeHistory.h */; };
-		075A1FBF134B717D0012A094 /* CIAPIApiTradeHistory.m in Sources */ = {isa = PBXBuildFile; fileRef = 075A1F68134B717D0012A094 /* CIAPIApiTradeHistory.m */; };
-		075A1FC0134B717D0012A094 /* CIAPIApiTradeOrderResponse.h in Headers */ = {isa = PBXBuildFile; fileRef = 075A1F69134B717D0012A094 /* CIAPIApiTradeOrderResponse.h */; };
-		075A1FC1134B717D0012A094 /* CIAPIApiTradeOrderResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 075A1F6A134B717D0012A094 /* CIAPIApiTradeOrderResponse.m */; };
-		075A1FC2134B717D0012A094 /* CIAPICancelOrderRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = 075A1F6B134B717D0012A094 /* CIAPICancelOrderRequest.h */; };
-		075A1FC3134B717D0012A094 /* CIAPICancelOrderRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 075A1F6C134B717D0012A094 /* CIAPICancelOrderRequest.m */; };
-		075A1FC4134B717D0012A094 /* CIAPIClientAccountMargin.h in Headers */ = {isa = PBXBuildFile; fileRef = 075A1F6D134B717D0012A094 /* CIAPIClientAccountMargin.h */; };
-		075A1FC5134B717D0012A094 /* CIAPIClientAccountMargin.m in Sources */ = {isa = PBXBuildFile; fileRef = 075A1F6E134B717D0012A094 /* CIAPIClientAccountMargin.m */; };
-		075A1FC6134B717D0012A094 /* CIAPICreateSessionResponse.h in Headers */ = {isa = PBXBuildFile; fileRef = 075A1F6F134B717D0012A094 /* CIAPICreateSessionResponse.h */; };
-		075A1FC7134B717D0012A094 /* CIAPICreateSessionResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 075A1F70134B717D0012A094 /* CIAPICreateSessionResponse.m */; };
-		075A1FC8134B717D0012A094 /* CIAPIDataTypeObjects.h in Headers */ = {isa = PBXBuildFile; fileRef = 075A1F71134B717D0012A094 /* CIAPIDataTypeObjects.h */; };
-		075A1FC9134B717D0012A094 /* CIAPIErrorResponse.h in Headers */ = {isa = PBXBuildFile; fileRef = 075A1F72134B717D0012A094 /* CIAPIErrorResponse.h */; };
-		075A1FCA134B717D0012A094 /* CIAPIErrorResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 075A1F73134B717D0012A094 /* CIAPIErrorResponse.m */; };
-		075A1FCB134B717D0012A094 /* CIAPIG2SessionValidationResponse.h in Headers */ = {isa = PBXBuildFile; fileRef = 075A1F74134B717D0012A094 /* CIAPIG2SessionValidationResponse.h */; };
-		075A1FCC134B717D0012A094 /* CIAPIG2SessionValidationResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 075A1F75134B717D0012A094 /* CIAPIG2SessionValidationResponse.m */; };
-		075A1FCD134B717D0012A094 /* CIAPIGatewayIfDone.h in Headers */ = {isa = PBXBuildFile; fileRef = 075A1F76134B717D0012A094 /* CIAPIGatewayIfDone.h */; };
-		075A1FCE134B717D0012A094 /* CIAPIGatewayIfDone.m in Sources */ = {isa = PBXBuildFile; fileRef = 075A1F77134B717D0012A094 /* CIAPIGatewayIfDone.m */; };
-		075A1FCF134B717D0012A094 /* CIAPIGatewayOrder.h in Headers */ = {isa = PBXBuildFile; fileRef = 075A1F78134B717D0012A094 /* CIAPIGatewayOrder.h */; };
-		075A1FD0134B717D0012A094 /* CIAPIGatewayOrder.m in Sources */ = {isa = PBXBuildFile; fileRef = 075A1F79134B717D0012A094 /* CIAPIGatewayOrder.m */; };
-		075A1FD1134B717D0012A094 /* CIAPIGatewayStopLimitOrder.h in Headers */ = {isa = PBXBuildFile; fileRef = 075A1F7A134B717D0012A094 /* CIAPIGatewayStopLimitOrder.h */; };
-		075A1FD2134B717D0012A094 /* CIAPIGatewayStopLimitOrder.m in Sources */ = {isa = PBXBuildFile; fileRef = 075A1F7B134B717D0012A094 /* CIAPIGatewayStopLimitOrder.m */; };
-		075A1FD3134B717D0012A094 /* CIAPIGetNewsDetailResponse.h in Headers */ = {isa = PBXBuildFile; fileRef = 075A1F7C134B717D0012A094 /* CIAPIGetNewsDetailResponse.h */; };
-		075A1FD4134B717D0012A094 /* CIAPIGetNewsDetailResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 075A1F7D134B717D0012A094 /* CIAPIGetNewsDetailResponse.m */; };
-		075A1FD5134B717D0012A094 /* CIAPIGetPriceBarResponse.h in Headers */ = {isa = PBXBuildFile; fileRef = 075A1F7E134B717D0012A094 /* CIAPIGetPriceBarResponse.h */; };
-		075A1FD6134B717D0012A094 /* CIAPIGetPriceBarResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 075A1F7F134B717D0012A094 /* CIAPIGetPriceBarResponse.m */; };
-		075A1FD7134B717D0012A094 /* CIAPIGetPriceTickResponse.h in Headers */ = {isa = PBXBuildFile; fileRef = 075A1F80134B717D0012A094 /* CIAPIGetPriceTickResponse.h */; };
-		075A1FD8134B717D0012A094 /* CIAPIGetPriceTickResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 075A1F81134B717D0012A094 /* CIAPIGetPriceTickResponse.m */; };
-		075A1FD9134B717D0012A094 /* CIAPIListActiveStopLimitOrderResponse.h in Headers */ = {isa = PBXBuildFile; fileRef = 075A1F82134B717D0012A094 /* CIAPIListActiveStopLimitOrderResponse.h */; };
-		075A1FDA134B717D0012A094 /* CIAPIListActiveStopLimitOrderResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 075A1F83134B717D0012A094 /* CIAPIListActiveStopLimitOrderResponse.m */; };
-		075A1FDB134B717D0012A094 /* CIAPIListCfdMarketsResponse.h in Headers */ = {isa = PBXBuildFile; fileRef = 075A1F84134B717D0012A094 /* CIAPIListCfdMarketsResponse.h */; };
-		075A1FDC134B717D0012A094 /* CIAPIListCfdMarketsResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 075A1F85134B717D0012A094 /* CIAPIListCfdMarketsResponse.m */; };
-		075A1FDD134B717D0012A094 /* CIAPIListNewsHeadlinesResponse.h in Headers */ = {isa = PBXBuildFile; fileRef = 075A1F86134B717D0012A094 /* CIAPIListNewsHeadlinesResponse.h */; };
-		075A1FDE134B717D0012A094 /* CIAPIListNewsHeadlinesResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 075A1F87134B717D0012A094 /* CIAPIListNewsHeadlinesResponse.m */; };
-		075A1FDF134B717D0012A094 /* CIAPIListOpenPositionsResponse.h in Headers */ = {isa = PBXBuildFile; fileRef = 075A1F88134B717D0012A094 /* CIAPIListOpenPositionsResponse.h */; };
-		075A1FE0134B717D0012A094 /* CIAPIListOpenPositionsResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 075A1F89134B717D0012A094 /* CIAPIListOpenPositionsResponse.m */; };
-		075A1FE1134B717D0012A094 /* CIAPIListOrdersResponse.h in Headers */ = {isa = PBXBuildFile; fileRef = 075A1F8A134B717D0012A094 /* CIAPIListOrdersResponse.h */; };
-		075A1FE2134B717D0012A094 /* CIAPIListOrdersResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 075A1F8B134B717D0012A094 /* CIAPIListOrdersResponse.m */; };
-		075A1FE3134B717D0012A094 /* CIAPIListSpreadMarketsResponse.h in Headers */ = {isa = PBXBuildFile; fileRef = 075A1F8C134B717D0012A094 /* CIAPIListSpreadMarketsResponse.h */; };
-		075A1FE4134B717D0012A094 /* CIAPIListSpreadMarketsResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 075A1F8D134B717D0012A094 /* CIAPIListSpreadMarketsResponse.m */; };
-		075A1FE5134B717D0012A094 /* CIAPIListStopLimitOrderHistoryResponse.h in Headers */ = {isa = PBXBuildFile; fileRef = 075A1F8E134B717D0012A094 /* CIAPIListStopLimitOrderHistoryResponse.h */; };
-		075A1FE6134B717D0012A094 /* CIAPIListStopLimitOrderHistoryResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 075A1F8F134B717D0012A094 /* CIAPIListStopLimitOrderHistoryResponse.m */; };
-		075A1FE7134B717D0012A094 /* CIAPIListTradeHistoryResponse.h in Headers */ = {isa = PBXBuildFile; fileRef = 075A1F90134B717D0012A094 /* CIAPIListTradeHistoryResponse.h */; };
-		075A1FE8134B717D0012A094 /* CIAPIListTradeHistoryResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 075A1F91134B717D0012A094 /* CIAPIListTradeHistoryResponse.m */; };
-		075A1FE9134B717D0012A094 /* CIAPILogOnRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = 075A1F92134B717D0012A094 /* CIAPILogOnRequest.h */; };
-		075A1FEA134B717D0012A094 /* CIAPILogOnRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 075A1F93134B717D0012A094 /* CIAPILogOnRequest.m */; };
-		075A1FEB134B717D0012A094 /* CIAPIMarket.h in Headers */ = {isa = PBXBuildFile; fileRef = 075A1F94134B717D0012A094 /* CIAPIMarket.h */; };
-		075A1FEC134B717D0012A094 /* CIAPIMarket.m in Sources */ = {isa = PBXBuildFile; fileRef = 075A1F95134B717D0012A094 /* CIAPIMarket.m */; };
-		075A1FED134B717D0012A094 /* CIAPINews.h in Headers */ = {isa = PBXBuildFile; fileRef = 075A1F96134B717D0012A094 /* CIAPINews.h */; };
-		075A1FEE134B717D0012A094 /* CIAPINews.m in Sources */ = {isa = PBXBuildFile; fileRef = 075A1F97134B717D0012A094 /* CIAPINews.m */; };
-		075A1FEF134B717D0012A094 /* CIAPINewsDetail.h in Headers */ = {isa = PBXBuildFile; fileRef = 075A1F98134B717D0012A094 /* CIAPINewsDetail.h */; };
-		075A1FF0134B717D0012A094 /* CIAPINewsDetail.m in Sources */ = {isa = PBXBuildFile; fileRef = 075A1F99134B717D0012A094 /* CIAPINewsDetail.m */; };
-		075A1FF1134B717D0012A094 /* CIAPINewStopLimitOrderRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = 075A1F9A134B717D0012A094 /* CIAPINewStopLimitOrderRequest.h */; };
-		075A1FF2134B717D0012A094 /* CIAPINewStopLimitOrderRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 075A1F9B134B717D0012A094 /* CIAPINewStopLimitOrderRequest.m */; };
-		075A1FF3134B717D0012A094 /* CIAPINewTradeOrderRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = 075A1F9C134B717D0012A094 /* CIAPINewTradeOrderRequest.h */; };
-		075A1FF4134B717D0012A094 /* CIAPINewTradeOrderRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 075A1F9D134B717D0012A094 /* CIAPINewTradeOrderRequest.m */; };
-		075A1FF5134B717D0012A094 /* CIAPIOcoOrderRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = 075A1F9E134B717D0012A094 /* CIAPIOcoOrderRequest.h */; };
-		075A1FF6134B717D0012A094 /* CIAPIOcoOrderRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 075A1F9F134B717D0012A094 /* CIAPIOcoOrderRequest.m */; };
-		075A1FF7134B717D0012A094 /* CIAPIOrder.h in Headers */ = {isa = PBXBuildFile; fileRef = 075A1FA0134B717D0012A094 /* CIAPIOrder.h */; };
-		075A1FF8134B717D0012A094 /* CIAPIOrder.m in Sources */ = {isa = PBXBuildFile; fileRef = 075A1FA1134B717D0012A094 /* CIAPIOrder.m */; };
-		075A1FF9134B717D0012A094 /* CIAPIPrice.h in Headers */ = {isa = PBXBuildFile; fileRef = 075A1FA2134B717D0012A094 /* CIAPIPrice.h */; };
-		075A1FFA134B717D0012A094 /* CIAPIPrice.m in Sources */ = {isa = PBXBuildFile; fileRef = 075A1FA3134B717D0012A094 /* CIAPIPrice.m */; };
-		075A1FFB134B717D0012A094 /* CIAPIPriceBar.h in Headers */ = {isa = PBXBuildFile; fileRef = 075A1FA4134B717D0012A094 /* CIAPIPriceBar.h */; };
-		075A1FFC134B717D0012A094 /* CIAPIPriceBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 075A1FA5134B717D0012A094 /* CIAPIPriceBar.m */; };
-		075A1FFD134B717D0012A094 /* CIAPIPriceTick.h in Headers */ = {isa = PBXBuildFile; fileRef = 075A1FA6134B717D0012A094 /* CIAPIPriceTick.h */; };
-		075A1FFE134B717D0012A094 /* CIAPIPriceTick.m in Sources */ = {isa = PBXBuildFile; fileRef = 075A1FA7134B717D0012A094 /* CIAPIPriceTick.m */; };
-		075A1FFF134B717D0012A094 /* CIAPIQuote.h in Headers */ = {isa = PBXBuildFile; fileRef = 075A1FA8134B717D0012A094 /* CIAPIQuote.h */; };
-		075A2000134B717D0012A094 /* CIAPIQuote.m in Sources */ = {isa = PBXBuildFile; fileRef = 075A1FA9134B717D0012A094 /* CIAPIQuote.m */; };
-		075A2001134B717D0012A094 /* CIAPISessionDeletionRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = 075A1FAA134B717D0012A094 /* CIAPISessionDeletionRequest.h */; };
-		075A2002134B717D0012A094 /* CIAPISessionDeletionRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 075A1FAB134B717D0012A094 /* CIAPISessionDeletionRequest.m */; };
-		075A2003134B717D0012A094 /* CIAPISessionDeletionResponse.h in Headers */ = {isa = PBXBuildFile; fileRef = 075A1FAC134B717D0012A094 /* CIAPISessionDeletionResponse.h */; };
-		075A2004134B717D0012A094 /* CIAPISessionDeletionResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 075A1FAD134B717D0012A094 /* CIAPISessionDeletionResponse.m */; };
-		075A2006134B738A0012A094 /* CIAPIErrorCode.h in Headers */ = {isa = PBXBuildFile; fileRef = 075A2005134B738A0012A094 /* CIAPIErrorCode.h */; };
 		075E8E411342724900C85B9B /* CIAPIClient.h in Headers */ = {isa = PBXBuildFile; fileRef = 075E8E3F1342724900C85B9B /* CIAPIClient.h */; };
 		075E8E421342724900C85B9B /* CIAPIClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 075E8E401342724900C85B9B /* CIAPIClient.m */; };
 		076AF1C5134FC4510049972E /* CIAPIAuthenticator.h in Headers */ = {isa = PBXBuildFile; fileRef = 076AF1C3134FC4510049972E /* CIAPIAuthenticator.h */; };
@@ -158,6 +64,11 @@
 		07DEFE5D1342710E00CFA705 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 07DEFE5B1342710E00CFA705 /* InfoPlist.strings */; };
 		07DEFE601342710E00CFA705 /* CIAPITests.h in Resources */ = {isa = PBXBuildFile; fileRef = 07DEFE5F1342710E00CFA705 /* CIAPITests.h */; };
 		07DEFE621342710E00CFA705 /* CIAPITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 07DEFE611342710E00CFA705 /* CIAPITests.m */; };
+		07F0E713138BD7FA002EB862 /* PropertyDescriptionDecoder.h in Headers */ = {isa = PBXBuildFile; fileRef = 07F0E711138BD7FA002EB862 /* PropertyDescriptionDecoder.h */; };
+		07F0E714138BD7FA002EB862 /* PropertyDescriptionDecoder.m in Sources */ = {isa = PBXBuildFile; fileRef = 07F0E712138BD7FA002EB862 /* PropertyDescriptionDecoder.m */; };
+		07F0E717138BD800002EB862 /* TypeDecoder.h in Headers */ = {isa = PBXBuildFile; fileRef = 07F0E715138BD800002EB862 /* TypeDecoder.h */; };
+		07F0E718138BD800002EB862 /* TypeDecoder.m in Sources */ = {isa = PBXBuildFile; fileRef = 07F0E716138BD800002EB862 /* TypeDecoder.m */; };
+		07F0E71C138BD8F0002EB862 /* ObjectDictionaryMapping.m in Sources */ = {isa = PBXBuildFile; fileRef = 07F0E71B138BD8F0002EB862 /* ObjectDictionaryMapping.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -241,108 +152,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		075993FE136C69C90040D454 /* ObjectPropertiesJSONMapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ObjectPropertiesJSONMapper.h; sourceTree = "<group>"; };
-		075993FF136C69C90040D454 /* ObjectPropertiesJSONMapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ObjectPropertiesJSONMapper.m; sourceTree = "<group>"; };
+		075993FE136C69C90040D454 /* ObjectPropertiesDictionaryMapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ObjectPropertiesDictionaryMapper.h; sourceTree = "<group>"; };
+		075993FF136C69C90040D454 /* ObjectPropertiesDictionaryMapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ObjectPropertiesDictionaryMapper.m; sourceTree = "<group>"; };
 		07599402136D8DCE0040D454 /* CIAPIObjectResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CIAPIObjectResponse.h; sourceTree = "<group>"; };
 		07599403136D8DCE0040D454 /* CIAPIObjectResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CIAPIObjectResponse.m; sourceTree = "<group>"; };
-		07599406136D8F670040D454 /* CIAPIGetClientAndTradingAccountRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CIAPIGetClientAndTradingAccountRequest.h; sourceTree = "<group>"; };
-		07599407136D8F670040D454 /* CIAPIGetClientAndTradingAccountRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CIAPIGetClientAndTradingAccountRequest.m; sourceTree = "<group>"; };
-		0759940C136D905A0040D454 /* CIAPIAccountInformationResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CIAPIAccountInformationResponse.h; sourceTree = "<group>"; };
-		0759940D136D905A0040D454 /* CIAPIAccountInformationResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CIAPIAccountInformationResponse.m; sourceTree = "<group>"; };
-		07599411136D91170040D454 /* CIAPITradingAccount.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CIAPITradingAccount.h; sourceTree = "<group>"; };
-		07599412136D91170040D454 /* CIAPITradingAccount.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CIAPITradingAccount.m; sourceTree = "<group>"; };
 		07599415136D92A00040D454 /* DTORequests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DTORequests.h; sourceTree = "<group>"; };
 		07599416136D92A00040D454 /* DTORequests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DTORequests.m; sourceTree = "<group>"; };
 		0759941A136DB62C0040D454 /* CIAPIObjectListResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CIAPIObjectListResponse.h; sourceTree = "<group>"; };
 		0759941B136DB62C0040D454 /* CIAPIObjectListResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CIAPIObjectListResponse.m; sourceTree = "<group>"; };
-		075A1F57134B717D0012A094 /* CIAPIApiActiveStopLimitOrder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CIAPIApiActiveStopLimitOrder.h; sourceTree = "<group>"; };
-		075A1F58134B717D0012A094 /* CIAPIApiActiveStopLimitOrder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CIAPIApiActiveStopLimitOrder.m; sourceTree = "<group>"; };
-		075A1F59134B717D0012A094 /* CIAPIApiBasicStopLimitOrder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CIAPIApiBasicStopLimitOrder.h; sourceTree = "<group>"; };
-		075A1F5A134B717D0012A094 /* CIAPIApiBasicStopLimitOrder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CIAPIApiBasicStopLimitOrder.m; sourceTree = "<group>"; };
-		075A1F5B134B717D0012A094 /* CIAPIApiIfDoneResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CIAPIApiIfDoneResponse.h; sourceTree = "<group>"; };
-		075A1F5C134B717D0012A094 /* CIAPIApiIfDoneResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CIAPIApiIfDoneResponse.m; sourceTree = "<group>"; };
-		075A1F5D134B717D0012A094 /* CIAPIApiOpenPosition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CIAPIApiOpenPosition.h; sourceTree = "<group>"; };
-		075A1F5E134B717D0012A094 /* CIAPIApiOpenPosition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CIAPIApiOpenPosition.m; sourceTree = "<group>"; };
-		075A1F5F134B717D0012A094 /* CIAPIApiOrderResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CIAPIApiOrderResponse.h; sourceTree = "<group>"; };
-		075A1F60134B717D0012A094 /* CIAPIApiOrderResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CIAPIApiOrderResponse.m; sourceTree = "<group>"; };
-		075A1F61134B717D0012A094 /* CIAPIApiQuoteResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CIAPIApiQuoteResponse.h; sourceTree = "<group>"; };
-		075A1F62134B717D0012A094 /* CIAPIApiQuoteResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CIAPIApiQuoteResponse.m; sourceTree = "<group>"; };
-		075A1F63134B717D0012A094 /* CIAPIApiStopLimitOrderHistory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CIAPIApiStopLimitOrderHistory.h; sourceTree = "<group>"; };
-		075A1F64134B717D0012A094 /* CIAPIApiStopLimitOrderHistory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CIAPIApiStopLimitOrderHistory.m; sourceTree = "<group>"; };
-		075A1F65134B717D0012A094 /* CIAPIApiStopLimitResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CIAPIApiStopLimitResponse.h; sourceTree = "<group>"; };
-		075A1F66134B717D0012A094 /* CIAPIApiStopLimitResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CIAPIApiStopLimitResponse.m; sourceTree = "<group>"; };
-		075A1F67134B717D0012A094 /* CIAPIApiTradeHistory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CIAPIApiTradeHistory.h; sourceTree = "<group>"; };
-		075A1F68134B717D0012A094 /* CIAPIApiTradeHistory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CIAPIApiTradeHistory.m; sourceTree = "<group>"; };
-		075A1F69134B717D0012A094 /* CIAPIApiTradeOrderResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CIAPIApiTradeOrderResponse.h; sourceTree = "<group>"; };
-		075A1F6A134B717D0012A094 /* CIAPIApiTradeOrderResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CIAPIApiTradeOrderResponse.m; sourceTree = "<group>"; };
-		075A1F6B134B717D0012A094 /* CIAPICancelOrderRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CIAPICancelOrderRequest.h; sourceTree = "<group>"; };
-		075A1F6C134B717D0012A094 /* CIAPICancelOrderRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CIAPICancelOrderRequest.m; sourceTree = "<group>"; };
-		075A1F6D134B717D0012A094 /* CIAPIClientAccountMargin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CIAPIClientAccountMargin.h; sourceTree = "<group>"; };
-		075A1F6E134B717D0012A094 /* CIAPIClientAccountMargin.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CIAPIClientAccountMargin.m; sourceTree = "<group>"; };
-		075A1F6F134B717D0012A094 /* CIAPICreateSessionResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CIAPICreateSessionResponse.h; sourceTree = "<group>"; };
-		075A1F70134B717D0012A094 /* CIAPICreateSessionResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CIAPICreateSessionResponse.m; sourceTree = "<group>"; };
-		075A1F71134B717D0012A094 /* CIAPIDataTypeObjects.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CIAPIDataTypeObjects.h; sourceTree = "<group>"; };
-		075A1F72134B717D0012A094 /* CIAPIErrorResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CIAPIErrorResponse.h; sourceTree = "<group>"; };
-		075A1F73134B717D0012A094 /* CIAPIErrorResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CIAPIErrorResponse.m; sourceTree = "<group>"; };
-		075A1F74134B717D0012A094 /* CIAPIG2SessionValidationResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CIAPIG2SessionValidationResponse.h; sourceTree = "<group>"; };
-		075A1F75134B717D0012A094 /* CIAPIG2SessionValidationResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CIAPIG2SessionValidationResponse.m; sourceTree = "<group>"; };
-		075A1F76134B717D0012A094 /* CIAPIGatewayIfDone.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CIAPIGatewayIfDone.h; sourceTree = "<group>"; };
-		075A1F77134B717D0012A094 /* CIAPIGatewayIfDone.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CIAPIGatewayIfDone.m; sourceTree = "<group>"; };
-		075A1F78134B717D0012A094 /* CIAPIGatewayOrder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CIAPIGatewayOrder.h; sourceTree = "<group>"; };
-		075A1F79134B717D0012A094 /* CIAPIGatewayOrder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CIAPIGatewayOrder.m; sourceTree = "<group>"; };
-		075A1F7A134B717D0012A094 /* CIAPIGatewayStopLimitOrder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CIAPIGatewayStopLimitOrder.h; sourceTree = "<group>"; };
-		075A1F7B134B717D0012A094 /* CIAPIGatewayStopLimitOrder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CIAPIGatewayStopLimitOrder.m; sourceTree = "<group>"; };
-		075A1F7C134B717D0012A094 /* CIAPIGetNewsDetailResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CIAPIGetNewsDetailResponse.h; sourceTree = "<group>"; };
-		075A1F7D134B717D0012A094 /* CIAPIGetNewsDetailResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CIAPIGetNewsDetailResponse.m; sourceTree = "<group>"; };
-		075A1F7E134B717D0012A094 /* CIAPIGetPriceBarResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CIAPIGetPriceBarResponse.h; sourceTree = "<group>"; };
-		075A1F7F134B717D0012A094 /* CIAPIGetPriceBarResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CIAPIGetPriceBarResponse.m; sourceTree = "<group>"; };
-		075A1F80134B717D0012A094 /* CIAPIGetPriceTickResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CIAPIGetPriceTickResponse.h; sourceTree = "<group>"; };
-		075A1F81134B717D0012A094 /* CIAPIGetPriceTickResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CIAPIGetPriceTickResponse.m; sourceTree = "<group>"; };
-		075A1F82134B717D0012A094 /* CIAPIListActiveStopLimitOrderResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CIAPIListActiveStopLimitOrderResponse.h; sourceTree = "<group>"; };
-		075A1F83134B717D0012A094 /* CIAPIListActiveStopLimitOrderResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CIAPIListActiveStopLimitOrderResponse.m; sourceTree = "<group>"; };
-		075A1F84134B717D0012A094 /* CIAPIListCfdMarketsResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CIAPIListCfdMarketsResponse.h; sourceTree = "<group>"; };
-		075A1F85134B717D0012A094 /* CIAPIListCfdMarketsResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CIAPIListCfdMarketsResponse.m; sourceTree = "<group>"; };
-		075A1F86134B717D0012A094 /* CIAPIListNewsHeadlinesResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CIAPIListNewsHeadlinesResponse.h; sourceTree = "<group>"; };
-		075A1F87134B717D0012A094 /* CIAPIListNewsHeadlinesResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CIAPIListNewsHeadlinesResponse.m; sourceTree = "<group>"; };
-		075A1F88134B717D0012A094 /* CIAPIListOpenPositionsResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CIAPIListOpenPositionsResponse.h; sourceTree = "<group>"; };
-		075A1F89134B717D0012A094 /* CIAPIListOpenPositionsResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CIAPIListOpenPositionsResponse.m; sourceTree = "<group>"; };
-		075A1F8A134B717D0012A094 /* CIAPIListOrdersResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CIAPIListOrdersResponse.h; sourceTree = "<group>"; };
-		075A1F8B134B717D0012A094 /* CIAPIListOrdersResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CIAPIListOrdersResponse.m; sourceTree = "<group>"; };
-		075A1F8C134B717D0012A094 /* CIAPIListSpreadMarketsResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CIAPIListSpreadMarketsResponse.h; sourceTree = "<group>"; };
-		075A1F8D134B717D0012A094 /* CIAPIListSpreadMarketsResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CIAPIListSpreadMarketsResponse.m; sourceTree = "<group>"; };
-		075A1F8E134B717D0012A094 /* CIAPIListStopLimitOrderHistoryResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CIAPIListStopLimitOrderHistoryResponse.h; sourceTree = "<group>"; };
-		075A1F8F134B717D0012A094 /* CIAPIListStopLimitOrderHistoryResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CIAPIListStopLimitOrderHistoryResponse.m; sourceTree = "<group>"; };
-		075A1F90134B717D0012A094 /* CIAPIListTradeHistoryResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CIAPIListTradeHistoryResponse.h; sourceTree = "<group>"; };
-		075A1F91134B717D0012A094 /* CIAPIListTradeHistoryResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CIAPIListTradeHistoryResponse.m; sourceTree = "<group>"; };
-		075A1F92134B717D0012A094 /* CIAPILogOnRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CIAPILogOnRequest.h; sourceTree = "<group>"; };
-		075A1F93134B717D0012A094 /* CIAPILogOnRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CIAPILogOnRequest.m; sourceTree = "<group>"; };
-		075A1F94134B717D0012A094 /* CIAPIMarket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CIAPIMarket.h; sourceTree = "<group>"; };
-		075A1F95134B717D0012A094 /* CIAPIMarket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CIAPIMarket.m; sourceTree = "<group>"; };
-		075A1F96134B717D0012A094 /* CIAPINews.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CIAPINews.h; sourceTree = "<group>"; };
-		075A1F97134B717D0012A094 /* CIAPINews.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CIAPINews.m; sourceTree = "<group>"; };
-		075A1F98134B717D0012A094 /* CIAPINewsDetail.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CIAPINewsDetail.h; sourceTree = "<group>"; };
-		075A1F99134B717D0012A094 /* CIAPINewsDetail.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CIAPINewsDetail.m; sourceTree = "<group>"; };
-		075A1F9A134B717D0012A094 /* CIAPINewStopLimitOrderRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CIAPINewStopLimitOrderRequest.h; sourceTree = "<group>"; };
-		075A1F9B134B717D0012A094 /* CIAPINewStopLimitOrderRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CIAPINewStopLimitOrderRequest.m; sourceTree = "<group>"; };
-		075A1F9C134B717D0012A094 /* CIAPINewTradeOrderRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CIAPINewTradeOrderRequest.h; sourceTree = "<group>"; };
-		075A1F9D134B717D0012A094 /* CIAPINewTradeOrderRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CIAPINewTradeOrderRequest.m; sourceTree = "<group>"; };
-		075A1F9E134B717D0012A094 /* CIAPIOcoOrderRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CIAPIOcoOrderRequest.h; sourceTree = "<group>"; };
-		075A1F9F134B717D0012A094 /* CIAPIOcoOrderRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CIAPIOcoOrderRequest.m; sourceTree = "<group>"; };
-		075A1FA0134B717D0012A094 /* CIAPIOrder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CIAPIOrder.h; sourceTree = "<group>"; };
-		075A1FA1134B717D0012A094 /* CIAPIOrder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CIAPIOrder.m; sourceTree = "<group>"; };
-		075A1FA2134B717D0012A094 /* CIAPIPrice.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CIAPIPrice.h; sourceTree = "<group>"; };
-		075A1FA3134B717D0012A094 /* CIAPIPrice.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CIAPIPrice.m; sourceTree = "<group>"; };
-		075A1FA4134B717D0012A094 /* CIAPIPriceBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CIAPIPriceBar.h; sourceTree = "<group>"; };
-		075A1FA5134B717D0012A094 /* CIAPIPriceBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CIAPIPriceBar.m; sourceTree = "<group>"; };
-		075A1FA6134B717D0012A094 /* CIAPIPriceTick.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CIAPIPriceTick.h; sourceTree = "<group>"; };
-		075A1FA7134B717D0012A094 /* CIAPIPriceTick.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CIAPIPriceTick.m; sourceTree = "<group>"; };
-		075A1FA8134B717D0012A094 /* CIAPIQuote.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CIAPIQuote.h; sourceTree = "<group>"; };
-		075A1FA9134B717D0012A094 /* CIAPIQuote.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CIAPIQuote.m; sourceTree = "<group>"; };
-		075A1FAA134B717D0012A094 /* CIAPISessionDeletionRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CIAPISessionDeletionRequest.h; sourceTree = "<group>"; };
-		075A1FAB134B717D0012A094 /* CIAPISessionDeletionRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CIAPISessionDeletionRequest.m; sourceTree = "<group>"; };
-		075A1FAC134B717D0012A094 /* CIAPISessionDeletionResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CIAPISessionDeletionResponse.h; sourceTree = "<group>"; };
-		075A1FAD134B717D0012A094 /* CIAPISessionDeletionResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CIAPISessionDeletionResponse.m; sourceTree = "<group>"; };
-		075A2005134B738A0012A094 /* CIAPIErrorCode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CIAPIErrorCode.h; sourceTree = "<group>"; };
 		075E8E16134271BF00C85B9B /* RestKit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RestKit.xcodeproj; path = ../RestKit/RestKit.xcodeproj; sourceTree = "<group>"; };
 		075E8E3F1342724900C85B9B /* CIAPIClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CIAPIClient.h; sourceTree = "<group>"; };
 		075E8E401342724900C85B9B /* CIAPIClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CIAPIClient.m; sourceTree = "<group>"; };
@@ -403,6 +220,13 @@
 		07DEFE5E1342710E00CFA705 /* CIAPITests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CIAPITests-Prefix.pch"; sourceTree = "<group>"; };
 		07DEFE5F1342710E00CFA705 /* CIAPITests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CIAPITests.h; sourceTree = "<group>"; };
 		07DEFE611342710E00CFA705 /* CIAPITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CIAPITests.m; sourceTree = "<group>"; };
+		07F0E711138BD7FA002EB862 /* PropertyDescriptionDecoder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PropertyDescriptionDecoder.h; sourceTree = "<group>"; };
+		07F0E712138BD7FA002EB862 /* PropertyDescriptionDecoder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PropertyDescriptionDecoder.m; sourceTree = "<group>"; };
+		07F0E715138BD800002EB862 /* TypeDecoder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TypeDecoder.h; sourceTree = "<group>"; };
+		07F0E716138BD800002EB862 /* TypeDecoder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TypeDecoder.m; sourceTree = "<group>"; };
+		07F0E719138BD827002EB862 /* TestControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestControl.h; sourceTree = "<group>"; };
+		07F0E71A138BD8F0002EB862 /* ObjectDictionaryMapping.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ObjectDictionaryMapping.h; sourceTree = "<group>"; };
+		07F0E71B138BD8F0002EB862 /* ObjectDictionaryMapping.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ObjectDictionaryMapping.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -441,8 +265,12 @@
 		075993FD136C69A90040D454 /* JSON Property manager */ = {
 			isa = PBXGroup;
 			children = (
-				075993FE136C69C90040D454 /* ObjectPropertiesJSONMapper.h */,
-				075993FF136C69C90040D454 /* ObjectPropertiesJSONMapper.m */,
+				075993FE136C69C90040D454 /* ObjectPropertiesDictionaryMapper.h */,
+				075993FF136C69C90040D454 /* ObjectPropertiesDictionaryMapper.m */,
+				07F0E711138BD7FA002EB862 /* PropertyDescriptionDecoder.h */,
+				07F0E712138BD7FA002EB862 /* PropertyDescriptionDecoder.m */,
+				07F0E715138BD800002EB862 /* TypeDecoder.h */,
+				07F0E716138BD800002EB862 /* TypeDecoder.m */,
 			);
 			name = "JSON Property manager";
 			sourceTree = "<group>";
@@ -450,8 +278,6 @@
 		0759940A136D903C0040D454 /* Requests */ = {
 			isa = PBXGroup;
 			children = (
-				07599406136D8F670040D454 /* CIAPIGetClientAndTradingAccountRequest.h */,
-				07599407136D8F670040D454 /* CIAPIGetClientAndTradingAccountRequest.m */,
 			);
 			name = Requests;
 			sourceTree = "<group>";
@@ -459,8 +285,6 @@
 		0759940B136D90420040D454 /* Responses */ = {
 			isa = PBXGroup;
 			children = (
-				0759940C136D905A0040D454 /* CIAPIAccountInformationResponse.h */,
-				0759940D136D905A0040D454 /* CIAPIAccountInformationResponse.m */,
 			);
 			name = Responses;
 			sourceTree = "<group>";
@@ -468,106 +292,8 @@
 		07599410136D91050040D454 /* Composite Elements */ = {
 			isa = PBXGroup;
 			children = (
-				07599411136D91170040D454 /* CIAPITradingAccount.h */,
-				07599412136D91170040D454 /* CIAPITradingAccount.m */,
 			);
 			name = "Composite Elements";
-			sourceTree = "<group>";
-		};
-		075A1F56134B717D0012A094 /* Generated DTOs */ = {
-			isa = PBXGroup;
-			children = (
-				075A1F57134B717D0012A094 /* CIAPIApiActiveStopLimitOrder.h */,
-				075A1F58134B717D0012A094 /* CIAPIApiActiveStopLimitOrder.m */,
-				075A1F59134B717D0012A094 /* CIAPIApiBasicStopLimitOrder.h */,
-				075A1F5A134B717D0012A094 /* CIAPIApiBasicStopLimitOrder.m */,
-				075A1F5B134B717D0012A094 /* CIAPIApiIfDoneResponse.h */,
-				075A1F5C134B717D0012A094 /* CIAPIApiIfDoneResponse.m */,
-				075A1F5D134B717D0012A094 /* CIAPIApiOpenPosition.h */,
-				075A1F5E134B717D0012A094 /* CIAPIApiOpenPosition.m */,
-				075A1F5F134B717D0012A094 /* CIAPIApiOrderResponse.h */,
-				075A1F60134B717D0012A094 /* CIAPIApiOrderResponse.m */,
-				075A1F61134B717D0012A094 /* CIAPIApiQuoteResponse.h */,
-				075A1F62134B717D0012A094 /* CIAPIApiQuoteResponse.m */,
-				075A1F63134B717D0012A094 /* CIAPIApiStopLimitOrderHistory.h */,
-				075A1F64134B717D0012A094 /* CIAPIApiStopLimitOrderHistory.m */,
-				075A1F65134B717D0012A094 /* CIAPIApiStopLimitResponse.h */,
-				075A1F66134B717D0012A094 /* CIAPIApiStopLimitResponse.m */,
-				075A1F67134B717D0012A094 /* CIAPIApiTradeHistory.h */,
-				075A1F68134B717D0012A094 /* CIAPIApiTradeHistory.m */,
-				075A1F69134B717D0012A094 /* CIAPIApiTradeOrderResponse.h */,
-				075A1F6A134B717D0012A094 /* CIAPIApiTradeOrderResponse.m */,
-				075A1F6B134B717D0012A094 /* CIAPICancelOrderRequest.h */,
-				075A1F6C134B717D0012A094 /* CIAPICancelOrderRequest.m */,
-				075A1F6D134B717D0012A094 /* CIAPIClientAccountMargin.h */,
-				075A1F6E134B717D0012A094 /* CIAPIClientAccountMargin.m */,
-				075A1F6F134B717D0012A094 /* CIAPICreateSessionResponse.h */,
-				075A1F70134B717D0012A094 /* CIAPICreateSessionResponse.m */,
-				075A1F71134B717D0012A094 /* CIAPIDataTypeObjects.h */,
-				075A1F72134B717D0012A094 /* CIAPIErrorResponse.h */,
-				075A1F73134B717D0012A094 /* CIAPIErrorResponse.m */,
-				075A1F74134B717D0012A094 /* CIAPIG2SessionValidationResponse.h */,
-				075A1F75134B717D0012A094 /* CIAPIG2SessionValidationResponse.m */,
-				075A1F76134B717D0012A094 /* CIAPIGatewayIfDone.h */,
-				075A1F77134B717D0012A094 /* CIAPIGatewayIfDone.m */,
-				075A1F78134B717D0012A094 /* CIAPIGatewayOrder.h */,
-				075A1F79134B717D0012A094 /* CIAPIGatewayOrder.m */,
-				075A1F7A134B717D0012A094 /* CIAPIGatewayStopLimitOrder.h */,
-				075A1F7B134B717D0012A094 /* CIAPIGatewayStopLimitOrder.m */,
-				075A1F7C134B717D0012A094 /* CIAPIGetNewsDetailResponse.h */,
-				075A1F7D134B717D0012A094 /* CIAPIGetNewsDetailResponse.m */,
-				075A1F7E134B717D0012A094 /* CIAPIGetPriceBarResponse.h */,
-				075A1F7F134B717D0012A094 /* CIAPIGetPriceBarResponse.m */,
-				075A1F80134B717D0012A094 /* CIAPIGetPriceTickResponse.h */,
-				075A1F81134B717D0012A094 /* CIAPIGetPriceTickResponse.m */,
-				075A1F82134B717D0012A094 /* CIAPIListActiveStopLimitOrderResponse.h */,
-				075A1F83134B717D0012A094 /* CIAPIListActiveStopLimitOrderResponse.m */,
-				075A1F84134B717D0012A094 /* CIAPIListCfdMarketsResponse.h */,
-				075A1F85134B717D0012A094 /* CIAPIListCfdMarketsResponse.m */,
-				075A1F86134B717D0012A094 /* CIAPIListNewsHeadlinesResponse.h */,
-				075A1F87134B717D0012A094 /* CIAPIListNewsHeadlinesResponse.m */,
-				075A1F88134B717D0012A094 /* CIAPIListOpenPositionsResponse.h */,
-				075A1F89134B717D0012A094 /* CIAPIListOpenPositionsResponse.m */,
-				075A1F8A134B717D0012A094 /* CIAPIListOrdersResponse.h */,
-				075A1F8B134B717D0012A094 /* CIAPIListOrdersResponse.m */,
-				075A1F8C134B717D0012A094 /* CIAPIListSpreadMarketsResponse.h */,
-				075A1F8D134B717D0012A094 /* CIAPIListSpreadMarketsResponse.m */,
-				075A1F8E134B717D0012A094 /* CIAPIListStopLimitOrderHistoryResponse.h */,
-				075A1F8F134B717D0012A094 /* CIAPIListStopLimitOrderHistoryResponse.m */,
-				075A1F90134B717D0012A094 /* CIAPIListTradeHistoryResponse.h */,
-				075A1F91134B717D0012A094 /* CIAPIListTradeHistoryResponse.m */,
-				075A1F92134B717D0012A094 /* CIAPILogOnRequest.h */,
-				075A1F93134B717D0012A094 /* CIAPILogOnRequest.m */,
-				075A1F94134B717D0012A094 /* CIAPIMarket.h */,
-				075A1F95134B717D0012A094 /* CIAPIMarket.m */,
-				075A1F96134B717D0012A094 /* CIAPINews.h */,
-				075A1F97134B717D0012A094 /* CIAPINews.m */,
-				075A1F98134B717D0012A094 /* CIAPINewsDetail.h */,
-				075A1F99134B717D0012A094 /* CIAPINewsDetail.m */,
-				075A1F9A134B717D0012A094 /* CIAPINewStopLimitOrderRequest.h */,
-				075A1F9B134B717D0012A094 /* CIAPINewStopLimitOrderRequest.m */,
-				075A1F9C134B717D0012A094 /* CIAPINewTradeOrderRequest.h */,
-				075A1F9D134B717D0012A094 /* CIAPINewTradeOrderRequest.m */,
-				075A1F9E134B717D0012A094 /* CIAPIOcoOrderRequest.h */,
-				075A1F9F134B717D0012A094 /* CIAPIOcoOrderRequest.m */,
-				075A1FA0134B717D0012A094 /* CIAPIOrder.h */,
-				075A1FA1134B717D0012A094 /* CIAPIOrder.m */,
-				075A1FA2134B717D0012A094 /* CIAPIPrice.h */,
-				075A1FA3134B717D0012A094 /* CIAPIPrice.m */,
-				075A1FA4134B717D0012A094 /* CIAPIPriceBar.h */,
-				075A1FA5134B717D0012A094 /* CIAPIPriceBar.m */,
-				075A1FA6134B717D0012A094 /* CIAPIPriceTick.h */,
-				075A1FA7134B717D0012A094 /* CIAPIPriceTick.m */,
-				075A1FA8134B717D0012A094 /* CIAPIQuote.h */,
-				075A1FA9134B717D0012A094 /* CIAPIQuote.m */,
-				075A1FAA134B717D0012A094 /* CIAPISessionDeletionRequest.h */,
-				075A1FAB134B717D0012A094 /* CIAPISessionDeletionRequest.m */,
-				075A1FAC134B717D0012A094 /* CIAPISessionDeletionResponse.h */,
-				075A1FAD134B717D0012A094 /* CIAPISessionDeletionResponse.m */,
-				075A2005134B738A0012A094 /* CIAPIErrorCode.h */,
-			);
-			name = "Generated DTOs";
-			path = DTOs;
 			sourceTree = "<group>";
 		};
 		075E8E17134271BF00C85B9B /* Products */ = {
@@ -703,8 +429,9 @@
 				075993FD136C69A90040D454 /* JSON Property manager */,
 				07A65B92136B122C00B78941 /* Client */,
 				076AF1D1135093DA0049972E /* Authenticator */,
+				07E9722D1389B985002B0930 /* Requests */,
+				07E9729A1389B9A3002B0930 /* Responses */,
 				07A65B90136B11FF00B78941 /* Handcrafted DTOs */,
-				075A1F56134B717D0012A094 /* Generated DTOs */,
 				07DEFE481342710E00CFA705 /* Supporting Files */,
 				076AF1D8135095370049972E /* CIAPIConfigConstants.h */,
 				076AF1EA1352395E0049972E /* DESIGN */,
@@ -725,12 +452,15 @@
 			isa = PBXGroup;
 			children = (
 				07DEFE591342710E00CFA705 /* Supporting Files */,
+				07F0E719138BD827002EB862 /* TestControl.h */,
 				07DEFE5F1342710E00CFA705 /* CIAPITests.h */,
 				07DEFE611342710E00CFA705 /* CIAPITests.m */,
 				076AF1DA1350A8540049972E /* AuthenticatorTests.h */,
 				076AF1DB1350A8540049972E /* AuthenticatorTests.m */,
 				07599415136D92A00040D454 /* DTORequests.h */,
 				07599416136D92A00040D454 /* DTORequests.m */,
+				07F0E71A138BD8F0002EB862 /* ObjectDictionaryMapping.h */,
+				07F0E71B138BD8F0002EB862 /* ObjectDictionaryMapping.m */,
 			);
 			path = CIAPITests;
 			sourceTree = "<group>";
@@ -743,6 +473,20 @@
 				07DEFE5E1342710E00CFA705 /* CIAPITests-Prefix.pch */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		07E9722D1389B985002B0930 /* Requests */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Requests;
+			sourceTree = "<group>";
+		};
+		07E9729A1389B9A3002B0930 /* Responses */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Responses;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -762,51 +506,6 @@
 				07D54D051342737800DD2A60 /* LSSessionOptions.h in Headers */,
 				07D54D071342737800DD2A60 /* LSSessionOptions+Internals.h in Headers */,
 				07D54D091342737800DD2A60 /* LSUnchangedValue.h in Headers */,
-				075A1FAE134B717D0012A094 /* CIAPIApiActiveStopLimitOrder.h in Headers */,
-				075A1FB0134B717D0012A094 /* CIAPIApiBasicStopLimitOrder.h in Headers */,
-				075A1FB2134B717D0012A094 /* CIAPIApiIfDoneResponse.h in Headers */,
-				075A1FB4134B717D0012A094 /* CIAPIApiOpenPosition.h in Headers */,
-				075A1FB6134B717D0012A094 /* CIAPIApiOrderResponse.h in Headers */,
-				075A1FB8134B717D0012A094 /* CIAPIApiQuoteResponse.h in Headers */,
-				075A1FBA134B717D0012A094 /* CIAPIApiStopLimitOrderHistory.h in Headers */,
-				075A1FBC134B717D0012A094 /* CIAPIApiStopLimitResponse.h in Headers */,
-				075A1FBE134B717D0012A094 /* CIAPIApiTradeHistory.h in Headers */,
-				075A1FC0134B717D0012A094 /* CIAPIApiTradeOrderResponse.h in Headers */,
-				075A1FC2134B717D0012A094 /* CIAPICancelOrderRequest.h in Headers */,
-				075A1FC4134B717D0012A094 /* CIAPIClientAccountMargin.h in Headers */,
-				075A1FC6134B717D0012A094 /* CIAPICreateSessionResponse.h in Headers */,
-				075A1FC8134B717D0012A094 /* CIAPIDataTypeObjects.h in Headers */,
-				075A1FC9134B717D0012A094 /* CIAPIErrorResponse.h in Headers */,
-				075A1FCB134B717D0012A094 /* CIAPIG2SessionValidationResponse.h in Headers */,
-				075A1FCD134B717D0012A094 /* CIAPIGatewayIfDone.h in Headers */,
-				075A1FCF134B717D0012A094 /* CIAPIGatewayOrder.h in Headers */,
-				075A1FD1134B717D0012A094 /* CIAPIGatewayStopLimitOrder.h in Headers */,
-				075A1FD3134B717D0012A094 /* CIAPIGetNewsDetailResponse.h in Headers */,
-				075A1FD5134B717D0012A094 /* CIAPIGetPriceBarResponse.h in Headers */,
-				075A1FD7134B717D0012A094 /* CIAPIGetPriceTickResponse.h in Headers */,
-				075A1FD9134B717D0012A094 /* CIAPIListActiveStopLimitOrderResponse.h in Headers */,
-				075A1FDB134B717D0012A094 /* CIAPIListCfdMarketsResponse.h in Headers */,
-				075A1FDD134B717D0012A094 /* CIAPIListNewsHeadlinesResponse.h in Headers */,
-				075A1FDF134B717D0012A094 /* CIAPIListOpenPositionsResponse.h in Headers */,
-				075A1FE1134B717D0012A094 /* CIAPIListOrdersResponse.h in Headers */,
-				075A1FE3134B717D0012A094 /* CIAPIListSpreadMarketsResponse.h in Headers */,
-				075A1FE5134B717D0012A094 /* CIAPIListStopLimitOrderHistoryResponse.h in Headers */,
-				075A1FE7134B717D0012A094 /* CIAPIListTradeHistoryResponse.h in Headers */,
-				075A1FE9134B717D0012A094 /* CIAPILogOnRequest.h in Headers */,
-				075A1FEB134B717D0012A094 /* CIAPIMarket.h in Headers */,
-				075A1FED134B717D0012A094 /* CIAPINews.h in Headers */,
-				075A1FEF134B717D0012A094 /* CIAPINewsDetail.h in Headers */,
-				075A1FF1134B717D0012A094 /* CIAPINewStopLimitOrderRequest.h in Headers */,
-				075A1FF3134B717D0012A094 /* CIAPINewTradeOrderRequest.h in Headers */,
-				075A1FF5134B717D0012A094 /* CIAPIOcoOrderRequest.h in Headers */,
-				075A1FF7134B717D0012A094 /* CIAPIOrder.h in Headers */,
-				075A1FF9134B717D0012A094 /* CIAPIPrice.h in Headers */,
-				075A1FFB134B717D0012A094 /* CIAPIPriceBar.h in Headers */,
-				075A1FFD134B717D0012A094 /* CIAPIPriceTick.h in Headers */,
-				075A1FFF134B717D0012A094 /* CIAPIQuote.h in Headers */,
-				075A2001134B717D0012A094 /* CIAPISessionDeletionRequest.h in Headers */,
-				075A2003134B717D0012A094 /* CIAPISessionDeletionResponse.h in Headers */,
-				075A2006134B738A0012A094 /* CIAPIErrorCode.h in Headers */,
 				076AF1C5134FC4510049972E /* CIAPIAuthenticator.h in Headers */,
 				076AF1C8134FC4B90049972E /* CIAPIStreamDelegate.h in Headers */,
 				076AF1CB135093070049972E /* CIAPIObjectRequest.h in Headers */,
@@ -816,13 +515,12 @@
 				076AF1DC1350A8540049972E /* AuthenticatorTests.h in Headers */,
 				076AF1E0135231470049972E /* CIAPIRequestToken.h in Headers */,
 				076AF1ED13524D590049972E /* CIAPI.h in Headers */,
-				07599400136C69C90040D454 /* ObjectPropertiesJSONMapper.h in Headers */,
+				07599400136C69C90040D454 /* ObjectPropertiesDictionaryMapper.h in Headers */,
 				07599404136D8DCE0040D454 /* CIAPIObjectResponse.h in Headers */,
-				07599408136D8F670040D454 /* CIAPIGetClientAndTradingAccountRequest.h in Headers */,
-				0759940E136D905A0040D454 /* CIAPIAccountInformationResponse.h in Headers */,
-				07599413136D91170040D454 /* CIAPITradingAccount.h in Headers */,
 				07599417136D92A00040D454 /* DTORequests.h in Headers */,
 				0759941C136DB62C0040D454 /* CIAPIObjectListResponse.h in Headers */,
+				07F0E713138BD7FA002EB862 /* PropertyDescriptionDecoder.h in Headers */,
+				07F0E717138BD800002EB862 /* TypeDecoder.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1008,58 +706,14 @@
 				07D54D061342737800DD2A60 /* LSSessionOptions.m in Sources */,
 				07D54D081342737800DD2A60 /* LSSessionOptions+Internals.m in Sources */,
 				07D54D0A1342737800DD2A60 /* LSUnchangedValue.m in Sources */,
-				075A1FAF134B717D0012A094 /* CIAPIApiActiveStopLimitOrder.m in Sources */,
-				075A1FB1134B717D0012A094 /* CIAPIApiBasicStopLimitOrder.m in Sources */,
-				075A1FB3134B717D0012A094 /* CIAPIApiIfDoneResponse.m in Sources */,
-				075A1FB5134B717D0012A094 /* CIAPIApiOpenPosition.m in Sources */,
-				075A1FB7134B717D0012A094 /* CIAPIApiOrderResponse.m in Sources */,
-				075A1FB9134B717D0012A094 /* CIAPIApiQuoteResponse.m in Sources */,
-				075A1FBB134B717D0012A094 /* CIAPIApiStopLimitOrderHistory.m in Sources */,
-				075A1FBD134B717D0012A094 /* CIAPIApiStopLimitResponse.m in Sources */,
-				075A1FBF134B717D0012A094 /* CIAPIApiTradeHistory.m in Sources */,
-				075A1FC1134B717D0012A094 /* CIAPIApiTradeOrderResponse.m in Sources */,
-				075A1FC3134B717D0012A094 /* CIAPICancelOrderRequest.m in Sources */,
-				075A1FC5134B717D0012A094 /* CIAPIClientAccountMargin.m in Sources */,
-				075A1FC7134B717D0012A094 /* CIAPICreateSessionResponse.m in Sources */,
-				075A1FCA134B717D0012A094 /* CIAPIErrorResponse.m in Sources */,
-				075A1FCC134B717D0012A094 /* CIAPIG2SessionValidationResponse.m in Sources */,
-				075A1FCE134B717D0012A094 /* CIAPIGatewayIfDone.m in Sources */,
-				075A1FD0134B717D0012A094 /* CIAPIGatewayOrder.m in Sources */,
-				075A1FD2134B717D0012A094 /* CIAPIGatewayStopLimitOrder.m in Sources */,
-				075A1FD4134B717D0012A094 /* CIAPIGetNewsDetailResponse.m in Sources */,
-				075A1FD6134B717D0012A094 /* CIAPIGetPriceBarResponse.m in Sources */,
-				075A1FD8134B717D0012A094 /* CIAPIGetPriceTickResponse.m in Sources */,
-				075A1FDA134B717D0012A094 /* CIAPIListActiveStopLimitOrderResponse.m in Sources */,
-				075A1FDC134B717D0012A094 /* CIAPIListCfdMarketsResponse.m in Sources */,
-				075A1FDE134B717D0012A094 /* CIAPIListNewsHeadlinesResponse.m in Sources */,
-				075A1FE0134B717D0012A094 /* CIAPIListOpenPositionsResponse.m in Sources */,
-				075A1FE2134B717D0012A094 /* CIAPIListOrdersResponse.m in Sources */,
-				075A1FE4134B717D0012A094 /* CIAPIListSpreadMarketsResponse.m in Sources */,
-				075A1FE6134B717D0012A094 /* CIAPIListStopLimitOrderHistoryResponse.m in Sources */,
-				075A1FE8134B717D0012A094 /* CIAPIListTradeHistoryResponse.m in Sources */,
-				075A1FEA134B717D0012A094 /* CIAPILogOnRequest.m in Sources */,
-				075A1FEC134B717D0012A094 /* CIAPIMarket.m in Sources */,
-				075A1FEE134B717D0012A094 /* CIAPINews.m in Sources */,
-				075A1FF0134B717D0012A094 /* CIAPINewsDetail.m in Sources */,
-				075A1FF2134B717D0012A094 /* CIAPINewStopLimitOrderRequest.m in Sources */,
-				075A1FF4134B717D0012A094 /* CIAPINewTradeOrderRequest.m in Sources */,
-				075A1FF6134B717D0012A094 /* CIAPIOcoOrderRequest.m in Sources */,
-				075A1FF8134B717D0012A094 /* CIAPIOrder.m in Sources */,
-				075A1FFA134B717D0012A094 /* CIAPIPrice.m in Sources */,
-				075A1FFC134B717D0012A094 /* CIAPIPriceBar.m in Sources */,
-				075A1FFE134B717D0012A094 /* CIAPIPriceTick.m in Sources */,
-				075A2000134B717D0012A094 /* CIAPIQuote.m in Sources */,
-				075A2002134B717D0012A094 /* CIAPISessionDeletionRequest.m in Sources */,
-				075A2004134B717D0012A094 /* CIAPISessionDeletionResponse.m in Sources */,
 				076AF1C6134FC4510049972E /* CIAPIAuthenticator.m in Sources */,
 				076AF1CC135093070049972E /* CIAPIObjectRequest.m in Sources */,
 				076AF1E1135231470049972E /* CIAPIRequestToken.m in Sources */,
-				07599401136C69C90040D454 /* ObjectPropertiesJSONMapper.m in Sources */,
+				07599401136C69C90040D454 /* ObjectPropertiesDictionaryMapper.m in Sources */,
 				07599405136D8DCE0040D454 /* CIAPIObjectResponse.m in Sources */,
-				07599409136D8F670040D454 /* CIAPIGetClientAndTradingAccountRequest.m in Sources */,
-				0759940F136D905A0040D454 /* CIAPIAccountInformationResponse.m in Sources */,
-				07599414136D91170040D454 /* CIAPITradingAccount.m in Sources */,
 				0759941D136DB62C0040D454 /* CIAPIObjectListResponse.m in Sources */,
+				07F0E714138BD7FA002EB862 /* PropertyDescriptionDecoder.m in Sources */,
+				07F0E718138BD800002EB862 /* TypeDecoder.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1070,6 +724,7 @@
 				076AF22013524D9E0049972E /* AuthenticatorTests.m in Sources */,
 				07DEFE621342710E00CFA705 /* CIAPITests.m in Sources */,
 				07599419136D94800040D454 /* DTORequests.m in Sources */,
+				07F0E71C138BD8F0002EB862 /* ObjectDictionaryMapping.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
