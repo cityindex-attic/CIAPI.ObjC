@@ -70,6 +70,7 @@
     if ([response isOK])
     {
         id bodyObj = [response bodyAsJSON];
+        NSLog(@"Succeeded request: Target URL was %@, body is %@", response.URL, bodyObj);
         
         CIAPIObjectResponse *responseObj = [[[request responseClass] alloc] init];
         [responseObj setupFromDictionary:bodyObj error:nil];
