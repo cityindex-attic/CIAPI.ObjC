@@ -7,9 +7,12 @@
 
 #import "CIAPILogOnResponse.h"
 
+
+
 @implementation CIAPILogOnResponse 
 
 @synthesize Session;
+
 
 @end
 

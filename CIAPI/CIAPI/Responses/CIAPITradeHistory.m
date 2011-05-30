@@ -7,6 +7,8 @@
 
 #import "CIAPITradeHistory.h"
 
+
+
 @implementation CIAPITradeHistory 
 
 @synthesize OrderId;
@@ -19,6 +21,7 @@
 @synthesize Currency;
 @synthesize LastChangedDateTimeUtc;
 @synthesize ExecutedDateTimeUtc;
+
 
 @end
 

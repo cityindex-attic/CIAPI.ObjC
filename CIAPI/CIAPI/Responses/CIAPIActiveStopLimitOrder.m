@@ -7,6 +7,8 @@
 
 #import "CIAPIActiveStopLimitOrder.h"
 
+
+
 @implementation CIAPIActiveStopLimitOrder 
 
 @synthesize OrderId;
@@ -26,6 +28,7 @@
 @synthesize LimitOrder;
 @synthesize OcoOrder;
 @synthesize LastChangedDateTimeUTC;
+
 
 @end
 

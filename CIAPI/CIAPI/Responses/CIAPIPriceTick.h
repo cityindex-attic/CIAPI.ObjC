@@ -8,15 +8,18 @@
 #import <Foundation/Foundation.h>
 
 #import "CIAPIObjectResponse.h"
+#import "CIAPIObjectListResponse.h"
 
-@interface CIAPIPriceTick : NSObject {
-  id TickDate;
-  id Price;
+
+
+@interface CIAPIPriceTick : CIAPIObjectResponse {
+  NSString* TickDate;
+  double Price;
 }
 
 // The datetime at which a price tick occurred. Accurate to the millisecond 
-@property (readonly) id TickDate;
+@property (readonly) NSString* TickDate;
 // The mid price 
-@property (readonly) id Price;
+@property (readonly) double Price;
 
 @end

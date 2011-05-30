@@ -8,39 +8,42 @@
 #import <Foundation/Foundation.h>
 
 #import "CIAPIObjectResponse.h"
+#import "CIAPIObjectListResponse.h"
 
-@interface CIAPITradeHistory : NSObject {
-  id OrderId;
-  id MarketId;
-  id MarketName;
-  id Direction;
-  id OriginalQuantity;
-  id Price;
-  id TradingAccountId;
-  id Currency;
-  id LastChangedDateTimeUtc;
-  id ExecutedDateTimeUtc;
+
+
+@interface CIAPITradeHistory : CIAPIObjectResponse {
+  NSInteger OrderId;
+  NSInteger MarketId;
+  NSString* MarketName;
+  NSString* Direction;
+  double OriginalQuantity;
+  double Price;
+  NSInteger TradingAccountId;
+  NSString* Currency;
+  NSString* LastChangedDateTimeUtc;
+  NSString* ExecutedDateTimeUtc;
 }
 
 // The order id. 
-@property (readonly) id OrderId;
+@property (readonly) NSInteger OrderId;
 // The market id. 
-@property (readonly) id MarketId;
+@property (readonly) NSInteger MarketId;
 // The name of the market. 
-@property (readonly) id MarketName;
+@property (readonly) NSString* MarketName;
 // The direction of the trade. 
-@property (readonly) id Direction;
+@property (readonly) NSString* Direction;
 // The original quantity of the trade, before part closures. 
-@property (readonly) id OriginalQuantity;
+@property (readonly) double OriginalQuantity;
 // The open price of the trade. 
-@property (readonly) id Price;
+@property (readonly) double Price;
 // The trading account that the order is on. 
-@property (readonly) id TradingAccountId;
+@property (readonly) NSInteger TradingAccountId;
 // The trade currency. 
-@property (readonly) id Currency;
+@property (readonly) NSString* Currency;
 // The last time that the order changed. Note - Does not include things such as the current market price. 
-@property (readonly) id LastChangedDateTimeUtc;
+@property (readonly) NSString* LastChangedDateTimeUtc;
 // The time the order was executed. 
-@property (readonly) id ExecutedDateTimeUtc;
+@property (readonly) NSString* ExecutedDateTimeUtc;
 
 @end

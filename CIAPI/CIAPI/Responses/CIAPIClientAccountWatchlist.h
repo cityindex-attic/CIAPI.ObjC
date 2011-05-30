@@ -8,21 +8,24 @@
 #import <Foundation/Foundation.h>
 
 #import "CIAPIObjectResponse.h"
+#import "CIAPIObjectListResponse.h"
 
-@interface CIAPIClientAccountWatchlist : NSObject {
-  id WatchlistId;
-  id WatchlistDescription;
-  id DisplayOrder;
-  id Items;
+
+
+@interface CIAPIClientAccountWatchlist : CIAPIObjectResponse {
+  NSInteger WatchlistId;
+  NSString* WatchlistDescription;
+  NSInteger DisplayOrder;
+  NSArray* Items;
 }
 
 // Watchlist item id 
-@property (readonly) id WatchlistId;
+@property (readonly) NSInteger WatchlistId;
 // Watchlist description 
-@property (readonly) id WatchlistDescription;
+@property (readonly) NSString* WatchlistDescription;
 // Watchlist display order 
-@property (readonly) id DisplayOrder;
+@property (readonly) NSInteger DisplayOrder;
 // Watchlist items 
-@property (readonly) id Items;
+@property (readonly) NSArray* Items;
 
 @end

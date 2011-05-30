@@ -8,15 +8,18 @@
 #import <Foundation/Foundation.h>
 
 #import "CIAPIObjectResponse.h"
+#import "CIAPIObjectListResponse.h"
+
+
 
 @interface CIAPIGetMessagePopupResponse : CIAPIObjectResponse {
-  id AskForClientApproval;
-  id Message;
+  BOOL AskForClientApproval;
+  NSString* Message;
 }
 
 // Should the client application ask for client approval. 
-@property (readonly) id AskForClientApproval;
+@property (readonly) BOOL AskForClientApproval;
 // The message to display to the client. 
-@property (readonly) id Message;
+@property (readonly) NSString* Message;
 
 @end

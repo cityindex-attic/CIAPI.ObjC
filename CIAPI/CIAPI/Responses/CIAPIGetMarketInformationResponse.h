@@ -8,12 +8,16 @@
 #import <Foundation/Foundation.h>
 
 #import "CIAPIObjectResponse.h"
+#import "CIAPIObjectListResponse.h"
+
+#import "CIAPIMarketInformation.h"
+
 
 @interface CIAPIGetMarketInformationResponse : CIAPIObjectResponse {
-  id MarketInformation;
+  CIAPIMarketInformation* MarketInformation;
 }
 
 // The requested market information. 
-@property (readonly) id MarketInformation;
+@property (readonly) CIAPIMarketInformation* MarketInformation;
 
 @end

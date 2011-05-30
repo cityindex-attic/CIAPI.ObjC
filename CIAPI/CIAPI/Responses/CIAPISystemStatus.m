@@ -7,9 +7,12 @@
 
 #import "CIAPISystemStatus.h"
 
+
+
 @implementation CIAPISystemStatus 
 
 @synthesize StatusMessage;
+
 
 @end
 

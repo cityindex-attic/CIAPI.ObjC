@@ -7,6 +7,8 @@
 
 #import "CIAPIOpenPosition.h"
 
+
+
 @implementation CIAPIOpenPosition 
 
 @synthesize OrderId;
@@ -21,6 +23,7 @@
 @synthesize StopOrder;
 @synthesize LimitOrder;
 @synthesize LastChangedDateTimeUTC;
+
 
 @end
 

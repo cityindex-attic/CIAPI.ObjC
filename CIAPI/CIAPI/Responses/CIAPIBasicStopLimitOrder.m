@@ -7,11 +7,14 @@
 
 #import "CIAPIBasicStopLimitOrder.h"
 
+
+
 @implementation CIAPIBasicStopLimitOrder 
 
 @synthesize OrderId;
 @synthesize TriggerPrice;
 @synthesize Quantity;
+
 
 @end
 

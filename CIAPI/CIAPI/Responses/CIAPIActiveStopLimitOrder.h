@@ -8,60 +8,66 @@
 #import <Foundation/Foundation.h>
 
 #import "CIAPIObjectResponse.h"
+#import "CIAPIObjectListResponse.h"
 
-@interface CIAPIActiveStopLimitOrder : NSObject {
-  id OrderId;
-  id ParentOrderId;
-  id MarketId;
-  id MarketName;
-  id Direction;
-  id Quantity;
-  id TriggerPrice;
-  id TradingAccountId;
-  id Type;
-  id Applicability;
-  id ExpiryDateTimeUTC;
-  id Currency;
-  id Status;
-  id StopOrder;
-  id LimitOrder;
-  id OcoOrder;
-  id LastChangedDateTimeUTC;
+#import "CIAPIBasicStopLimitOrder.h"
+#import "CIAPIBasicStopLimitOrder.h"
+#import "CIAPIBasicStopLimitOrder.h"
+
+
+@interface CIAPIActiveStopLimitOrder : CIAPIObjectResponse {
+  NSInteger OrderId;
+  NSString* ParentOrderId;
+  NSInteger MarketId;
+  NSString* MarketName;
+  NSString* Direction;
+  double Quantity;
+  double TriggerPrice;
+  double TradingAccountId;
+  NSInteger Type;
+  NSInteger Applicability;
+  NSString* ExpiryDateTimeUTC;
+  NSString* Currency;
+  NSInteger Status;
+  CIAPIBasicStopLimitOrder* StopOrder;
+  CIAPIBasicStopLimitOrder* LimitOrder;
+  CIAPIBasicStopLimitOrder* OcoOrder;
+  NSString* LastChangedDateTimeUTC;
 }
 
 // The order's unique identifier. 
-@property (readonly) id OrderId;
+@property (readonly) NSInteger OrderId;
 // The order's parent OrderId. 
-@property (readonly) id ParentOrderId;
+@property (readonly) NSString* ParentOrderId;
 // The markets unique identifier. 
-@property (readonly) id MarketId;
+@property (readonly) NSInteger MarketId;
 // The market's name. 
-@property (readonly) id MarketName;
+@property (readonly) NSString* MarketName;
 // The direction, buy or sell. 
-@property (readonly) id Direction;
+@property (readonly) NSString* Direction;
 // The quantity of the product. 
-@property (readonly) id Quantity;
+@property (readonly) double Quantity;
 // The marked to market price at which the order will trigger at. 
-@property (readonly) id TriggerPrice;
+@property (readonly) double TriggerPrice;
 // The trading account that the order is on. 
-@property (readonly) id TradingAccountId;
+@property (readonly) double TradingAccountId;
 // The type of order, i.e. stop or limit. 
-@property (readonly) id Type;
+@property (readonly) NSInteger Type;
 // When the order applies until. i.e. good till cancelled (GTC) good for day (GFD) or good till time (GTT). 
-@property (readonly) id Applicability;
+@property (readonly) NSInteger Applicability;
 // The associated expiry DateTime. 
-@property (readonly) id ExpiryDateTimeUTC;
+@property (readonly) NSString* ExpiryDateTimeUTC;
 // The trade currency. 
-@property (readonly) id Currency;
+@property (readonly) NSString* Currency;
 // The order status. 
-@property (readonly) id Status;
+@property (readonly) NSInteger Status;
 // The if done stop order. 
-@property (readonly) id StopOrder;
+@property (readonly) CIAPIBasicStopLimitOrder* StopOrder;
 // The if done limit order 
-@property (readonly) id LimitOrder;
+@property (readonly) CIAPIBasicStopLimitOrder* LimitOrder;
 // The order on the other side of a one Cancels the other relationship. 
-@property (readonly) id OcoOrder;
+@property (readonly) CIAPIBasicStopLimitOrder* OcoOrder;
 // The last time that the order changed. Note - Does not include things such as the current market price. 
-@property (readonly) id LastChangedDateTimeUTC;
+@property (readonly) NSString* LastChangedDateTimeUTC;
 
 @end

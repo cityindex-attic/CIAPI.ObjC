@@ -7,6 +7,8 @@
 
 #import "CIAPIStopLimitOrderHistory.h"
 
+
+
 @implementation CIAPIStopLimitOrderHistory 
 
 @synthesize OrderId;
@@ -22,6 +24,7 @@
 @synthesize Currency;
 @synthesize StatusId;
 @synthesize LastChangedDateTimeUtc;
+
 
 @end
 

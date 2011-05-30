@@ -8,18 +8,21 @@
 #import <Foundation/Foundation.h>
 
 #import "CIAPIObjectResponse.h"
+#import "CIAPIObjectListResponse.h"
+
+
 
 @interface CIAPIQuoteResponse : CIAPIObjectResponse {
-  id QuoteId;
-  id Status;
-  id StatusReason;
+  NSInteger QuoteId;
+  NSInteger Status;
+  NSInteger StatusReason;
 }
 
 // quote id. 
-@property (readonly) id QuoteId;
+@property (readonly) NSInteger QuoteId;
 // quote status. 
-@property (readonly) id Status;
+@property (readonly) NSInteger Status;
 // quote status reason. 
-@property (readonly) id StatusReason;
+@property (readonly) NSInteger StatusReason;
 
 @end

@@ -8,12 +8,15 @@
 #import <Foundation/Foundation.h>
 
 #import "CIAPIObjectResponse.h"
+#import "CIAPIObjectListResponse.h"
+
+
 
 @interface CIAPIListMarketInformationResponse : CIAPIObjectListResponse {
-  id MarketInformation;
+  NSArray* MarketInformation;
 }
 
 // The requested list of market information. 
-@property (readonly) id MarketInformation;
+@property (readonly) NSArray* MarketInformation;
 
 @end

@@ -8,15 +8,18 @@
 #import <Foundation/Foundation.h>
 
 #import "CIAPIObjectResponse.h"
+#import "CIAPIObjectListResponse.h"
 
-@interface CIAPIMarket : NSObject {
-  id MarketId;
-  id Name;
+
+
+@interface CIAPIMarket : CIAPIObjectResponse {
+  NSInteger MarketId;
+  NSString* Name;
 }
 
 // A market's unique identifier 
-@property (readonly) id MarketId;
+@property (readonly) NSInteger MarketId;
 // The market name 
-@property (readonly) id Name;
+@property (readonly) NSString* Name;
 
 @end

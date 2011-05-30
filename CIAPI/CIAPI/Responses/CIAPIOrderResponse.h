@@ -8,33 +8,37 @@
 #import <Foundation/Foundation.h>
 
 #import "CIAPIObjectResponse.h"
+#import "CIAPIObjectListResponse.h"
+
+#import "CIAPIOrderResponse.h"
+
 
 @interface CIAPIOrderResponse : CIAPIObjectResponse {
-  id OrderId;
-  id StatusReason;
-  id Status;
-  id Price;
-  id CommissionCharge;
-  id IfDone;
-  id GuaranteedPremium;
-  id OCO;
+  NSInteger OrderId;
+  NSInteger StatusReason;
+  NSInteger Status;
+  double Price;
+  double CommissionCharge;
+  NSArray* IfDone;
+  double GuaranteedPremium;
+  CIAPIOrderResponse* OCO;
 }
 
 // order id. 
-@property (readonly) id OrderId;
+@property (readonly) NSInteger OrderId;
 // order status reason id. 
-@property (readonly) id StatusReason;
+@property (readonly) NSInteger StatusReason;
 // order status id. 
-@property (readonly) id Status;
+@property (readonly) NSInteger Status;
 // price. 
-@property (readonly) id Price;
+@property (readonly) double Price;
 // commission charge. 
-@property (readonly) id CommissionCharge;
+@property (readonly) double CommissionCharge;
 // list of if done orders. 
-@property (readonly) id IfDone;
+@property (readonly) NSArray* IfDone;
 // premium for guaranteed orders. 
-@property (readonly) id GuaranteedPremium;
+@property (readonly) double GuaranteedPremium;
 // an order in an OCO relationship with this order. 
-@property (readonly) id OCO;
+@property (readonly) CIAPIOrderResponse* OCO;
 
 @end

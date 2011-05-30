@@ -8,12 +8,15 @@
 #import <Foundation/Foundation.h>
 
 #import "CIAPIObjectResponse.h"
+#import "CIAPIObjectListResponse.h"
+
+
 
 @interface CIAPIListActiveStopLimitOrderResponse : CIAPIObjectListResponse {
-  id ActiveStopLimitOrders;
+  NSArray* ActiveStopLimitOrders;
 }
 
 // The requested list of active stop / limit orders. 
-@property (readonly) id ActiveStopLimitOrders;
+@property (readonly) NSArray* ActiveStopLimitOrders;
 
 @end

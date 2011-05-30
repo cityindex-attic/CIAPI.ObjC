@@ -8,24 +8,27 @@
 #import <Foundation/Foundation.h>
 
 #import "CIAPIObjectResponse.h"
+#import "CIAPIObjectListResponse.h"
 
-@interface CIAPIPriceBar : NSObject {
-  id BarDate;
-  id Open;
-  id High;
-  id Low;
-  id Close;
+
+
+@interface CIAPIPriceBar : CIAPIObjectResponse {
+  NSString* BarDate;
+  double Open;
+  double High;
+  double Low;
+  double Close;
 }
 
 // The date of the start of the price bar interval 
-@property (readonly) id BarDate;
+@property (readonly) NSString* BarDate;
 // For the equities model of charting, this is the price at the start of the price bar interval. 
-@property (readonly) id Open;
+@property (readonly) double Open;
 // The highest price occurring during the interval of the price bar 
-@property (readonly) id High;
+@property (readonly) double High;
 // The lowest price occurring during the interval of the price bar 
-@property (readonly) id Low;
+@property (readonly) double Low;
 // The price at the end of the price bar interval 
-@property (readonly) id Close;
+@property (readonly) double Close;
 
 @end

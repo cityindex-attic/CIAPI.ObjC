@@ -8,12 +8,15 @@
 #import <Foundation/Foundation.h>
 
 #import "CIAPIObjectResponse.h"
+#import "CIAPIObjectListResponse.h"
+
+
 
 @interface CIAPIListOpenPositionsResponse : CIAPIObjectListResponse {
-  id OpenPositions;
+  NSArray* OpenPositions;
 }
 
 // A list of trades / open positions. 
-@property (readonly) id OpenPositions;
+@property (readonly) NSArray* OpenPositions;
 
 @end

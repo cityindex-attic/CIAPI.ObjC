@@ -7,9 +7,12 @@
 
 #import "CIAPIListWatchlistResponse.h"
 
+
+
 @implementation CIAPIListWatchlistResponse 
 
 @synthesize ClientAccountId;
+
 
 @end
 

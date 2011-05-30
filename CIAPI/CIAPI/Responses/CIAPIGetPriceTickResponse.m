@@ -7,9 +7,18 @@
 
 #import "CIAPIGetPriceTickResponse.h"
 
+#import "CIAPIPriceTick.h"
+
+
 @implementation CIAPIGetPriceTickResponse 
 
 @synthesize PriceTicks;
+
+- (Class)propertyTypeHintForName:(NSString*)name
+{
+  if ([name isEqualToString:@"PriceTicks"]) return [CIAPIPriceTick class];
+  return nil;
+}
 
 @end
 

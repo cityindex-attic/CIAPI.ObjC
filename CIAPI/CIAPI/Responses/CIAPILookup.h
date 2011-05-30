@@ -8,30 +8,33 @@
 #import <Foundation/Foundation.h>
 
 #import "CIAPIObjectResponse.h"
+#import "CIAPIObjectListResponse.h"
 
-@interface CIAPILookup : NSObject {
-  id Id;
-  id Description;
-  id DisplayOrder;
-  id TranslationTextId;
-  id TranslationText;
-  id IsActive;
-  id IsAllowed;
+
+
+@interface CIAPILookup : CIAPIObjectResponse {
+  NSInteger Id;
+  NSString* Description;
+  NSInteger DisplayOrder;
+  NSString* TranslationTextId;
+  NSString* TranslationText;
+  BOOL IsActive;
+  BOOL IsAllowed;
 }
 
 // lookups id. 
-@property (readonly) id Id;
+@property (readonly) NSInteger Id;
 // lookup items description. 
-@property (readonly) id Description;
+@property (readonly) NSString* Description;
 // order the items should be displayed on a user interface. 
-@property (readonly) id DisplayOrder;
+@property (readonly) NSInteger DisplayOrder;
 // translation text id. 
-@property (readonly) id TranslationTextId;
+@property (readonly) NSString* TranslationTextId;
 // translated text. 
-@property (readonly) id TranslationText;
+@property (readonly) NSString* TranslationText;
 // is active. 
-@property (readonly) id IsActive;
+@property (readonly) BOOL IsActive;
 // is allowed. 
-@property (readonly) id IsAllowed;
+@property (readonly) BOOL IsAllowed;
 
 @end

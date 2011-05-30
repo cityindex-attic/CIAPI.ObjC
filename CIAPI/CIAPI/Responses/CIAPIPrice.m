@@ -7,6 +7,8 @@
 
 #import "CIAPIPrice.h"
 
+
+
 @implementation CIAPIPrice 
 
 @synthesize MarketId;
@@ -19,6 +21,7 @@
 @synthesize Change;
 @synthesize Direction;
 @synthesize AuditId;
+
 
 @end
 

@@ -7,9 +7,18 @@
 
 #import "CIAPIListCfdMarketsResponse.h"
 
+#import "CIAPIMarket.h"
+
+
 @implementation CIAPIListCfdMarketsResponse 
 
 @synthesize Markets;
+
+- (Class)propertyTypeHintForName:(NSString*)name
+{
+  if ([name isEqualToString:@"Markets"]) return [CIAPIMarket class];
+  return nil;
+}
 
 @end
 

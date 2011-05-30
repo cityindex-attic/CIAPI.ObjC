@@ -7,10 +7,13 @@
 
 #import "CIAPIGetMessagePopupResponse.h"
 
+
+
 @implementation CIAPIGetMessagePopupResponse 
 
 @synthesize AskForClientApproval;
 @synthesize Message;
+
 
 @end
 

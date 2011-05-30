@@ -7,10 +7,13 @@
 
 #import "CIAPIIfDoneResponse.h"
 
+
+
 @implementation CIAPIIfDoneResponse 
 
 @synthesize Stop;
 @synthesize Limit;
+
 
 @end
 

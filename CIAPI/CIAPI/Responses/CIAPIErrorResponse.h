@@ -8,15 +8,19 @@
 #import <Foundation/Foundation.h>
 
 #import "CIAPIObjectResponse.h"
+#import "CIAPIObjectListResponse.h"
+
+#import "CIAPIErrorCode.h"
+
 
 @interface CIAPIErrorResponse : CIAPIObjectResponse {
-  id ErrorMessage;
-  id ErrorCode;
+  NSString* ErrorMessage;
+  CIAPIErrorCode* ErrorCode;
 }
 
 // This is a description of the ErrorMessage property 
-@property (readonly) id ErrorMessage;
+@property (readonly) NSString* ErrorMessage;
 // The error code 
-@property (readonly) id ErrorCode;
+@property (readonly) CIAPIErrorCode* ErrorCode;
 
 @end

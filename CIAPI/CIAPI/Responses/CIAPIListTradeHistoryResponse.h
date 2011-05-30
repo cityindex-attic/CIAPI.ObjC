@@ -8,12 +8,15 @@
 #import <Foundation/Foundation.h>
 
 #import "CIAPIObjectResponse.h"
+#import "CIAPIObjectListResponse.h"
+
+
 
 @interface CIAPIListTradeHistoryResponse : CIAPIObjectListResponse {
-  id TradeHistory;
+  NSArray* TradeHistory;
 }
 
 // A list of historical trades. 
-@property (readonly) id TradeHistory;
+@property (readonly) NSArray* TradeHistory;
 
 @end

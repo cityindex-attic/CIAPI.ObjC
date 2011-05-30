@@ -8,12 +8,15 @@
 #import <Foundation/Foundation.h>
 
 #import "CIAPIObjectResponse.h"
+#import "CIAPIObjectListResponse.h"
+
+
 
 @interface CIAPIListWatchlistResponse : CIAPIObjectListResponse {
-  id ClientAccountId;
+  NSInteger ClientAccountId;
 }
 
 // Client account id 
-@property (readonly) id ClientAccountId;
+@property (readonly) NSInteger ClientAccountId;
 
 @end

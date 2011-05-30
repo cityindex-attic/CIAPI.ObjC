@@ -8,21 +8,24 @@
 #import <Foundation/Foundation.h>
 
 #import "CIAPIObjectResponse.h"
+#import "CIAPIObjectListResponse.h"
+
+
 
 @interface CIAPIAccountInformationResponse : CIAPIObjectResponse {
-  id LogonUserName;
-  id ClientAccountId;
-  id ClientAccountCurrency;
-  id TradingAccounts;
+  NSString* LogonUserName;
+  NSInteger ClientAccountId;
+  NSString* ClientAccountCurrency;
+  NSArray* TradingAccounts;
 }
 
 // logon user name. 
-@property (readonly) id LogonUserName;
+@property (readonly) NSString* LogonUserName;
 // client account id. 
-@property (readonly) id ClientAccountId;
+@property (readonly) NSInteger ClientAccountId;
 // Base currency of the client account. 
-@property (readonly) id ClientAccountCurrency;
+@property (readonly) NSString* ClientAccountCurrency;
 // a list of trading accounts. 
-@property (readonly) id TradingAccounts;
+@property (readonly) NSArray* TradingAccounts;
 
 @end

@@ -7,9 +7,12 @@
 
 #import "CIAPIGetActiveStopLimitOrderResponse.h"
 
+
+
 @implementation CIAPIGetActiveStopLimitOrderResponse 
 
 @synthesize ActiveStopLimitOrder;
+
 
 @end
 

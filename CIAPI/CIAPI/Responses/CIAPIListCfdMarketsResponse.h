@@ -8,12 +8,15 @@
 #import <Foundation/Foundation.h>
 
 #import "CIAPIObjectResponse.h"
+#import "CIAPIObjectListResponse.h"
+
+
 
 @interface CIAPIListCfdMarketsResponse : CIAPIObjectListResponse {
-  id Markets;
+  NSArray* Markets;
 }
 
 // A list of CFD markets 
-@property (readonly) id Markets;
+@property (readonly) NSArray* Markets;
 
 @end

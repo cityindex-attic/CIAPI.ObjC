@@ -7,6 +7,8 @@
 
 #import "CIAPIPriceBar.h"
 
+
+
 @implementation CIAPIPriceBar 
 
 @synthesize BarDate;
@@ -14,6 +16,7 @@
 @synthesize High;
 @synthesize Low;
 @synthesize Close;
+
 
 @end
 

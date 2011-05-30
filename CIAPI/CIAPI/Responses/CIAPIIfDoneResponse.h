@@ -8,15 +8,20 @@
 #import <Foundation/Foundation.h>
 
 #import "CIAPIObjectResponse.h"
+#import "CIAPIObjectListResponse.h"
+
+#import "CIAPIOrderResponse.h"
+#import "CIAPIOrderResponse.h"
+
 
 @interface CIAPIIfDoneResponse : CIAPIObjectResponse {
-  id Stop;
-  id Limit;
+  CIAPIOrderResponse* Stop;
+  CIAPIOrderResponse* Limit;
 }
 
 // Stop 
-@property (readonly) id Stop;
+@property (readonly) CIAPIOrderResponse* Stop;
 // Limit 
-@property (readonly) id Limit;
+@property (readonly) CIAPIOrderResponse* Limit;
 
 @end

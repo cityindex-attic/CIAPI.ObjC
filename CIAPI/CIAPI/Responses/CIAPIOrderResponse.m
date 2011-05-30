@@ -7,6 +7,9 @@
 
 #import "CIAPIOrderResponse.h"
 
+#import "CIAPIIfDoneResponse.h"
+
+
 @implementation CIAPIOrderResponse 
 
 @synthesize OrderId;
@@ -17,6 +20,12 @@
 @synthesize IfDone;
 @synthesize GuaranteedPremium;
 @synthesize OCO;
+
+- (Class)propertyTypeHintForName:(NSString*)name
+{
+  if ([name isEqualToString:@"IfDone"]) return [CIAPIIfDoneResponse class];
+  return nil;
+}
 
 @end
 

@@ -7,6 +7,8 @@
 
 #import "CIAPILookup.h"
 
+
+
 @implementation CIAPILookup 
 
 @synthesize Id;
@@ -16,6 +18,7 @@
 @synthesize TranslationText;
 @synthesize IsActive;
 @synthesize IsAllowed;
+
 
 @end
 

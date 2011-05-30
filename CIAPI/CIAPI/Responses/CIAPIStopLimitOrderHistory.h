@@ -8,48 +8,51 @@
 #import <Foundation/Foundation.h>
 
 #import "CIAPIObjectResponse.h"
+#import "CIAPIObjectListResponse.h"
 
-@interface CIAPIStopLimitOrderHistory : NSObject {
-  id OrderId;
-  id MarketId;
-  id MarketName;
-  id Direction;
-  id OriginalQuantity;
-  id Price;
-  id TriggerPrice;
-  id TradingAccountId;
-  id TypeId;
-  id OrderApplicabilityId;
-  id Currency;
-  id StatusId;
-  id LastChangedDateTimeUtc;
+
+
+@interface CIAPIStopLimitOrderHistory : CIAPIObjectResponse {
+  NSInteger OrderId;
+  NSInteger MarketId;
+  NSString* MarketName;
+  NSString* Direction;
+  double OriginalQuantity;
+  NSString* Price;
+  double TriggerPrice;
+  NSInteger TradingAccountId;
+  NSInteger TypeId;
+  NSInteger OrderApplicabilityId;
+  NSString* Currency;
+  NSInteger StatusId;
+  NSString* LastChangedDateTimeUtc;
 }
 
 // The order's unique identifier. 
-@property (readonly) id OrderId;
+@property (readonly) NSInteger OrderId;
 // The markets unique identifier. 
-@property (readonly) id MarketId;
+@property (readonly) NSInteger MarketId;
 // The market's name. 
-@property (readonly) id MarketName;
+@property (readonly) NSString* MarketName;
 // The direction, buy or sell. 
-@property (readonly) id Direction;
+@property (readonly) NSString* Direction;
 // The quantity of the order when it became a trade / was cancelled etc. 
-@property (readonly) id OriginalQuantity;
+@property (readonly) double OriginalQuantity;
 // The price / rate that the order was filled at. 
-@property (readonly) id Price;
+@property (readonly) NSString* Price;
 // The price / rate that the the order was set to trigger at. 
-@property (readonly) id TriggerPrice;
+@property (readonly) double TriggerPrice;
 // The trading account that the order is on. 
-@property (readonly) id TradingAccountId;
+@property (readonly) NSInteger TradingAccountId;
 // The type of the order stop, limit or trade. 
-@property (readonly) id TypeId;
+@property (readonly) NSInteger TypeId;
 // When the order applies until. i.e. good till cancelled (GTC) good for day (GFD) or good till time (GTT). 
-@property (readonly) id OrderApplicabilityId;
+@property (readonly) NSInteger OrderApplicabilityId;
 // The trade currency. 
-@property (readonly) id Currency;
+@property (readonly) NSString* Currency;
 // the order status. 
-@property (readonly) id StatusId;
+@property (readonly) NSInteger StatusId;
 // The last time that the order changed. Note - Does not include things such as the current market price. 
-@property (readonly) id LastChangedDateTimeUtc;
+@property (readonly) NSString* LastChangedDateTimeUtc;
 
 @end

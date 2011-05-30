@@ -8,12 +8,15 @@
 #import <Foundation/Foundation.h>
 
 #import "CIAPIObjectResponse.h"
+#import "CIAPIObjectListResponse.h"
 
-@interface CIAPINewsDetail : NSObject {
-  id Story;
+
+
+@interface CIAPINewsDetail : CIAPIObjectResponse {
+  NSString* Story;
 }
 
 // The detail of the story. This can contain HTML characters. 
-@property (readonly) id Story;
+@property (readonly) NSString* Story;
 
 @end

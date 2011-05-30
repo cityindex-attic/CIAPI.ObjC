@@ -8,15 +8,20 @@
 #import <Foundation/Foundation.h>
 
 #import "CIAPIObjectResponse.h"
+#import "CIAPIObjectListResponse.h"
+
+#import "CIAPITradeOrder.h"
+#import "CIAPIStopLimitOrder.h"
+
 
 @interface CIAPIGetOrderResponse : CIAPIObjectResponse {
-  id TradeOrder;
-  id StopLimitOrder;
+  CIAPITradeOrder* TradeOrder;
+  CIAPIStopLimitOrder* StopLimitOrder;
 }
 
 // The details of the order if it's a trade / open position. 
-@property (readonly) id TradeOrder;
+@property (readonly) CIAPITradeOrder* TradeOrder;
 // The details of the order if it's a stop limit order. 
-@property (readonly) id StopLimitOrder;
+@property (readonly) CIAPIStopLimitOrder* StopLimitOrder;
 
 @end

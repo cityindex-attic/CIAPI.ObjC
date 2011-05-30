@@ -8,8 +8,11 @@
 #import <Foundation/Foundation.h>
 
 #import "CIAPIObjectResponse.h"
+#import "CIAPIObjectListResponse.h"
 
-@interface CIAPITradeOrder : NSObject {
+
+
+@interface CIAPITradeOrder : CIAPIObjectResponse {
 }
 
 

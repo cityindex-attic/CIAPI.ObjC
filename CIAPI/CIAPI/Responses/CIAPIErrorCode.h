@@ -8,8 +8,11 @@
 #import <Foundation/Foundation.h>
 
 #import "CIAPIObjectResponse.h"
+#import "CIAPIObjectListResponse.h"
 
-@interface CIAPIErrorCode : NSObject {
+
+
+@interface CIAPIErrorCode : CIAPIObjectResponse {
 }
 
 

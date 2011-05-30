@@ -7,6 +7,8 @@
 
 #import "CIAPIClientAccountMargin.h"
 
+
+
 @implementation CIAPIClientAccountMargin 
 
 @synthesize Cash;
@@ -20,6 +22,7 @@
 @synthesize TotalMarginRequirement;
 @synthesize CurrencyId;
 @synthesize CurrencyISO;
+
 
 @end
 

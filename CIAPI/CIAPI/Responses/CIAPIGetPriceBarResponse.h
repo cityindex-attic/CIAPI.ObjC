@@ -8,15 +8,19 @@
 #import <Foundation/Foundation.h>
 
 #import "CIAPIObjectResponse.h"
+#import "CIAPIObjectListResponse.h"
+
+#import "CIAPIPriceBar.h"
+
 
 @interface CIAPIGetPriceBarResponse : CIAPIObjectResponse {
-  id PriceBars;
-  id PartialPriceBar;
+  NSArray* PriceBars;
+  CIAPIPriceBar* PartialPriceBar;
 }
 
 // An array of finalized price bars, sorted in ascending order based on PriceBar.BarDate 
-@property (readonly) id PriceBars;
+@property (readonly) NSArray* PriceBars;
 // The (non-finalized) price bar data for the current period (i.e, the period that hasn't yet completed) 
-@property (readonly) id PartialPriceBar;
+@property (readonly) CIAPIPriceBar* PartialPriceBar;
 
 @end

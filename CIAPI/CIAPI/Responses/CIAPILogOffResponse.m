@@ -7,9 +7,12 @@
 
 #import "CIAPILogOffResponse.h"
 
+
+
 @implementation CIAPILogOffResponse 
 
 @synthesize LoggedOut;
+
 
 @end
 

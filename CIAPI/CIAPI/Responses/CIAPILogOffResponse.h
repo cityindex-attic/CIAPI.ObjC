@@ -8,12 +8,15 @@
 #import <Foundation/Foundation.h>
 
 #import "CIAPIObjectResponse.h"
+#import "CIAPIObjectListResponse.h"
+
+
 
 @interface CIAPILogOffResponse : CIAPIObjectResponse {
-  id LoggedOut;
+  BOOL LoggedOut;
 }
 
 // LogOut status 
-@property (readonly) id LoggedOut;
+@property (readonly) BOOL LoggedOut;
 
 @end

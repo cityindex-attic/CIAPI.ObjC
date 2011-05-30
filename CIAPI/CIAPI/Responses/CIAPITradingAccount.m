@@ -7,12 +7,15 @@
 
 #import "CIAPITradingAccount.h"
 
+
+
 @implementation CIAPITradingAccount 
 
 @synthesize TradingAccountId;
 @synthesize TradingAccountCode;
 @synthesize TradingAccountStatus;
 @synthesize TradingAccountType;
+
 
 @end
 

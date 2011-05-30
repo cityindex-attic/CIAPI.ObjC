@@ -8,21 +8,24 @@
 #import <Foundation/Foundation.h>
 
 #import "CIAPIObjectResponse.h"
+#import "CIAPIObjectListResponse.h"
 
-@interface CIAPITradingAccount : NSObject {
-  id TradingAccountId;
-  id TradingAccountCode;
-  id TradingAccountStatus;
-  id TradingAccountType;
+
+
+@interface CIAPITradingAccount : CIAPIObjectResponse {
+  NSInteger TradingAccountId;
+  NSString* TradingAccountCode;
+  NSString* TradingAccountStatus;
+  NSString* TradingAccountType;
 }
 
 // Trading Account Id 
-@property (readonly) id TradingAccountId;
+@property (readonly) NSInteger TradingAccountId;
 // Trading Account Code 
-@property (readonly) id TradingAccountCode;
+@property (readonly) NSString* TradingAccountCode;
 // Trading Account Status 
-@property (readonly) id TradingAccountStatus;
+@property (readonly) NSString* TradingAccountStatus;
 // Trading Account Type 
-@property (readonly) id TradingAccountType;
+@property (readonly) NSString* TradingAccountType;
 
 @end

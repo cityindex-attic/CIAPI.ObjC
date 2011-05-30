@@ -8,12 +8,15 @@
 #import <Foundation/Foundation.h>
 
 #import "CIAPIObjectResponse.h"
+#import "CIAPIObjectListResponse.h"
 
-@interface CIAPISystemStatus : NSObject {
-  id StatusMessage;
+
+
+@interface CIAPISystemStatus : CIAPIObjectResponse {
+  NSString* StatusMessage;
 }
 
 // a status message 
-@property (readonly) id StatusMessage;
+@property (readonly) NSString* StatusMessage;
 
 @end

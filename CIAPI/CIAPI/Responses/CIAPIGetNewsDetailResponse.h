@@ -8,12 +8,16 @@
 #import <Foundation/Foundation.h>
 
 #import "CIAPIObjectResponse.h"
+#import "CIAPIObjectListResponse.h"
+
+#import "CIAPINewsDetail.h"
+
 
 @interface CIAPIGetNewsDetailResponse : CIAPIObjectResponse {
-  id NewsDetail;
+  CIAPINewsDetail* NewsDetail;
 }
 
 // The details of the news item 
-@property (readonly) id NewsDetail;
+@property (readonly) CIAPINewsDetail* NewsDetail;
 
 @end

@@ -7,9 +7,18 @@
 
 #import "CIAPIListTradeHistoryResponse.h"
 
+#import "CIAPITradeHistory.h"
+
+
 @implementation CIAPIListTradeHistoryResponse 
 
 @synthesize TradeHistory;
+
+- (Class)propertyTypeHintForName:(NSString*)name
+{
+  if ([name isEqualToString:@"TradeHistory"]) return [CIAPITradeHistory class];
+  return nil;
+}
 
 @end
 

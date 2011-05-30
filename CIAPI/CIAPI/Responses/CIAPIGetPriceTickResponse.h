@@ -8,12 +8,15 @@
 #import <Foundation/Foundation.h>
 
 #import "CIAPIObjectResponse.h"
+#import "CIAPIObjectListResponse.h"
+
+
 
 @interface CIAPIGetPriceTickResponse : CIAPIObjectResponse {
-  id PriceTicks;
+  NSArray* PriceTicks;
 }
 
 // An array of price ticks, sorted in ascending order by PriceTick.TickDate 
-@property (readonly) id PriceTicks;
+@property (readonly) NSArray* PriceTicks;
 
 @end

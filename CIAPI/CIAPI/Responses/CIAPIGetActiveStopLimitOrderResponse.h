@@ -8,12 +8,16 @@
 #import <Foundation/Foundation.h>
 
 #import "CIAPIObjectResponse.h"
+#import "CIAPIObjectListResponse.h"
+
+#import "CIAPIActiveStopLimitOrder.h"
+
 
 @interface CIAPIGetActiveStopLimitOrderResponse : CIAPIObjectResponse {
-  id ActiveStopLimitOrder;
+  CIAPIActiveStopLimitOrder* ActiveStopLimitOrder;
 }
 
 // The active stop limit order. If it is null then the active stop limit order does not exist. 
-@property (readonly) id ActiveStopLimitOrder;
+@property (readonly) CIAPIActiveStopLimitOrder* ActiveStopLimitOrder;
 
 @end

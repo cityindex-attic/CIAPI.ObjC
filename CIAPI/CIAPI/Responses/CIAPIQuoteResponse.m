@@ -7,11 +7,14 @@
 
 #import "CIAPIQuoteResponse.h"
 
+
+
 @implementation CIAPIQuoteResponse 
 
 @synthesize QuoteId;
 @synthesize Status;
 @synthesize StatusReason;
+
 
 @end
 

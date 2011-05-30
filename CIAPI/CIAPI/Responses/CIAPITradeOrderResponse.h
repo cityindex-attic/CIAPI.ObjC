@@ -8,24 +8,28 @@
 #import <Foundation/Foundation.h>
 
 #import "CIAPIObjectResponse.h"
+#import "CIAPIObjectListResponse.h"
+
+#import "CIAPIQuoteResponse.h"
+
 
 @interface CIAPITradeOrderResponse : CIAPIObjectResponse {
-  id Status;
-  id StatusReason;
-  id OrderId;
-  id Orders;
-  id Quote;
+  NSInteger Status;
+  NSInteger StatusReason;
+  NSInteger OrderId;
+  NSArray* Orders;
+  CIAPIQuoteResponse* Quote;
 }
 
 // The status of the order (Pending, Accepted, Open, etc) 
-@property (readonly) id Status;
+@property (readonly) NSInteger Status;
 // The id corresponding to a more descriptive reason for the order status 
-@property (readonly) id StatusReason;
+@property (readonly) NSInteger StatusReason;
 // The unique identifier associated to the order returned from the underlying trading system 
-@property (readonly) id OrderId;
+@property (readonly) NSInteger OrderId;
 // List of orders with their associated response 
-@property (readonly) id Orders;
+@property (readonly) NSArray* Orders;
 // Quote response 
-@property (readonly) id Quote;
+@property (readonly) CIAPIQuoteResponse* Quote;
 
 @end

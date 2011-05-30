@@ -7,6 +7,9 @@
 
 #import "CIAPIMarketInformation.h"
 
+#import "CIAPIMarketEod.h"
+
+
 @implementation CIAPIMarketInformation 
 
 @synthesize MarketId;
@@ -24,6 +27,12 @@
 @synthesize LongPositionOnly;
 @synthesize CloseOnly;
 @synthesize MarketEod;
+
+- (Class)propertyTypeHintForName:(NSString*)name
+{
+  if ([name isEqualToString:@"MarketEod"]) return [CIAPIMarketEod class];
+  return nil;
+}
 
 @end
 

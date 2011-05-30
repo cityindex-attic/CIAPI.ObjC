@@ -7,6 +7,8 @@
 
 #import "CIAPIOrder.h"
 
+
+
 @implementation CIAPIOrder 
 
 @synthesize OrderId;
@@ -27,6 +29,7 @@
 @synthesize Type;
 @synthesize Status;
 @synthesize ReasonId;
+
 
 @end
 

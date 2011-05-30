@@ -7,6 +7,8 @@
 
 #import "CIAPIQuote.h"
 
+
+
 @implementation CIAPIQuote 
 
 @synthesize QuoteId;
@@ -21,6 +23,7 @@
 @synthesize StatusId;
 @synthesize TypeId;
 @synthesize RequestDateTime;
+
 
 @end
 

@@ -8,45 +8,50 @@
 #import <Foundation/Foundation.h>
 
 #import "CIAPIObjectResponse.h"
+#import "CIAPIObjectListResponse.h"
 
-@interface CIAPIOpenPosition : NSObject {
-  id OrderId;
-  id MarketId;
-  id MarketName;
-  id Direction;
-  id Quantity;
-  id Price;
-  id TradingAccountId;
-  id Currency;
-  id Status;
-  id StopOrder;
-  id LimitOrder;
-  id LastChangedDateTimeUTC;
+#import "CIAPIBasicStopLimitOrder.h"
+#import "CIAPIBasicStopLimitOrder.h"
+
+
+@interface CIAPIOpenPosition : CIAPIObjectResponse {
+  NSInteger OrderId;
+  NSInteger MarketId;
+  NSString* MarketName;
+  NSString* Direction;
+  double Quantity;
+  double Price;
+  NSInteger TradingAccountId;
+  NSString* Currency;
+  NSInteger Status;
+  CIAPIBasicStopLimitOrder* StopOrder;
+  CIAPIBasicStopLimitOrder* LimitOrder;
+  NSString* LastChangedDateTimeUTC;
 }
 
 // The order's unique identifier. 
-@property (readonly) id OrderId;
+@property (readonly) NSInteger OrderId;
 // The markets unique identifier. 
-@property (readonly) id MarketId;
+@property (readonly) NSInteger MarketId;
 // The market's name. 
-@property (readonly) id MarketName;
+@property (readonly) NSString* MarketName;
 // The direction, buy or sell. 
-@property (readonly) id Direction;
+@property (readonly) NSString* Direction;
 // The quantity of the order. 
-@property (readonly) id Quantity;
+@property (readonly) double Quantity;
 // The price / rate that the trade was opened at. 
-@property (readonly) id Price;
+@property (readonly) double Price;
 // The trading account that the order is on. 
-@property (readonly) id TradingAccountId;
+@property (readonly) NSInteger TradingAccountId;
 // The trade currency. 
-@property (readonly) id Currency;
+@property (readonly) NSString* Currency;
 // The order status. 
-@property (readonly) id Status;
+@property (readonly) NSInteger Status;
 // The stop order attached to this order. 
-@property (readonly) id StopOrder;
+@property (readonly) CIAPIBasicStopLimitOrder* StopOrder;
 // The limit order attached to this order. 
-@property (readonly) id LimitOrder;
+@property (readonly) CIAPIBasicStopLimitOrder* LimitOrder;
 // The last time that the order changed. Note - Does not include things such as the current market price. 
-@property (readonly) id LastChangedDateTimeUTC;
+@property (readonly) NSString* LastChangedDateTimeUTC;
 
 @end

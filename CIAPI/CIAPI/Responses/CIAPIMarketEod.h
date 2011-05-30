@@ -8,15 +8,18 @@
 #import <Foundation/Foundation.h>
 
 #import "CIAPIObjectResponse.h"
+#import "CIAPIObjectListResponse.h"
 
-@interface CIAPIMarketEod : NSObject {
-  id MarketEodUnit;
-  id MarketEodAmount;
+
+
+@interface CIAPIMarketEod : CIAPIObjectResponse {
+  NSString* MarketEodUnit;
+  NSString* MarketEodAmount;
 }
 
 // Unit 
-@property (readonly) id MarketEodUnit;
+@property (readonly) NSString* MarketEodUnit;
 // End of day amount. 
-@property (readonly) id MarketEodAmount;
+@property (readonly) NSString* MarketEodAmount;
 
 @end

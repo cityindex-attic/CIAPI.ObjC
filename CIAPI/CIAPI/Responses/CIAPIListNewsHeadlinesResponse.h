@@ -8,12 +8,15 @@
 #import <Foundation/Foundation.h>
 
 #import "CIAPIObjectResponse.h"
+#import "CIAPIObjectListResponse.h"
+
+
 
 @interface CIAPIListNewsHeadlinesResponse : CIAPIObjectListResponse {
-  id Headlines;
+  NSArray* Headlines;
 }
 
 // A list of News headlines 
-@property (readonly) id Headlines;
+@property (readonly) NSArray* Headlines;
 
 @end

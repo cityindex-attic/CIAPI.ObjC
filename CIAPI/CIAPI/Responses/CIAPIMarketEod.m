@@ -7,10 +7,13 @@
 
 #import "CIAPIMarketEod.h"
 
+
+
 @implementation CIAPIMarketEod 
 
 @synthesize MarketEodUnit;
 @synthesize MarketEodAmount;
+
 
 @end
 

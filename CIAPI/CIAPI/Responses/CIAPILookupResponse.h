@@ -8,18 +8,21 @@
 #import <Foundation/Foundation.h>
 
 #import "CIAPIObjectResponse.h"
+#import "CIAPIObjectListResponse.h"
+
+
 
 @interface CIAPILookupResponse : CIAPIObjectResponse {
-  id CultureId;
-  id LookupEntityName;
-  id ApiLookupDTOList;
+  NSInteger CultureId;
+  NSString* LookupEntityName;
+  NSArray* ApiLookupDTOList;
 }
 
 // The culture id requested 
-@property (readonly) id CultureId;
+@property (readonly) NSInteger CultureId;
 // The lookup name requested 
-@property (readonly) id LookupEntityName;
+@property (readonly) NSString* LookupEntityName;
 // List of lookup entities from the database 
-@property (readonly) id ApiLookupDTOList;
+@property (readonly) NSArray* ApiLookupDTOList;
 
 @end

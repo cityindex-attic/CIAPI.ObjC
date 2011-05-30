@@ -7,10 +7,13 @@
 
 #import "CIAPIStopLimitOrder.h"
 
+
+
 @implementation CIAPIStopLimitOrder 
 
 @synthesize ExpiryDateTimeUTC;
 @synthesize Applicability;
+
 
 @end
 

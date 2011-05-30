@@ -8,12 +8,15 @@
 #import <Foundation/Foundation.h>
 
 #import "CIAPIObjectResponse.h"
+#import "CIAPIObjectListResponse.h"
+
+
 
 @interface CIAPIListSpreadMarketsResponse : CIAPIObjectListResponse {
-  id Markets;
+  NSArray* Markets;
 }
 
 // A list of Spread Betting markets 
-@property (readonly) id Markets;
+@property (readonly) NSArray* Markets;
 
 @end

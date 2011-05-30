@@ -8,6 +8,9 @@
 #import <Foundation/Foundation.h>
 
 #import "CIAPIObjectResponse.h"
+#import "CIAPIObjectListResponse.h"
+
+
 
 @interface CIAPIListOrdersResponse : CIAPIObjectListResponse {
 }

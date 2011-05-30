@@ -7,9 +7,12 @@
 
 #import "CIAPIGetOpenPositionResponse.h"
 
+
+
 @implementation CIAPIGetOpenPositionResponse 
 
 @synthesize OpenPosition;
+
 
 @end
 

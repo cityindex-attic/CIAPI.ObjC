@@ -7,9 +7,12 @@
 
 #import "CIAPIGetMarketInformationResponse.h"
 
+
+
 @implementation CIAPIGetMarketInformationResponse 
 
 @synthesize MarketInformation;
+
 
 @end
 

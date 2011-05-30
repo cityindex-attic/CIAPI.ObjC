@@ -7,10 +7,19 @@
 
 #import "CIAPIGetPriceBarResponse.h"
 
+#import "CIAPIPriceBar.h"
+
+
 @implementation CIAPIGetPriceBarResponse 
 
 @synthesize PriceBars;
 @synthesize PartialPriceBar;
+
+- (Class)propertyTypeHintForName:(NSString*)name
+{
+  if ([name isEqualToString:@"PriceBars"]) return [CIAPIPriceBar class];
+  return nil;
+}
 
 @end
 

@@ -7,10 +7,13 @@
 
 #import "CIAPIGetOrderResponse.h"
 
+
+
 @implementation CIAPIGetOrderResponse 
 
 @synthesize TradeOrder;
 @synthesize StopLimitOrder;
+
 
 @end
 

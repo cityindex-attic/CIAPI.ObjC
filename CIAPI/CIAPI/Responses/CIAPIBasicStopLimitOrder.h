@@ -8,18 +8,21 @@
 #import <Foundation/Foundation.h>
 
 #import "CIAPIObjectResponse.h"
+#import "CIAPIObjectListResponse.h"
 
-@interface CIAPIBasicStopLimitOrder : NSObject {
-  id OrderId;
-  id TriggerPrice;
-  id Quantity;
+
+
+@interface CIAPIBasicStopLimitOrder : CIAPIObjectResponse {
+  NSInteger OrderId;
+  double TriggerPrice;
+  double Quantity;
 }
 
 // The order's unique identifier. 
-@property (readonly) id OrderId;
+@property (readonly) NSInteger OrderId;
 // The order's trigger price. 
-@property (readonly) id TriggerPrice;
+@property (readonly) double TriggerPrice;
 // The quantity of the product. 
-@property (readonly) id Quantity;
+@property (readonly) double Quantity;
 
 @end

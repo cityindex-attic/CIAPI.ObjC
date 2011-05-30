@@ -8,15 +8,20 @@
 #import <Foundation/Foundation.h>
 
 #import "CIAPIObjectResponse.h"
+#import "CIAPIObjectListResponse.h"
 
-@interface CIAPIIfDone : NSObject {
-  id Stop;
-  id Limit;
+#import "CIAPIStopLimitOrder.h"
+#import "CIAPIStopLimitOrder.h"
+
+
+@interface CIAPIIfDone : CIAPIObjectResponse {
+  CIAPIStopLimitOrder* Stop;
+  CIAPIStopLimitOrder* Limit;
 }
 
 // The price at which the stop order will be filled 
-@property (readonly) id Stop;
+@property (readonly) CIAPIStopLimitOrder* Stop;
 // The price at which the limit order will be filled 
-@property (readonly) id Limit;
+@property (readonly) CIAPIStopLimitOrder* Limit;
 
 @end

@@ -8,63 +8,66 @@
 #import <Foundation/Foundation.h>
 
 #import "CIAPIObjectResponse.h"
+#import "CIAPIObjectListResponse.h"
 
-@interface CIAPIOrder : NSObject {
-  id OrderId;
-  id MarketId;
-  id ClientAccountId;
-  id TradingAccountId;
-  id CurrencyId;
-  id CurrencyISO;
-  id Direction;
-  id AutoRollover;
-  id ExecutionPrice;
-  id LastChangedTime;
-  id OpenPrice;
-  id OriginalLastChangedDateTime;
-  id OriginalQuantity;
-  id PositionMethodId;
-  id Quantity;
-  id Type;
-  id Status;
-  id ReasonId;
+
+
+@interface CIAPIOrder : CIAPIObjectResponse {
+  NSInteger OrderId;
+  NSInteger MarketId;
+  NSInteger ClientAccountId;
+  NSInteger TradingAccountId;
+  NSInteger CurrencyId;
+  NSString* CurrencyISO;
+  NSInteger Direction;
+  BOOL AutoRollover;
+  double ExecutionPrice;
+  NSString* LastChangedTime;
+  double OpenPrice;
+  NSString* OriginalLastChangedDateTime;
+  double OriginalQuantity;
+  NSInteger PositionMethodId;
+  double Quantity;
+  NSString* Type;
+  NSString* Status;
+  NSInteger ReasonId;
 }
 
 // Order id 
-@property (readonly) id OrderId;
+@property (readonly) NSInteger OrderId;
 // Market id. 
-@property (readonly) id MarketId;
+@property (readonly) NSInteger MarketId;
 // Client account id. 
-@property (readonly) id ClientAccountId;
+@property (readonly) NSInteger ClientAccountId;
 // Trading account id. 
-@property (readonly) id TradingAccountId;
+@property (readonly) NSInteger TradingAccountId;
 // Trade currency id. 
-@property (readonly) id CurrencyId;
+@property (readonly) NSInteger CurrencyId;
 // Trade currency ISO code. 
-@property (readonly) id CurrencyISO;
+@property (readonly) NSString* CurrencyISO;
 // direction of the order. 
-@property (readonly) id Direction;
+@property (readonly) NSInteger Direction;
 // Does the order automatically roll over. 
-@property (readonly) id AutoRollover;
+@property (readonly) BOOL AutoRollover;
 // the price the order was executed at. 
-@property (readonly) id ExecutionPrice;
+@property (readonly) double ExecutionPrice;
 // The date time that the order was last changed. Always expressed in UTC. 
-@property (readonly) id LastChangedTime;
+@property (readonly) NSString* LastChangedTime;
 // the open price of the order. 
-@property (readonly) id OpenPrice;
+@property (readonly) double OpenPrice;
 // The date of the Order. Always expressed in UTC 
-@property (readonly) id OriginalLastChangedDateTime;
+@property (readonly) NSString* OriginalLastChangedDateTime;
 // The orders original quantity, before any part / full closures. 
-@property (readonly) id OriginalQuantity;
+@property (readonly) double OriginalQuantity;
 // The position method of the order. 
-@property (readonly) id PositionMethodId;
+@property (readonly) NSInteger PositionMethodId;
 // The current quantity of the order. 
-@property (readonly) id Quantity;
+@property (readonly) double Quantity;
 // the type of the order (1 = Trade / 2 = Stop / 3 = Limit) 
-@property (readonly) id Type;
+@property (readonly) NSString* Type;
 // The order status id. 
-@property (readonly) id Status;
+@property (readonly) NSString* Status;
 // the order status reason is. 
-@property (readonly) id ReasonId;
+@property (readonly) NSInteger ReasonId;
 
 @end

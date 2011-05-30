@@ -7,11 +7,14 @@
 
 #import "CIAPIClientAccountWatchlistItem.h"
 
+
+
 @implementation CIAPIClientAccountWatchlistItem 
 
 @synthesize WatchlistId;
 @synthesize MarketId;
 @synthesize DisplayOrder;
+
 
 @end
 
