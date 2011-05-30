@@ -7,7 +7,7 @@
 //
 
 #import "CIAPIObjectRequest.h"
-
+#import "ObjectPropertiesDictionaryMapper.h"
 
 
 @implementation CIAPIObjectRequest
@@ -20,8 +20,7 @@
 
 - (NSDictionary*)propertiesForRequest
 {
-    assert(FALSE);
-    return nil;
+    return [ObjectPropertiesDictionaryMapper objectPropertiesToDictionary:self];
 }
 
 - (NSString*)urlTemplate

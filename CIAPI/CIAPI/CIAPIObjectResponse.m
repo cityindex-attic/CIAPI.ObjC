@@ -8,13 +8,27 @@
 
 #import "CIAPIObjectResponse.h"
 
+#import "ObjectPropertiesDictionaryMapper.h"
+
 
 @implementation CIAPIObjectResponse
 
 - (BOOL)setupFromDictionary:(NSDictionary*)dictionary error:(NSError**)error
 {
-    assert(FALSE);
-    return FALSE;
+    @try
+    {
+        [ObjectPropertiesDictionaryMapper dictionaryToObjectProperties:dictionary object:self];
+    }
+    @catch (NSException *exception)
+    {
+        // TODO: Real error handling
+        if (error)
+            *error = [NSError errorWithDomain:@"Cannot decode" code:0 userInfo:[NSDictionary dictionaryWithObject:exception forKey:@"exception"]];
+        
+        return FALSE;
+    }
+    
+    return TRUE;
 }
 
 @end
