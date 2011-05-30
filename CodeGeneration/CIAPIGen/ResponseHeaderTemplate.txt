@@ -1,8 +1,40 @@
 //
-//  CIAPI<% code.write(objName) %>Response.h
+//  <% code.write(apiName(objName)); %>.h
 //  CIAPI
 //
 //  Copyright 2011 Adam Wright/CityIndex. All rights reserved.
 //
 
-<% fileName = "CIAPI" + apiName(objName) + "Response.h" %>
+#import <Foundation/Foundation.h>
+
+#import "CIAPIObjectResponse.h"
+#import "CIAPIObjectListResponse.h"
+
+<%
+var typeNamesForProperties = {};
+for (property in obj.properties) {
+  var typeName = obj.properties[property].type;
+  if (typeName == null) {
+    typeName = apiName(obj.properties[property]["$ref"]);
+%>
+#import "<% code.write(typeName)%>.h"
+<%
+  }
+
+  typeNamesForProperties[property] = schemaTypeToObjCType(typeName);
+}%>
+
+
+@interface <% code.write(apiName(objName)) %> : <% code.write(responseSuperclass(cleanName(objName))) %> {
+<% for (property in obj.properties) { %>
+  <% code.write(typeNamesForProperties[property]) %> <% code.write(property) %>;
+<% } %>
+}
+
+<% for (property in obj.properties) { %>
+// <% code.write(obj.properties[property].description) %> 
+@property (readonly) <% code.write(typeNamesForProperties[property]) %> <% code.write(property) %>;
+<% } %>
+
+@end
+<% fileName = apiName(objName) + ".h"; %>

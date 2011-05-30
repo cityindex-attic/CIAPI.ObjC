@@ -407,7 +407,7 @@
       },
       "Price": {
         "type": "string",
-        "description": "The price at which the order is to be filled"
+        "description": "The price at which the order was filled"
       },
       "TradingAccountId": {
         "type": "integer",
@@ -520,7 +520,11 @@
       },
       "LastChangedDateTimeUtc": {
         "type": "string",
-        "description": "The last time that the order changed. Note - Does not include things such as the current market price."
+        "description": "The last time that the order changed."
+      },
+      "CreatedDateTimeUtc": {
+        "type": "string",
+        "description": "The creation date time of the order."
       }
     }
   },
@@ -997,6 +1001,17 @@
       }
     ]
   },
+  "ApiSaveWatchlistRequestDTO": {
+    "id": "ApiSaveWatchlistRequestDTO",
+    "type": "object",
+    "description": "request to save a watchlist.",
+    "properties": {
+      "Watchlist": {
+        "$ref": "#.ApiClientAccountWatchlistDTO",
+        "description": "The watchlist to save. This will update an existing watchlist; or when the watchlistId is omitted or 0 is supplied, will create a new watchlist."
+      }
+    }
+  },
   "CancelOrderRequestDTO": {
     "id": "CancelOrderRequestDTO",
     "type": "object",
@@ -1294,6 +1309,12 @@
         "description": "List of lookup entities from the database"
       }
     }
+  },
+  "ApiSaveWatchlistResponseDTO": {
+    "id": "ApiSaveWatchlistResponseDTO",
+    "type": "object",
+    "description": "",
+    "properties": {}
   },
   "GetMarketInformationResponseDTO": {
     "id": "GetMarketInformationResponseDTO",

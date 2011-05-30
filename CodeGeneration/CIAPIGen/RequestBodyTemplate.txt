@@ -6,12 +6,55 @@
 //
 
 #import "CIAPI<% code.write(objName) %>Request.h"
-#import "<% code.write(apiName(obj.returns["$ref"])) %>.h"
 
-@implementation CIAPIGetClientAndTradingAccountRequest
+<%
+  var arrayParamsClasses = {}
+  var arrayParamsClassesCount = 0;
+  // Handle the array parameter type hinting
+  for (parameter in obj.parameters)
+  {
+    if (obj.parameters[parameter].type == "array")
+    {
+      var typeName = obj.parameters[parameter].items.type;
+      if (typeName == null)
+        typeName = apiName(obj.parameters[parameter].items["$ref"]);
+
+      arrayType = schemaTypeToObjCClassName(typeName);
+      arrayParamsClasses[obj.parameters[parameter].name] = arrayType;
+      arrayParamsClassesCount++;
+
+      if (arrayType.substring(0, 5) == "CIAPI")
+      {
+%>
+#import "<% code.write(arrayType) %>.h"
+<%
+      }
+    }
+  }
+%>
+<% if (apiName(obj.returns["$ref"]).substring(0, 2) != "NS") { %>
+#import "<% code.write(apiName(obj.returns["$ref"])) %>.h"
+<% } %>
+
+@implementation <% code.write(apiName(objName)) %>Request
 
 <% for (parameter in obj.parameters) { %>
-@synthesize <% code.write(obj.parameters[parameter].name) %>;
+@synthesize <% code.write(safeNameFor(obj.parameters[parameter].name)) %>;
+<% } %>
+
+<% if (arrayParamsClassesCount > 0) { %>
+- (Class)propertyTypeHintForName:(NSString*)name
+{
+<%
+  for (arrayParam in arrayParamsClasses)
+  {
+%>
+  if ([name isEqualToString:@"<% code.write(arrayParam) %>"]) return [<% code.write(arrayParamsClasses[arrayParam]) %> class];
+<%
+  }
+%>
+  return nil;
+}
 <% } %>
 
 - (enum CIAPIRequestType)requestType
@@ -19,14 +62,9 @@
     return CIAPIRequest<% code.write(obj.transport) %>;
 }
 
-- (NSDictionary*)propertiesForRequest
-{
-    return [NSDictionary dictionaryWithObjects: <% for (parameter in obj.parameters) { %> @"<% code.write(obj.parameters[parameter].name) %>", <% code.write(obj.parameters[parameter].name) %>, <% } %>nil];
-}
-
 - (NSString*)urlTemplate
 {
-    return @"<% code.write(obj.target + obj.uriTemplate) %>";
+    return @"<% code.write(obj.target + obj.uriTemplate.replace(/\{/g, "(").replace(/}/g, ")")) %>";
 }
 
 - (Class)responseClass

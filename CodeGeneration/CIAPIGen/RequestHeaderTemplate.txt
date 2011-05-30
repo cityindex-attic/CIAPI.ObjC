@@ -5,20 +5,37 @@
 //  Copyright 2011 Adam Wright/CityIndex. All rights reserved.
 //
 
+
 #import <Foundation/Foundation.h>
 
 #import "CIAPIObjectRequest.h"
 
+<%
+
+var typeNamesForParameters = {};
+
+for (parameter in obj.parameters) {
+  var typeName = obj.parameters[parameter].type;
+  if (typeName == null) {
+    typeName = apiName(obj.parameters[parameter]["$ref"]);
+%>
+#import "<% code.write(typeName)%>.h"
+<%
+  }
+
+  typeNamesForParameters[parameter] = schemaTypeToObjCType(typeName);
+}%>
+
 <% code.write(lineSplit(77, "// ", obj.description)) %> 
 @interface CIAPI<% code.write(objName) %>Request : CIAPIObjectRequest {
 <% for (parameter in obj.parameters) { %>
-  id <% code.write(obj.parameters[parameter].name) %>;
+ <% code.write(typeNamesForParameters[parameter]) %> <% code.write(safeNameFor(obj.parameters[parameter].name)) %>;
 <% } %>
 }
 
 <% for (parameter in obj.parameters) { %>
-  // <% code.write(obj.parameters[parameter].description) %> 
-  @property (retain) id <% code.write(obj.parameters[parameter].name) %>;
+// <% code.write(obj.parameters[parameter].description.replace(/\n/g, "")) %> 
+@property <% if (isObjectType(typeNamesForParameters[parameter])) {%>(retain)<% } %> <% code.write(typeNamesForParameters[parameter]) %> <% code.write(safeNameFor(obj.parameters[parameter].name)) %>;
 <% } %>
 
 @end

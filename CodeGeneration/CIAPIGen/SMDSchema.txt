@@ -793,27 +793,6 @@
         }
       ]
     },
-    "GetTermsAndConditions": {
-      "description": "What are the Users Terms and Conditions.",
-      "target": "useraccount",
-      "uriTemplate": "/UserAccount/{clientaccount}/TermsAndConditions",
-      "contentType": "application/json",
-      "responseContentType": "application/json",
-      "transport": "GET",
-      "envelope": "URL",
-      "returns": {
-        "$ref": "#.String"
-      },
-      "group": "AccountInformation",
-      "throttleScope": "data",
-      "parameters": [
-        {
-          "type": "string",
-          "name": "clientaccount",
-          "description": "What are the Users Terms and Conditions."
-        }
-      ]
-    },
     "GetClientAndTradingAccount": {
       "description": "Returns the Users ClientAccountId and a list of their TradingAccounts. There are no parameters for this call.",
       "target": "useraccount",

@@ -1,8 +1,60 @@
 //
-//  CIAPI<% code.write(objName) %>Response.m
+//  <% code.write(apiName(objName)) %>.m
 //  CIAPI
 //
 //  Copyright 2011 Adam Wright/CityIndex. All rights reserved.
 //
 
-<% fileName = "CIAPI" + apiName(objName) + "Response.h" %>
+#import "<% code.write(apiName(objName)) %>.h"
+
+<%
+  var arrayPropertiesClasses = {}
+  var arrayPropertiesClassesCount = 0;
+  // Handle the array parameter type hinting
+  for (property in obj.properties)
+  {
+    if (obj.properties[property].type == "array")
+    {
+      var typeName = obj.properties[property].items.type;
+      if (typeName == null)
+        typeName = apiName(obj.properties[property].items["$ref"]);
+
+      arrayType = schemaTypeToObjCClassName(typeName);
+      arrayPropertiesClasses[property] = arrayType;
+      arrayPropertiesClassesCount++;
+
+      if (arrayType.substring(0, 5) == "CIAPI")
+      {
+%>
+#import "<% code.write(arrayType) %>.h"
+<%
+      }
+    }
+  }
+%>
+
+
+@implementation <% code.write(apiName(objName)) %> 
+
+<% for (property in obj.properties) { %>
+@synthesize <% code.write(property) %>;
+<% } %>
+
+<% if (arrayPropertiesClassesCount > 0) {%>
+- (Class)propertyTypeHintForName:(NSString*)name
+{
+<%
+  for (arrayParam in arrayPropertiesClasses)
+  {
+%>
+  if ([name isEqualToString:@"<% code.write(arrayParam) %>"]) return [<% code.write(arrayPropertiesClasses[arrayParam]) %> class];
+<%
+  }
+%>
+  return nil;
+}
+<% } %>
+
+@end
+
+<% fileName = apiName(objName) + ".m" %>

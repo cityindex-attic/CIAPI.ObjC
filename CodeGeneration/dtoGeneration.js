@@ -26,10 +26,18 @@ exports.processSingleTemplate = function(templatePath, objName, obj,
     this.Global.objName = objName;
     this.Global.obj = obj;
     this.Global.code = writeStream;
+    this.Global.console = console;
 
     console.log("Templating object " + objName + " with template " + templatePath); 
 
-    vm.runInNewContext(templateScript, this.Global, templatePath);
+    try
+    {
+      vm.runInNewContext(templateScript, this.Global, templatePath);
+    }
+    catch (e)
+    {
+      console.log("Templating script failed: " + e);
+    }
 
     writeStream.end();
     writeStream.destroySoon();
@@ -52,12 +60,14 @@ exports.processSingleTemplate = function(templatePath, objName, obj,
   }
 };
 
-exports.templateObjects = function(objects, templates, targetDir)
+exports.templateObjects = function(objects, templates, targetDir, filter)
 {
   for (obj in objects)
   {
     for (template in templates)
     {
+      if (filter && !filter(obj, objects[obj]))
+        continue;
       this.processSingleTemplate(templates[template], obj, objects[obj],
                                  targetDir);
     }
