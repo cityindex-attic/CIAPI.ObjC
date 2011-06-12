@@ -157,6 +157,16 @@
     }
 }
 
+- (BOOL)canCurrentlyDequeueObject
+{
+    @synchronized (recentRequestTimes)
+    {
+        [self removeStaleRecentRequestTimes];
+        
+        return ([recentRequestTimes count] < throttleLimit);
+    }
+}
+
 /*
  * Private methods
  */

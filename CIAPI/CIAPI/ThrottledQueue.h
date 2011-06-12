@@ -46,6 +46,8 @@
 
 - (NSUInteger)count;
 
+- (BOOL)canCurrentlyDequeueObject;
+
 @end
 
 // Private methods
