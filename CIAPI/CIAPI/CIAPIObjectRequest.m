@@ -29,6 +29,11 @@
     return nil;
 }
 
+- (NSString*)throttleScope
+{
+    return @"global";
+}
+
 - (Class)responseClass
 {
     assert(FALSE);

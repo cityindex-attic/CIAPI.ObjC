@@ -26,6 +26,7 @@ enum CIAPIRequestType
 - (enum CIAPIRequestType)requestType;
 - (NSDictionary*)propertiesForRequest;
 - (NSString*)urlTemplate;
+- (NSString*)throttleScope;
 - (Class)responseClass;
 
 @end
