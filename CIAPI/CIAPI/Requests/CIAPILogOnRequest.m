@@ -25,6 +25,11 @@
     return @"session/";
 }
 
+- (NSString*)throttleScope
+{
+    return @"data";
+}
+
 - (Class)responseClass
 {
     return [CIAPILogOnResponse class];

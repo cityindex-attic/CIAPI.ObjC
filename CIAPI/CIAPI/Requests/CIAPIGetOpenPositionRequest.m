@@ -21,7 +21,7 @@
 
 - (NSString*)urlTemplate
 {
-    return @"order/(orderId)/openposition";
+    return @"order/{orderId}/openposition";
 }
 
 - (Class)responseClass

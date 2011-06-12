@@ -21,7 +21,7 @@
 
 - (NSString*)urlTemplate
 {
-    return @"order/(orderId)/activestoplimitorder";
+    return @"order/{orderId}/activestoplimitorder";
 }
 
 - (Class)responseClass

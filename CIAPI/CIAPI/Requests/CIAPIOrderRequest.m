@@ -45,6 +45,11 @@
     return @"order/newstoplimitorder";
 }
 
+- (NSString*)throttleScope
+{
+    return @"trading";
+}
+
 - (Class)responseClass
 {
     return [CIAPITradeOrderResponse class];

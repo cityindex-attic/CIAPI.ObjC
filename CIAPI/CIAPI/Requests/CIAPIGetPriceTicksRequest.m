@@ -22,7 +22,12 @@
 
 - (NSString*)urlTemplate
 {
-    return @"market/(marketId)/tickhistory?priceticks=(priceTicks)";
+    return @"market/{marketId}/tickhistory?priceticks={priceTicks}";
+}
+
+- (NSString*)throttleScope
+{
+    return @"data";
 }
 
 - (Class)responseClass

@@ -22,7 +22,12 @@
 
 - (NSString*)urlTemplate
 {
-    return @"session/deleteSession?userName=(userName)&session=(session)";
+    return @"session/deleteSession?userName={userName}&session={session}";
+}
+
+- (NSString*)throttleScope
+{
+    return @"data";
 }
 
 - (Class)responseClass

@@ -21,7 +21,7 @@
 
 - (NSString*)urlTemplate
 {
-    return @"order/order/activestoplimitorders?TradingAccountId=(tradingAccountId)";
+    return @"order/order/activestoplimitorders?TradingAccountId={tradingAccountId}";
 }
 
 - (Class)responseClass

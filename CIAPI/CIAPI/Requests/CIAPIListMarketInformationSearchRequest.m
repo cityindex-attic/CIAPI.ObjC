@@ -27,7 +27,12 @@
 
 - (NSString*)urlTemplate
 {
-    return @"market/market/informationsearch?SearchByMarketCode=(searchByMarketCode)&SearchByMarketName=(searchByMarketName)&SpreadProductType=(spreadProductType)&CfdProductType=(cfdProductType)&BinaryProductType=(binaryProductType)&Query=(query)&MaxResults=(maxResults)";
+    return @"market/market/informationsearch?SearchByMarketCode={searchByMarketCode}&SearchByMarketName={searchByMarketName}&SpreadProductType={spreadProductType}&CfdProductType={cfdProductType}&BinaryProductType={binaryProductType}&Query={query}&MaxResults={maxResults}";
+}
+
+- (NSString*)throttleScope
+{
+    return @"data";
 }
 
 - (Class)responseClass

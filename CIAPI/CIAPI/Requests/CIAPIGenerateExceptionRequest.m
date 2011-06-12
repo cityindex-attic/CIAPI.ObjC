@@ -21,7 +21,12 @@
 
 - (NSString*)urlTemplate
 {
-    return @"errors?errorCode=(errorCode)";
+    return @"errors?errorCode={errorCode}";
+}
+
+- (NSString*)throttleScope
+{
+    return @"data";
 }
 
 - (Class)responseClass

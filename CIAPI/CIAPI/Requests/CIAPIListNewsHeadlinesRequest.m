@@ -22,7 +22,12 @@
 
 - (NSString*)urlTemplate
 {
-    return @"news?Category=(category)&MaxResults=(maxResults)";
+    return @"news?Category={category}&MaxResults={maxResults}";
+}
+
+- (NSString*)throttleScope
+{
+    return @"data";
 }
 
 - (Class)responseClass

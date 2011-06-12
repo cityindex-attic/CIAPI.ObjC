@@ -24,7 +24,12 @@
 
 - (NSString*)urlTemplate
 {
-    return @"market/(marketId)/barhistory?interval=(interval)&span=(span)&pricebars=(priceBars)";
+    return @"market/{marketId}/barhistory?interval={interval}&span={span}&pricebars={priceBars}";
+}
+
+- (NSString*)throttleScope
+{
+    return @"data";
 }
 
 - (Class)responseClass

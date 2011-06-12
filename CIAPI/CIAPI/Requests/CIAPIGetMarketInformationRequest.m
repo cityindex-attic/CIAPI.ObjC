@@ -21,7 +21,12 @@
 
 - (NSString*)urlTemplate
 {
-    return @"market/(marketId)/information";
+    return @"market/{marketId}/information";
+}
+
+- (NSString*)throttleScope
+{
+    return @"data";
 }
 
 - (Class)responseClass

@@ -21,7 +21,12 @@
 
 - (NSString*)urlTemplate
 {
-    return @"news/(storyId)";
+    return @"news/{storyId}";
+}
+
+- (NSString*)throttleScope
+{
+    return @"data";
 }
 
 - (Class)responseClass

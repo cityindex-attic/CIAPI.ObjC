@@ -20,7 +20,12 @@
 
 - (NSString*)urlTemplate
 {
-    return @"useraccount/UserAccount/(id)/ChartingEnabled";
+    return @"useraccount/UserAccount/{id}/ChartingEnabled";
+}
+
+- (NSString*)throttleScope
+{
+    return @"data";
 }
 
 - (Class)responseClass

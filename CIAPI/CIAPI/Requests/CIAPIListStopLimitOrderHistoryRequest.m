@@ -22,7 +22,7 @@
 
 - (NSString*)urlTemplate
 {
-    return @"order/order/stoplimitorderhistory?TradingAccountId=(tradingAccountId)&MaxResults=(maxResults)";
+    return @"order/order/stoplimitorderhistory?TradingAccountId={tradingAccountId}&MaxResults={maxResults}";
 }
 
 - (Class)responseClass

@@ -24,7 +24,12 @@
 
 - (NSString*)urlTemplate
 {
-    return @"spread/markets?MarketName=(searchByMarketName)&MarketCode=(searchByMarketCode)&ClientAccountId=(clientAccountId)&MaxResults=(maxResults)";
+    return @"spread/markets?MarketName={searchByMarketName}&MarketCode={searchByMarketCode}&ClientAccountId={clientAccountId}&MaxResults={maxResults}";
+}
+
+- (NSString*)throttleScope
+{
+    return @"data";
 }
 
 - (Class)responseClass
