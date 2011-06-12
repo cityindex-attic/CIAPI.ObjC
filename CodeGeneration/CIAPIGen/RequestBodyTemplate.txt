@@ -64,9 +64,16 @@
 
 - (NSString*)urlTemplate
 {
-    return @"<% code.write(obj.target + obj.uriTemplate.replace(/\{/g, "(").replace(/}/g, ")")) %>";
+    return @"<% code.write(obj.target + obj.uriTemplate) %>";
 }
 
+<% if (obj.throttleScope) { %>
+- (NSString*)throttleScope
+{
+    return @"<% code.write(obj.throttleScope); %>";
+}
+
+<% } %>
 - (Class)responseClass
 {
     return [<% code.write(apiName(obj.returns["$ref"])) %> class];
