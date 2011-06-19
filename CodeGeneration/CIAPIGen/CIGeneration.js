@@ -1,3 +1,4 @@
+var fs = require("fs");
 var dtoGen = require("../dtoGeneration.js");
 
 dtoGen.Global.cleanName = function(name)
@@ -113,3 +114,45 @@ dtoGen.templateObjects(dtoGen.Global.Schemata.DTO,
                        {
                          return !/Request$/.test(dtoGen.Global.apiName(objName))
                        });
+
+// Output the set of header files we generated into a single file
+var headerStream = fs.createWriteStream("../../CIAPI/CIAPI/CIAPIRequestsAndResponses.h");
+
+if (headerStream)
+{
+  console.log("Generating composite header file includer");
+
+  headerStream.write("// Generated header to include all other generated " +
+                     " request and response headers\n\n");
+  for (fileIndex in dtoGen.Global.generatedFiles)
+  {
+    var fileName = dtoGen.Global.generatedFiles[fileIndex];
+    if (fileName.match(/.*\.h$/))
+    {
+      // Determine where the file lives
+      // HACKHACK
+      
+      var fileStat = null;
+      
+      try
+      {
+        fileStat = fs.statSync("../../CIAPI/CIAPI/Requests/" + fileName);
+      }
+      catch (e)
+      {
+      }
+
+      if (fileStat && fileStat.isFile())
+        headerStream.write("#import \"Requests/" + fileName + "\"\n");
+      else
+        headerStream.write("#import \"Responses/" + fileName + "\"\n");
+    }
+  }
+
+  headerStream.end();
+  headerStream.destroySoon();
+}
+else
+{
+  console.log("Could not create composite header file");
+}

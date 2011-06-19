@@ -2,6 +2,8 @@ var fs = require("fs");
 var vm = require("vm");
 
 exports.Global = { "Schemata" : {} };
+exports.Global.generatedFiles = [];
+
 exports.Global.lineSplit = function(len, prefix, source)
 {
   allSource = source;
@@ -46,6 +48,8 @@ exports.processSingleTemplate = function(templatePath, objName, obj,
       fs.renameSync("/tmp/templateTmp", targetDir + this.Global.fileName)
     else
       throw "Template did not provide a file name for the result"
+
+    this.Global.generatedFiles.push(this.Global.fileName);
 
     this.Global.objName = null;
     this.Global.obj = null;
