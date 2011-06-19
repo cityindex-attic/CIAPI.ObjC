@@ -8,6 +8,7 @@
 
 #import "CIAPIConfigConstants.h"
 
+#import "CIAPIRequestsAndResponses.h"
 #import "CIAPIAuthenticator.h"
 #import "CIAPIClient.h"
 
