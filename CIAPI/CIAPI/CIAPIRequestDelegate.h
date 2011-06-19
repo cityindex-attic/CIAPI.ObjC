@@ -8,10 +8,12 @@
 
 #import <Foundation/Foundation.h>
 
+@class CIAPIRequestToken;
+
 @protocol CIAPIRequestDelegate <NSObject>
 @optional
 
-- (void)requestSucceeded:(id)request result:(id)result;
-- (void)requestFailed:(id)request error:(NSError**)error;
+- (void)requestSucceeded:(CIAPIRequestToken *)requestToken result:(id)result;
+- (void)requestFailed:(CIAPIRequestToken *)requestToken error:(NSError*)error;
 
 @end
