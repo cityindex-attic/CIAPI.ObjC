@@ -11,7 +11,8 @@
 #import "CIAPIClient.h"
 #import "CIAPIObjectResponse.h"
 
-#import "RestKit/Support/RKJSONParser.h"
+#import "RestKit/RestKit.h"
+//#import "RestKit/Support/RKJSONParser.h"
 
 @implementation CIAPIClient
 
@@ -28,8 +29,12 @@
         sessionID = [_sessionID retain];
         
         underlyingClient = [[RKClient clientWithBaseURL:CIAPI_BASE_URI] retain];
-        [underlyingClient.HTTPHeaders setValue:sessionID forKey:@"Session"];
-        [underlyingClient.HTTPHeaders setValue:username forKey:@"UserName"];
+        [((RKClient*)underlyingClient).HTTPHeaders setValue:sessionID forKey:@"Session"];
+        [((RKClient*)underlyingClient).HTTPHeaders setValue:username forKey:@"UserName"];
+        
+        requestDispatcher = [[RequestDispatcher alloc] init];
+        
+        [requestDispatcher startDispatcher];
     }
     
     return self;
@@ -37,6 +42,9 @@
 
 - (void)dealloc
 {
+    [requestDispatcher stopDispatcher];
+    
+    [requestDispatcher release];
     [underlyingClient release];
     [username release];
     [sessionID release];
@@ -48,25 +56,7 @@
 {
     assert(request != nil);
     
-    NSMutableDictionary *parameters = [NSMutableDictionary dictionaryWithDictionary:[request propertiesForRequest]];
-    // This call will mutable the parameters to consume the ones used in the URL. This covers POST requests that have URL parameters
-    NSString *url = [self buildURLFromTemplate:[request urlTemplate] parameters:parameters error:nil];
-    RKRequest *rkRequest = [underlyingClient requestWithResourcePath:url delegate:nil];
-    
-    if ([request requestType] == CIAPIRequestGET)
-    {
-        rkRequest.method = RKRequestMethodGET;
-    }
-    else if ([request requestType] == CIAPIRequestPOST)
-    {
-        rkRequest.method = RKRequestMethodPOST;
-        rkRequest.params = [RKJSONSerialization JSONSerializationWithObject:parameters];
-    }
-    else
-    {
-        assert(FALSE);
-    }
-    
+    RKRequest *rkRequest = [self buildRKRequestFromCIAPIRequest:request error:error];
     RKResponse *response = [rkRequest sendSynchronously];
     
     if ([response isOK])
@@ -88,49 +78,107 @@
     return nil;
 }
 
-- (CIAPIRequestToken*)makeRequest:(CIAPIObjectRequest*)request delegate:(id<CIAPIRequestDelegate>)delegate
+- (CIAPIRequestToken*)makeRequest:(CIAPIObjectRequest*)request delegate:(id<CIAPIRequestDelegate>)delegate error:(NSError**)error
 {
-    return nil;
+    CIAPIRequestToken *requestToken = [[CIAPIRequestToken alloc] initWithRequest:request delegate:delegate];
+    
+    RKRequest *rkRequest = [self buildRKRequestFromCIAPIRequest:request error:error];
+    
+    if (!rkRequest)
+        return nil;
+    
+    [requestToken setRKRequest:rkRequest];
+    
+    [requestDispatcher scheduleRequestToken:requestToken];
+    
+    return requestToken;
 }
 
-- (CIAPIRequestToken*)makeRequest:(CIAPIObjectRequest*)request block:(CIAPIRequestCallback)delegate
+- (CIAPIRequestToken*)makeRequest:(CIAPIObjectRequest*)request block:(CIAPIRequestCallback)callbackBlock error:(NSError**)error
 {
-    return nil;
+    CIAPIRequestToken *requestToken = [[CIAPIRequestToken alloc] initWithRequest:request block:[callbackBlock retain]];
+    
+    RKRequest *rkRequest = [self buildRKRequestFromCIAPIRequest:request error:error];
+    
+    if (!rkRequest)
+        return nil;
+    
+    [requestToken setRKRequest:rkRequest];
+    
+    [requestDispatcher scheduleRequestToken:requestToken];
+    
+    return requestToken;
 }
 
 - (enum CIAPIRequestCancellationResult)cancelRequest:(CIAPIRequestToken*)token
 {
+    [requestDispatcher unscheduleRequestToken:token];
+    
     return 0;
 }
 
 - (BOOL)subscribeToStreamEndPoint:(NSString*)endPoint channel:(NSString*)channel delegate:(id<CIAPIStreamDelegate>)delegate
 {
+    NSAssert(FALSE, @"Streams are not yet implemented, pending CI API changes");
+    
     return NO;
 }
 
 - (BOOL)subscribeToStreamEndPoint:(NSString*)endPoint channel:(NSString*)channel block:(CIAPIStreamCallback)block
 {
+    NSAssert(FALSE, @"Streams are not yet implemented, pending CI API changes");
+    
     return NO;
 }
 
 - (BOOL)unsubscribeFromStreamEndPoint:(NSString*)endPoint channel:(NSString*)channel
 {
+    NSAssert(FALSE, @"Streams are not yet implemented, pending CI API changes");
+    
     return NO;
 }
 
 - (BOOL)unsubscribeFromStreamEndPoint:(NSString*)endPoint channel:(NSString*)channel delegate:(id<CIAPIStreamDelegate>)delegate
 {
+    NSAssert(FALSE, @"Streams are not yet implemented, pending CI API changes");
+    
     return NO;
 }
 
 - (BOOL)unsubscribeFromStreamEndPoint:(NSString*)endPoint channel:(NSString*)channel block:(CIAPIStreamCallback)block
 {
+    NSAssert(FALSE, @"Streams are not yet implemented, pending CI API changes");
+    
     return NO;
 }
 
 /*
  * Private members
  */
+
+- (RKRequest*)buildRKRequestFromCIAPIRequest:(CIAPIObjectRequest*)ciapiRequest error:(NSError**)error
+{
+    NSMutableDictionary *parameters = [NSMutableDictionary dictionaryWithDictionary:[ciapiRequest propertiesForRequest]];
+    // This call will mutable the parameters to consume the ones used in the URL. This covers POST requests that have URL parameters
+    NSString *url = [self buildURLFromTemplate:[ciapiRequest urlTemplate] parameters:parameters error:error];
+    RKRequest *rkRequest = [underlyingClient requestWithResourcePath:url delegate:nil];
+    
+    if ([ciapiRequest requestType] == CIAPIRequestGET)
+    {
+        rkRequest.method = RKRequestMethodGET;
+    }
+    else if ([ciapiRequest requestType] == CIAPIRequestPOST)
+    {
+        rkRequest.method = RKRequestMethodPOST;
+        rkRequest.params = [RKJSONSerialization JSONSerializationWithObject:parameters];
+    }
+    else
+    {
+        assert(FALSE);
+    }
+    
+    return rkRequest;
+}
 
 // TODO: We don't really know which URL parameters are optional, so we require them all
 - (NSString*)buildURLFromTemplate:(NSString*)urlTemplate parameters:(NSMutableDictionary*)parameters error:(NSError**)error

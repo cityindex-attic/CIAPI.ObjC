@@ -13,7 +13,7 @@
 #import "CIAPIRequestDelegate.h"
 #import "CIAPIStreamDelegate.h"
 
-#import "RestKit/RestKit.h"
+#import "RequestDispatcher.h"
 
 enum CIAPIRequestCancellationResult
 {
@@ -28,8 +28,10 @@ typedef void(^CIAPIStreamCallback)(NSString *endPoint, NSString *channel, id mes
     NSString *username;
     NSString *sessionID;
     
-    RKClient *underlyingClient;
+    id underlyingClient;
     NSMutableDictionary *tokenToRequestMappings;
+    
+    RequestDispatcher *requestDispatcher;
 }
 
 @property (readonly) NSString *username;
@@ -38,8 +40,8 @@ typedef void(^CIAPIStreamCallback)(NSString *endPoint, NSString *channel, id mes
 - (CIAPIClient*)initWithUsername:(NSString*)_username sessionID:(NSString*)_sessionID;
 
 - (id)makeRequest:(CIAPIObjectRequest*)request error:(NSError**)error;
-- (CIAPIRequestToken*)makeRequest:(CIAPIObjectRequest*)request delegate:(id<CIAPIRequestDelegate>)delegate;
-- (CIAPIRequestToken*)makeRequest:(CIAPIObjectRequest*)request block:(CIAPIRequestCallback)delegate;
+- (CIAPIRequestToken*)makeRequest:(CIAPIObjectRequest*)request delegate:(id<CIAPIRequestDelegate>)delegate error:(NSError**)error;
+- (CIAPIRequestToken*)makeRequest:(CIAPIObjectRequest*)request block:(CIAPIRequestCallback)callbackBlock error:(NSError**)error;
 
 - (enum CIAPIRequestCancellationResult)cancelRequest:(CIAPIRequestToken*)token;
 
@@ -55,6 +57,7 @@ typedef void(^CIAPIStreamCallback)(NSString *endPoint, NSString *channel, id mes
 // Private interface members
 @interface CIAPIClient ()
 
+- (id)buildRKRequestFromCIAPIRequest:(CIAPIObjectRequest*)ciapiRequest error:(NSError**)error;
 - (NSString*)buildURLFromTemplate:(NSString*)urlTemplate parameters:(NSMutableDictionary*)parameters error:(NSError**)error;
 
 @end
