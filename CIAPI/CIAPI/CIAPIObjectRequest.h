@@ -9,9 +9,10 @@
 #import <Foundation/Foundation.h>
 
 #import "CIAPIRequestDelegate.h"
-#import "RestKit/RestKit.h"
 
-typedef void(^CIAPIRequestCallback)(id request, id response, NSError *error);
+@class CIAPIRequestToken;
+
+typedef void(^CIAPIRequestCallback)(CIAPIRequestToken *request, id response, NSError *error);
 
 enum CIAPIRequestType
 {
