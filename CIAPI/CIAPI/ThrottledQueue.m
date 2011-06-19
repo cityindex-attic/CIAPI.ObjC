@@ -91,6 +91,20 @@
     [obj release];
 }
 
+- (BOOL)removeObject:(id)object
+{
+    @synchronized (underlyingQueue)
+    {
+        if ([underlyingQueue containsObject:object])
+        {
+            [underlyingQueue removeObject:object];
+            return YES;
+        }
+        
+        return NO;
+    }
+}
+
 - (id)dequeueObject
 {
     id obj;

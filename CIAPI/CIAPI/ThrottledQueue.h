@@ -53,6 +53,7 @@
 - (void)enqueueObject:(id)object;
 - (void)enqueueObject:(id)object withMinimumWaitTime:(NSTimeInterval)minimumWaitTime;
 
+- (BOOL)removeObject:(id)object;
 - (id)dequeueObject;
 - (id)dequeueObjectOrGiveWaitTime:(NSTimeInterval*)waitTime;
 
