@@ -11,6 +11,11 @@
 
 @implementation CIAPIRequestToken
 
+@synthesize attemptCount;
+@synthesize requestObject;
+
+@synthesize underlyingRequest;
+
 - (CIAPIRequestToken*)initWithRequest:(CIAPIObjectRequest*)objRequest delegate:(id<CIAPIRequestDelegate>)delegate
 {
     self = [super init];
