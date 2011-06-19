@@ -56,6 +56,11 @@
     {
         queue.delegate = self;
         [allQueues addObject:queue];
+        
+        // Fire the wait signal, as we might have an object waiting now
+        [enqueueWaitCondition lock];
+        [enqueueWaitCondition signal];
+        [enqueueWaitCondition unlock];
     }
 }
 
@@ -101,6 +106,7 @@
             if (waitTime < DBL_MAX)
             {
                 // If we know how long we'll have to wait for the next object, just wait
+                // TODO: In principle, if another queue is added in the background with an object available sooner than waitTime, this waits too long
                 [NSThread sleepForTimeInterval:waitTime];
             }
             else
