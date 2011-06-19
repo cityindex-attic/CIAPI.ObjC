@@ -51,3 +51,10 @@ typedef void(^CIAPIStreamCallback)(NSString *endPoint, NSString *channel, id mes
 - (BOOL)unsubscribeFromStreamEndPoint:(NSString*)endPoint channel:(NSString*)channel block:(CIAPIStreamCallback)block;
 
 @end
+
+// Private interface members
+@interface CIAPIClient ()
+
+- (NSString*)buildURLFromTemplate:(NSString*)urlTemplate parameters:(NSMutableDictionary*)parameters error:(NSError**)error;
+
+@end

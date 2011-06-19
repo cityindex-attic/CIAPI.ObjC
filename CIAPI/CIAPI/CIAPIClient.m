@@ -48,7 +48,9 @@
 {
     assert(request != nil);
     
-    NSString *url = RKMakePathWithObject([request urlTemplate], [request propertiesForRequest]);
+    NSMutableDictionary *parameters = [NSMutableDictionary dictionaryWithDictionary:[request propertiesForRequest]];
+    // This call will mutable the parameters to consume the ones used in the URL. This covers POST requests that have URL parameters
+    NSString *url = [self buildURLFromTemplate:[request urlTemplate] parameters:parameters error:nil];
     RKRequest *rkRequest = [underlyingClient requestWithResourcePath:url delegate:nil];
     
     if ([request requestType] == CIAPIRequestGET)
@@ -58,7 +60,7 @@
     else if ([request requestType] == CIAPIRequestPOST)
     {
         rkRequest.method = RKRequestMethodPOST;
-        rkRequest.params = [RKJSONSerialization JSONSerializationWithObject:[request propertiesForRequest]];
+        rkRequest.params = [RKJSONSerialization JSONSerializationWithObject:parameters];
     }
     else
     {
@@ -72,7 +74,7 @@
         id bodyObj = [response bodyAsJSON];
         NSLog(@"Succeeded request: Target URL was %@, body is %@", response.URL, bodyObj);
         
-        CIAPIObjectResponse *responseObj = [[[request responseClass] alloc] init];
+        CIAPIObjectResponse *responseObj = [[[[request responseClass] alloc] init] autorelease];
         [responseObj setupFromDictionary:bodyObj error:nil];
         
         return responseObj;
@@ -124,6 +126,52 @@
 - (BOOL)unsubscribeFromStreamEndPoint:(NSString*)endPoint channel:(NSString*)channel block:(CIAPIStreamCallback)block
 {
     return NO;
+}
+
+/*
+ * Private members
+ */
+
+// TODO: We don't really know which URL parameters are optional, so we require them all
+- (NSString*)buildURLFromTemplate:(NSString*)urlTemplate parameters:(NSMutableDictionary*)parameters error:(NSError**)error
+{
+    NSScanner *scanner = [NSScanner scannerWithString:urlTemplate];
+    NSMutableString *builtURL = [NSMutableString string];
+    
+    // Scan for pairs of { and }, which delimit replacement keys
+    // Remove them from the string, and replace them with the parameter. Then remove the parameter from the dictionary
+    NSString *token;
+
+    while (![scanner isAtEnd])
+    {
+        if ([scanner scanUpToString:@"{" intoString:&token])
+            [builtURL appendString:token];
+        
+        if ([scanner scanString:@"{" intoString:nil])
+        {
+            [scanner scanUpToString:@"}" intoString:&token];
+            
+            id paramValue = [parameters objectForKey:token];
+            [parameters removeObjectForKey:token];
+            
+            if (!paramValue)
+            {
+                if (error != NULL)
+                    *error = [NSError errorWithDomain:@"TODO" code:0 userInfo:nil];
+                return nil;
+            }
+            
+            [builtURL appendFormat:@"%@", paramValue];
+            
+            if (![scanner scanString:@"}" intoString:nil] && error)
+            {
+                *error = [NSError errorWithDomain:@"TODO" code:0 userInfo:nil];
+                return nil;
+            }
+        }
+    }
+    
+    return builtURL;
 }
 
 @end
