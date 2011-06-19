@@ -49,7 +49,7 @@
                                                  userInfo:nil];
                 }
                 
-                targetObjectFieldContents = [[targetPropertyClass alloc] init];
+                targetObjectFieldContents = [[[targetPropertyClass alloc] init] autorelease];
                 
                 if (targetObjectFieldContents == nil)
                 {
