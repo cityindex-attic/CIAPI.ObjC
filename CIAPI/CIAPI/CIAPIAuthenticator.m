@@ -50,11 +50,11 @@
     request = [self _buildRequestWithUsername:userName password:password];    
     RKResponse *response = [request sendSynchronously];
     
-    [self _setupClientOrError:response error:error];
+    BOOL result = [self _setupClientOrError:response error:error];
     
     [request release];
         
-    return TRUE;
+    return result;
 }
 
 - (void)authenticateWithUserName:(NSString*)userName password:(NSString*)password
@@ -110,11 +110,11 @@
     loRequest.Password = password;
     
     request = [[rkClient requestWithResourcePath:@"session" delegate:self] retain];
-    request.method = RKRequestMethodPOST;
-    request.params = [RKJSONSerialization JSONSerializationWithObject:[loRequest propertiesForRequest]];
+    [request setMethod:RKRequestMethodPOST];
+    [request setParams:[RKJSONSerialization JSONSerializationWithObject:[loRequest propertiesForRequest]]];
     
     // A little bit hacky to carry information in the request, but good enough to get off the ground prototyping with
-    request.userData = userName;
+    [request setUserData: userName];
     
     return request;
 }

@@ -8,8 +8,6 @@
 
 #import <Foundation/Foundation.h>
 
-#import "RestKit/RestKit.h"
-
 #import "CIAPIAuthenticatorDelegate.h"
 #import "CIAPIClient.h"
 
@@ -17,12 +15,12 @@
 
 typedef void(^CIAPIAuthenticatorCallback)(CIAPIAuthenticator *authenticator, NSError *error);
 
-@interface CIAPIAuthenticator : NSObject<RKRequestDelegate> {
+@interface CIAPIAuthenticator : NSObject {
     CIAPIClient *client;
     
     @private
-    RKClient *rkClient;
-    RKRequest *request;
+    id rkClient;
+    id request;
 }
 
 /** Returns the current authenticated client provided by this authenticator */
@@ -55,7 +53,7 @@ typedef void(^CIAPIAuthenticatorCallback)(CIAPIAuthenticator *authenticator, NSE
 
 @interface CIAPIAuthenticator ()
 
-- (RKRequest*)_buildRequestWithUsername:(NSString*)userName password:(NSString*)password;
-- (BOOL)_setupClientOrError:(RKResponse*)response error:(NSError**)error;
+- (id)_buildRequestWithUsername:(NSString*)userName password:(NSString*)password;
+- (BOOL)_setupClientOrError:(id)response error:(NSError**)error;
 
 @end
