@@ -1,0 +1,325 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		07DE1A1713AE9751005447CF /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07DE1A1613AE9751005447CF /* SystemConfiguration.framework */; };
+		07DE1A1913AE9758005447CF /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07DE1A1813AE9758005447CF /* MobileCoreServices.framework */; };
+		07DE1A1B13AE9787005447CF /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07DE1A1A13AE9787005447CF /* CFNetwork.framework */; };
+		07FC282D13AE93E500C6C16B /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07FC282C13AE93E500C6C16B /* UIKit.framework */; };
+		07FC282F13AE93E500C6C16B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07FC282E13AE93E500C6C16B /* Foundation.framework */; };
+		07FC283113AE93E500C6C16B /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07FC283013AE93E500C6C16B /* CoreGraphics.framework */; };
+		07FC283713AE93E500C6C16B /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 07FC283513AE93E500C6C16B /* InfoPlist.strings */; };
+		07FC283913AE93E500C6C16B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 07FC283813AE93E500C6C16B /* main.m */; };
+		07FC283D13AE93E500C6C16B /* CityPadAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 07FC283C13AE93E500C6C16B /* CityPadAppDelegate.m */; };
+		07FC283F13AE93E500C6C16B /* CityPadViewController.h in Resources */ = {isa = PBXBuildFile; fileRef = 07FC283E13AE93E500C6C16B /* CityPadViewController.h */; };
+		07FC284113AE93E500C6C16B /* CityPadViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 07FC284013AE93E500C6C16B /* CityPadViewController.m */; };
+		07FC284413AE93E500C6C16B /* CityPadViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 07FC284213AE93E500C6C16B /* CityPadViewController.xib */; };
+		07FC285113AE943500C6C16B /* libCIAPI.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 07FC285013AE943500C6C16B /* libCIAPI.a */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		07DE1A1613AE9751005447CF /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		07DE1A1813AE9758005447CF /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+		07DE1A1A13AE9787005447CF /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		07DE1A1C13AE98F5005447CF /* libRestKitJSONParserYAJL.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libRestKitJSONParserYAJL.a; path = "../../../../Library/Developer/Xcode/DerivedData/CIAPI-brcduccruwgmebaoxkzcnuyjccsy/Build/Products/Debug-iphoneos/libRestKitJSONParserYAJL.a"; sourceTree = "<group>"; };
+		07FC282813AE93E500C6C16B /* CityPad.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CityPad.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		07FC282C13AE93E500C6C16B /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		07FC282E13AE93E500C6C16B /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		07FC283013AE93E500C6C16B /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		07FC283413AE93E500C6C16B /* CityPad-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "CityPad-Info.plist"; sourceTree = "<group>"; };
+		07FC283613AE93E500C6C16B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		07FC283813AE93E500C6C16B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		07FC283A13AE93E500C6C16B /* CityPad-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CityPad-Prefix.pch"; sourceTree = "<group>"; };
+		07FC283B13AE93E500C6C16B /* CityPadAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CityPadAppDelegate.h; sourceTree = "<group>"; };
+		07FC283C13AE93E500C6C16B /* CityPadAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CityPadAppDelegate.m; sourceTree = "<group>"; };
+		07FC283E13AE93E500C6C16B /* CityPadViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CityPadViewController.h; sourceTree = "<group>"; };
+		07FC284013AE93E500C6C16B /* CityPadViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CityPadViewController.m; sourceTree = "<group>"; };
+		07FC284313AE93E500C6C16B /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/CityPadViewController.xib; sourceTree = "<group>"; };
+		07FC285013AE943500C6C16B /* libCIAPI.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libCIAPI.a; path = "../CIAPI/build/Release-iphoneos/libCIAPI.a"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		07FC282513AE93E500C6C16B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				07DE1A1B13AE9787005447CF /* CFNetwork.framework in Frameworks */,
+				07DE1A1913AE9758005447CF /* MobileCoreServices.framework in Frameworks */,
+				07DE1A1713AE9751005447CF /* SystemConfiguration.framework in Frameworks */,
+				07FC282D13AE93E500C6C16B /* UIKit.framework in Frameworks */,
+				07FC282F13AE93E500C6C16B /* Foundation.framework in Frameworks */,
+				07FC283113AE93E500C6C16B /* CoreGraphics.framework in Frameworks */,
+				07FC285113AE943500C6C16B /* libCIAPI.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		07FC281D13AE93E500C6C16B = {
+			isa = PBXGroup;
+			children = (
+				07DE1A1C13AE98F5005447CF /* libRestKitJSONParserYAJL.a */,
+				07DE1A1A13AE9787005447CF /* CFNetwork.framework */,
+				07DE1A1813AE9758005447CF /* MobileCoreServices.framework */,
+				07DE1A1613AE9751005447CF /* SystemConfiguration.framework */,
+				07FC285013AE943500C6C16B /* libCIAPI.a */,
+				07FC283213AE93E500C6C16B /* CityPad */,
+				07FC282B13AE93E500C6C16B /* Frameworks */,
+				07FC282913AE93E500C6C16B /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		07FC282913AE93E500C6C16B /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				07FC282813AE93E500C6C16B /* CityPad.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		07FC282B13AE93E500C6C16B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				07FC282C13AE93E500C6C16B /* UIKit.framework */,
+				07FC282E13AE93E500C6C16B /* Foundation.framework */,
+				07FC283013AE93E500C6C16B /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		07FC283213AE93E500C6C16B /* CityPad */ = {
+			isa = PBXGroup;
+			children = (
+				07FC283B13AE93E500C6C16B /* CityPadAppDelegate.h */,
+				07FC283C13AE93E500C6C16B /* CityPadAppDelegate.m */,
+				07FC283E13AE93E500C6C16B /* CityPadViewController.h */,
+				07FC284013AE93E500C6C16B /* CityPadViewController.m */,
+				07FC284213AE93E500C6C16B /* CityPadViewController.xib */,
+				07FC283313AE93E500C6C16B /* Supporting Files */,
+			);
+			path = CityPad;
+			sourceTree = "<group>";
+		};
+		07FC283313AE93E500C6C16B /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				07FC283413AE93E500C6C16B /* CityPad-Info.plist */,
+				07FC283513AE93E500C6C16B /* InfoPlist.strings */,
+				07FC283813AE93E500C6C16B /* main.m */,
+				07FC283A13AE93E500C6C16B /* CityPad-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		07FC282713AE93E500C6C16B /* CityPad */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 07FC284713AE93E500C6C16B /* Build configuration list for PBXNativeTarget "CityPad" */;
+			buildPhases = (
+				07FC282413AE93E500C6C16B /* Sources */,
+				07FC282513AE93E500C6C16B /* Frameworks */,
+				07FC282613AE93E500C6C16B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = CityPad;
+			productName = CityPad;
+			productReference = 07FC282813AE93E500C6C16B /* CityPad.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		07FC281F13AE93E500C6C16B /* Project object */ = {
+			isa = PBXProject;
+			buildConfigurationList = 07FC282213AE93E500C6C16B /* Build configuration list for PBXProject "CityPad" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 07FC281D13AE93E500C6C16B;
+			productRefGroup = 07FC282913AE93E500C6C16B /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				07FC282713AE93E500C6C16B /* CityPad */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		07FC282613AE93E500C6C16B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				07FC283713AE93E500C6C16B /* InfoPlist.strings in Resources */,
+				07FC283F13AE93E500C6C16B /* CityPadViewController.h in Resources */,
+				07FC284413AE93E500C6C16B /* CityPadViewController.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		07FC282413AE93E500C6C16B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				07FC283913AE93E500C6C16B /* main.m in Sources */,
+				07FC283D13AE93E500C6C16B /* CityPadAppDelegate.m in Sources */,
+				07FC284113AE93E500C6C16B /* CityPadViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		07FC283513AE93E500C6C16B /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				07FC283613AE93E500C6C16B /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		07FC284213AE93E500C6C16B /* CityPadViewController.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				07FC284313AE93E500C6C16B /* en */,
+			);
+			name = CityPadViewController.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		07FC284513AE93E500C6C16B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = 2;
+			};
+			name = Debug;
+		};
+		07FC284613AE93E500C6C16B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = 2;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		07FC284813AE93E500C6C16B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_ARC = NO;
+				CLANG_WARN_OBJCPP_ARC_ABI = NO;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "CityPad/CityPad-Prefix.pch";
+				HEADER_SEARCH_PATHS = ../CIAPI/CIAPI/;
+				INFOPLIST_FILE = "CityPad/CityPad-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/../../../../Library/Developer/Xcode/DerivedData/CIAPI-brcduccruwgmebaoxkzcnuyjccsy/Build/Products/Debug-iphoneos\"",
+				);
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-all_load",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				USER_HEADER_SEARCH_PATHS = "";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		07FC284913AE93E500C6C16B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_ARC = NO;
+				CLANG_WARN_OBJCPP_ARC_ABI = NO;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "CityPad/CityPad-Prefix.pch";
+				HEADER_SEARCH_PATHS = ../CIAPI/CIAPI/;
+				INFOPLIST_FILE = "CityPad/CityPad-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/../../../../Library/Developer/Xcode/DerivedData/CIAPI-brcduccruwgmebaoxkzcnuyjccsy/Build/Products/Debug-iphoneos\"",
+				);
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-all_load",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				USER_HEADER_SEARCH_PATHS = "";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		07FC282213AE93E500C6C16B /* Build configuration list for PBXProject "CityPad" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				07FC284513AE93E500C6C16B /* Debug */,
+				07FC284613AE93E500C6C16B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		07FC284713AE93E500C6C16B /* Build configuration list for PBXNativeTarget "CityPad" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				07FC284813AE93E500C6C16B /* Debug */,
+				07FC284913AE93E500C6C16B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 07FC281F13AE93E500C6C16B /* Project object */;
+}
