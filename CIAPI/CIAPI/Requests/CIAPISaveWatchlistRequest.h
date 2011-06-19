@@ -10,14 +10,14 @@
 #import "CIAPIObjectResponse.h"
 #import "CIAPIObjectListResponse.h"
 
-#import "CIAPIClientAccountWatchlist.h"
+//#import "CIAPIClientAccountWatchlist.h"
 
 
 @interface CIAPISaveWatchlistRequest : CIAPIObjectResponse {
-  CIAPIClientAccountWatchlist* Watchlist;
+  id Watchlist;
 }
 
 // The watchlist to save. This will update an existing watchlist; or when the watchlistId is omitted or 0 is supplied, will create a new watchlist. 
-@property (readonly) CIAPIClientAccountWatchlist* Watchlist;
+@property (readonly) id Watchlist;
 
 @end
