@@ -7,6 +7,190 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0704146A13A523BB002F28C5 /* ThrottledQueue.h in Headers */ = {isa = PBXBuildFile; fileRef = 0704146813A523BB002F28C5 /* ThrottledQueue.h */; };
+		0704146B13A523BB002F28C5 /* ThrottledQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = 0704146913A523BB002F28C5 /* ThrottledQueue.m */; };
+		0704146E13A52473002F28C5 /* ThrottledQueueMultiplexer.h in Headers */ = {isa = PBXBuildFile; fileRef = 0704146C13A52473002F28C5 /* ThrottledQueueMultiplexer.h */; };
+		0704146F13A52473002F28C5 /* ThrottledQueueMultiplexer.m in Sources */ = {isa = PBXBuildFile; fileRef = 0704146D13A52473002F28C5 /* ThrottledQueueMultiplexer.m */; };
+		073649F913945510001A5278 /* CIAPICancelOrderRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = 073649B313945510001A5278 /* CIAPICancelOrderRequest.h */; };
+		073649FA13945510001A5278 /* CIAPICancelOrderRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 073649B413945510001A5278 /* CIAPICancelOrderRequest.m */; };
+		073649FB13945510001A5278 /* CIAPIDeleteSessionRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = 073649B513945510001A5278 /* CIAPIDeleteSessionRequest.h */; };
+		073649FC13945510001A5278 /* CIAPIDeleteSessionRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 073649B613945510001A5278 /* CIAPIDeleteSessionRequest.m */; };
+		073649FD13945510001A5278 /* CIAPIGenerateExceptionRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = 073649B713945510001A5278 /* CIAPIGenerateExceptionRequest.h */; };
+		073649FE13945510001A5278 /* CIAPIGenerateExceptionRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 073649B813945510001A5278 /* CIAPIGenerateExceptionRequest.m */; };
+		073649FF13945510001A5278 /* CIAPIGetActiveStopLimitOrderRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = 073649B913945510001A5278 /* CIAPIGetActiveStopLimitOrderRequest.h */; };
+		07364A0013945510001A5278 /* CIAPIGetActiveStopLimitOrderRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 073649BA13945510001A5278 /* CIAPIGetActiveStopLimitOrderRequest.m */; };
+		07364A0113945510001A5278 /* CIAPIGetChartingEnabledRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = 073649BB13945510001A5278 /* CIAPIGetChartingEnabledRequest.h */; };
+		07364A0213945510001A5278 /* CIAPIGetChartingEnabledRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 073649BC13945510001A5278 /* CIAPIGetChartingEnabledRequest.m */; };
+		07364A0313945510001A5278 /* CIAPIGetClientAndTradingAccountRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = 073649BD13945510001A5278 /* CIAPIGetClientAndTradingAccountRequest.h */; };
+		07364A0413945510001A5278 /* CIAPIGetClientAndTradingAccountRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 073649BE13945510001A5278 /* CIAPIGetClientAndTradingAccountRequest.m */; };
+		07364A0513945510001A5278 /* CIAPIGetMarketInformationRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = 073649BF13945510001A5278 /* CIAPIGetMarketInformationRequest.h */; };
+		07364A0613945510001A5278 /* CIAPIGetMarketInformationRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 073649C013945510001A5278 /* CIAPIGetMarketInformationRequest.m */; };
+		07364A0713945510001A5278 /* CIAPIGetNewsDetailRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = 073649C113945510001A5278 /* CIAPIGetNewsDetailRequest.h */; };
+		07364A0813945510001A5278 /* CIAPIGetNewsDetailRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 073649C213945510001A5278 /* CIAPIGetNewsDetailRequest.m */; };
+		07364A0913945510001A5278 /* CIAPIGetOpenPositionRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = 073649C313945510001A5278 /* CIAPIGetOpenPositionRequest.h */; };
+		07364A0A13945510001A5278 /* CIAPIGetOpenPositionRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 073649C413945510001A5278 /* CIAPIGetOpenPositionRequest.m */; };
+		07364A0B13945510001A5278 /* CIAPIGetOrderRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = 073649C513945510001A5278 /* CIAPIGetOrderRequest.h */; };
+		07364A0C13945510001A5278 /* CIAPIGetOrderRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 073649C613945510001A5278 /* CIAPIGetOrderRequest.m */; };
+		07364A0D13945510001A5278 /* CIAPIGetPriceBarsRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = 073649C713945510001A5278 /* CIAPIGetPriceBarsRequest.h */; };
+		07364A0E13945510001A5278 /* CIAPIGetPriceBarsRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 073649C813945510001A5278 /* CIAPIGetPriceBarsRequest.m */; };
+		07364A0F13945510001A5278 /* CIAPIGetPriceTicksRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = 073649C913945510001A5278 /* CIAPIGetPriceTicksRequest.h */; };
+		07364A1013945510001A5278 /* CIAPIGetPriceTicksRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 073649CA13945510001A5278 /* CIAPIGetPriceTicksRequest.m */; };
+		07364A1113945510001A5278 /* CIAPIInsertWatchlistItemRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = 073649CB13945510001A5278 /* CIAPIInsertWatchlistItemRequest.h */; };
+		07364A1213945510001A5278 /* CIAPIInsertWatchlistItemRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 073649CC13945510001A5278 /* CIAPIInsertWatchlistItemRequest.m */; };
+		07364A1313945510001A5278 /* CIAPIListActiveStopLimitOrdersRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = 073649CD13945510001A5278 /* CIAPIListActiveStopLimitOrdersRequest.h */; };
+		07364A1413945510001A5278 /* CIAPIListActiveStopLimitOrdersRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 073649CE13945510001A5278 /* CIAPIListActiveStopLimitOrdersRequest.m */; };
+		07364A1513945510001A5278 /* CIAPIListCfdMarketsRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = 073649CF13945510001A5278 /* CIAPIListCfdMarketsRequest.h */; };
+		07364A1613945510001A5278 /* CIAPIListCfdMarketsRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 073649D013945510001A5278 /* CIAPIListCfdMarketsRequest.m */; };
+		07364A1713945510001A5278 /* CIAPIListMarketInformationRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = 073649D113945510001A5278 /* CIAPIListMarketInformationRequest.h */; };
+		07364A1813945510001A5278 /* CIAPIListMarketInformationRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 073649D213945510001A5278 /* CIAPIListMarketInformationRequest.m */; };
+		07364A1913945510001A5278 /* CIAPIListMarketInformationSearchRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = 073649D313945510001A5278 /* CIAPIListMarketInformationSearchRequest.h */; };
+		07364A1A13945510001A5278 /* CIAPIListMarketInformationSearchRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 073649D413945510001A5278 /* CIAPIListMarketInformationSearchRequest.m */; };
+		07364A1B13945510001A5278 /* CIAPIListNewsHeadlinesRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = 073649D513945510001A5278 /* CIAPIListNewsHeadlinesRequest.h */; };
+		07364A1C13945510001A5278 /* CIAPIListNewsHeadlinesRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 073649D613945510001A5278 /* CIAPIListNewsHeadlinesRequest.m */; };
+		07364A1D13945510001A5278 /* CIAPIListOpenPositionsRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = 073649D713945510001A5278 /* CIAPIListOpenPositionsRequest.h */; };
+		07364A1E13945510001A5278 /* CIAPIListOpenPositionsRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 073649D813945510001A5278 /* CIAPIListOpenPositionsRequest.m */; };
+		07364A1F13945510001A5278 /* CIAPIListSpreadMarketsRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = 073649D913945510001A5278 /* CIAPIListSpreadMarketsRequest.h */; };
+		07364A2013945510001A5278 /* CIAPIListSpreadMarketsRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 073649DA13945510001A5278 /* CIAPIListSpreadMarketsRequest.m */; };
+		07364A2113945510001A5278 /* CIAPIListStopLimitOrderHistoryRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = 073649DB13945510001A5278 /* CIAPIListStopLimitOrderHistoryRequest.h */; };
+		07364A2213945510001A5278 /* CIAPIListStopLimitOrderHistoryRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 073649DC13945510001A5278 /* CIAPIListStopLimitOrderHistoryRequest.m */; };
+		07364A2313945510001A5278 /* CIAPIListTradeHistoryRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = 073649DD13945510001A5278 /* CIAPIListTradeHistoryRequest.h */; };
+		07364A2413945510001A5278 /* CIAPIListTradeHistoryRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 073649DE13945510001A5278 /* CIAPIListTradeHistoryRequest.m */; };
+		07364A2513945510001A5278 /* CIAPILogOffRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = 073649DF13945510001A5278 /* CIAPILogOffRequest.h */; };
+		07364A2613945510001A5278 /* CIAPILogOffRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 073649E013945510001A5278 /* CIAPILogOffRequest.m */; };
+		07364A2713945510001A5278 /* CIAPILogOnRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = 073649E113945510001A5278 /* CIAPILogOnRequest.h */; };
+		07364A2813945510001A5278 /* CIAPILogOnRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 073649E213945510001A5278 /* CIAPILogOnRequest.m */; };
+		07364A2913945510001A5278 /* CIAPINewStopLimitOrderRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = 073649E313945510001A5278 /* CIAPINewStopLimitOrderRequest.h */; };
+		07364A2A13945510001A5278 /* CIAPINewStopLimitOrderRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 073649E413945510001A5278 /* CIAPINewStopLimitOrderRequest.m */; };
+		07364A2B13945510001A5278 /* CIAPINewTradeOrderRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = 073649E513945510001A5278 /* CIAPINewTradeOrderRequest.h */; };
+		07364A2C13945510001A5278 /* CIAPINewTradeOrderRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 073649E613945510001A5278 /* CIAPINewTradeOrderRequest.m */; };
+		07364A2D13945510001A5278 /* CIAPIOrderRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = 073649E713945510001A5278 /* CIAPIOrderRequest.h */; };
+		07364A2E13945510001A5278 /* CIAPIOrderRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 073649E813945510001A5278 /* CIAPIOrderRequest.m */; };
+		07364A2F13945510001A5278 /* CIAPISaveWatchlistRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = 073649E913945510001A5278 /* CIAPISaveWatchlistRequest.h */; };
+		07364A3013945510001A5278 /* CIAPISaveWatchlistRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 073649EA13945510001A5278 /* CIAPISaveWatchlistRequest.m */; };
+		07364A3113945510001A5278 /* CIAPISystemStatusRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = 073649EB13945510001A5278 /* CIAPISystemStatusRequest.h */; };
+		07364A3213945510001A5278 /* CIAPISystemStatusRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 073649EC13945510001A5278 /* CIAPISystemStatusRequest.m */; };
+		07364A3313945510001A5278 /* CIAPITradeRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = 073649ED13945510001A5278 /* CIAPITradeRequest.h */; };
+		07364A3413945510001A5278 /* CIAPITradeRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 073649EE13945510001A5278 /* CIAPITradeRequest.m */; };
+		07364A3513945510001A5278 /* CIAPIUpdateOrderRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = 073649EF13945510001A5278 /* CIAPIUpdateOrderRequest.h */; };
+		07364A3613945510001A5278 /* CIAPIUpdateOrderRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 073649F013945510001A5278 /* CIAPIUpdateOrderRequest.m */; };
+		07364A3713945510001A5278 /* CIAPIUpdateStopLimitOrderRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = 073649F113945510001A5278 /* CIAPIUpdateStopLimitOrderRequest.h */; };
+		07364A3813945510001A5278 /* CIAPIUpdateStopLimitOrderRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 073649F213945510001A5278 /* CIAPIUpdateStopLimitOrderRequest.m */; };
+		07364A3913945510001A5278 /* CIAPIUpdateTradeOrderRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = 073649F313945510001A5278 /* CIAPIUpdateTradeOrderRequest.h */; };
+		07364A3A13945510001A5278 /* CIAPIUpdateTradeOrderRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 073649F413945510001A5278 /* CIAPIUpdateTradeOrderRequest.m */; };
+		07364A3B13945510001A5278 /* CIAPIUpdateTradeRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = 073649F513945510001A5278 /* CIAPIUpdateTradeRequest.h */; };
+		07364A3C13945510001A5278 /* CIAPIUpdateTradeRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 073649F613945510001A5278 /* CIAPIUpdateTradeRequest.m */; };
+		07364A3D13945510001A5278 /* CIAPIUpdateWatchlistDisplayOrderRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = 073649F713945510001A5278 /* CIAPIUpdateWatchlistDisplayOrderRequest.h */; };
+		07364A3E13945510001A5278 /* CIAPIUpdateWatchlistDisplayOrderRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 073649F813945510001A5278 /* CIAPIUpdateWatchlistDisplayOrderRequest.m */; };
+		07364AAD1394551B001A5278 /* CIAPIAccountInformationResponse.h in Headers */ = {isa = PBXBuildFile; fileRef = 07364A3F1394551B001A5278 /* CIAPIAccountInformationResponse.h */; };
+		07364AAE1394551B001A5278 /* CIAPIAccountInformationResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 07364A401394551B001A5278 /* CIAPIAccountInformationResponse.m */; };
+		07364AAF1394551B001A5278 /* CIAPIActiveStopLimitOrder.h in Headers */ = {isa = PBXBuildFile; fileRef = 07364A411394551B001A5278 /* CIAPIActiveStopLimitOrder.h */; };
+		07364AB01394551B001A5278 /* CIAPIActiveStopLimitOrder.m in Sources */ = {isa = PBXBuildFile; fileRef = 07364A421394551B001A5278 /* CIAPIActiveStopLimitOrder.m */; };
+		07364AB11394551B001A5278 /* CIAPIBasicStopLimitOrder.h in Headers */ = {isa = PBXBuildFile; fileRef = 07364A431394551B001A5278 /* CIAPIBasicStopLimitOrder.h */; };
+		07364AB21394551B001A5278 /* CIAPIBasicStopLimitOrder.m in Sources */ = {isa = PBXBuildFile; fileRef = 07364A441394551B001A5278 /* CIAPIBasicStopLimitOrder.m */; };
+		07364AB31394551B001A5278 /* CIAPIClientAccountMargin.h in Headers */ = {isa = PBXBuildFile; fileRef = 07364A451394551B001A5278 /* CIAPIClientAccountMargin.h */; };
+		07364AB41394551B001A5278 /* CIAPIClientAccountMargin.m in Sources */ = {isa = PBXBuildFile; fileRef = 07364A461394551B001A5278 /* CIAPIClientAccountMargin.m */; };
+		07364AB51394551B001A5278 /* CIAPIClientAccountWatchlist.h in Headers */ = {isa = PBXBuildFile; fileRef = 07364A471394551B001A5278 /* CIAPIClientAccountWatchlist.h */; };
+		07364AB61394551B001A5278 /* CIAPIClientAccountWatchlist.m in Sources */ = {isa = PBXBuildFile; fileRef = 07364A481394551B001A5278 /* CIAPIClientAccountWatchlist.m */; };
+		07364AB71394551B001A5278 /* CIAPIClientAccountWatchlistItem.h in Headers */ = {isa = PBXBuildFile; fileRef = 07364A491394551B001A5278 /* CIAPIClientAccountWatchlistItem.h */; };
+		07364AB81394551B001A5278 /* CIAPIClientAccountWatchlistItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 07364A4A1394551B001A5278 /* CIAPIClientAccountWatchlistItem.m */; };
+		07364AB91394551B001A5278 /* CIAPIErrorCode.h in Headers */ = {isa = PBXBuildFile; fileRef = 07364A4B1394551B001A5278 /* CIAPIErrorCode.h */; };
+		07364ABA1394551B001A5278 /* CIAPIErrorCode.m in Sources */ = {isa = PBXBuildFile; fileRef = 07364A4C1394551B001A5278 /* CIAPIErrorCode.m */; };
+		07364ABB1394551B001A5278 /* CIAPIErrorResponse.h in Headers */ = {isa = PBXBuildFile; fileRef = 07364A4D1394551B001A5278 /* CIAPIErrorResponse.h */; };
+		07364ABC1394551B001A5278 /* CIAPIErrorResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 07364A4E1394551B001A5278 /* CIAPIErrorResponse.m */; };
+		07364ABD1394551B001A5278 /* CIAPIGetActiveStopLimitOrderResponse.h in Headers */ = {isa = PBXBuildFile; fileRef = 07364A4F1394551B001A5278 /* CIAPIGetActiveStopLimitOrderResponse.h */; };
+		07364ABE1394551B001A5278 /* CIAPIGetActiveStopLimitOrderResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 07364A501394551B001A5278 /* CIAPIGetActiveStopLimitOrderResponse.m */; };
+		07364ABF1394551B001A5278 /* CIAPIGetMarketInformationResponse.h in Headers */ = {isa = PBXBuildFile; fileRef = 07364A511394551B001A5278 /* CIAPIGetMarketInformationResponse.h */; };
+		07364AC01394551B001A5278 /* CIAPIGetMarketInformationResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 07364A521394551B001A5278 /* CIAPIGetMarketInformationResponse.m */; };
+		07364AC11394551B001A5278 /* CIAPIGetMessagePopupResponse.h in Headers */ = {isa = PBXBuildFile; fileRef = 07364A531394551B001A5278 /* CIAPIGetMessagePopupResponse.h */; };
+		07364AC21394551B001A5278 /* CIAPIGetMessagePopupResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 07364A541394551B001A5278 /* CIAPIGetMessagePopupResponse.m */; };
+		07364AC31394551B001A5278 /* CIAPIGetNewsDetailResponse.h in Headers */ = {isa = PBXBuildFile; fileRef = 07364A551394551B001A5278 /* CIAPIGetNewsDetailResponse.h */; };
+		07364AC41394551B001A5278 /* CIAPIGetNewsDetailResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 07364A561394551B001A5278 /* CIAPIGetNewsDetailResponse.m */; };
+		07364AC51394551B001A5278 /* CIAPIGetOpenPositionResponse.h in Headers */ = {isa = PBXBuildFile; fileRef = 07364A571394551B001A5278 /* CIAPIGetOpenPositionResponse.h */; };
+		07364AC61394551B001A5278 /* CIAPIGetOpenPositionResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 07364A581394551B001A5278 /* CIAPIGetOpenPositionResponse.m */; };
+		07364AC71394551B001A5278 /* CIAPIGetOrderResponse.h in Headers */ = {isa = PBXBuildFile; fileRef = 07364A591394551B001A5278 /* CIAPIGetOrderResponse.h */; };
+		07364AC81394551B001A5278 /* CIAPIGetOrderResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 07364A5A1394551B001A5278 /* CIAPIGetOrderResponse.m */; };
+		07364AC91394551B001A5278 /* CIAPIGetPriceBarResponse.h in Headers */ = {isa = PBXBuildFile; fileRef = 07364A5B1394551B001A5278 /* CIAPIGetPriceBarResponse.h */; };
+		07364ACA1394551B001A5278 /* CIAPIGetPriceBarResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 07364A5C1394551B001A5278 /* CIAPIGetPriceBarResponse.m */; };
+		07364ACB1394551B001A5278 /* CIAPIGetPriceTickResponse.h in Headers */ = {isa = PBXBuildFile; fileRef = 07364A5D1394551B001A5278 /* CIAPIGetPriceTickResponse.h */; };
+		07364ACC1394551B001A5278 /* CIAPIGetPriceTickResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 07364A5E1394551B001A5278 /* CIAPIGetPriceTickResponse.m */; };
+		07364ACD1394551B001A5278 /* CIAPIIfDone.h in Headers */ = {isa = PBXBuildFile; fileRef = 07364A5F1394551B001A5278 /* CIAPIIfDone.h */; };
+		07364ACE1394551B001A5278 /* CIAPIIfDone.m in Sources */ = {isa = PBXBuildFile; fileRef = 07364A601394551B001A5278 /* CIAPIIfDone.m */; };
+		07364ACF1394551B001A5278 /* CIAPIIfDoneResponse.h in Headers */ = {isa = PBXBuildFile; fileRef = 07364A611394551B001A5278 /* CIAPIIfDoneResponse.h */; };
+		07364AD01394551B001A5278 /* CIAPIIfDoneResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 07364A621394551B001A5278 /* CIAPIIfDoneResponse.m */; };
+		07364AD11394551B001A5278 /* CIAPIListActiveStopLimitOrderResponse.h in Headers */ = {isa = PBXBuildFile; fileRef = 07364A631394551B001A5278 /* CIAPIListActiveStopLimitOrderResponse.h */; };
+		07364AD21394551B001A5278 /* CIAPIListActiveStopLimitOrderResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 07364A641394551B001A5278 /* CIAPIListActiveStopLimitOrderResponse.m */; };
+		07364AD31394551B001A5278 /* CIAPIListCfdMarketsResponse.h in Headers */ = {isa = PBXBuildFile; fileRef = 07364A651394551B001A5278 /* CIAPIListCfdMarketsResponse.h */; };
+		07364AD41394551B001A5278 /* CIAPIListCfdMarketsResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 07364A661394551B001A5278 /* CIAPIListCfdMarketsResponse.m */; };
+		07364AD51394551B001A5278 /* CIAPIListMarketInformationResponse.h in Headers */ = {isa = PBXBuildFile; fileRef = 07364A671394551B001A5278 /* CIAPIListMarketInformationResponse.h */; };
+		07364AD61394551B001A5278 /* CIAPIListMarketInformationResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 07364A681394551B001A5278 /* CIAPIListMarketInformationResponse.m */; };
+		07364AD71394551B001A5278 /* CIAPIListMarketInformationSearchResponse.h in Headers */ = {isa = PBXBuildFile; fileRef = 07364A691394551B001A5278 /* CIAPIListMarketInformationSearchResponse.h */; };
+		07364AD81394551B001A5278 /* CIAPIListMarketInformationSearchResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 07364A6A1394551B001A5278 /* CIAPIListMarketInformationSearchResponse.m */; };
+		07364AD91394551B001A5278 /* CIAPIListNewsHeadlinesResponse.h in Headers */ = {isa = PBXBuildFile; fileRef = 07364A6B1394551B001A5278 /* CIAPIListNewsHeadlinesResponse.h */; };
+		07364ADA1394551B001A5278 /* CIAPIListNewsHeadlinesResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 07364A6C1394551B001A5278 /* CIAPIListNewsHeadlinesResponse.m */; };
+		07364ADB1394551B001A5278 /* CIAPIListOpenPositionsResponse.h in Headers */ = {isa = PBXBuildFile; fileRef = 07364A6D1394551B001A5278 /* CIAPIListOpenPositionsResponse.h */; };
+		07364ADC1394551B001A5278 /* CIAPIListOpenPositionsResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 07364A6E1394551B001A5278 /* CIAPIListOpenPositionsResponse.m */; };
+		07364ADD1394551B001A5278 /* CIAPIListOrdersResponse.h in Headers */ = {isa = PBXBuildFile; fileRef = 07364A6F1394551B001A5278 /* CIAPIListOrdersResponse.h */; };
+		07364ADE1394551B001A5278 /* CIAPIListOrdersResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 07364A701394551B001A5278 /* CIAPIListOrdersResponse.m */; };
+		07364ADF1394551B001A5278 /* CIAPIListSpreadMarketsResponse.h in Headers */ = {isa = PBXBuildFile; fileRef = 07364A711394551B001A5278 /* CIAPIListSpreadMarketsResponse.h */; };
+		07364AE01394551B001A5278 /* CIAPIListSpreadMarketsResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 07364A721394551B001A5278 /* CIAPIListSpreadMarketsResponse.m */; };
+		07364AE11394551B001A5278 /* CIAPIListStopLimitOrderHistoryResponse.h in Headers */ = {isa = PBXBuildFile; fileRef = 07364A731394551B001A5278 /* CIAPIListStopLimitOrderHistoryResponse.h */; };
+		07364AE21394551B001A5278 /* CIAPIListStopLimitOrderHistoryResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 07364A741394551B001A5278 /* CIAPIListStopLimitOrderHistoryResponse.m */; };
+		07364AE31394551B001A5278 /* CIAPIListTradeHistoryResponse.h in Headers */ = {isa = PBXBuildFile; fileRef = 07364A751394551B001A5278 /* CIAPIListTradeHistoryResponse.h */; };
+		07364AE41394551B001A5278 /* CIAPIListTradeHistoryResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 07364A761394551B001A5278 /* CIAPIListTradeHistoryResponse.m */; };
+		07364AE51394551B001A5278 /* CIAPIListWatchlistResponse.h in Headers */ = {isa = PBXBuildFile; fileRef = 07364A771394551B001A5278 /* CIAPIListWatchlistResponse.h */; };
+		07364AE61394551B001A5278 /* CIAPIListWatchlistResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 07364A781394551B001A5278 /* CIAPIListWatchlistResponse.m */; };
+		07364AE71394551B001A5278 /* CIAPILogOffResponse.h in Headers */ = {isa = PBXBuildFile; fileRef = 07364A791394551B001A5278 /* CIAPILogOffResponse.h */; };
+		07364AE81394551B001A5278 /* CIAPILogOffResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 07364A7A1394551B001A5278 /* CIAPILogOffResponse.m */; };
+		07364AE91394551B001A5278 /* CIAPILogOnResponse.h in Headers */ = {isa = PBXBuildFile; fileRef = 07364A7B1394551B001A5278 /* CIAPILogOnResponse.h */; };
+		07364AEA1394551B001A5278 /* CIAPILogOnResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 07364A7C1394551B001A5278 /* CIAPILogOnResponse.m */; };
+		07364AEB1394551B001A5278 /* CIAPILookup.h in Headers */ = {isa = PBXBuildFile; fileRef = 07364A7D1394551B001A5278 /* CIAPILookup.h */; };
+		07364AEC1394551B001A5278 /* CIAPILookup.m in Sources */ = {isa = PBXBuildFile; fileRef = 07364A7E1394551B001A5278 /* CIAPILookup.m */; };
+		07364AED1394551B001A5278 /* CIAPILookupResponse.h in Headers */ = {isa = PBXBuildFile; fileRef = 07364A7F1394551B001A5278 /* CIAPILookupResponse.h */; };
+		07364AEE1394551B001A5278 /* CIAPILookupResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 07364A801394551B001A5278 /* CIAPILookupResponse.m */; };
+		07364AEF1394551B001A5278 /* CIAPIMarket.h in Headers */ = {isa = PBXBuildFile; fileRef = 07364A811394551B001A5278 /* CIAPIMarket.h */; };
+		07364AF01394551B001A5278 /* CIAPIMarket.m in Sources */ = {isa = PBXBuildFile; fileRef = 07364A821394551B001A5278 /* CIAPIMarket.m */; };
+		07364AF11394551B001A5278 /* CIAPIMarketEod.h in Headers */ = {isa = PBXBuildFile; fileRef = 07364A831394551B001A5278 /* CIAPIMarketEod.h */; };
+		07364AF21394551B001A5278 /* CIAPIMarketEod.m in Sources */ = {isa = PBXBuildFile; fileRef = 07364A841394551B001A5278 /* CIAPIMarketEod.m */; };
+		07364AF31394551B001A5278 /* CIAPIMarketInformation.h in Headers */ = {isa = PBXBuildFile; fileRef = 07364A851394551B001A5278 /* CIAPIMarketInformation.h */; };
+		07364AF41394551B001A5278 /* CIAPIMarketInformation.m in Sources */ = {isa = PBXBuildFile; fileRef = 07364A861394551B001A5278 /* CIAPIMarketInformation.m */; };
+		07364AF51394551B001A5278 /* CIAPINews.h in Headers */ = {isa = PBXBuildFile; fileRef = 07364A871394551B001A5278 /* CIAPINews.h */; };
+		07364AF61394551B001A5278 /* CIAPINews.m in Sources */ = {isa = PBXBuildFile; fileRef = 07364A881394551B001A5278 /* CIAPINews.m */; };
+		07364AF71394551B001A5278 /* CIAPINewsDetail.h in Headers */ = {isa = PBXBuildFile; fileRef = 07364A891394551B001A5278 /* CIAPINewsDetail.h */; };
+		07364AF81394551B001A5278 /* CIAPINewsDetail.m in Sources */ = {isa = PBXBuildFile; fileRef = 07364A8A1394551B001A5278 /* CIAPINewsDetail.m */; };
+		07364AF91394551B001A5278 /* CIAPIOpenPosition.h in Headers */ = {isa = PBXBuildFile; fileRef = 07364A8B1394551B001A5278 /* CIAPIOpenPosition.h */; };
+		07364AFA1394551B001A5278 /* CIAPIOpenPosition.m in Sources */ = {isa = PBXBuildFile; fileRef = 07364A8C1394551B001A5278 /* CIAPIOpenPosition.m */; };
+		07364AFB1394551B001A5278 /* CIAPIOrder.h in Headers */ = {isa = PBXBuildFile; fileRef = 07364A8D1394551B001A5278 /* CIAPIOrder.h */; };
+		07364AFC1394551B001A5278 /* CIAPIOrder.m in Sources */ = {isa = PBXBuildFile; fileRef = 07364A8E1394551B001A5278 /* CIAPIOrder.m */; };
+		07364AFD1394551B001A5278 /* CIAPIOrderResponse.h in Headers */ = {isa = PBXBuildFile; fileRef = 07364A8F1394551B001A5278 /* CIAPIOrderResponse.h */; };
+		07364AFE1394551B001A5278 /* CIAPIOrderResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 07364A901394551B001A5278 /* CIAPIOrderResponse.m */; };
+		07364AFF1394551B001A5278 /* CIAPIPrice.h in Headers */ = {isa = PBXBuildFile; fileRef = 07364A911394551B001A5278 /* CIAPIPrice.h */; };
+		07364B001394551B001A5278 /* CIAPIPrice.m in Sources */ = {isa = PBXBuildFile; fileRef = 07364A921394551B001A5278 /* CIAPIPrice.m */; };
+		07364B011394551B001A5278 /* CIAPIPriceBar.h in Headers */ = {isa = PBXBuildFile; fileRef = 07364A931394551B001A5278 /* CIAPIPriceBar.h */; };
+		07364B021394551B001A5278 /* CIAPIPriceBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 07364A941394551B001A5278 /* CIAPIPriceBar.m */; };
+		07364B031394551B001A5278 /* CIAPIPriceTick.h in Headers */ = {isa = PBXBuildFile; fileRef = 07364A951394551B001A5278 /* CIAPIPriceTick.h */; };
+		07364B041394551B001A5278 /* CIAPIPriceTick.m in Sources */ = {isa = PBXBuildFile; fileRef = 07364A961394551B001A5278 /* CIAPIPriceTick.m */; };
+		07364B051394551B001A5278 /* CIAPIQuote.h in Headers */ = {isa = PBXBuildFile; fileRef = 07364A971394551B001A5278 /* CIAPIQuote.h */; };
+		07364B061394551B001A5278 /* CIAPIQuote.m in Sources */ = {isa = PBXBuildFile; fileRef = 07364A981394551B001A5278 /* CIAPIQuote.m */; };
+		07364B071394551B001A5278 /* CIAPIQuoteResponse.h in Headers */ = {isa = PBXBuildFile; fileRef = 07364A991394551B001A5278 /* CIAPIQuoteResponse.h */; };
+		07364B081394551B001A5278 /* CIAPIQuoteResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 07364A9A1394551B001A5278 /* CIAPIQuoteResponse.m */; };
+		07364B091394551B001A5278 /* CIAPISaveWatchlistResponse.h in Headers */ = {isa = PBXBuildFile; fileRef = 07364A9B1394551B001A5278 /* CIAPISaveWatchlistResponse.h */; };
+		07364B0A1394551B001A5278 /* CIAPISaveWatchlistResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 07364A9C1394551B001A5278 /* CIAPISaveWatchlistResponse.m */; };
+		07364B0B1394551B001A5278 /* CIAPIStopLimitOrder.h in Headers */ = {isa = PBXBuildFile; fileRef = 07364A9D1394551B001A5278 /* CIAPIStopLimitOrder.h */; };
+		07364B0C1394551B001A5278 /* CIAPIStopLimitOrder.m in Sources */ = {isa = PBXBuildFile; fileRef = 07364A9E1394551B001A5278 /* CIAPIStopLimitOrder.m */; };
+		07364B0D1394551B001A5278 /* CIAPIStopLimitOrderHistory.h in Headers */ = {isa = PBXBuildFile; fileRef = 07364A9F1394551B001A5278 /* CIAPIStopLimitOrderHistory.h */; };
+		07364B0E1394551B001A5278 /* CIAPIStopLimitOrderHistory.m in Sources */ = {isa = PBXBuildFile; fileRef = 07364AA01394551B001A5278 /* CIAPIStopLimitOrderHistory.m */; };
+		07364B0F1394551B001A5278 /* CIAPIStopLimitResponse.h in Headers */ = {isa = PBXBuildFile; fileRef = 07364AA11394551B001A5278 /* CIAPIStopLimitResponse.h */; };
+		07364B101394551B001A5278 /* CIAPIStopLimitResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 07364AA21394551B001A5278 /* CIAPIStopLimitResponse.m */; };
+		07364B111394551B001A5278 /* CIAPISystemStatus.h in Headers */ = {isa = PBXBuildFile; fileRef = 07364AA31394551B001A5278 /* CIAPISystemStatus.h */; };
+		07364B121394551B001A5278 /* CIAPISystemStatus.m in Sources */ = {isa = PBXBuildFile; fileRef = 07364AA41394551B001A5278 /* CIAPISystemStatus.m */; };
+		07364B131394551B001A5278 /* CIAPITradeHistory.h in Headers */ = {isa = PBXBuildFile; fileRef = 07364AA51394551B001A5278 /* CIAPITradeHistory.h */; };
+		07364B141394551B001A5278 /* CIAPITradeHistory.m in Sources */ = {isa = PBXBuildFile; fileRef = 07364AA61394551B001A5278 /* CIAPITradeHistory.m */; };
+		07364B151394551B001A5278 /* CIAPITradeOrder.h in Headers */ = {isa = PBXBuildFile; fileRef = 07364AA71394551B001A5278 /* CIAPITradeOrder.h */; };
+		07364B161394551B001A5278 /* CIAPITradeOrder.m in Sources */ = {isa = PBXBuildFile; fileRef = 07364AA81394551B001A5278 /* CIAPITradeOrder.m */; };
+		07364B171394551B001A5278 /* CIAPITradeOrderResponse.h in Headers */ = {isa = PBXBuildFile; fileRef = 07364AA91394551B001A5278 /* CIAPITradeOrderResponse.h */; };
+		07364B181394551B001A5278 /* CIAPITradeOrderResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 07364AAA1394551B001A5278 /* CIAPITradeOrderResponse.m */; };
+		07364B191394551B001A5278 /* CIAPITradingAccount.h in Headers */ = {isa = PBXBuildFile; fileRef = 07364AAB1394551B001A5278 /* CIAPITradingAccount.h */; };
+		07364B1A1394551B001A5278 /* CIAPITradingAccount.m in Sources */ = {isa = PBXBuildFile; fileRef = 07364AAC1394551B001A5278 /* CIAPITradingAccount.m */; };
 		07599400136C69C90040D454 /* ObjectPropertiesDictionaryMapper.h in Headers */ = {isa = PBXBuildFile; fileRef = 075993FE136C69C90040D454 /* ObjectPropertiesDictionaryMapper.h */; };
 		07599401136C69C90040D454 /* ObjectPropertiesDictionaryMapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 075993FF136C69C90040D454 /* ObjectPropertiesDictionaryMapper.m */; };
 		07599404136D8DCE0040D454 /* CIAPIObjectResponse.h in Headers */ = {isa = PBXBuildFile; fileRef = 07599402136D8DCE0040D454 /* CIAPIObjectResponse.h */; };
@@ -69,6 +253,9 @@
 		07F0E717138BD800002EB862 /* TypeDecoder.h in Headers */ = {isa = PBXBuildFile; fileRef = 07F0E715138BD800002EB862 /* TypeDecoder.h */; };
 		07F0E718138BD800002EB862 /* TypeDecoder.m in Sources */ = {isa = PBXBuildFile; fileRef = 07F0E716138BD800002EB862 /* TypeDecoder.m */; };
 		07F0E71C138BD8F0002EB862 /* ObjectDictionaryMapping.m in Sources */ = {isa = PBXBuildFile; fileRef = 07F0E71B138BD8F0002EB862 /* ObjectDictionaryMapping.m */; };
+		07FC281713AE437D00C6C16B /* RequestDispatcher.h in Headers */ = {isa = PBXBuildFile; fileRef = 07FC281513AE437D00C6C16B /* RequestDispatcher.h */; };
+		07FC281813AE437D00C6C16B /* RequestDispatcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 07FC281613AE437D00C6C16B /* RequestDispatcher.m */; };
+		07FC281C13AE938100C6C16B /* CIAPIRequestsAndResponses.h in Headers */ = {isa = PBXBuildFile; fileRef = 07FC281B13AE938000C6C16B /* CIAPIRequestsAndResponses.h */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -149,9 +336,200 @@
 			remoteGlobalIDString = 07DEFE411342710E00CFA705;
 			remoteInfo = CIAPI;
 		};
+		07FC284E13AE93E800C6C16B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 07FC284A13AE93E500C6C16B /* CityPad.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 07FC282813AE93E500C6C16B;
+			remoteInfo = CityPad;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0704146813A523BB002F28C5 /* ThrottledQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ThrottledQueue.h; sourceTree = "<group>"; };
+		0704146913A523BB002F28C5 /* ThrottledQueue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ThrottledQueue.m; sourceTree = "<group>"; };
+		0704146C13A52473002F28C5 /* ThrottledQueueMultiplexer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ThrottledQueueMultiplexer.h; sourceTree = "<group>"; };
+		0704146D13A52473002F28C5 /* ThrottledQueueMultiplexer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ThrottledQueueMultiplexer.m; sourceTree = "<group>"; };
+		073649B313945510001A5278 /* CIAPICancelOrderRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CIAPICancelOrderRequest.h; sourceTree = "<group>"; };
+		073649B413945510001A5278 /* CIAPICancelOrderRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CIAPICancelOrderRequest.m; sourceTree = "<group>"; };
+		073649B513945510001A5278 /* CIAPIDeleteSessionRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CIAPIDeleteSessionRequest.h; sourceTree = "<group>"; };
+		073649B613945510001A5278 /* CIAPIDeleteSessionRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CIAPIDeleteSessionRequest.m; sourceTree = "<group>"; };
+		073649B713945510001A5278 /* CIAPIGenerateExceptionRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CIAPIGenerateExceptionRequest.h; sourceTree = "<group>"; };
+		073649B813945510001A5278 /* CIAPIGenerateExceptionRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CIAPIGenerateExceptionRequest.m; sourceTree = "<group>"; };
+		073649B913945510001A5278 /* CIAPIGetActiveStopLimitOrderRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CIAPIGetActiveStopLimitOrderRequest.h; sourceTree = "<group>"; };
+		073649BA13945510001A5278 /* CIAPIGetActiveStopLimitOrderRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CIAPIGetActiveStopLimitOrderRequest.m; sourceTree = "<group>"; };
+		073649BB13945510001A5278 /* CIAPIGetChartingEnabledRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CIAPIGetChartingEnabledRequest.h; sourceTree = "<group>"; };
+		073649BC13945510001A5278 /* CIAPIGetChartingEnabledRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CIAPIGetChartingEnabledRequest.m; sourceTree = "<group>"; };
+		073649BD13945510001A5278 /* CIAPIGetClientAndTradingAccountRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CIAPIGetClientAndTradingAccountRequest.h; sourceTree = "<group>"; };
+		073649BE13945510001A5278 /* CIAPIGetClientAndTradingAccountRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CIAPIGetClientAndTradingAccountRequest.m; sourceTree = "<group>"; };
+		073649BF13945510001A5278 /* CIAPIGetMarketInformationRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CIAPIGetMarketInformationRequest.h; sourceTree = "<group>"; };
+		073649C013945510001A5278 /* CIAPIGetMarketInformationRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CIAPIGetMarketInformationRequest.m; sourceTree = "<group>"; };
+		073649C113945510001A5278 /* CIAPIGetNewsDetailRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CIAPIGetNewsDetailRequest.h; sourceTree = "<group>"; };
+		073649C213945510001A5278 /* CIAPIGetNewsDetailRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CIAPIGetNewsDetailRequest.m; sourceTree = "<group>"; };
+		073649C313945510001A5278 /* CIAPIGetOpenPositionRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CIAPIGetOpenPositionRequest.h; sourceTree = "<group>"; };
+		073649C413945510001A5278 /* CIAPIGetOpenPositionRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CIAPIGetOpenPositionRequest.m; sourceTree = "<group>"; };
+		073649C513945510001A5278 /* CIAPIGetOrderRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CIAPIGetOrderRequest.h; sourceTree = "<group>"; };
+		073649C613945510001A5278 /* CIAPIGetOrderRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CIAPIGetOrderRequest.m; sourceTree = "<group>"; };
+		073649C713945510001A5278 /* CIAPIGetPriceBarsRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CIAPIGetPriceBarsRequest.h; sourceTree = "<group>"; };
+		073649C813945510001A5278 /* CIAPIGetPriceBarsRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CIAPIGetPriceBarsRequest.m; sourceTree = "<group>"; };
+		073649C913945510001A5278 /* CIAPIGetPriceTicksRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CIAPIGetPriceTicksRequest.h; sourceTree = "<group>"; };
+		073649CA13945510001A5278 /* CIAPIGetPriceTicksRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CIAPIGetPriceTicksRequest.m; sourceTree = "<group>"; };
+		073649CB13945510001A5278 /* CIAPIInsertWatchlistItemRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CIAPIInsertWatchlistItemRequest.h; sourceTree = "<group>"; };
+		073649CC13945510001A5278 /* CIAPIInsertWatchlistItemRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CIAPIInsertWatchlistItemRequest.m; sourceTree = "<group>"; };
+		073649CD13945510001A5278 /* CIAPIListActiveStopLimitOrdersRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CIAPIListActiveStopLimitOrdersRequest.h; sourceTree = "<group>"; };
+		073649CE13945510001A5278 /* CIAPIListActiveStopLimitOrdersRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CIAPIListActiveStopLimitOrdersRequest.m; sourceTree = "<group>"; };
+		073649CF13945510001A5278 /* CIAPIListCfdMarketsRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CIAPIListCfdMarketsRequest.h; sourceTree = "<group>"; };
+		073649D013945510001A5278 /* CIAPIListCfdMarketsRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CIAPIListCfdMarketsRequest.m; sourceTree = "<group>"; };
+		073649D113945510001A5278 /* CIAPIListMarketInformationRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CIAPIListMarketInformationRequest.h; sourceTree = "<group>"; };
+		073649D213945510001A5278 /* CIAPIListMarketInformationRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CIAPIListMarketInformationRequest.m; sourceTree = "<group>"; };
+		073649D313945510001A5278 /* CIAPIListMarketInformationSearchRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CIAPIListMarketInformationSearchRequest.h; sourceTree = "<group>"; };
+		073649D413945510001A5278 /* CIAPIListMarketInformationSearchRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CIAPIListMarketInformationSearchRequest.m; sourceTree = "<group>"; };
+		073649D513945510001A5278 /* CIAPIListNewsHeadlinesRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CIAPIListNewsHeadlinesRequest.h; sourceTree = "<group>"; };
+		073649D613945510001A5278 /* CIAPIListNewsHeadlinesRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CIAPIListNewsHeadlinesRequest.m; sourceTree = "<group>"; };
+		073649D713945510001A5278 /* CIAPIListOpenPositionsRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CIAPIListOpenPositionsRequest.h; sourceTree = "<group>"; };
+		073649D813945510001A5278 /* CIAPIListOpenPositionsRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CIAPIListOpenPositionsRequest.m; sourceTree = "<group>"; };
+		073649D913945510001A5278 /* CIAPIListSpreadMarketsRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CIAPIListSpreadMarketsRequest.h; sourceTree = "<group>"; };
+		073649DA13945510001A5278 /* CIAPIListSpreadMarketsRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CIAPIListSpreadMarketsRequest.m; sourceTree = "<group>"; };
+		073649DB13945510001A5278 /* CIAPIListStopLimitOrderHistoryRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CIAPIListStopLimitOrderHistoryRequest.h; sourceTree = "<group>"; };
+		073649DC13945510001A5278 /* CIAPIListStopLimitOrderHistoryRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CIAPIListStopLimitOrderHistoryRequest.m; sourceTree = "<group>"; };
+		073649DD13945510001A5278 /* CIAPIListTradeHistoryRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CIAPIListTradeHistoryRequest.h; sourceTree = "<group>"; };
+		073649DE13945510001A5278 /* CIAPIListTradeHistoryRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CIAPIListTradeHistoryRequest.m; sourceTree = "<group>"; };
+		073649DF13945510001A5278 /* CIAPILogOffRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CIAPILogOffRequest.h; sourceTree = "<group>"; };
+		073649E013945510001A5278 /* CIAPILogOffRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CIAPILogOffRequest.m; sourceTree = "<group>"; };
+		073649E113945510001A5278 /* CIAPILogOnRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CIAPILogOnRequest.h; sourceTree = "<group>"; };
+		073649E213945510001A5278 /* CIAPILogOnRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CIAPILogOnRequest.m; sourceTree = "<group>"; };
+		073649E313945510001A5278 /* CIAPINewStopLimitOrderRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CIAPINewStopLimitOrderRequest.h; sourceTree = "<group>"; };
+		073649E413945510001A5278 /* CIAPINewStopLimitOrderRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CIAPINewStopLimitOrderRequest.m; sourceTree = "<group>"; };
+		073649E513945510001A5278 /* CIAPINewTradeOrderRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CIAPINewTradeOrderRequest.h; sourceTree = "<group>"; };
+		073649E613945510001A5278 /* CIAPINewTradeOrderRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CIAPINewTradeOrderRequest.m; sourceTree = "<group>"; };
+		073649E713945510001A5278 /* CIAPIOrderRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CIAPIOrderRequest.h; sourceTree = "<group>"; };
+		073649E813945510001A5278 /* CIAPIOrderRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CIAPIOrderRequest.m; sourceTree = "<group>"; };
+		073649E913945510001A5278 /* CIAPISaveWatchlistRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CIAPISaveWatchlistRequest.h; sourceTree = "<group>"; };
+		073649EA13945510001A5278 /* CIAPISaveWatchlistRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CIAPISaveWatchlistRequest.m; sourceTree = "<group>"; };
+		073649EB13945510001A5278 /* CIAPISystemStatusRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CIAPISystemStatusRequest.h; sourceTree = "<group>"; };
+		073649EC13945510001A5278 /* CIAPISystemStatusRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CIAPISystemStatusRequest.m; sourceTree = "<group>"; };
+		073649ED13945510001A5278 /* CIAPITradeRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CIAPITradeRequest.h; sourceTree = "<group>"; };
+		073649EE13945510001A5278 /* CIAPITradeRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CIAPITradeRequest.m; sourceTree = "<group>"; };
+		073649EF13945510001A5278 /* CIAPIUpdateOrderRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CIAPIUpdateOrderRequest.h; sourceTree = "<group>"; };
+		073649F013945510001A5278 /* CIAPIUpdateOrderRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CIAPIUpdateOrderRequest.m; sourceTree = "<group>"; };
+		073649F113945510001A5278 /* CIAPIUpdateStopLimitOrderRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CIAPIUpdateStopLimitOrderRequest.h; sourceTree = "<group>"; };
+		073649F213945510001A5278 /* CIAPIUpdateStopLimitOrderRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CIAPIUpdateStopLimitOrderRequest.m; sourceTree = "<group>"; };
+		073649F313945510001A5278 /* CIAPIUpdateTradeOrderRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CIAPIUpdateTradeOrderRequest.h; sourceTree = "<group>"; };
+		073649F413945510001A5278 /* CIAPIUpdateTradeOrderRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CIAPIUpdateTradeOrderRequest.m; sourceTree = "<group>"; };
+		073649F513945510001A5278 /* CIAPIUpdateTradeRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CIAPIUpdateTradeRequest.h; sourceTree = "<group>"; };
+		073649F613945510001A5278 /* CIAPIUpdateTradeRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CIAPIUpdateTradeRequest.m; sourceTree = "<group>"; };
+		073649F713945510001A5278 /* CIAPIUpdateWatchlistDisplayOrderRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CIAPIUpdateWatchlistDisplayOrderRequest.h; sourceTree = "<group>"; };
+		073649F813945510001A5278 /* CIAPIUpdateWatchlistDisplayOrderRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CIAPIUpdateWatchlistDisplayOrderRequest.m; sourceTree = "<group>"; };
+		07364A3F1394551B001A5278 /* CIAPIAccountInformationResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CIAPIAccountInformationResponse.h; sourceTree = "<group>"; };
+		07364A401394551B001A5278 /* CIAPIAccountInformationResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CIAPIAccountInformationResponse.m; sourceTree = "<group>"; };
+		07364A411394551B001A5278 /* CIAPIActiveStopLimitOrder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CIAPIActiveStopLimitOrder.h; sourceTree = "<group>"; };
+		07364A421394551B001A5278 /* CIAPIActiveStopLimitOrder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CIAPIActiveStopLimitOrder.m; sourceTree = "<group>"; };
+		07364A431394551B001A5278 /* CIAPIBasicStopLimitOrder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CIAPIBasicStopLimitOrder.h; sourceTree = "<group>"; };
+		07364A441394551B001A5278 /* CIAPIBasicStopLimitOrder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CIAPIBasicStopLimitOrder.m; sourceTree = "<group>"; };
+		07364A451394551B001A5278 /* CIAPIClientAccountMargin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CIAPIClientAccountMargin.h; sourceTree = "<group>"; };
+		07364A461394551B001A5278 /* CIAPIClientAccountMargin.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CIAPIClientAccountMargin.m; sourceTree = "<group>"; };
+		07364A471394551B001A5278 /* CIAPIClientAccountWatchlist.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CIAPIClientAccountWatchlist.h; sourceTree = "<group>"; };
+		07364A481394551B001A5278 /* CIAPIClientAccountWatchlist.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CIAPIClientAccountWatchlist.m; sourceTree = "<group>"; };
+		07364A491394551B001A5278 /* CIAPIClientAccountWatchlistItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CIAPIClientAccountWatchlistItem.h; sourceTree = "<group>"; };
+		07364A4A1394551B001A5278 /* CIAPIClientAccountWatchlistItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CIAPIClientAccountWatchlistItem.m; sourceTree = "<group>"; };
+		07364A4B1394551B001A5278 /* CIAPIErrorCode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CIAPIErrorCode.h; sourceTree = "<group>"; };
+		07364A4C1394551B001A5278 /* CIAPIErrorCode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CIAPIErrorCode.m; sourceTree = "<group>"; };
+		07364A4D1394551B001A5278 /* CIAPIErrorResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CIAPIErrorResponse.h; sourceTree = "<group>"; };
+		07364A4E1394551B001A5278 /* CIAPIErrorResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CIAPIErrorResponse.m; sourceTree = "<group>"; };
+		07364A4F1394551B001A5278 /* CIAPIGetActiveStopLimitOrderResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CIAPIGetActiveStopLimitOrderResponse.h; sourceTree = "<group>"; };
+		07364A501394551B001A5278 /* CIAPIGetActiveStopLimitOrderResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CIAPIGetActiveStopLimitOrderResponse.m; sourceTree = "<group>"; };
+		07364A511394551B001A5278 /* CIAPIGetMarketInformationResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CIAPIGetMarketInformationResponse.h; sourceTree = "<group>"; };
+		07364A521394551B001A5278 /* CIAPIGetMarketInformationResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CIAPIGetMarketInformationResponse.m; sourceTree = "<group>"; };
+		07364A531394551B001A5278 /* CIAPIGetMessagePopupResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CIAPIGetMessagePopupResponse.h; sourceTree = "<group>"; };
+		07364A541394551B001A5278 /* CIAPIGetMessagePopupResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CIAPIGetMessagePopupResponse.m; sourceTree = "<group>"; };
+		07364A551394551B001A5278 /* CIAPIGetNewsDetailResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CIAPIGetNewsDetailResponse.h; sourceTree = "<group>"; };
+		07364A561394551B001A5278 /* CIAPIGetNewsDetailResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CIAPIGetNewsDetailResponse.m; sourceTree = "<group>"; };
+		07364A571394551B001A5278 /* CIAPIGetOpenPositionResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CIAPIGetOpenPositionResponse.h; sourceTree = "<group>"; };
+		07364A581394551B001A5278 /* CIAPIGetOpenPositionResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CIAPIGetOpenPositionResponse.m; sourceTree = "<group>"; };
+		07364A591394551B001A5278 /* CIAPIGetOrderResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CIAPIGetOrderResponse.h; sourceTree = "<group>"; };
+		07364A5A1394551B001A5278 /* CIAPIGetOrderResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CIAPIGetOrderResponse.m; sourceTree = "<group>"; };
+		07364A5B1394551B001A5278 /* CIAPIGetPriceBarResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CIAPIGetPriceBarResponse.h; sourceTree = "<group>"; };
+		07364A5C1394551B001A5278 /* CIAPIGetPriceBarResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CIAPIGetPriceBarResponse.m; sourceTree = "<group>"; };
+		07364A5D1394551B001A5278 /* CIAPIGetPriceTickResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CIAPIGetPriceTickResponse.h; sourceTree = "<group>"; };
+		07364A5E1394551B001A5278 /* CIAPIGetPriceTickResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CIAPIGetPriceTickResponse.m; sourceTree = "<group>"; };
+		07364A5F1394551B001A5278 /* CIAPIIfDone.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CIAPIIfDone.h; sourceTree = "<group>"; };
+		07364A601394551B001A5278 /* CIAPIIfDone.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CIAPIIfDone.m; sourceTree = "<group>"; };
+		07364A611394551B001A5278 /* CIAPIIfDoneResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CIAPIIfDoneResponse.h; sourceTree = "<group>"; };
+		07364A621394551B001A5278 /* CIAPIIfDoneResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CIAPIIfDoneResponse.m; sourceTree = "<group>"; };
+		07364A631394551B001A5278 /* CIAPIListActiveStopLimitOrderResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CIAPIListActiveStopLimitOrderResponse.h; sourceTree = "<group>"; };
+		07364A641394551B001A5278 /* CIAPIListActiveStopLimitOrderResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CIAPIListActiveStopLimitOrderResponse.m; sourceTree = "<group>"; };
+		07364A651394551B001A5278 /* CIAPIListCfdMarketsResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CIAPIListCfdMarketsResponse.h; sourceTree = "<group>"; };
+		07364A661394551B001A5278 /* CIAPIListCfdMarketsResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CIAPIListCfdMarketsResponse.m; sourceTree = "<group>"; };
+		07364A671394551B001A5278 /* CIAPIListMarketInformationResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CIAPIListMarketInformationResponse.h; sourceTree = "<group>"; };
+		07364A681394551B001A5278 /* CIAPIListMarketInformationResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CIAPIListMarketInformationResponse.m; sourceTree = "<group>"; };
+		07364A691394551B001A5278 /* CIAPIListMarketInformationSearchResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CIAPIListMarketInformationSearchResponse.h; sourceTree = "<group>"; };
+		07364A6A1394551B001A5278 /* CIAPIListMarketInformationSearchResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CIAPIListMarketInformationSearchResponse.m; sourceTree = "<group>"; };
+		07364A6B1394551B001A5278 /* CIAPIListNewsHeadlinesResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CIAPIListNewsHeadlinesResponse.h; sourceTree = "<group>"; };
+		07364A6C1394551B001A5278 /* CIAPIListNewsHeadlinesResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CIAPIListNewsHeadlinesResponse.m; sourceTree = "<group>"; };
+		07364A6D1394551B001A5278 /* CIAPIListOpenPositionsResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CIAPIListOpenPositionsResponse.h; sourceTree = "<group>"; };
+		07364A6E1394551B001A5278 /* CIAPIListOpenPositionsResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CIAPIListOpenPositionsResponse.m; sourceTree = "<group>"; };
+		07364A6F1394551B001A5278 /* CIAPIListOrdersResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CIAPIListOrdersResponse.h; sourceTree = "<group>"; };
+		07364A701394551B001A5278 /* CIAPIListOrdersResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CIAPIListOrdersResponse.m; sourceTree = "<group>"; };
+		07364A711394551B001A5278 /* CIAPIListSpreadMarketsResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CIAPIListSpreadMarketsResponse.h; sourceTree = "<group>"; };
+		07364A721394551B001A5278 /* CIAPIListSpreadMarketsResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CIAPIListSpreadMarketsResponse.m; sourceTree = "<group>"; };
+		07364A731394551B001A5278 /* CIAPIListStopLimitOrderHistoryResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CIAPIListStopLimitOrderHistoryResponse.h; sourceTree = "<group>"; };
+		07364A741394551B001A5278 /* CIAPIListStopLimitOrderHistoryResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CIAPIListStopLimitOrderHistoryResponse.m; sourceTree = "<group>"; };
+		07364A751394551B001A5278 /* CIAPIListTradeHistoryResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CIAPIListTradeHistoryResponse.h; sourceTree = "<group>"; };
+		07364A761394551B001A5278 /* CIAPIListTradeHistoryResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CIAPIListTradeHistoryResponse.m; sourceTree = "<group>"; };
+		07364A771394551B001A5278 /* CIAPIListWatchlistResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CIAPIListWatchlistResponse.h; sourceTree = "<group>"; };
+		07364A781394551B001A5278 /* CIAPIListWatchlistResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CIAPIListWatchlistResponse.m; sourceTree = "<group>"; };
+		07364A791394551B001A5278 /* CIAPILogOffResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CIAPILogOffResponse.h; sourceTree = "<group>"; };
+		07364A7A1394551B001A5278 /* CIAPILogOffResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CIAPILogOffResponse.m; sourceTree = "<group>"; };
+		07364A7B1394551B001A5278 /* CIAPILogOnResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CIAPILogOnResponse.h; sourceTree = "<group>"; };
+		07364A7C1394551B001A5278 /* CIAPILogOnResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CIAPILogOnResponse.m; sourceTree = "<group>"; };
+		07364A7D1394551B001A5278 /* CIAPILookup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CIAPILookup.h; sourceTree = "<group>"; };
+		07364A7E1394551B001A5278 /* CIAPILookup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CIAPILookup.m; sourceTree = "<group>"; };
+		07364A7F1394551B001A5278 /* CIAPILookupResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CIAPILookupResponse.h; sourceTree = "<group>"; };
+		07364A801394551B001A5278 /* CIAPILookupResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CIAPILookupResponse.m; sourceTree = "<group>"; };
+		07364A811394551B001A5278 /* CIAPIMarket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CIAPIMarket.h; sourceTree = "<group>"; };
+		07364A821394551B001A5278 /* CIAPIMarket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CIAPIMarket.m; sourceTree = "<group>"; };
+		07364A831394551B001A5278 /* CIAPIMarketEod.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CIAPIMarketEod.h; sourceTree = "<group>"; };
+		07364A841394551B001A5278 /* CIAPIMarketEod.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CIAPIMarketEod.m; sourceTree = "<group>"; };
+		07364A851394551B001A5278 /* CIAPIMarketInformation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CIAPIMarketInformation.h; sourceTree = "<group>"; };
+		07364A861394551B001A5278 /* CIAPIMarketInformation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CIAPIMarketInformation.m; sourceTree = "<group>"; };
+		07364A871394551B001A5278 /* CIAPINews.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CIAPINews.h; sourceTree = "<group>"; };
+		07364A881394551B001A5278 /* CIAPINews.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CIAPINews.m; sourceTree = "<group>"; };
+		07364A891394551B001A5278 /* CIAPINewsDetail.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CIAPINewsDetail.h; sourceTree = "<group>"; };
+		07364A8A1394551B001A5278 /* CIAPINewsDetail.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CIAPINewsDetail.m; sourceTree = "<group>"; };
+		07364A8B1394551B001A5278 /* CIAPIOpenPosition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CIAPIOpenPosition.h; sourceTree = "<group>"; };
+		07364A8C1394551B001A5278 /* CIAPIOpenPosition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CIAPIOpenPosition.m; sourceTree = "<group>"; };
+		07364A8D1394551B001A5278 /* CIAPIOrder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CIAPIOrder.h; sourceTree = "<group>"; };
+		07364A8E1394551B001A5278 /* CIAPIOrder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CIAPIOrder.m; sourceTree = "<group>"; };
+		07364A8F1394551B001A5278 /* CIAPIOrderResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CIAPIOrderResponse.h; sourceTree = "<group>"; };
+		07364A901394551B001A5278 /* CIAPIOrderResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CIAPIOrderResponse.m; sourceTree = "<group>"; };
+		07364A911394551B001A5278 /* CIAPIPrice.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CIAPIPrice.h; sourceTree = "<group>"; };
+		07364A921394551B001A5278 /* CIAPIPrice.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CIAPIPrice.m; sourceTree = "<group>"; };
+		07364A931394551B001A5278 /* CIAPIPriceBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CIAPIPriceBar.h; sourceTree = "<group>"; };
+		07364A941394551B001A5278 /* CIAPIPriceBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CIAPIPriceBar.m; sourceTree = "<group>"; };
+		07364A951394551B001A5278 /* CIAPIPriceTick.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CIAPIPriceTick.h; sourceTree = "<group>"; };
+		07364A961394551B001A5278 /* CIAPIPriceTick.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CIAPIPriceTick.m; sourceTree = "<group>"; };
+		07364A971394551B001A5278 /* CIAPIQuote.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CIAPIQuote.h; sourceTree = "<group>"; };
+		07364A981394551B001A5278 /* CIAPIQuote.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CIAPIQuote.m; sourceTree = "<group>"; };
+		07364A991394551B001A5278 /* CIAPIQuoteResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CIAPIQuoteResponse.h; sourceTree = "<group>"; };
+		07364A9A1394551B001A5278 /* CIAPIQuoteResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CIAPIQuoteResponse.m; sourceTree = "<group>"; };
+		07364A9B1394551B001A5278 /* CIAPISaveWatchlistResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CIAPISaveWatchlistResponse.h; sourceTree = "<group>"; };
+		07364A9C1394551B001A5278 /* CIAPISaveWatchlistResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CIAPISaveWatchlistResponse.m; sourceTree = "<group>"; };
+		07364A9D1394551B001A5278 /* CIAPIStopLimitOrder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CIAPIStopLimitOrder.h; sourceTree = "<group>"; };
+		07364A9E1394551B001A5278 /* CIAPIStopLimitOrder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CIAPIStopLimitOrder.m; sourceTree = "<group>"; };
+		07364A9F1394551B001A5278 /* CIAPIStopLimitOrderHistory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CIAPIStopLimitOrderHistory.h; sourceTree = "<group>"; };
+		07364AA01394551B001A5278 /* CIAPIStopLimitOrderHistory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CIAPIStopLimitOrderHistory.m; sourceTree = "<group>"; };
+		07364AA11394551B001A5278 /* CIAPIStopLimitResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CIAPIStopLimitResponse.h; sourceTree = "<group>"; };
+		07364AA21394551B001A5278 /* CIAPIStopLimitResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CIAPIStopLimitResponse.m; sourceTree = "<group>"; };
+		07364AA31394551B001A5278 /* CIAPISystemStatus.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CIAPISystemStatus.h; sourceTree = "<group>"; };
+		07364AA41394551B001A5278 /* CIAPISystemStatus.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CIAPISystemStatus.m; sourceTree = "<group>"; };
+		07364AA51394551B001A5278 /* CIAPITradeHistory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CIAPITradeHistory.h; sourceTree = "<group>"; };
+		07364AA61394551B001A5278 /* CIAPITradeHistory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CIAPITradeHistory.m; sourceTree = "<group>"; };
+		07364AA71394551B001A5278 /* CIAPITradeOrder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CIAPITradeOrder.h; sourceTree = "<group>"; };
+		07364AA81394551B001A5278 /* CIAPITradeOrder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CIAPITradeOrder.m; sourceTree = "<group>"; };
+		07364AA91394551B001A5278 /* CIAPITradeOrderResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CIAPITradeOrderResponse.h; sourceTree = "<group>"; };
+		07364AAA1394551B001A5278 /* CIAPITradeOrderResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CIAPITradeOrderResponse.m; sourceTree = "<group>"; };
+		07364AAB1394551B001A5278 /* CIAPITradingAccount.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CIAPITradingAccount.h; sourceTree = "<group>"; };
+		07364AAC1394551B001A5278 /* CIAPITradingAccount.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CIAPITradingAccount.m; sourceTree = "<group>"; };
 		075993FE136C69C90040D454 /* ObjectPropertiesDictionaryMapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ObjectPropertiesDictionaryMapper.h; sourceTree = "<group>"; };
 		075993FF136C69C90040D454 /* ObjectPropertiesDictionaryMapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ObjectPropertiesDictionaryMapper.m; sourceTree = "<group>"; };
 		07599402136D8DCE0040D454 /* CIAPIObjectResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CIAPIObjectResponse.h; sourceTree = "<group>"; };
@@ -227,6 +605,10 @@
 		07F0E719138BD827002EB862 /* TestControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestControl.h; sourceTree = "<group>"; };
 		07F0E71A138BD8F0002EB862 /* ObjectDictionaryMapping.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ObjectDictionaryMapping.h; sourceTree = "<group>"; };
 		07F0E71B138BD8F0002EB862 /* ObjectDictionaryMapping.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ObjectDictionaryMapping.m; sourceTree = "<group>"; };
+		07FC281513AE437D00C6C16B /* RequestDispatcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RequestDispatcher.h; sourceTree = "<group>"; };
+		07FC281613AE437D00C6C16B /* RequestDispatcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RequestDispatcher.m; sourceTree = "<group>"; };
+		07FC281B13AE938000C6C16B /* CIAPIRequestsAndResponses.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CIAPIRequestsAndResponses.h; sourceTree = "<group>"; };
+		07FC284A13AE93E500C6C16B /* CityPad.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = CityPad.xcodeproj; path = ../CityPad/CityPad.xcodeproj; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -275,27 +657,6 @@
 			name = "JSON Property manager";
 			sourceTree = "<group>";
 		};
-		0759940A136D903C0040D454 /* Requests */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = Requests;
-			sourceTree = "<group>";
-		};
-		0759940B136D90420040D454 /* Responses */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = Responses;
-			sourceTree = "<group>";
-		};
-		07599410136D91050040D454 /* Composite Elements */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = "Composite Elements";
-			sourceTree = "<group>";
-		};
 		075E8E17134271BF00C85B9B /* Products */ = {
 			isa = PBXGroup;
 			children = (
@@ -323,32 +684,28 @@
 			name = Authenticator;
 			sourceTree = "<group>";
 		};
-		07A65B90136B11FF00B78941 /* Handcrafted DTOs */ = {
-			isa = PBXGroup;
-			children = (
-				07599410136D91050040D454 /* Composite Elements */,
-				0759940B136D90420040D454 /* Responses */,
-				0759940A136D903C0040D454 /* Requests */,
-			);
-			name = "Handcrafted DTOs";
-			path = DTOs;
-			sourceTree = "<group>";
-		};
 		07A65B92136B122C00B78941 /* Client */ = {
 			isa = PBXGroup;
 			children = (
-				076AF1C7134FC4B90049972E /* CIAPIStreamDelegate.h */,
+				07FC281B13AE938000C6C16B /* CIAPIRequestsAndResponses.h */,
 				076AF1CD1350931A0049972E /* CIAPIRequestDelegate.h */,
-				076AF1DE135231460049972E /* CIAPIRequestToken.h */,
-				076AF1DF135231460049972E /* CIAPIRequestToken.m */,
-				076AF1C9135093070049972E /* CIAPIObjectRequest.h */,
-				076AF1CA135093070049972E /* CIAPIObjectRequest.m */,
+				076AF1C7134FC4B90049972E /* CIAPIStreamDelegate.h */,
 				07599402136D8DCE0040D454 /* CIAPIObjectResponse.h */,
 				07599403136D8DCE0040D454 /* CIAPIObjectResponse.m */,
 				0759941A136DB62C0040D454 /* CIAPIObjectListResponse.h */,
 				0759941B136DB62C0040D454 /* CIAPIObjectListResponse.m */,
 				075E8E3F1342724900C85B9B /* CIAPIClient.h */,
 				075E8E401342724900C85B9B /* CIAPIClient.m */,
+				0704146813A523BB002F28C5 /* ThrottledQueue.h */,
+				0704146913A523BB002F28C5 /* ThrottledQueue.m */,
+				0704146C13A52473002F28C5 /* ThrottledQueueMultiplexer.h */,
+				0704146D13A52473002F28C5 /* ThrottledQueueMultiplexer.m */,
+				076AF1DE135231460049972E /* CIAPIRequestToken.h */,
+				076AF1DF135231460049972E /* CIAPIRequestToken.m */,
+				076AF1C9135093070049972E /* CIAPIObjectRequest.h */,
+				076AF1CA135093070049972E /* CIAPIObjectRequest.m */,
+				07FC281513AE437D00C6C16B /* RequestDispatcher.h */,
+				07FC281613AE437D00C6C16B /* RequestDispatcher.m */,
 			);
 			name = Client;
 			sourceTree = "<group>";
@@ -379,6 +736,7 @@
 		07DEFE371342710E00CFA705 = {
 			isa = PBXGroup;
 			children = (
+				07FC284A13AE93E500C6C16B /* CityPad.xcodeproj */,
 				075E8E16134271BF00C85B9B /* RestKit.xcodeproj */,
 				07D54CEA1342734D00DD2A60 /* iStreamLight */,
 				07DEFE471342710E00CFA705 /* CIAPI */,
@@ -426,16 +784,15 @@
 		07DEFE471342710E00CFA705 /* CIAPI */ = {
 			isa = PBXGroup;
 			children = (
+				076AF1EA1352395E0049972E /* DESIGN */,
+				076AF1D8135095370049972E /* CIAPIConfigConstants.h */,
+				076AF1EB13524D570049972E /* CIAPI.h */,
 				075993FD136C69A90040D454 /* JSON Property manager */,
 				07A65B92136B122C00B78941 /* Client */,
 				076AF1D1135093DA0049972E /* Authenticator */,
 				07E9722D1389B985002B0930 /* Requests */,
 				07E9729A1389B9A3002B0930 /* Responses */,
-				07A65B90136B11FF00B78941 /* Handcrafted DTOs */,
 				07DEFE481342710E00CFA705 /* Supporting Files */,
-				076AF1D8135095370049972E /* CIAPIConfigConstants.h */,
-				076AF1EA1352395E0049972E /* DESIGN */,
-				076AF1EB13524D570049972E /* CIAPI.h */,
 			);
 			path = CIAPI;
 			sourceTree = "<group>";
@@ -478,6 +835,76 @@
 		07E9722D1389B985002B0930 /* Requests */ = {
 			isa = PBXGroup;
 			children = (
+				073649B313945510001A5278 /* CIAPICancelOrderRequest.h */,
+				073649B413945510001A5278 /* CIAPICancelOrderRequest.m */,
+				073649B513945510001A5278 /* CIAPIDeleteSessionRequest.h */,
+				073649B613945510001A5278 /* CIAPIDeleteSessionRequest.m */,
+				073649B713945510001A5278 /* CIAPIGenerateExceptionRequest.h */,
+				073649B813945510001A5278 /* CIAPIGenerateExceptionRequest.m */,
+				073649B913945510001A5278 /* CIAPIGetActiveStopLimitOrderRequest.h */,
+				073649BA13945510001A5278 /* CIAPIGetActiveStopLimitOrderRequest.m */,
+				073649BB13945510001A5278 /* CIAPIGetChartingEnabledRequest.h */,
+				073649BC13945510001A5278 /* CIAPIGetChartingEnabledRequest.m */,
+				073649BD13945510001A5278 /* CIAPIGetClientAndTradingAccountRequest.h */,
+				073649BE13945510001A5278 /* CIAPIGetClientAndTradingAccountRequest.m */,
+				073649BF13945510001A5278 /* CIAPIGetMarketInformationRequest.h */,
+				073649C013945510001A5278 /* CIAPIGetMarketInformationRequest.m */,
+				073649C113945510001A5278 /* CIAPIGetNewsDetailRequest.h */,
+				073649C213945510001A5278 /* CIAPIGetNewsDetailRequest.m */,
+				073649C313945510001A5278 /* CIAPIGetOpenPositionRequest.h */,
+				073649C413945510001A5278 /* CIAPIGetOpenPositionRequest.m */,
+				073649C513945510001A5278 /* CIAPIGetOrderRequest.h */,
+				073649C613945510001A5278 /* CIAPIGetOrderRequest.m */,
+				073649C713945510001A5278 /* CIAPIGetPriceBarsRequest.h */,
+				073649C813945510001A5278 /* CIAPIGetPriceBarsRequest.m */,
+				073649C913945510001A5278 /* CIAPIGetPriceTicksRequest.h */,
+				073649CA13945510001A5278 /* CIAPIGetPriceTicksRequest.m */,
+				073649CB13945510001A5278 /* CIAPIInsertWatchlistItemRequest.h */,
+				073649CC13945510001A5278 /* CIAPIInsertWatchlistItemRequest.m */,
+				073649CD13945510001A5278 /* CIAPIListActiveStopLimitOrdersRequest.h */,
+				073649CE13945510001A5278 /* CIAPIListActiveStopLimitOrdersRequest.m */,
+				073649CF13945510001A5278 /* CIAPIListCfdMarketsRequest.h */,
+				073649D013945510001A5278 /* CIAPIListCfdMarketsRequest.m */,
+				073649D113945510001A5278 /* CIAPIListMarketInformationRequest.h */,
+				073649D213945510001A5278 /* CIAPIListMarketInformationRequest.m */,
+				073649D313945510001A5278 /* CIAPIListMarketInformationSearchRequest.h */,
+				073649D413945510001A5278 /* CIAPIListMarketInformationSearchRequest.m */,
+				073649D513945510001A5278 /* CIAPIListNewsHeadlinesRequest.h */,
+				073649D613945510001A5278 /* CIAPIListNewsHeadlinesRequest.m */,
+				073649D713945510001A5278 /* CIAPIListOpenPositionsRequest.h */,
+				073649D813945510001A5278 /* CIAPIListOpenPositionsRequest.m */,
+				073649D913945510001A5278 /* CIAPIListSpreadMarketsRequest.h */,
+				073649DA13945510001A5278 /* CIAPIListSpreadMarketsRequest.m */,
+				073649DB13945510001A5278 /* CIAPIListStopLimitOrderHistoryRequest.h */,
+				073649DC13945510001A5278 /* CIAPIListStopLimitOrderHistoryRequest.m */,
+				073649DD13945510001A5278 /* CIAPIListTradeHistoryRequest.h */,
+				073649DE13945510001A5278 /* CIAPIListTradeHistoryRequest.m */,
+				073649DF13945510001A5278 /* CIAPILogOffRequest.h */,
+				073649E013945510001A5278 /* CIAPILogOffRequest.m */,
+				073649E113945510001A5278 /* CIAPILogOnRequest.h */,
+				073649E213945510001A5278 /* CIAPILogOnRequest.m */,
+				073649E313945510001A5278 /* CIAPINewStopLimitOrderRequest.h */,
+				073649E413945510001A5278 /* CIAPINewStopLimitOrderRequest.m */,
+				073649E513945510001A5278 /* CIAPINewTradeOrderRequest.h */,
+				073649E613945510001A5278 /* CIAPINewTradeOrderRequest.m */,
+				073649E713945510001A5278 /* CIAPIOrderRequest.h */,
+				073649E813945510001A5278 /* CIAPIOrderRequest.m */,
+				073649E913945510001A5278 /* CIAPISaveWatchlistRequest.h */,
+				073649EA13945510001A5278 /* CIAPISaveWatchlistRequest.m */,
+				073649EB13945510001A5278 /* CIAPISystemStatusRequest.h */,
+				073649EC13945510001A5278 /* CIAPISystemStatusRequest.m */,
+				073649ED13945510001A5278 /* CIAPITradeRequest.h */,
+				073649EE13945510001A5278 /* CIAPITradeRequest.m */,
+				073649EF13945510001A5278 /* CIAPIUpdateOrderRequest.h */,
+				073649F013945510001A5278 /* CIAPIUpdateOrderRequest.m */,
+				073649F113945510001A5278 /* CIAPIUpdateStopLimitOrderRequest.h */,
+				073649F213945510001A5278 /* CIAPIUpdateStopLimitOrderRequest.m */,
+				073649F313945510001A5278 /* CIAPIUpdateTradeOrderRequest.h */,
+				073649F413945510001A5278 /* CIAPIUpdateTradeOrderRequest.m */,
+				073649F513945510001A5278 /* CIAPIUpdateTradeRequest.h */,
+				073649F613945510001A5278 /* CIAPIUpdateTradeRequest.m */,
+				073649F713945510001A5278 /* CIAPIUpdateWatchlistDisplayOrderRequest.h */,
+				073649F813945510001A5278 /* CIAPIUpdateWatchlistDisplayOrderRequest.m */,
 			);
 			path = Requests;
 			sourceTree = "<group>";
@@ -485,8 +912,126 @@
 		07E9729A1389B9A3002B0930 /* Responses */ = {
 			isa = PBXGroup;
 			children = (
+				07364A3F1394551B001A5278 /* CIAPIAccountInformationResponse.h */,
+				07364A401394551B001A5278 /* CIAPIAccountInformationResponse.m */,
+				07364A411394551B001A5278 /* CIAPIActiveStopLimitOrder.h */,
+				07364A421394551B001A5278 /* CIAPIActiveStopLimitOrder.m */,
+				07364A431394551B001A5278 /* CIAPIBasicStopLimitOrder.h */,
+				07364A441394551B001A5278 /* CIAPIBasicStopLimitOrder.m */,
+				07364A451394551B001A5278 /* CIAPIClientAccountMargin.h */,
+				07364A461394551B001A5278 /* CIAPIClientAccountMargin.m */,
+				07364A471394551B001A5278 /* CIAPIClientAccountWatchlist.h */,
+				07364A481394551B001A5278 /* CIAPIClientAccountWatchlist.m */,
+				07364A491394551B001A5278 /* CIAPIClientAccountWatchlistItem.h */,
+				07364A4A1394551B001A5278 /* CIAPIClientAccountWatchlistItem.m */,
+				07364A4B1394551B001A5278 /* CIAPIErrorCode.h */,
+				07364A4C1394551B001A5278 /* CIAPIErrorCode.m */,
+				07364A4D1394551B001A5278 /* CIAPIErrorResponse.h */,
+				07364A4E1394551B001A5278 /* CIAPIErrorResponse.m */,
+				07364A4F1394551B001A5278 /* CIAPIGetActiveStopLimitOrderResponse.h */,
+				07364A501394551B001A5278 /* CIAPIGetActiveStopLimitOrderResponse.m */,
+				07364A511394551B001A5278 /* CIAPIGetMarketInformationResponse.h */,
+				07364A521394551B001A5278 /* CIAPIGetMarketInformationResponse.m */,
+				07364A531394551B001A5278 /* CIAPIGetMessagePopupResponse.h */,
+				07364A541394551B001A5278 /* CIAPIGetMessagePopupResponse.m */,
+				07364A551394551B001A5278 /* CIAPIGetNewsDetailResponse.h */,
+				07364A561394551B001A5278 /* CIAPIGetNewsDetailResponse.m */,
+				07364A571394551B001A5278 /* CIAPIGetOpenPositionResponse.h */,
+				07364A581394551B001A5278 /* CIAPIGetOpenPositionResponse.m */,
+				07364A591394551B001A5278 /* CIAPIGetOrderResponse.h */,
+				07364A5A1394551B001A5278 /* CIAPIGetOrderResponse.m */,
+				07364A5B1394551B001A5278 /* CIAPIGetPriceBarResponse.h */,
+				07364A5C1394551B001A5278 /* CIAPIGetPriceBarResponse.m */,
+				07364A5D1394551B001A5278 /* CIAPIGetPriceTickResponse.h */,
+				07364A5E1394551B001A5278 /* CIAPIGetPriceTickResponse.m */,
+				07364A5F1394551B001A5278 /* CIAPIIfDone.h */,
+				07364A601394551B001A5278 /* CIAPIIfDone.m */,
+				07364A611394551B001A5278 /* CIAPIIfDoneResponse.h */,
+				07364A621394551B001A5278 /* CIAPIIfDoneResponse.m */,
+				07364A631394551B001A5278 /* CIAPIListActiveStopLimitOrderResponse.h */,
+				07364A641394551B001A5278 /* CIAPIListActiveStopLimitOrderResponse.m */,
+				07364A651394551B001A5278 /* CIAPIListCfdMarketsResponse.h */,
+				07364A661394551B001A5278 /* CIAPIListCfdMarketsResponse.m */,
+				07364A671394551B001A5278 /* CIAPIListMarketInformationResponse.h */,
+				07364A681394551B001A5278 /* CIAPIListMarketInformationResponse.m */,
+				07364A691394551B001A5278 /* CIAPIListMarketInformationSearchResponse.h */,
+				07364A6A1394551B001A5278 /* CIAPIListMarketInformationSearchResponse.m */,
+				07364A6B1394551B001A5278 /* CIAPIListNewsHeadlinesResponse.h */,
+				07364A6C1394551B001A5278 /* CIAPIListNewsHeadlinesResponse.m */,
+				07364A6D1394551B001A5278 /* CIAPIListOpenPositionsResponse.h */,
+				07364A6E1394551B001A5278 /* CIAPIListOpenPositionsResponse.m */,
+				07364A6F1394551B001A5278 /* CIAPIListOrdersResponse.h */,
+				07364A701394551B001A5278 /* CIAPIListOrdersResponse.m */,
+				07364A711394551B001A5278 /* CIAPIListSpreadMarketsResponse.h */,
+				07364A721394551B001A5278 /* CIAPIListSpreadMarketsResponse.m */,
+				07364A731394551B001A5278 /* CIAPIListStopLimitOrderHistoryResponse.h */,
+				07364A741394551B001A5278 /* CIAPIListStopLimitOrderHistoryResponse.m */,
+				07364A751394551B001A5278 /* CIAPIListTradeHistoryResponse.h */,
+				07364A761394551B001A5278 /* CIAPIListTradeHistoryResponse.m */,
+				07364A771394551B001A5278 /* CIAPIListWatchlistResponse.h */,
+				07364A781394551B001A5278 /* CIAPIListWatchlistResponse.m */,
+				07364A791394551B001A5278 /* CIAPILogOffResponse.h */,
+				07364A7A1394551B001A5278 /* CIAPILogOffResponse.m */,
+				07364A7B1394551B001A5278 /* CIAPILogOnResponse.h */,
+				07364A7C1394551B001A5278 /* CIAPILogOnResponse.m */,
+				07364A7D1394551B001A5278 /* CIAPILookup.h */,
+				07364A7E1394551B001A5278 /* CIAPILookup.m */,
+				07364A7F1394551B001A5278 /* CIAPILookupResponse.h */,
+				07364A801394551B001A5278 /* CIAPILookupResponse.m */,
+				07364A811394551B001A5278 /* CIAPIMarket.h */,
+				07364A821394551B001A5278 /* CIAPIMarket.m */,
+				07364A831394551B001A5278 /* CIAPIMarketEod.h */,
+				07364A841394551B001A5278 /* CIAPIMarketEod.m */,
+				07364A851394551B001A5278 /* CIAPIMarketInformation.h */,
+				07364A861394551B001A5278 /* CIAPIMarketInformation.m */,
+				07364A871394551B001A5278 /* CIAPINews.h */,
+				07364A881394551B001A5278 /* CIAPINews.m */,
+				07364A891394551B001A5278 /* CIAPINewsDetail.h */,
+				07364A8A1394551B001A5278 /* CIAPINewsDetail.m */,
+				07364A8B1394551B001A5278 /* CIAPIOpenPosition.h */,
+				07364A8C1394551B001A5278 /* CIAPIOpenPosition.m */,
+				07364A8D1394551B001A5278 /* CIAPIOrder.h */,
+				07364A8E1394551B001A5278 /* CIAPIOrder.m */,
+				07364A8F1394551B001A5278 /* CIAPIOrderResponse.h */,
+				07364A901394551B001A5278 /* CIAPIOrderResponse.m */,
+				07364A911394551B001A5278 /* CIAPIPrice.h */,
+				07364A921394551B001A5278 /* CIAPIPrice.m */,
+				07364A931394551B001A5278 /* CIAPIPriceBar.h */,
+				07364A941394551B001A5278 /* CIAPIPriceBar.m */,
+				07364A951394551B001A5278 /* CIAPIPriceTick.h */,
+				07364A961394551B001A5278 /* CIAPIPriceTick.m */,
+				07364A971394551B001A5278 /* CIAPIQuote.h */,
+				07364A981394551B001A5278 /* CIAPIQuote.m */,
+				07364A991394551B001A5278 /* CIAPIQuoteResponse.h */,
+				07364A9A1394551B001A5278 /* CIAPIQuoteResponse.m */,
+				07364A9B1394551B001A5278 /* CIAPISaveWatchlistResponse.h */,
+				07364A9C1394551B001A5278 /* CIAPISaveWatchlistResponse.m */,
+				07364A9D1394551B001A5278 /* CIAPIStopLimitOrder.h */,
+				07364A9E1394551B001A5278 /* CIAPIStopLimitOrder.m */,
+				07364A9F1394551B001A5278 /* CIAPIStopLimitOrderHistory.h */,
+				07364AA01394551B001A5278 /* CIAPIStopLimitOrderHistory.m */,
+				07364AA11394551B001A5278 /* CIAPIStopLimitResponse.h */,
+				07364AA21394551B001A5278 /* CIAPIStopLimitResponse.m */,
+				07364AA31394551B001A5278 /* CIAPISystemStatus.h */,
+				07364AA41394551B001A5278 /* CIAPISystemStatus.m */,
+				07364AA51394551B001A5278 /* CIAPITradeHistory.h */,
+				07364AA61394551B001A5278 /* CIAPITradeHistory.m */,
+				07364AA71394551B001A5278 /* CIAPITradeOrder.h */,
+				07364AA81394551B001A5278 /* CIAPITradeOrder.m */,
+				07364AA91394551B001A5278 /* CIAPITradeOrderResponse.h */,
+				07364AAA1394551B001A5278 /* CIAPITradeOrderResponse.m */,
+				07364AAB1394551B001A5278 /* CIAPITradingAccount.h */,
+				07364AAC1394551B001A5278 /* CIAPITradingAccount.m */,
 			);
 			path = Responses;
+			sourceTree = "<group>";
+		};
+		07FC284B13AE93E500C6C16B /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				07FC284F13AE93E800C6C16B /* CityPad.app */,
+			);
+			name = Products;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -521,6 +1066,100 @@
 				0759941C136DB62C0040D454 /* CIAPIObjectListResponse.h in Headers */,
 				07F0E713138BD7FA002EB862 /* PropertyDescriptionDecoder.h in Headers */,
 				07F0E717138BD800002EB862 /* TypeDecoder.h in Headers */,
+				073649F913945510001A5278 /* CIAPICancelOrderRequest.h in Headers */,
+				073649FB13945510001A5278 /* CIAPIDeleteSessionRequest.h in Headers */,
+				073649FD13945510001A5278 /* CIAPIGenerateExceptionRequest.h in Headers */,
+				073649FF13945510001A5278 /* CIAPIGetActiveStopLimitOrderRequest.h in Headers */,
+				07364A0113945510001A5278 /* CIAPIGetChartingEnabledRequest.h in Headers */,
+				07364A0313945510001A5278 /* CIAPIGetClientAndTradingAccountRequest.h in Headers */,
+				07364A0513945510001A5278 /* CIAPIGetMarketInformationRequest.h in Headers */,
+				07364A0713945510001A5278 /* CIAPIGetNewsDetailRequest.h in Headers */,
+				07364A0913945510001A5278 /* CIAPIGetOpenPositionRequest.h in Headers */,
+				07364A0B13945510001A5278 /* CIAPIGetOrderRequest.h in Headers */,
+				07364A0D13945510001A5278 /* CIAPIGetPriceBarsRequest.h in Headers */,
+				07364A0F13945510001A5278 /* CIAPIGetPriceTicksRequest.h in Headers */,
+				07364A1113945510001A5278 /* CIAPIInsertWatchlistItemRequest.h in Headers */,
+				07364A1313945510001A5278 /* CIAPIListActiveStopLimitOrdersRequest.h in Headers */,
+				07364A1513945510001A5278 /* CIAPIListCfdMarketsRequest.h in Headers */,
+				07364A1713945510001A5278 /* CIAPIListMarketInformationRequest.h in Headers */,
+				07364A1913945510001A5278 /* CIAPIListMarketInformationSearchRequest.h in Headers */,
+				07364A1B13945510001A5278 /* CIAPIListNewsHeadlinesRequest.h in Headers */,
+				07364A1D13945510001A5278 /* CIAPIListOpenPositionsRequest.h in Headers */,
+				07364A1F13945510001A5278 /* CIAPIListSpreadMarketsRequest.h in Headers */,
+				07364A2113945510001A5278 /* CIAPIListStopLimitOrderHistoryRequest.h in Headers */,
+				07364A2313945510001A5278 /* CIAPIListTradeHistoryRequest.h in Headers */,
+				07364A2513945510001A5278 /* CIAPILogOffRequest.h in Headers */,
+				07364A2713945510001A5278 /* CIAPILogOnRequest.h in Headers */,
+				07364A2913945510001A5278 /* CIAPINewStopLimitOrderRequest.h in Headers */,
+				07364A2B13945510001A5278 /* CIAPINewTradeOrderRequest.h in Headers */,
+				07364A2D13945510001A5278 /* CIAPIOrderRequest.h in Headers */,
+				07364A2F13945510001A5278 /* CIAPISaveWatchlistRequest.h in Headers */,
+				07364A3113945510001A5278 /* CIAPISystemStatusRequest.h in Headers */,
+				07364A3313945510001A5278 /* CIAPITradeRequest.h in Headers */,
+				07364A3513945510001A5278 /* CIAPIUpdateOrderRequest.h in Headers */,
+				07364A3713945510001A5278 /* CIAPIUpdateStopLimitOrderRequest.h in Headers */,
+				07364A3913945510001A5278 /* CIAPIUpdateTradeOrderRequest.h in Headers */,
+				07364A3B13945510001A5278 /* CIAPIUpdateTradeRequest.h in Headers */,
+				07364A3D13945510001A5278 /* CIAPIUpdateWatchlistDisplayOrderRequest.h in Headers */,
+				07364AAD1394551B001A5278 /* CIAPIAccountInformationResponse.h in Headers */,
+				07364AAF1394551B001A5278 /* CIAPIActiveStopLimitOrder.h in Headers */,
+				07364AB11394551B001A5278 /* CIAPIBasicStopLimitOrder.h in Headers */,
+				07364AB31394551B001A5278 /* CIAPIClientAccountMargin.h in Headers */,
+				07364AB51394551B001A5278 /* CIAPIClientAccountWatchlist.h in Headers */,
+				07364AB71394551B001A5278 /* CIAPIClientAccountWatchlistItem.h in Headers */,
+				07364AB91394551B001A5278 /* CIAPIErrorCode.h in Headers */,
+				07364ABB1394551B001A5278 /* CIAPIErrorResponse.h in Headers */,
+				07364ABD1394551B001A5278 /* CIAPIGetActiveStopLimitOrderResponse.h in Headers */,
+				07364ABF1394551B001A5278 /* CIAPIGetMarketInformationResponse.h in Headers */,
+				07364AC11394551B001A5278 /* CIAPIGetMessagePopupResponse.h in Headers */,
+				07364AC31394551B001A5278 /* CIAPIGetNewsDetailResponse.h in Headers */,
+				07364AC51394551B001A5278 /* CIAPIGetOpenPositionResponse.h in Headers */,
+				07364AC71394551B001A5278 /* CIAPIGetOrderResponse.h in Headers */,
+				07364AC91394551B001A5278 /* CIAPIGetPriceBarResponse.h in Headers */,
+				07364ACB1394551B001A5278 /* CIAPIGetPriceTickResponse.h in Headers */,
+				07364ACD1394551B001A5278 /* CIAPIIfDone.h in Headers */,
+				07364ACF1394551B001A5278 /* CIAPIIfDoneResponse.h in Headers */,
+				07364AD11394551B001A5278 /* CIAPIListActiveStopLimitOrderResponse.h in Headers */,
+				07364AD31394551B001A5278 /* CIAPIListCfdMarketsResponse.h in Headers */,
+				07364AD51394551B001A5278 /* CIAPIListMarketInformationResponse.h in Headers */,
+				07364AD71394551B001A5278 /* CIAPIListMarketInformationSearchResponse.h in Headers */,
+				07364AD91394551B001A5278 /* CIAPIListNewsHeadlinesResponse.h in Headers */,
+				07364ADB1394551B001A5278 /* CIAPIListOpenPositionsResponse.h in Headers */,
+				07364ADD1394551B001A5278 /* CIAPIListOrdersResponse.h in Headers */,
+				07364ADF1394551B001A5278 /* CIAPIListSpreadMarketsResponse.h in Headers */,
+				07364AE11394551B001A5278 /* CIAPIListStopLimitOrderHistoryResponse.h in Headers */,
+				07364AE31394551B001A5278 /* CIAPIListTradeHistoryResponse.h in Headers */,
+				07364AE51394551B001A5278 /* CIAPIListWatchlistResponse.h in Headers */,
+				07364AE71394551B001A5278 /* CIAPILogOffResponse.h in Headers */,
+				07364AE91394551B001A5278 /* CIAPILogOnResponse.h in Headers */,
+				07364AEB1394551B001A5278 /* CIAPILookup.h in Headers */,
+				07364AED1394551B001A5278 /* CIAPILookupResponse.h in Headers */,
+				07364AEF1394551B001A5278 /* CIAPIMarket.h in Headers */,
+				07364AF11394551B001A5278 /* CIAPIMarketEod.h in Headers */,
+				07364AF31394551B001A5278 /* CIAPIMarketInformation.h in Headers */,
+				07364AF51394551B001A5278 /* CIAPINews.h in Headers */,
+				07364AF71394551B001A5278 /* CIAPINewsDetail.h in Headers */,
+				07364AF91394551B001A5278 /* CIAPIOpenPosition.h in Headers */,
+				07364AFB1394551B001A5278 /* CIAPIOrder.h in Headers */,
+				07364AFD1394551B001A5278 /* CIAPIOrderResponse.h in Headers */,
+				07364AFF1394551B001A5278 /* CIAPIPrice.h in Headers */,
+				07364B011394551B001A5278 /* CIAPIPriceBar.h in Headers */,
+				07364B031394551B001A5278 /* CIAPIPriceTick.h in Headers */,
+				07364B051394551B001A5278 /* CIAPIQuote.h in Headers */,
+				07364B071394551B001A5278 /* CIAPIQuoteResponse.h in Headers */,
+				07364B091394551B001A5278 /* CIAPISaveWatchlistResponse.h in Headers */,
+				07364B0B1394551B001A5278 /* CIAPIStopLimitOrder.h in Headers */,
+				07364B0D1394551B001A5278 /* CIAPIStopLimitOrderHistory.h in Headers */,
+				07364B0F1394551B001A5278 /* CIAPIStopLimitResponse.h in Headers */,
+				07364B111394551B001A5278 /* CIAPISystemStatus.h in Headers */,
+				07364B131394551B001A5278 /* CIAPITradeHistory.h in Headers */,
+				07364B151394551B001A5278 /* CIAPITradeOrder.h in Headers */,
+				07364B171394551B001A5278 /* CIAPITradeOrderResponse.h in Headers */,
+				07364B191394551B001A5278 /* CIAPITradingAccount.h in Headers */,
+				0704146A13A523BB002F28C5 /* ThrottledQueue.h in Headers */,
+				0704146E13A52473002F28C5 /* ThrottledQueueMultiplexer.h in Headers */,
+				07FC281713AE437D00C6C16B /* RequestDispatcher.h in Headers */,
+				07FC281C13AE938100C6C16B /* CIAPIRequestsAndResponses.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -568,6 +1207,9 @@
 /* Begin PBXProject section */
 		07DEFE391342710E00CFA705 /* Project object */ = {
 			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0420;
+			};
 			buildConfigurationList = 07DEFE3C1342710E00CFA705 /* Build configuration list for PBXProject "CIAPI" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
@@ -579,6 +1221,10 @@
 			productRefGroup = 07DEFE431342710E00CFA705 /* Products */;
 			projectDirPath = "";
 			projectReferences = (
+				{
+					ProductGroup = 07FC284B13AE93E500C6C16B /* Products */;
+					ProjectRef = 07FC284A13AE93E500C6C16B /* CityPad.xcodeproj */;
+				},
 				{
 					ProductGroup = 075E8E17134271BF00C85B9B /* Products */;
 					ProjectRef = 075E8E16134271BF00C85B9B /* RestKit.xcodeproj */;
@@ -663,6 +1309,13 @@
 			remoteRef = 075E8E3C134271BF00C85B9B /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
+		07FC284F13AE93E800C6C16B /* CityPad.app */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.application;
+			path = CityPad.app;
+			remoteRef = 07FC284E13AE93E800C6C16B /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
 /* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
@@ -714,6 +1367,99 @@
 				0759941D136DB62C0040D454 /* CIAPIObjectListResponse.m in Sources */,
 				07F0E714138BD7FA002EB862 /* PropertyDescriptionDecoder.m in Sources */,
 				07F0E718138BD800002EB862 /* TypeDecoder.m in Sources */,
+				073649FA13945510001A5278 /* CIAPICancelOrderRequest.m in Sources */,
+				073649FC13945510001A5278 /* CIAPIDeleteSessionRequest.m in Sources */,
+				073649FE13945510001A5278 /* CIAPIGenerateExceptionRequest.m in Sources */,
+				07364A0013945510001A5278 /* CIAPIGetActiveStopLimitOrderRequest.m in Sources */,
+				07364A0213945510001A5278 /* CIAPIGetChartingEnabledRequest.m in Sources */,
+				07364A0413945510001A5278 /* CIAPIGetClientAndTradingAccountRequest.m in Sources */,
+				07364A0613945510001A5278 /* CIAPIGetMarketInformationRequest.m in Sources */,
+				07364A0813945510001A5278 /* CIAPIGetNewsDetailRequest.m in Sources */,
+				07364A0A13945510001A5278 /* CIAPIGetOpenPositionRequest.m in Sources */,
+				07364A0C13945510001A5278 /* CIAPIGetOrderRequest.m in Sources */,
+				07364A0E13945510001A5278 /* CIAPIGetPriceBarsRequest.m in Sources */,
+				07364A1013945510001A5278 /* CIAPIGetPriceTicksRequest.m in Sources */,
+				07364A1213945510001A5278 /* CIAPIInsertWatchlistItemRequest.m in Sources */,
+				07364A1413945510001A5278 /* CIAPIListActiveStopLimitOrdersRequest.m in Sources */,
+				07364A1613945510001A5278 /* CIAPIListCfdMarketsRequest.m in Sources */,
+				07364A1813945510001A5278 /* CIAPIListMarketInformationRequest.m in Sources */,
+				07364A1A13945510001A5278 /* CIAPIListMarketInformationSearchRequest.m in Sources */,
+				07364A1C13945510001A5278 /* CIAPIListNewsHeadlinesRequest.m in Sources */,
+				07364A1E13945510001A5278 /* CIAPIListOpenPositionsRequest.m in Sources */,
+				07364A2013945510001A5278 /* CIAPIListSpreadMarketsRequest.m in Sources */,
+				07364A2213945510001A5278 /* CIAPIListStopLimitOrderHistoryRequest.m in Sources */,
+				07364A2413945510001A5278 /* CIAPIListTradeHistoryRequest.m in Sources */,
+				07364A2613945510001A5278 /* CIAPILogOffRequest.m in Sources */,
+				07364A2813945510001A5278 /* CIAPILogOnRequest.m in Sources */,
+				07364A2A13945510001A5278 /* CIAPINewStopLimitOrderRequest.m in Sources */,
+				07364A2C13945510001A5278 /* CIAPINewTradeOrderRequest.m in Sources */,
+				07364A2E13945510001A5278 /* CIAPIOrderRequest.m in Sources */,
+				07364A3013945510001A5278 /* CIAPISaveWatchlistRequest.m in Sources */,
+				07364A3213945510001A5278 /* CIAPISystemStatusRequest.m in Sources */,
+				07364A3413945510001A5278 /* CIAPITradeRequest.m in Sources */,
+				07364A3613945510001A5278 /* CIAPIUpdateOrderRequest.m in Sources */,
+				07364A3813945510001A5278 /* CIAPIUpdateStopLimitOrderRequest.m in Sources */,
+				07364A3A13945510001A5278 /* CIAPIUpdateTradeOrderRequest.m in Sources */,
+				07364A3C13945510001A5278 /* CIAPIUpdateTradeRequest.m in Sources */,
+				07364A3E13945510001A5278 /* CIAPIUpdateWatchlistDisplayOrderRequest.m in Sources */,
+				07364AAE1394551B001A5278 /* CIAPIAccountInformationResponse.m in Sources */,
+				07364AB01394551B001A5278 /* CIAPIActiveStopLimitOrder.m in Sources */,
+				07364AB21394551B001A5278 /* CIAPIBasicStopLimitOrder.m in Sources */,
+				07364AB41394551B001A5278 /* CIAPIClientAccountMargin.m in Sources */,
+				07364AB61394551B001A5278 /* CIAPIClientAccountWatchlist.m in Sources */,
+				07364AB81394551B001A5278 /* CIAPIClientAccountWatchlistItem.m in Sources */,
+				07364ABA1394551B001A5278 /* CIAPIErrorCode.m in Sources */,
+				07364ABC1394551B001A5278 /* CIAPIErrorResponse.m in Sources */,
+				07364ABE1394551B001A5278 /* CIAPIGetActiveStopLimitOrderResponse.m in Sources */,
+				07364AC01394551B001A5278 /* CIAPIGetMarketInformationResponse.m in Sources */,
+				07364AC21394551B001A5278 /* CIAPIGetMessagePopupResponse.m in Sources */,
+				07364AC41394551B001A5278 /* CIAPIGetNewsDetailResponse.m in Sources */,
+				07364AC61394551B001A5278 /* CIAPIGetOpenPositionResponse.m in Sources */,
+				07364AC81394551B001A5278 /* CIAPIGetOrderResponse.m in Sources */,
+				07364ACA1394551B001A5278 /* CIAPIGetPriceBarResponse.m in Sources */,
+				07364ACC1394551B001A5278 /* CIAPIGetPriceTickResponse.m in Sources */,
+				07364ACE1394551B001A5278 /* CIAPIIfDone.m in Sources */,
+				07364AD01394551B001A5278 /* CIAPIIfDoneResponse.m in Sources */,
+				07364AD21394551B001A5278 /* CIAPIListActiveStopLimitOrderResponse.m in Sources */,
+				07364AD41394551B001A5278 /* CIAPIListCfdMarketsResponse.m in Sources */,
+				07364AD61394551B001A5278 /* CIAPIListMarketInformationResponse.m in Sources */,
+				07364AD81394551B001A5278 /* CIAPIListMarketInformationSearchResponse.m in Sources */,
+				07364ADA1394551B001A5278 /* CIAPIListNewsHeadlinesResponse.m in Sources */,
+				07364ADC1394551B001A5278 /* CIAPIListOpenPositionsResponse.m in Sources */,
+				07364ADE1394551B001A5278 /* CIAPIListOrdersResponse.m in Sources */,
+				07364AE01394551B001A5278 /* CIAPIListSpreadMarketsResponse.m in Sources */,
+				07364AE21394551B001A5278 /* CIAPIListStopLimitOrderHistoryResponse.m in Sources */,
+				07364AE41394551B001A5278 /* CIAPIListTradeHistoryResponse.m in Sources */,
+				07364AE61394551B001A5278 /* CIAPIListWatchlistResponse.m in Sources */,
+				07364AE81394551B001A5278 /* CIAPILogOffResponse.m in Sources */,
+				07364AEA1394551B001A5278 /* CIAPILogOnResponse.m in Sources */,
+				07364AEC1394551B001A5278 /* CIAPILookup.m in Sources */,
+				07364AEE1394551B001A5278 /* CIAPILookupResponse.m in Sources */,
+				07364AF01394551B001A5278 /* CIAPIMarket.m in Sources */,
+				07364AF21394551B001A5278 /* CIAPIMarketEod.m in Sources */,
+				07364AF41394551B001A5278 /* CIAPIMarketInformation.m in Sources */,
+				07364AF61394551B001A5278 /* CIAPINews.m in Sources */,
+				07364AF81394551B001A5278 /* CIAPINewsDetail.m in Sources */,
+				07364AFA1394551B001A5278 /* CIAPIOpenPosition.m in Sources */,
+				07364AFC1394551B001A5278 /* CIAPIOrder.m in Sources */,
+				07364AFE1394551B001A5278 /* CIAPIOrderResponse.m in Sources */,
+				07364B001394551B001A5278 /* CIAPIPrice.m in Sources */,
+				07364B021394551B001A5278 /* CIAPIPriceBar.m in Sources */,
+				07364B041394551B001A5278 /* CIAPIPriceTick.m in Sources */,
+				07364B061394551B001A5278 /* CIAPIQuote.m in Sources */,
+				07364B081394551B001A5278 /* CIAPIQuoteResponse.m in Sources */,
+				07364B0A1394551B001A5278 /* CIAPISaveWatchlistResponse.m in Sources */,
+				07364B0C1394551B001A5278 /* CIAPIStopLimitOrder.m in Sources */,
+				07364B0E1394551B001A5278 /* CIAPIStopLimitOrderHistory.m in Sources */,
+				07364B101394551B001A5278 /* CIAPIStopLimitResponse.m in Sources */,
+				07364B121394551B001A5278 /* CIAPISystemStatus.m in Sources */,
+				07364B141394551B001A5278 /* CIAPITradeHistory.m in Sources */,
+				07364B161394551B001A5278 /* CIAPITradeOrder.m in Sources */,
+				07364B181394551B001A5278 /* CIAPITradeOrderResponse.m in Sources */,
+				07364B1A1394551B001A5278 /* CIAPITradingAccount.m in Sources */,
+				0704146B13A523BB002F28C5 /* ThrottledQueue.m in Sources */,
+				0704146F13A52473002F28C5 /* ThrottledQueueMultiplexer.m in Sources */,
+				07FC281813AE437D00C6C16B /* RequestDispatcher.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -759,6 +1505,7 @@
 				GCC_PREPROCESSOR_DEFINITIONS = DEBUG;
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
 				GCC_VERSION = com.apple.compilers.llvmgcc42;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				HEADER_SEARCH_PATHS = ../RestKit/Build;
@@ -777,6 +1524,7 @@
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_VERSION = com.apple.compilers.llvmgcc42;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				HEADER_SEARCH_PATHS = ../RestKit/Build;
