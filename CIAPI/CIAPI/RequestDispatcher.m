@@ -12,24 +12,35 @@
 
 #import "CIAPIRequestToken.h"
 #import "CIAPIObjectRequest.h"
+#import "CIAPIObjectResponse.h"
+
+#import "RestKit/RestKit.h"
 
 @implementation RequestDispatcher
 
 @synthesize maximumRequestAttempts;
+@synthesize throttleSize;
+@synthesize throttlePeriod;
 
-- (id)init
+- (RequestDispatcher*)initWithMaximumRetryAttempts:(NSUInteger)_maximumRequestAttempts throttleSize:(NSUInteger)_throttleSize
+                                    throttlePeriod:(NSTimeInterval)_throttlePeriod;
 {
     self = [super init];
     
     if (self)
     {
+        maximumRequestAttempts = _maximumRequestAttempts;
+        throttleSize = _throttleSize;
+        throttlePeriod = _throttlePeriod;
+        
         namedQueueMap = [[NSMutableDictionary alloc] init];
         rkRequestToTokenMapper = [[NSMutableDictionary alloc] init];
         queueMultiplexer = [[ThrottledQueueMultiplexer alloc] init];
+        inflightRequests = [[NSMutableArray alloc] init];
         
         // Create one global queue
         // TODO: Give it better queuing values
-        [namedQueueMap setObject:[ThrottledQueue throttledQueueWithLimit:10 overPeriod:10] forKey:@"global"];
+        [namedQueueMap setObject:[ThrottledQueue throttledQueueWithLimit:throttleSize overPeriod:throttlePeriod] forKey:@"global"];
     }
     
     return self;
@@ -37,6 +48,7 @@
 
 - (void)dealloc
 {
+    [inflightRequests release];
     [namedQueueMap release];
     [rkRequestToTokenMapper release];
     [queueMultiplexer release];
@@ -54,7 +66,7 @@
         
         if (queue == nil)
         {
-            queue = [ThrottledQueue throttledQueueWithLimit:10 overPeriod:10];
+            queue = [ThrottledQueue throttledQueueWithLimit:throttleSize overPeriod:throttlePeriod];
             [namedQueueMap setObject:queue forKey:token.requestObject.throttleScope];
         }
     }
@@ -80,15 +92,15 @@
 
 - (void)startDispatcher
 {
-    NSAssert(dispatcherShouldRun == YES, @"Cannot start the dispatcher more than once");
+    NSAssert(dispatcherShouldRun == NO, @"Cannot start the dispatcher more than once");
     dispatcherShouldRun = YES;
     
-    [NSThread detachNewThreadSelector:@selector(dispatchThread) toTarget:self withObject:nil];
+    [NSThread detachNewThreadSelector:@selector(dispatchThread:) toTarget:self withObject:nil];
 }
      
 - (void)stopDispatcher
 {
-    NSAssert(dispatcherShouldRun == NO, @"Cannot stop the dispatcher more than once");
+    NSAssert(dispatcherShouldRun == YES, @"Cannot stop the dispatcher more than once");
     
     queueMultiplexer.stopDequeue = YES;
     dispatcherShouldRun = NO;
@@ -96,9 +108,12 @@
 
 - (void)dispatchThread:(id)ignore
 {
+    [self retain];
+    
     while (dispatcherShouldRun)
     {
         CIAPIRequestToken *requestObject = [queueMultiplexer dequeueObject];
+        [inflightRequests addObject:requestObject];
         
         // We might have broken out of the multiplexer due to a stop request
         if (!dispatcherShouldRun)
@@ -106,36 +121,99 @@
         
         // Send the request
         requestObject.attemptCount = requestObject.attemptCount++;
-        requestObject.underlyingRequest.delegate = self;
+        [requestObject.underlyingRequest setDelegate: self];
         [requestObject.underlyingRequest send];
     }
+    
+    [self release];
 }
 
 /*
  * Private methods
  */
 
-- (void)rescheduleRequest:(CIAPIRequestToken*)token forLastError:(int)error
+- (void)dispatchSuccessfulRequest:(CIAPIRequestToken*)token result:(id)result
 {
+    // Dispatch onto the main thread
+    token.responseObject = result;
+    [self performSelectorOnMainThread:@selector(mainThreadSuccessDispatcher:) withObject:token waitUntilDone:NO];
+}
+
+- (void)rescheduleFailedRequest:(CIAPIRequestToken*)token forLastError:(enum RequestFailureType)failureType
+{
+    token.responseError = [NSError errorWithDomain:@"TODO" code:0 userInfo:nil];
+    
     // Depending on the error, we may reschedule this request with a longer wait time
+    if (token.attemptCount < maximumRequestAttempts)
+        [self scheduleRequestToken:token];
+    else
+        [self performSelectorOnMainThread:@selector(mainThreadFailureDispatcher:) withObject:token waitUntilDone:NO];
+}
+
+- (void)mainThreadSuccessDispatcher:(CIAPIRequestToken*)token
+{
+    if (token.callbackDelegate)
+        [token.callbackBlock requestSucceeded:token result:token.responseObject];
+    else if (token.callbackBlock)
+        token.callbackBlock(token, token.responseObject, nil);
+    else
+        NSAssert(FALSE, @"Trying to dispatch a result, but was given neither delegate or block!");
+}
+
+- (void)mainThreadFailureDispatcher:(CIAPIRequestToken*)token
+{
+    if (token.callbackDelegate)
+        [token.callbackDelegate requestFailed:token error:token.responseError];
+    else if (token.callbackBlock)
+        token.callbackBlock(token, nil, token.responseError);
+    else
+        NSAssert(FALSE, @"Trying to dispatch a result, but was given neither delegate or block!");
 }
 
 /*
  * RestKit delegate methods
  */
-- (void)request:(RKRequest *)request didLoadResponse:(RKResponse *)response
+- (void)request:(RKRequest*)rkRequest didLoadResponse:(id)rkResponse
 {
+    CIAPIRequestToken *token = [rkRequestToTokenMapper objectForKey:rkRequest];
+    if (!token)
+        NSAssert(FALSE, @"We got a response for a request we never issued?");
+    [inflightRequests removeObject:token];
     
+    if ([rkResponse isOK])
+    {
+        // Decode the resultant object JSON into the response type
+        id bodyObj = [rkResponse bodyAsJSON];
+        
+        CIAPIObjectResponse *responseObj = [[[token.requestObject responseClass] alloc] init];
+        [responseObj setupFromDictionary:bodyObj error:nil];
+        
+        [self dispatchSuccessfulRequest:token result:responseObj];
+    }
+    else
+    {
+        [self rescheduleFailedRequest:token forLastError:RequestUnknownError];
+    }
 }
 
-- (void)request:(RKRequest *)request didFailLoadWithError:(NSError *)error
+- (void)request:(RKRequest*)rkRequest didFailLoadWithError:(NSError *)error
 {
+    CIAPIRequestToken *token = [rkRequestToTokenMapper objectForKey:rkRequest];    
+    if (!token)
+        NSAssert(FALSE, @"We got a response for a request we never issued?");
+    [inflightRequests removeObject:token];
     
+    [self rescheduleFailedRequest:token forLastError:RequestUnknownError];
 }
 
-- (void)requestDidTimeout:(RKRequest *)request
+- (void)requestDidTimeout:(RKRequest*)rkRequest
 {
+    CIAPIRequestToken *token = [rkRequestToTokenMapper objectForKey:rkRequest];    
+    if (!token)
+        NSAssert(FALSE, @"We got a response for a request we never issued?");
+    [inflightRequests removeObject:token];
     
+    [self rescheduleFailedRequest:token forLastError:RequestUnknownError];
 }
 
 @end
