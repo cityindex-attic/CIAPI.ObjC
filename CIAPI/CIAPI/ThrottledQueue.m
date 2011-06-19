@@ -31,6 +31,7 @@
 
 @synthesize throttleLimit;
 @synthesize throttlePeriod;
+@synthesize delegate;
 
 - (ThrottledQueue*)initWithLimit:(NSUInteger)limit overPeriod:(NSTimeInterval)period
 {
@@ -84,11 +85,43 @@
         [underlyingQueue addObject:obj];
     }
     
+    if ([delegate respondsToSelector:@selector(objectEnqueued:)])
+        [delegate objectDequeued:obj];
+    
     [obj release];
 }
 
 - (id)dequeueObject
 {
+    id obj;
+    NSTimeInterval waitTime;
+    
+    // Spin, waiting for an object, bailing if there are no objects
+    while ((obj = [self dequeueObjectOrGiveWaitTime:&waitTime]) == nil)
+    {
+        if (waitTime == 0)
+            return nil;
+        
+        [NSThread sleepForTimeInterval:waitTime];
+    }
+    
+    return obj;
+}
+
+- (id)dequeueObjectOrGiveWaitTime:(NSTimeInterval*)waitTime
+{
+    // If there are no objects, fail and give a 0 wait time to indicate this
+    @synchronized (underlyingQueue)
+    {
+        if ([underlyingQueue count] == 0)
+        {
+            if (waitTime != NULL)
+                *waitTime = DBL_MAX;
+            
+            return nil;
+        }
+    }
+    
     // Synchronize on the request times queue to block all other dequeues until this one passes
     // We do *not* block enqueues or count requests
     @synchronized (recentRequestTimes)
@@ -103,12 +136,13 @@
             NSNumber *eldestRequest = [recentRequestTimes objectAtIndex:0];
             NSTimeInterval timeToWait = [eldestRequest doubleValue] + throttlePeriod - [NSDate timeIntervalSinceReferenceDate];
             
-            // We might have been just on the cusp of obtaining a slot, so check time again
+            // If we actually have to wait, return the wait time and fail
             if (timeToWait > 0)
-                [NSThread sleepForTimeInterval:timeToWait];
-            
-            // We certainly have a slot now, so expire the eldest
-            [recentRequestTimes removeObjectAtIndex:0];
+            {
+                if (waitTime != NULL)
+                    *waitTime = timeToWait;
+                return nil;
+            }
         }
         
         // Try to perform the dequeue        
@@ -132,9 +166,15 @@
             if (obj == nil)
             {
                 obj = [underlyingQueue objectAtIndex:0];
-                NSTimeInterval waitTime = obj.enqueueTime + obj.minimumDequeueTime - [NSDate timeIntervalSinceReferenceDate];
-                if (waitTime > 0)
-                    [NSThread sleepForTimeInterval:waitTime];
+                NSTimeInterval timeToWait = obj.enqueueTime + obj.minimumDequeueTime - [NSDate timeIntervalSinceReferenceDate];
+                
+                // If we actually have to wait, return the wait time and fail
+                if (timeToWait > 0)
+                {
+                    if (waitTime != NULL)
+                        *waitTime = timeToWait;
+                    return nil;
+                }
             }
             
             NSNumber *dequeueTime = [NSNumber numberWithDouble:[NSDate timeIntervalSinceReferenceDate]];
@@ -143,6 +183,9 @@
             // Ensure we return a valid reference to the contained object (the queue might be the last holder)
             id underlyingObj = [[obj.object retain] autorelease];
             [underlyingQueue removeObject:obj];
+            
+            if ([delegate respondsToSelector:@selector(objectDequeued:)])
+                [delegate objectDequeued:underlyingObj];
             
             return underlyingObj;
         }

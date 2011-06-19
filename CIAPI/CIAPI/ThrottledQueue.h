@@ -8,6 +8,14 @@
 
 #import <Foundation/Foundation.h>
 
+@protocol ThrottledQueueDelegate<NSObject>
+
+@optional
+- (void)objectEnqueued:(id)object;
+- (void)objectDequeued:(id)object;
+
+@end
+
 @interface EnqueuedThrottledObject : NSObject {
     id object;
     NSTimeInterval enqueueTime;
@@ -20,6 +28,7 @@
 
 @end
 
+
 @interface ThrottledQueue : NSObject {
 @private
     // The maximum number of dequeues allowed within the throttle period
@@ -30,10 +39,12 @@
     
     NSMutableArray *underlyingQueue;
     NSMutableArray *recentRequestTimes;
+    id<ThrottledQueueDelegate> delegate;
 }
 
 @property (readonly) NSUInteger throttleLimit;
 @property (readonly) NSTimeInterval throttlePeriod;
+@property (retain) id<ThrottledQueueDelegate> delegate;
 
 + (ThrottledQueue*)throttledQueueWithLimit:(NSUInteger)limit overPeriod:(NSTimeInterval)period;
 
@@ -43,6 +54,7 @@
 - (void)enqueueObject:(id)object withMinimumWaitTime:(NSTimeInterval)minimumWaitTime;
 
 - (id)dequeueObject;
+- (id)dequeueObjectOrGiveWaitTime:(NSTimeInterval*)waitTime;
 
 - (NSUInteger)count;
 
