@@ -80,7 +80,7 @@
 
 - (CIAPIRequestToken*)makeRequest:(CIAPIObjectRequest*)request delegate:(id<CIAPIRequestDelegate>)delegate error:(NSError**)error
 {
-    CIAPIRequestToken *requestToken = [[CIAPIRequestToken alloc] initWithRequest:request delegate:delegate];
+    CIAPIRequestToken *requestToken = [[[CIAPIRequestToken alloc] initWithRequest:request delegate:delegate] autorelease];
     
     RKRequest *rkRequest = [self buildRKRequestFromCIAPIRequest:request error:error];
     
@@ -96,7 +96,7 @@
 
 - (CIAPIRequestToken*)makeRequest:(CIAPIObjectRequest*)request block:(CIAPIRequestCallback)callbackBlock error:(NSError**)error
 {
-    CIAPIRequestToken *requestToken = [[CIAPIRequestToken alloc] initWithRequest:request block:[callbackBlock retain]];
+    CIAPIRequestToken *requestToken = [[[CIAPIRequestToken alloc] initWithRequest:request block:callbackBlock] autorelease];
     
     RKRequest *rkRequest = [self buildRKRequestFromCIAPIRequest:request error:error];
     

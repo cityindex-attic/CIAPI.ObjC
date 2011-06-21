@@ -158,6 +158,8 @@
         token.callbackBlock(token, token.responseObject, nil);
     else
         NSAssert(FALSE, @"Trying to dispatch a result, but was given neither delegate or block!");
+    
+    // TODO: Remove the token from the token mapping dictionary (the only thing keeping it alive)
 }
 
 - (void)mainThreadFailureDispatcher:(CIAPIRequestToken*)token
@@ -168,6 +170,8 @@
         token.callbackBlock(token, nil, token.responseError);
     else
         NSAssert(FALSE, @"Trying to dispatch a result, but was given neither delegate or block!");
+    
+    // TODO: Remove the token from the token mapping dictionary (the only thing keeping it alive)
 }
 
 /*

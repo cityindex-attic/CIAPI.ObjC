@@ -32,6 +32,7 @@
     {
         requestObject = [objRequest retain];
         callbackDelegate = delegate;
+        callbackBlock = nil;
         attemptCount = 0;
     }
     
@@ -48,11 +49,21 @@
     if (self)
     {
         requestObject = [objRequest retain];
-        callbackBlock = block;
+        callbackBlock = [block retain];
+        callbackDelegate = nil;
         attemptCount = 0;
     }
     
     return self;
+}
+
+- (void)dealloc
+{
+    [requestObject release];
+    [callbackDelegate release];
+    [callbackBlock release];
+    
+    [super dealloc];
 }
 
 - (void)setRKRequest:(id)rkRequest
