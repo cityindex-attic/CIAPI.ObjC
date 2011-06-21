@@ -29,8 +29,11 @@
 
 - (void)dealloc
 {
-    [enqueueWaitCondition release];
-    [allQueues release];
+    @synchronized (allQueues)
+    {
+        [enqueueWaitCondition release];
+        [allQueues release];
+    }
     
     [super dealloc];
 }
@@ -49,8 +52,8 @@
 
 - (void)addQueue:(ThrottledQueue*)queue
 {    
-    NSAssert(queue == nil, @"Cannot add a nil queue");
-    NSAssert([allQueues containsObject:queue], @"Cannot insert the same queue twice");
+    NSAssert(queue != nil, @"Cannot add a nil queue");
+    NSAssert(![allQueues containsObject:queue], @"Cannot insert the same queue twice");
  
     @synchronized (allQueues)
     {
@@ -66,8 +69,8 @@
 
 - (void)removeQueue:(ThrottledQueue*)queue
 {
-    NSAssert(queue != nil, @"Cannot remove a nil queue");
-    NSAssert(![allQueues containsObject:queue], @"Cannot remove a queue that is not in the multiplexer");
+    NSAssert(queue == nil, @"Cannot remove a nil queue");
+    NSAssert([allQueues containsObject:queue], @"Cannot remove a queue that is not in the multiplexer");
     
     @synchronized (allQueues)
     {

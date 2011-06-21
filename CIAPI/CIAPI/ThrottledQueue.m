@@ -46,6 +46,7 @@
         throttlePeriod = period;
         underlyingQueue = [[NSMutableArray alloc] init];
         recentRequestTimes = [[NSMutableArray alloc] init];
+        delegate = nil;
     }
     
     return self;
@@ -88,7 +89,7 @@
     }
     
     if ([delegate respondsToSelector:@selector(objectEnqueued:)])
-        [delegate objectDequeued:obj];
+        [delegate objectEnqueued:obj];
     
     [obj release];
 }

@@ -155,8 +155,8 @@
     queue.delegate = delegateTester;
     
     [queue enqueueObject:@"Test 1"];
-    STAssertFalse(delegateTester.hasEnqueued, @"Delegate should have been informed of enqueue");
-    STAssertTrue(delegateTester.hasDequeued, @"Delegate should not have been informed of denqueue");
+    STAssertTrue(delegateTester.hasEnqueued, @"Delegate should have been informed of enqueue");
+    STAssertFalse(delegateTester.hasDequeued, @"Delegate should not have been informed of denqueue");
     
     delegateTester.hasEnqueued = NO;
     [queue dequeueObject];
