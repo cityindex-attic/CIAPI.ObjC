@@ -39,8 +39,8 @@
     
     if (self)
     {
-        NSAssert(limit, @"Throttles must have positive, non-zero limits");
-        NSAssert(period, @"Throttles must have positive, non-zero periods");
+        NSAssert(limit > 0, @"Throttles must have positive, non-zero limits");
+        NSAssert(period > 0.0, @"Throttles must have positive, non-zero periods");
         
         throttleLimit = limit;
         throttlePeriod = period;
@@ -64,13 +64,15 @@
             recentRequestTimes = nil;
         }
     }
+    
+    [delegate release];
 
     [super dealloc];
 }
 
 - (void)enqueueObject:(id)object
 {
-    [self enqueueObject:object withMinimumWaitTime:0];
+    [self enqueueObject:object withMinimumWaitTime:0.0];
 }
 
 - (void)enqueueObject:(id)object withMinimumWaitTime:(NSTimeInterval)minimumWaitTime
@@ -95,10 +97,13 @@
 {
     @synchronized (underlyingQueue)
     {
-        if ([underlyingQueue containsObject:object])
+        for (EnqueuedThrottledObject *carrierObject in underlyingQueue)
         {
-            [underlyingQueue removeObject:object];
-            return YES;
+            if (carrierObject.object == object || [carrierObject.object isEqual:object])
+            {
+                [underlyingQueue removeObject:carrierObject];
+                return YES;
+            }
         }
         
         return NO;
@@ -113,7 +118,7 @@
     // Spin, waiting for an object, bailing if there are no objects
     while ((obj = [self dequeueObjectOrGiveWaitTime:&waitTime]) == nil)
     {
-        if (waitTime == 0)
+        if (waitTime == THROTTLED_QUEUE_CANNOT_WAIT_TIME)
             return nil;
         
         [NSThread sleepForTimeInterval:waitTime];
@@ -130,7 +135,7 @@
         if ([underlyingQueue count] == 0)
         {
             if (waitTime != NULL)
-                *waitTime = DBL_MAX;
+                *waitTime = THROTTLED_QUEUE_CANNOT_WAIT_TIME;
             
             return nil;
         }
@@ -157,6 +162,9 @@
                     *waitTime = timeToWait;
                 return nil;
             }
+            
+            // Otherwise, expire the eldest, which suddenly became available
+            [recentRequestTimes removeObjectAtIndex:0];
         }
         
         // Try to perform the dequeue        
@@ -165,18 +173,24 @@
             // We cannot dequeue an object until it's minimum wait time is up. Cycle objects until we find one
             int objectToTry = 0;
             EnqueuedThrottledObject *obj = nil;
+            
             while (objectToTry < [underlyingQueue count])
             {
                 EnqueuedThrottledObject *tryingObj = [underlyingQueue objectAtIndex:objectToTry];
             
                 // If we can't dequeue this object yet, go around again
-                if (obj.enqueueTime + obj.minimumDequeueTime > [NSDate timeIntervalSinceReferenceDate])
+                if (tryingObj.enqueueTime + tryingObj.minimumDequeueTime > [NSDate timeIntervalSinceReferenceDate])
+                {
                     objectToTry++;
+                }
                 else
+                {
                     obj = tryingObj;
+                    break;
+                }
             }
             
-            // If we didn't find one, we'll wait until the first one is available
+            // If we didn't find one, see how long we'll have to wait
             if (obj == nil)
             {
                 obj = [underlyingQueue objectAtIndex:0];
@@ -191,7 +205,9 @@
                 }
             }
             
+            // We have an object that we are allowed to dequeue
             NSNumber *dequeueTime = [NSNumber numberWithDouble:[NSDate timeIntervalSinceReferenceDate]];
+            *waitTime = 0.0;            
             [recentRequestTimes addObject:dequeueTime];
             
             // Ensure we return a valid reference to the contained object (the queue might be the last holder)
@@ -214,20 +230,11 @@
     }
 }
 
-- (BOOL)canCurrentlyDequeueObject
-{
-    @synchronized (recentRequestTimes)
-    {
-        [self removeStaleRecentRequestTimes];
-        
-        return ([recentRequestTimes count] < throttleLimit);
-    }
-}
-
 /*
  * Private methods
  */
-         
+
+// Must be called within a synchronized block
 - (void)removeStaleRecentRequestTimes
 {
     NSMutableArray *staleTimes = [NSMutableArray array];
