@@ -8,6 +8,8 @@
 
 #import "ThrottledQueue.h"
 
+#import "CIAPILogging.h"
+
 @implementation EnqueuedThrottledObject
 
 @synthesize object;
@@ -39,6 +41,8 @@
     
     if (self)
     {
+        CIAPILogAbout(LogLevelNote, DispatcherModule, self, @"Creating throttled queue with limit %u over period %d", limit, period);
+        
         NSAssert(limit > 0, @"Throttles must have positive, non-zero limits");
         NSAssert(period > 0.0, @"Throttles must have positive, non-zero periods");
         
@@ -54,6 +58,8 @@
 
 - (void)dealloc
 {
+    CIAPILogAbout(LogLevelNote, DispatcherModule, self, @"Destroying throttled queue");
+    
     @synchronized (underlyingQueue)
     {
         @synchronized (recentRequestTimes)
@@ -78,6 +84,8 @@
 
 - (void)enqueueObject:(id)object withMinimumWaitTime:(NSTimeInterval)minimumWaitTime
 {
+    CIAPILogAbout(LogLevelNote, DispatcherModule, self, @"Adding item %@ to throttled queue with minimum wait time %d", object, minimumWaitTime);
+    
     EnqueuedThrottledObject *obj = [[EnqueuedThrottledObject alloc] init];
     obj.object = object;
     obj.enqueueTime = [NSDate timeIntervalSinceReferenceDate];
@@ -96,6 +104,8 @@
 
 - (BOOL)removeObject:(id)object
 {
+    CIAPILogAbout(LogLevelNote, DispatcherModule, self, @"Removing item %@ from throttled queue", object);
+    
     @synchronized (underlyingQueue)
     {
         for (EnqueuedThrottledObject *carrierObject in underlyingQueue)
@@ -122,6 +132,7 @@
         if (waitTime == THROTTLED_QUEUE_CANNOT_WAIT_TIME)
             return nil;
         
+        CIAPILogAbout(LogLevelNote, DispatcherModule, self, @"Dequeuing item synchronously, so sleeping %d", waitTime);
         [NSThread sleepForTimeInterval:waitTime];
     }
     
@@ -137,6 +148,8 @@
         {
             if (waitTime != NULL)
                 *waitTime = THROTTLED_QUEUE_CANNOT_WAIT_TIME;
+            
+            CIAPILogAbout(LogLevelNote, DispatcherModule, self, @"Dequeuing item from throttled queue failed due to no objects");
             
             return nil;
         }
@@ -161,6 +174,9 @@
             {
                 if (waitTime != NULL)
                     *waitTime = timeToWait;
+                
+                CIAPILogAbout(LogLevelNote, DispatcherModule, self, @"Dequeuing item from throttled queue failed due to throttled limit (wait %d)", timeToWait);
+                
                 return nil;
             }
             
@@ -202,6 +218,9 @@
                 {
                     if (waitTime != NULL)
                         *waitTime = timeToWait;
+                    
+                    CIAPILogAbout(LogLevelNote, DispatcherModule, self, @"Dequeuing item from throttled queue failed due to minimum wait times (wait %d)", timeToWait);
+                    
                     return nil;
                 }
             }
@@ -214,6 +233,8 @@
             // Ensure we return a valid reference to the contained object (the queue might be the last holder)
             id underlyingObj = [[obj.object retain] autorelease];
             [underlyingQueue removeObject:obj];
+            
+            CIAPILogAbout(LogLevelNote, DispatcherModule, self, @"Dequeuing item %@ from throttled queue", underlyingObj);
             
             if ([delegate respondsToSelector:@selector(objectDequeued:)])
                 [delegate objectDequeued:underlyingObj];

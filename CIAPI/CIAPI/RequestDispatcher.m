@@ -14,6 +14,8 @@
 #import "CIAPIObjectRequest.h"
 #import "CIAPIObjectResponse.h"
 
+#import "CIAPILogging.h"
+
 #import "RestKit/RestKit.h"
 
 @implementation RequestDispatcher
@@ -29,6 +31,9 @@
     
     if (self)
     {
+        CIAPILogAbout(LogLevelNote, DispatcherModule, self, @"Creating RequestDispatcher with maxAttempt %u, throttle size %u, throttle period %d",
+                      _maximumRequestAttempts, _throttleSize, _throttlePeriod);
+        
         maximumRequestAttempts = _maximumRequestAttempts;
         throttleSize = _throttleSize;
         throttlePeriod = _throttlePeriod;
@@ -48,6 +53,8 @@
 
 - (void)dealloc
 {
+    CIAPILogAbout(LogLevelNote, DispatcherModule, self, @"Destroying RequestDispatcher");
+    
     [inflightRequests release];
     [namedQueueMap release];
     [rkRequestToTokenMapper release];
@@ -58,6 +65,8 @@
 
 - (void)scheduleRequestToken:(CIAPIRequestToken*)token
 {
+    CIAPILogAbout(LogLevelNote, DispatcherModule, token, @"Scheduling dispatch of request token %X", token);
+    
     // Find the queue corresponding to the request, or create one
     ThrottledQueue *queue = nil;
     @synchronized (namedQueueMap)
@@ -66,6 +75,7 @@
         
         if (queue == nil)
         {
+            CIAPILogAbout(LogLevelNote, DispatcherModule, self, @"Creating a new request queue for throttle scope %@", token.requestObject.throttleScope);
             queue = [ThrottledQueue throttledQueueWithLimit:throttleSize overPeriod:throttlePeriod];
             [namedQueueMap setObject:queue forKey:token.requestObject.throttleScope];
         }
@@ -77,6 +87,8 @@
 
 - (BOOL)unscheduleRequestToken:(CIAPIRequestToken*)token
 {
+    CIAPILogAbout(LogLevelNote, DispatcherModule, token, @"Unscheduling dispatch of request token %X", token);
+    
     // Find the queue corresponding to the request
     ThrottledQueue *queue = nil;
     @synchronized (namedQueueMap)
@@ -92,6 +104,8 @@
 
 - (void)startDispatcher
 {
+    CIAPILogAbout(LogLevelNote, DispatcherModule, self, @"Starting dispatcher dispatch loop");
+    
     NSAssert(dispatcherShouldRun == NO, @"Cannot start the dispatcher more than once");
     dispatcherShouldRun = YES;
     
@@ -100,6 +114,7 @@
      
 - (void)stopDispatcher
 {
+    CIAPILogAbout(LogLevelNote, DispatcherModule, self, @"Stopping dispatcher dispatch loop");
     NSAssert(dispatcherShouldRun == YES, @"Cannot stop the dispatcher more than once");
     
     queueMultiplexer.stopDequeue = YES;
@@ -113,11 +128,23 @@
     while (dispatcherShouldRun)
     {
         CIAPIRequestToken *requestObject = [queueMultiplexer dequeueObject];
-        [inflightRequests addObject:requestObject];
         
         // We might have broken out of the multiplexer due to a stop request
         if (!dispatcherShouldRun)
+        {
+            CIAPILogAbout(LogLevelNote, DispatcherModule, self, @"Stopping dispatch loop due to user request");
             break;
+        }
+        
+        if (!requestObject)
+        {
+            // The multiplexer has quit, hopefully due to user request, so we'll spin until we're asked to do the same
+            continue;
+        }
+        
+        [inflightRequests addObject:requestObject];
+        
+        CIAPILogAbout(LogLevelNote, DispatcherModule, requestObject, @"Actually dispatching token %X", requestObject);
         
         // Send the request
         requestObject.attemptCount = requestObject.attemptCount++;
@@ -134,6 +161,8 @@
 
 - (void)dispatchSuccessfulRequest:(CIAPIRequestToken*)token result:(id)result
 {
+    CIAPILogAbout(LogLevelNote, DispatcherModule, token, @"Dispatch response SUCCEEDED for token %X", token);
+    
     // Dispatch onto the main thread
     token.responseObject = result;
     [self performSelectorOnMainThread:@selector(mainThreadSuccessDispatcher:) withObject:token waitUntilDone:NO];
@@ -141,6 +170,7 @@
 
 - (void)rescheduleFailedRequest:(CIAPIRequestToken*)token forLastError:(enum RequestFailureType)failureType
 {
+    CIAPILogAbout(LogLevelWarn, DispatcherModule, token, @"Dispatch response FAILED for token %X", token);
     token.responseError = [NSError errorWithDomain:@"TODO" code:0 userInfo:nil];
     
     // Depending on the error, we may reschedule this request with a longer wait time
@@ -152,6 +182,8 @@
 
 - (void)mainThreadSuccessDispatcher:(CIAPIRequestToken*)token
 {
+    CIAPILogAbout(LogLevelWarn, DispatcherModule, token, @"Main thread callback happening for token %X", token);
+    
     if (token.callbackDelegate)
         [token.callbackBlock requestSucceeded:token result:token.responseObject];
     else if (token.callbackBlock)
@@ -164,6 +196,8 @@
 
 - (void)mainThreadFailureDispatcher:(CIAPIRequestToken*)token
 {
+    CIAPILogAbout(LogLevelWarn, DispatcherModule, token, @"Main thread callback happening for token %X", token);
+    
     if (token.callbackDelegate)
         [token.callbackDelegate requestFailed:token error:token.responseError];
     else if (token.callbackBlock)
@@ -193,6 +227,8 @@
         [responseObj setupFromDictionary:bodyObj error:nil];
         
         [self dispatchSuccessfulRequest:token result:responseObj];
+        
+        [responseObj release];
     }
     else
     {

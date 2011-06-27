@@ -12,7 +12,9 @@
 #import "CIAPIObjectResponse.h"
 
 #import "RestKit/RestKit.h"
-//#import "RestKit/Support/RKJSONParser.h"
+
+
+#import "CIAPILogging.h"
 
 @implementation CIAPIClient
 
@@ -25,6 +27,7 @@
     
     if (self)
     {
+        CIAPILogAbout(LogLevelNote, CoreClientModule, self, @"Initialising CIAPIClient with username %@ and session ID %@", _username, _sessionID);
         username = [_username retain];
         sessionID = [_sessionID retain];
         
@@ -42,6 +45,8 @@
 
 - (void)dealloc
 {
+    CIAPILogAbout(LogLevelNote, CoreClientModule, self, @"Deallocating CIAPIClient");
+    
     [requestDispatcher stopDispatcher];
     
     [requestDispatcher release];
@@ -53,8 +58,10 @@
 }
 
 - (id)makeRequest:(CIAPIObjectRequest*)request error:(NSError**)error
-{
+{    
     assert(request != nil);
+
+    CIAPILogAbout(LogLevelNote, CoreClientModule, self, @"Begining synchronous request %@", request);    
     
     RKRequest *rkRequest = [self buildRKRequestFromCIAPIRequest:request error:error];
     RKResponse *response = [rkRequest sendSynchronously];
@@ -62,7 +69,7 @@
     if ([response isOK])
     {
         id bodyObj = [response bodyAsJSON];
-        NSLog(@"Succeeded request: Target URL was %@, body is %@", response.URL, bodyObj);
+        CIAPILogAbout(LogLevelNote, CoreClientModule, self, @"Synchronous request %X SUCCEEDED : Response = %@", request, bodyObj);
         
         CIAPIObjectResponse *responseObj = [[[[request responseClass] alloc] init] autorelease];
         [responseObj setupFromDictionary:bodyObj error:nil];
@@ -72,7 +79,8 @@
     else
     {
         // Is this an error object, or just an explosion?
-        NSLog(@"Failed request: Target URL was %@, body is %@", response.URL, [response bodyAsString]);
+        CIAPILogAbout(LogLevelWarn, CoreClientModule, self, @"Synchronous request %X FAILED. Was to URL %@, Response = %@ ", request, response.URL,
+                      [response bodyAsString]);
     }
     
     return nil;
@@ -80,7 +88,9 @@
 
 - (CIAPIRequestToken*)makeRequest:(CIAPIObjectRequest*)request delegate:(id<CIAPIRequestDelegate>)delegate error:(NSError**)error
 {
+    CIAPILogAbout(LogLevelNote, CoreClientModule, self, @"Asynchronous request %@ started, calling back to delegate %X", request, delegate);
     CIAPIRequestToken *requestToken = [[[CIAPIRequestToken alloc] initWithRequest:request delegate:delegate] autorelease];
+    CIAPILogAbout(LogLevelNote, CoreClientModule, requestToken, @"Request %@ created request token %X", request, requestToken);
     
     RKRequest *rkRequest = [self buildRKRequestFromCIAPIRequest:request error:error];
     
@@ -96,7 +106,9 @@
 
 - (CIAPIRequestToken*)makeRequest:(CIAPIObjectRequest*)request block:(CIAPIRequestCallback)callbackBlock error:(NSError**)error
 {
-    CIAPIRequestToken *requestToken = [[[CIAPIRequestToken alloc] initWithRequest:request block:callbackBlock] autorelease];
+    CIAPILogAbout(LogLevelNote, CoreClientModule, self, @"Asynchronous request %@ started, calling back to block %X", request, callbackBlock);
+    CIAPIRequestToken *requestToken = [[[CIAPIRequestToken alloc] initWithRequest:request block:callbackBlock ] autorelease];
+    CIAPILogAbout(LogLevelNote, CoreClientModule, requestToken, @"Request %@ created request token %X", request, requestToken);
     
     RKRequest *rkRequest = [self buildRKRequestFromCIAPIRequest:request error:error];
     
@@ -112,6 +124,7 @@
 
 - (enum CIAPIRequestCancellationResult)cancelRequest:(CIAPIRequestToken*)token
 {
+    CIAPILogAbout(LogLevelNote, CoreClientModule, token, @"Started cancellation for request token %X", token);
     [requestDispatcher unscheduleRequestToken:token];
     
     return 0;
