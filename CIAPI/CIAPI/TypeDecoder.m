@@ -38,7 +38,7 @@
     else if ([encodeString characterAtIndex:1] == '*')
     {
         // Handle string pointers as a special case (they should really be ^c)
-        type->decodedType = PointerStructure;
+        type->structuralType = PointerStructure;
         type->decodedType = CharType;
     }
     else if ([encodeString characterAtIndex:1] == '@')
