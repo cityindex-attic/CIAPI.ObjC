@@ -11,6 +11,8 @@
 		0704146B13A523BB002F28C5 /* ThrottledQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = 0704146913A523BB002F28C5 /* ThrottledQueue.m */; };
 		0704146E13A52473002F28C5 /* ThrottledQueueMultiplexer.h in Headers */ = {isa = PBXBuildFile; fileRef = 0704146C13A52473002F28C5 /* ThrottledQueueMultiplexer.h */; };
 		0704146F13A52473002F28C5 /* ThrottledQueueMultiplexer.m in Sources */ = {isa = PBXBuildFile; fileRef = 0704146D13A52473002F28C5 /* ThrottledQueueMultiplexer.m */; };
+		07137D7513B91C69006CD1AA /* CIAPILogging.h in Headers */ = {isa = PBXBuildFile; fileRef = 07137D7313B91C69006CD1AA /* CIAPILogging.h */; };
+		07137D7613B91C69006CD1AA /* CIAPILogging.m in Sources */ = {isa = PBXBuildFile; fileRef = 07137D7413B91C69006CD1AA /* CIAPILogging.m */; };
 		073649F913945510001A5278 /* CIAPICancelOrderRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = 073649B313945510001A5278 /* CIAPICancelOrderRequest.h */; };
 		073649FA13945510001A5278 /* CIAPICancelOrderRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 073649B413945510001A5278 /* CIAPICancelOrderRequest.m */; };
 		073649FB13945510001A5278 /* CIAPIDeleteSessionRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = 073649B513945510001A5278 /* CIAPIDeleteSessionRequest.h */; };
@@ -248,6 +250,8 @@
 		07DEFE5D1342710E00CFA705 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 07DEFE5B1342710E00CFA705 /* InfoPlist.strings */; };
 		07DEFE601342710E00CFA705 /* CIAPITests.h in Resources */ = {isa = PBXBuildFile; fileRef = 07DEFE5F1342710E00CFA705 /* CIAPITests.h */; };
 		07DEFE621342710E00CFA705 /* CIAPITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 07DEFE611342710E00CFA705 /* CIAPITests.m */; };
+		07F0A4E513B12D000049DFA7 /* ThrottledQueueTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 07F0A4E413B12D000049DFA7 /* ThrottledQueueTests.m */; };
+		07F0A4E813B12D100049DFA7 /* ThrottledQueueMultiplexerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 07F0A4E713B12D100049DFA7 /* ThrottledQueueMultiplexerTests.m */; };
 		07F0E713138BD7FA002EB862 /* PropertyDescriptionDecoder.h in Headers */ = {isa = PBXBuildFile; fileRef = 07F0E711138BD7FA002EB862 /* PropertyDescriptionDecoder.h */; };
 		07F0E714138BD7FA002EB862 /* PropertyDescriptionDecoder.m in Sources */ = {isa = PBXBuildFile; fileRef = 07F0E712138BD7FA002EB862 /* PropertyDescriptionDecoder.m */; };
 		07F0E717138BD800002EB862 /* TypeDecoder.h in Headers */ = {isa = PBXBuildFile; fileRef = 07F0E715138BD800002EB862 /* TypeDecoder.h */; };
@@ -350,6 +354,8 @@
 		0704146913A523BB002F28C5 /* ThrottledQueue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ThrottledQueue.m; sourceTree = "<group>"; };
 		0704146C13A52473002F28C5 /* ThrottledQueueMultiplexer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ThrottledQueueMultiplexer.h; sourceTree = "<group>"; };
 		0704146D13A52473002F28C5 /* ThrottledQueueMultiplexer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ThrottledQueueMultiplexer.m; sourceTree = "<group>"; };
+		07137D7313B91C69006CD1AA /* CIAPILogging.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CIAPILogging.h; sourceTree = "<group>"; };
+		07137D7413B91C69006CD1AA /* CIAPILogging.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CIAPILogging.m; sourceTree = "<group>"; };
 		073649B313945510001A5278 /* CIAPICancelOrderRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CIAPICancelOrderRequest.h; sourceTree = "<group>"; };
 		073649B413945510001A5278 /* CIAPICancelOrderRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CIAPICancelOrderRequest.m; sourceTree = "<group>"; };
 		073649B513945510001A5278 /* CIAPIDeleteSessionRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CIAPIDeleteSessionRequest.h; sourceTree = "<group>"; };
@@ -598,6 +604,10 @@
 		07DEFE5E1342710E00CFA705 /* CIAPITests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CIAPITests-Prefix.pch"; sourceTree = "<group>"; };
 		07DEFE5F1342710E00CFA705 /* CIAPITests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CIAPITests.h; sourceTree = "<group>"; };
 		07DEFE611342710E00CFA705 /* CIAPITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CIAPITests.m; sourceTree = "<group>"; };
+		07F0A4E313B12D000049DFA7 /* ThrottledQueueTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ThrottledQueueTests.h; sourceTree = "<group>"; };
+		07F0A4E413B12D000049DFA7 /* ThrottledQueueTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ThrottledQueueTests.m; sourceTree = "<group>"; };
+		07F0A4E613B12D100049DFA7 /* ThrottledQueueMultiplexerTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ThrottledQueueMultiplexerTests.h; sourceTree = "<group>"; };
+		07F0A4E713B12D100049DFA7 /* ThrottledQueueMultiplexerTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ThrottledQueueMultiplexerTests.m; sourceTree = "<group>"; };
 		07F0E711138BD7FA002EB862 /* PropertyDescriptionDecoder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PropertyDescriptionDecoder.h; sourceTree = "<group>"; };
 		07F0E712138BD7FA002EB862 /* PropertyDescriptionDecoder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PropertyDescriptionDecoder.m; sourceTree = "<group>"; };
 		07F0E715138BD800002EB862 /* TypeDecoder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TypeDecoder.h; sourceTree = "<group>"; };
@@ -785,6 +795,8 @@
 			isa = PBXGroup;
 			children = (
 				076AF1EA1352395E0049972E /* DESIGN */,
+				07137D7313B91C69006CD1AA /* CIAPILogging.h */,
+				07137D7413B91C69006CD1AA /* CIAPILogging.m */,
 				076AF1D8135095370049972E /* CIAPIConfigConstants.h */,
 				076AF1EB13524D570049972E /* CIAPI.h */,
 				075993FD136C69A90040D454 /* JSON Property manager */,
@@ -818,6 +830,10 @@
 				07599416136D92A00040D454 /* DTORequests.m */,
 				07F0E71A138BD8F0002EB862 /* ObjectDictionaryMapping.h */,
 				07F0E71B138BD8F0002EB862 /* ObjectDictionaryMapping.m */,
+				07F0A4E313B12D000049DFA7 /* ThrottledQueueTests.h */,
+				07F0A4E413B12D000049DFA7 /* ThrottledQueueTests.m */,
+				07F0A4E613B12D100049DFA7 /* ThrottledQueueMultiplexerTests.h */,
+				07F0A4E713B12D100049DFA7 /* ThrottledQueueMultiplexerTests.m */,
 			);
 			path = CIAPITests;
 			sourceTree = "<group>";
@@ -1160,6 +1176,7 @@
 				0704146E13A52473002F28C5 /* ThrottledQueueMultiplexer.h in Headers */,
 				07FC281713AE437D00C6C16B /* RequestDispatcher.h in Headers */,
 				07FC281C13AE938100C6C16B /* CIAPIRequestsAndResponses.h in Headers */,
+				07137D7513B91C69006CD1AA /* CIAPILogging.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1460,6 +1477,7 @@
 				0704146B13A523BB002F28C5 /* ThrottledQueue.m in Sources */,
 				0704146F13A52473002F28C5 /* ThrottledQueueMultiplexer.m in Sources */,
 				07FC281813AE437D00C6C16B /* RequestDispatcher.m in Sources */,
+				07137D7613B91C69006CD1AA /* CIAPILogging.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1471,6 +1489,8 @@
 				07DEFE621342710E00CFA705 /* CIAPITests.m in Sources */,
 				07599419136D94800040D454 /* DTORequests.m in Sources */,
 				07F0E71C138BD8F0002EB862 /* ObjectDictionaryMapping.m in Sources */,
+				07F0A4E513B12D000049DFA7 /* ThrottledQueueTests.m in Sources */,
+				07F0A4E813B12D100049DFA7 /* ThrottledQueueMultiplexerTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1544,6 +1564,7 @@
 				DSTROOT = /tmp/CIAPI.dst;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "CIAPI/CIAPI-Prefix.pch";
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				OTHER_LDFLAGS = (
 					"-ObjC",
 					"-all_load",
@@ -1559,6 +1580,7 @@
 				DSTROOT = /tmp/CIAPI.dst;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "CIAPI/CIAPI-Prefix.pch";
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				OTHER_LDFLAGS = (
 					"-ObjC",
 					"-all_load",
@@ -1577,6 +1599,7 @@
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "CIAPITests/CIAPITests-Prefix.pch";
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				INFOPLIST_FILE = "CIAPITests/CIAPITests-Info.plist";
 				OTHER_LDFLAGS = (
 					"-framework",
@@ -1599,6 +1622,7 @@
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "CIAPITests/CIAPITests-Prefix.pch";
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				INFOPLIST_FILE = "CIAPITests/CIAPITests-Info.plist";
 				OTHER_LDFLAGS = (
 					"-framework",
