@@ -12,6 +12,7 @@
 
 #import "CIAPILogging.h"
 
+#import "CIAPIErrorHandling.h"
 
 @implementation CIAPIObjectResponse
 
@@ -19,16 +20,16 @@
 {
     @try
     {
-        CIAPILogAbout(LogLevelNote, ResponseParsingModule, self, @"Began scalar object setup from dictionary");
+        CIAPILogAbout(CIAPILogLevelNote, CIAPIResponseParsingModule, self, @"Began scalar object setup from dictionary");
         [ObjectPropertiesDictionaryMapper dictionaryToObjectProperties:dictionary object:self];
     }
     @catch (NSException *exception)
     {
-        CIAPILogAbout(LogLevelError, ResponseParsingModule, self, @"Could not setup scalar object from dictionary! Exception: %@", exception);
+        CIAPILogAbout(CIAPILogLevelError, CIAPIResponseParsingModule, self, @"Could not setup scalar object from dictionary! Exception: %@", exception);
         
         // TODO: Real error handling
         if (error)
-            *error = [NSError errorWithDomain:@"Cannot decode" code:0 userInfo:[NSDictionary dictionaryWithObject:exception forKey:@"exception"]];
+            *error = [NSError errorWithDomain:CIAPI_ERROR_DOMAIN code:CIAPIErrorObjectSetup userInfo:CIAPILogErrorDictForObject(self)];
         
         return FALSE;
     }

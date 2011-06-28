@@ -8,25 +8,29 @@
 
 #import <Foundation/Foundation.h>
 
-enum LogLevel
+#import "CIAPIConfigConstants.h"
+
+enum CIAPILogLevel
 {
-    LogLevelNote = 1,
-    LogLevelWarn = 2,
-    LogLevelError = 3
+    CIAPILogLevelNote = 1,
+    CIAPILogLevelWarn = 2,
+    CIAPILogLevelError = 3
 };
 
-enum LogModule
+#define LOG_LEVEL_MAX CIAPILogLevelError
+
+enum CIAPILogModule
 {
-    UnknownModule = 0,
-    CoreClientModule = 1,
-    DispatcherModule = 2,
-    ResponseParsingModule = 4,
+    CIAPIUnknownModule = 1,
+    CIAPICoreClientModule = 2,
+    CIAPIDispatcherModule = 4,
+    CIAPIResponseParsingModule = 8,
+    CIAPIAuthenticationModule = 16,
 };
+
+#define LOG_MODULES_ALL (CIAPICoreClientModule | CIAPIDispatcherModule | CIAPIResponseParsingModule | CIAPIAuthenticationModule)
 
 #ifdef DEBUG
-
-#define ALSO_NS_LOG TRUE
-#define ALSO_NS_LOG_MIN_LEVEL 0
 
 @interface CIAPILogEntry : NSObject
 {
@@ -36,8 +40,8 @@ enum LogModule
     NSString *method;
     void *aboutObjectAddress;
     NSDate *dateAndTime;
-    enum LogModule logModule;
-    enum LogLevel logLevel;
+    enum CIAPILogModule logModule;
+    enum CIAPILogLevel logLevel;
 }
 
 @property (retain) NSString *formattedMessage;
@@ -46,8 +50,8 @@ enum LogModule
 @property (retain) NSString *method;
 @property void *aboutObjectAddress;
 @property (retain) NSDate *dateAndTime;
-@property enum LogModule logModule;
-@property enum LogLevel logLevel;
+@property enum CIAPILogModule logModule;
+@property enum CIAPILogLevel logLevel;
 
 - (void)dumpToNSLog;
 
@@ -61,12 +65,13 @@ enum LogModule
 
 +(CIAPILogging*)logger;
 
-- (void)logMessageAtLevel:(enum LogLevel)logLevel fromFile:(char*)file line:(int)line method:(char*)method module:(enum LogModule)module aboutObject:(id)obj message:(NSString*)messageFormat, ...;
+- (void)logMessageAtLevel:(enum CIAPILogLevel)logLevel fromFile:(char*)file line:(int)line method:(char*)method module:(enum CIAPILogModule)module aboutObject:(id)obj message:(NSString*)messageFormat, ...;
 
-- (NSArray*)getMessagesFromModules:(unsigned long)modules upToLevel:(enum LogLevel)level;
-- (NSArray*)getMessagesAboutObject:(id)object upToLevel:(enum LogLevel)level;
-- (void)dumpMessagesFromModules:(unsigned long)modules upToLevel:(enum LogLevel)level;
-- (void)dumpMessagesAboutObject:(id)object upToLevel:(enum LogLevel)level;
+- (NSArray*)allMessages;
+- (NSArray*)getMessagesFromModules:(unsigned long)modules upToLevel:(enum CIAPILogLevel)level;
+- (NSArray*)getMessagesAboutObject:(id)object upToLevel:(enum CIAPILogLevel)level;
+- (void)dumpMessagesFromModules:(unsigned long)modules upToLevel:(enum CIAPILogLevel)level;
+- (void)dumpMessagesAboutObject:(id)object upToLevel:(enum CIAPILogLevel)level;
 
 @end
 
@@ -82,10 +87,14 @@ enum LogModule
 [[CIAPILogging logger] logMessageAtLevel:(level) fromFile:(char*)(__FILE__) line:__LINE__ method:(char*)(__PRETTY_FUNCTION__) module:(moduleNo) \
     aboutObject:(obj) message:(messageStr), ##__VA_ARGS__]
 
+#define CIAPILogGetForObject(obj) [[CIAPILogging logger] getMessagesAboutObject:(obj) upToLevel:CIAPILogLevelError]
+#define CIAPILogErrorDictForObject(obj) [NSDictionary dictionaryWithObject:[[CIAPILogging logger] getMessagesAboutObject:(obj) upToLevel:CIAPILogLevelError] forKey:@"CIAPI_ERROR_LOG"]
+
 #else
 
-#define CIAPILog(message, ...)
-#define CIAPILogFromModule(module, message, ...)
-#define CIAPILogAbout(module, obj, message, ...)
+#define CIAPILog(level, messageStr, ...)
+#define CIAPILogFromModule(level, moduleNo, messageStr, ...)
+#define CIAPILogAbout(level, moduleNo, obj, messageStr, ...)
+#define CIAPILogErrorDictForObject(obj) nil
 
 #endif

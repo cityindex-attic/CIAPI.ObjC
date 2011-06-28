@@ -10,6 +10,8 @@
 
 #import "CIAPIAuthenticator.h"
 #import "CIAPIConfigConstants.h"
+#import "CIAPILogging.h"
+#import "CIAPIErrorHandling.h"
 
 #import "Requests/CIAPILogOnRequest.h"
 #import "Responses/CIAPILogOnResponse.h"
@@ -47,6 +49,7 @@
 
 - (BOOL)authenticateWithUserNameSynchronously:(NSString*)userName password:(NSString*)password error:(NSError**)error;
 {
+    CIAPILogAbout(CIAPILogLevelNote, CIAPIAuthenticationModule, self, @"Authenticating client %@ synchronously", userName);
     request = [self _buildRequestWithUsername:userName password:password];    
     RKResponse *response = [request sendSynchronously];
     
@@ -59,6 +62,8 @@
 
 - (void)authenticateWithUserName:(NSString*)userName password:(NSString*)password
 {
+    CIAPILogAbout(CIAPILogLevelNote, CIAPIAuthenticationModule, self, @"Authenticating client %@ asynchronously", userName);
+    
     [request cancel];
     [request release];
     
@@ -68,10 +73,14 @@
 
 - (void)request:(RKRequest*)_request didLoadResponse:(RKResponse*)response
 {
+    CIAPILogAbout(CIAPILogLevelNote, CIAPIAuthenticationModule, self, @"Asynchronous authentication GOOD response recieved");
+    
     NSError *error = nil;
     
     if (![self _setupClientOrError:response error:&error])
     {
+        CIAPILogAbout(CIAPILogLevelWarn, CIAPIAuthenticationModule, self, @"Authentication FAILED");
+        
         if (delegate)
             [delegate authenticationFailed:self error:error];
         
@@ -80,6 +89,8 @@
     }
     else
     {    
+        CIAPILogAbout(CIAPILogLevelWarn, CIAPIAuthenticationModule, self, @"Authentication SUCCEEDED");
+        
         if (delegate)
             [delegate authenticationSucceeded:self];
         
@@ -93,8 +104,10 @@
 
 - (void)request:(RKRequest*)_request didFailLoadWithError:(NSError*)error
 {
+    CIAPILogAbout(CIAPILogLevelNote, CIAPIAuthenticationModule, self, @"Asynchronous authentication ERROR response recieved");
+    
     if (delegate)
-        [delegate authenticationFailed:self error:error];
+        [delegate authenticationFailed:self error:[NSError errorWithDomain:CIAPI_ERROR_DOMAIN code:CIAPIErrorAuthenticationFailed userInfo:[NSDictionary dictionaryWithObject:CIAPILogGetForObject(self) forKey:CIAPI_ERROR_LOG]]];
     
     if (block)
         block(self, error);
@@ -126,9 +139,9 @@
     
     if (bodyObj == nil || sessionID == nil)
     {
-        // TODO: Setup errors properly
+        CIAPILogAbout(CIAPILogLevelWarn, CIAPIAuthenticationModule, self, @"Authentication response INCORRECT: Reply was %@", [response bodyAsString]);
         if (error)
-            *error = [NSError errorWithDomain:@"TODO" code:0 userInfo:nil];
+            *error = [NSError errorWithDomain:CIAPI_ERROR_DOMAIN code:CIAPIErrorAuthenticationFailed userInfo:CIAPILogErrorDictForObject(self)];
         
         return FALSE;
     }

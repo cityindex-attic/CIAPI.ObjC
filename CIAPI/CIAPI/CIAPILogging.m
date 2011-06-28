@@ -80,7 +80,7 @@ static CIAPILogging *logSingleton = nil;
     [super dealloc];
 }
 
-- (void)logMessageAtLevel:(enum LogLevel)level fromFile:(char*)file line:(int)line method:(char*)method module:(enum LogModule)module aboutObject:(id)obj message:(NSString*)messageFormat, ...
+- (void)logMessageAtLevel:(enum CIAPILogLevel)level fromFile:(char*)file line:(int)line method:(char*)method module:(enum CIAPILogModule)module aboutObject:(id)obj message:(NSString*)messageFormat, ...
 {
     va_list ap;
 	va_start(ap, messageFormat);
@@ -92,7 +92,7 @@ static CIAPILogging *logSingleton = nil;
     logEntry.line = line;
     logEntry.method = [NSString stringWithCString:method encoding:NSASCIIStringEncoding];
     logEntry.formattedMessage = formattedMessage;
-    logEntry.aboutObjectAddress = (void *)obj;
+    logEntry.aboutObjectAddress = (void*)obj;
     logEntry.logModule = module;
     logEntry.logLevel = level;
     
@@ -101,37 +101,51 @@ static CIAPILogging *logSingleton = nil;
         [logEntries addObject:logEntry];
     }
     
-    if (ALSO_NS_LOG && logEntry.logLevel >= ALSO_NS_LOG_MIN_LEVEL)
+    if (CIAPI_LOGGING_ALSO_NS_LOG && logEntry.logLevel >= CIAPI_LOGGING_ALSO_NS_LOG_MIN_LEVEL)
         [logEntry dumpToNSLog];
     
     [logEntry release];
     [formattedMessage release];
 }
 
-- (NSArray*)getMessagesFromModules:(unsigned long)modules upToLevel:(enum LogLevel)level
+- (NSArray*)allMessages
 {
-    return [logEntries filteredArrayUsingPredicate:[NSPredicate predicateWithBlock:^BOOL(CIAPILogEntry *obj, NSDictionary *bindings)
-                                                          {
-                                                              return (((obj.logModule & modules) == 1) && obj.logLevel <= level);
-                                                          }]];
+    @synchronized (logEntries)
+    {
+        return [NSArray arrayWithArray:logEntries];
+    }
 }
 
-- (NSArray*)getMessagesAboutObject:(id)object upToLevel:(enum LogLevel)level
+- (NSArray*)getMessagesFromModules:(unsigned long)modules upToLevel:(enum CIAPILogLevel)level
 {
-    return [logEntries filteredArrayUsingPredicate:[NSPredicate predicateWithBlock:^BOOL(CIAPILogEntry *obj, NSDictionary *bindings)
+    @synchronized (logEntries)
+    {
+        return [logEntries filteredArrayUsingPredicate:[NSPredicate predicateWithBlock:^BOOL(CIAPILogEntry *obj, NSDictionary *bindings)
+                                                          {
+                                                              return (((obj.logModule & modules) != 0) && obj.logLevel <= level);
+                                                          }]];
+    }
+}
+
+- (NSArray*)getMessagesAboutObject:(id)object upToLevel:(enum CIAPILogLevel)level
+{
+    @synchronized (logEntries)
+    {
+        return [logEntries filteredArrayUsingPredicate:[NSPredicate predicateWithBlock:^BOOL(CIAPILogEntry *obj, NSDictionary *bindings)
                                                     {
                                                         return (obj.aboutObjectAddress == (void*)object && obj.logLevel <= level);
                                                     }]];
+    }
 }
 
-- (void)dumpMessagesFromModules:(unsigned long)modules upToLevel:(enum LogLevel)level
+- (void)dumpMessagesFromModules:(unsigned long)modules upToLevel:(enum CIAPILogLevel)level
 {
     [[self getMessagesFromModules:modules upToLevel:level] enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
         [obj dumpToNSLog];
     }];
 }
 
-- (void)dumpMessagesAboutObject:(id)object upToLevel:(enum LogLevel)level
+- (void)dumpMessagesAboutObject:(id)object upToLevel:(enum CIAPILogLevel)level
 {
     [[self getMessagesAboutObject:object upToLevel:level] enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
         [obj dumpToNSLog];

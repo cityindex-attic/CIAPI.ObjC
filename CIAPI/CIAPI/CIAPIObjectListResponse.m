@@ -17,7 +17,7 @@
 
 - (BOOL)setupFromDictionary:(NSDictionary*)dictionary error:(NSError**)error
 {
-    CIAPILogAbout(LogLevelNote, ResponseParsingModule, self, @"Began vector object setup from dictionary");    
+    CIAPILogAbout(CIAPILogLevelNote, CIAPIResponseParsingModule, self, @"Began vector object setup from dictionary");    
     
     // Note the property key for the array (i.e. the only property)
     NSString *arrayPropertyName = [[dictionary allKeys] objectAtIndex:0];
@@ -25,7 +25,7 @@
     if (arrayPropertyName == nil)
     {
         // TODO: Error handling
-        CIAPILogAbout(LogLevelError, ResponseParsingModule, self, @"Vector object response had no array property name (root key). This is probably an API failure");
+        CIAPILogAbout(CIAPILogLevelError, CIAPIResponseParsingModule, self, @"Vector object response had no array property name (root key). This is probably an API failure");
         return NO;
     }
 
