@@ -26,9 +26,10 @@ enum CIAPILogModule
     CIAPIDispatcherModule = 4,
     CIAPIResponseParsingModule = 8,
     CIAPIAuthenticationModule = 16,
+    CIAPIHTTPModule = 16
 };
 
-#define LOG_MODULES_ALL (CIAPICoreClientModule | CIAPIDispatcherModule | CIAPIResponseParsingModule | CIAPIAuthenticationModule)
+#define LOG_MODULES_ALL (CIAPICoreClientModule | CIAPIDispatcherModule | CIAPIResponseParsingModule | CIAPIAuthenticationModule | CIAPIHTTPModule)
 
 #ifdef DEBUG
 
@@ -95,6 +96,6 @@ enum CIAPILogModule
 #define CIAPILog(level, messageStr, ...)
 #define CIAPILogFromModule(level, moduleNo, messageStr, ...)
 #define CIAPILogAbout(level, moduleNo, obj, messageStr, ...)
-#define CIAPILogErrorDictForObject(obj) nil
+#define CIAPILogErrorDictForObject(obj) [NSDictionary dictionary]
 
 #endif

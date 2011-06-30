@@ -14,7 +14,7 @@
  * or from the server and ourselves. It tracks retries and errors.
  */
 @interface CIAPIRequestToken : NSObject {    
-    id underlyingRequest;
+    NSURLRequest *underlyingRequest;
     int attemptCount;
 
     CIAPIRequestCallback callbackBlock;
@@ -25,7 +25,6 @@
     id responseObject;
 }
 
-// TODO: It bothers me that the RKRequest object is public in a user facing interface
 @property (readonly) id underlyingRequest;
 @property int attemptCount;
 
@@ -39,6 +38,6 @@
 - (CIAPIRequestToken*)initWithRequest:(CIAPIObjectRequest*)objRequest delegate:(id<CIAPIRequestDelegate>)delegate;
 - (CIAPIRequestToken*)initWithRequest:(CIAPIObjectRequest*)objRequest block:(CIAPIRequestCallback)block;
 
-- (void)setRKRequest:(id)rkRequest;
+- (void)setURLRequest:(NSURLRequest*)urlRequest;
 
 @end

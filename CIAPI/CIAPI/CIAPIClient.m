@@ -6,15 +6,13 @@
 //  Copyright 2011 __MyCompanyName__. All rights reserved.
 //
 
+#import "JSONKit.h"
 
 #import "CIAPIConfigConstants.h"
 #import "CIAPIClient.h"
 #import "CIAPIObjectResponse.h"
-
-#import "RestKit/RestKit.h"
-
-
 #import "CIAPILogging.h"
+#import "CIAPIURLConnection.h"
 
 @implementation CIAPIClient
 
@@ -30,12 +28,8 @@
         CIAPILogAbout(CIAPILogLevelNote, CIAPICoreClientModule, self, @"Initialising CIAPIClient with username %@ and session ID %@", _username, _sessionID);
         username = [_username retain];
         sessionID = [_sessionID retain];
-        
-        underlyingClient = [[RKClient clientWithBaseURL:CIAPI_BASE_URI] retain];
-        [((RKClient*)underlyingClient).HTTPHeaders setValue:sessionID forKey:@"Session"];
-        [((RKClient*)underlyingClient).HTTPHeaders setValue:username forKey:@"UserName"];
-        
-        requestDispatcher = [[RequestDispatcher alloc] init];
+
+        requestDispatcher = [[CIAPIRequestDispatcher alloc] init];
         
         [requestDispatcher startDispatcher];
     }
@@ -63,12 +57,15 @@
 
     CIAPILogAbout(CIAPILogLevelNote, CIAPICoreClientModule, self, @"Begining synchronous request %@", request);    
     
-    RKRequest *rkRequest = [self buildRKRequestFromCIAPIRequest:request error:error];
-    RKResponse *response = [rkRequest sendSynchronously];
+    // TODO: Need to use API errors properly
+    NSURLRequest *urlRequest = [self buildURLRequestFromCIAPIRequest:request error:error];
+    NSHTTPURLResponse *urlResponse = nil;
     
-    if ([response isOK])
-    {
-        id bodyObj = [response bodyAsJSON];
+    NSData *resultData = [NSURLConnection sendSynchronousRequest:urlRequest returningResponse:&urlResponse error:error];
+    
+    if ([urlResponse statusCode] == 200)
+    {        
+        id bodyObj = [[JSONDecoder decoder] objectWithData:resultData error:error];
         CIAPILogAbout(CIAPILogLevelNote, CIAPICoreClientModule, self, @"Synchronous request %X SUCCEEDED : Response = %@", request, bodyObj);
         
         CIAPIObjectResponse *responseObj = [[[[request responseClass] alloc] init] autorelease];
@@ -80,7 +77,7 @@
     {
         // Is this an error object, or just an explosion?
         CIAPILogAbout(CIAPILogLevelWarn, CIAPICoreClientModule, self, @"Synchronous request %X FAILED. Was to URL %@, Response = %@ ",
-                      request, response.URL, [response bodyAsString]);
+                      request, [urlResponse URL], [[[NSString alloc] initWithData:resultData encoding:NSUTF8StringEncoding] autorelease]);
     }
     
     return nil;
@@ -92,12 +89,13 @@
     CIAPIRequestToken *requestToken = [[[CIAPIRequestToken alloc] initWithRequest:request delegate:delegate] autorelease];
     CIAPILogAbout(CIAPILogLevelNote, CIAPICoreClientModule, requestToken, @"Request %@ created request token %X", request, requestToken);
     
-    RKRequest *rkRequest = [self buildRKRequestFromCIAPIRequest:request error:error];
+    NSURLRequest *urlRequest = [self buildURLRequestFromCIAPIRequest:request error:error];
     
-    if (!rkRequest)
+    // TODO: Set error
+    if (!urlRequest)
         return nil;
     
-    [requestToken setRKRequest:rkRequest];
+    [requestToken setURLRequest:urlRequest];
     
     [requestDispatcher scheduleRequestToken:requestToken];
     
@@ -110,12 +108,13 @@
     CIAPIRequestToken *requestToken = [[[CIAPIRequestToken alloc] initWithRequest:request block:callbackBlock ] autorelease];
     CIAPILogAbout(CIAPILogLevelNote, CIAPICoreClientModule, requestToken, @"Request %@ created request token %X", request, requestToken);
     
-    RKRequest *rkRequest = [self buildRKRequestFromCIAPIRequest:request error:error];
+    NSURLRequest *urlRequest = [self buildURLRequestFromCIAPIRequest:request error:error];
     
-    if (!rkRequest)
+    // TODO: Set error
+    if (!urlRequest)
         return nil;
     
-    [requestToken setRKRequest:rkRequest];
+    [requestToken setURLRequest:urlRequest];
     
     [requestDispatcher scheduleRequestToken:requestToken];
     
@@ -169,28 +168,36 @@
  * Private members
  */
 
-- (RKRequest*)buildRKRequestFromCIAPIRequest:(CIAPIObjectRequest*)ciapiRequest error:(NSError**)error
+- (NSURLRequest*)buildURLRequestFromCIAPIRequest:(CIAPIObjectRequest*)ciapiRequest error:(NSError**)error
 {
     NSMutableDictionary *parameters = [NSMutableDictionary dictionaryWithDictionary:[ciapiRequest propertiesForRequest]];
     // This call will mutable the parameters to consume the ones used in the URL. This covers POST requests that have URL parameters
-    NSString *url = [self buildURLFromTemplate:[ciapiRequest urlTemplate] parameters:parameters error:error];
-    RKRequest *rkRequest = [underlyingClient requestWithResourcePath:url delegate:nil];
+    NSString *urlStr = [self buildURLFromTemplate:[ciapiRequest urlTemplate] parameters:parameters error:error];
+    
+    NSURL *url = [NSURL URLWithString:urlStr relativeToURL:CIAPI_BASE_URL];
+    
+    NSMutableURLRequest *urlRequest = [NSMutableURLRequest requestWithURL:url cachePolicy:NSURLRequestReloadIgnoringLocalAndRemoteCacheData
+                                                          timeoutInterval:CIAPI_REQUEST_TIMEOUT_LENGTH];
     
     if ([ciapiRequest requestType] == CIAPIRequestGET)
     {
-        rkRequest.method = RKRequestMethodGET;
+        [urlRequest setHTTPMethod:@"GET"];
     }
     else if ([ciapiRequest requestType] == CIAPIRequestPOST)
     {
-        rkRequest.method = RKRequestMethodPOST;
-        rkRequest.params = [RKJSONSerialization JSONSerializationWithObject:parameters];
+        [urlRequest setHTTPMethod:@"POST"];
+        [urlRequest setHTTPBody:[parameters JSONData]];
+        [urlRequest addValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
     }
     else
     {
         assert(FALSE);
     }
     
-    return rkRequest;
+    [urlRequest addValue:username forHTTPHeaderField:@"UserName"];
+    [urlRequest addValue:sessionID forHTTPHeaderField:@"Session"];
+    
+    return urlRequest;
 }
 
 // TODO: We don't really know which URL parameters are optional, so we require them all

@@ -6,13 +6,12 @@
 //  Copyright 2011 __MyCompanyName__. All rights reserved.
 //
 
-#import "RestKit/RestKit.h"
+#import "JSONKit.h"
 
 #import "CIAPIAuthenticator.h"
 #import "CIAPIConfigConstants.h"
 #import "CIAPILogging.h"
 #import "CIAPIErrorHandling.h"
-
 #import "Requests/CIAPILogOnRequest.h"
 #import "Responses/CIAPILogOnResponse.h"
 
@@ -29,7 +28,6 @@
     
     if (self)
     {
-        rkClient = [[RKClient clientWithBaseURL:CIAPI_BASE_URI] retain];
         client = nil;
     }
     
@@ -39,9 +37,7 @@
 - (void)dealloc
 {
     [client release];
-    [rkClient release];
-    [request cancel];
-    [request release];
+
     [block release];
 
     [super dealloc];
@@ -50,34 +46,34 @@
 - (BOOL)authenticateWithUserNameSynchronously:(NSString*)userName password:(NSString*)password error:(NSError**)error;
 {
     CIAPILogAbout(CIAPILogLevelNote, CIAPIAuthenticationModule, self, @"Authenticating client %@ synchronously", userName);
-    request = [self _buildRequestWithUsername:userName password:password];    
-    RKResponse *response = [request sendSynchronously];
+    NSURLRequest *urlRequest = [self _buildRequestWithUsername:userName password:password];    
     
-    BOOL result = [self _setupClientOrError:response error:error];
-    
-    [request release];
+    NSHTTPURLResponse *urlResponse;
+    NSData *responseData = [CIAPIURLConnection sendSynchronousRequest:urlRequest returningResponse:&urlResponse error:error];
         
-    return result;
+    return [self _setupClientOrError:urlResponse withData:responseData error:error];
 }
 
 - (void)authenticateWithUserName:(NSString*)userName password:(NSString*)password
 {
     CIAPILogAbout(CIAPILogLevelNote, CIAPIAuthenticationModule, self, @"Authenticating client %@ asynchronously", userName);
     
-    [request cancel];
-    [request release];
+    [urlConnection cancel];
+    [urlConnection release];
     
-    request = [self _buildRequestWithUsername:userName password:password];
-    [request send];
+    NSURLRequest *request = [self _buildRequestWithUsername:userName password:password];
+    
+    urlConnection = [CIAPIURLConnection CIAPIURLConnectionForRequest:request delegate:self];
+    [urlConnection start];
 }
 
-- (void)request:(RKRequest*)_request didLoadResponse:(RKResponse*)response
+- (void)requestSucceeded:(CIAPIURLConnection*)connection request:(NSURLRequest*)request response:(NSHTTPURLResponse*)response data:(NSData*)data
 {
     CIAPILogAbout(CIAPILogLevelNote, CIAPIAuthenticationModule, self, @"Asynchronous authentication GOOD response recieved");
     
     NSError *error = nil;
     
-    if (![self _setupClientOrError:response error:&error])
+    if (![self _setupClientOrError:response withData:data error:&error])
     {
         CIAPILogAbout(CIAPILogLevelWarn, CIAPIAuthenticationModule, self, @"Authentication FAILED");
         
@@ -102,7 +98,7 @@
     request = nil;
 }
 
-- (void)request:(RKRequest*)_request didFailLoadWithError:(NSError*)error
+- (void)requestFailed:(CIAPIURLConnection*)connection request:(NSURLRequest*)request response:(NSURLResponse*)response error:(NSError*)error
 {
     CIAPILogAbout(CIAPILogLevelNote, CIAPIAuthenticationModule, self, @"Asynchronous authentication ERROR response recieved");
     
@@ -116,30 +112,37 @@
     request = nil;
 }
 
-- (RKRequest*)_buildRequestWithUsername:(NSString*)userName password:(NSString*)password
-{
+- (NSURLRequest*)_buildRequestWithUsername:(NSString*)userName password:(NSString*)password
+{    
     CIAPILogOnRequest *loRequest = [[[CIAPILogOnRequest alloc] init] autorelease];
     loRequest.UserName = userName;
     loRequest.Password = password;
+
+    NSURL *sessionURl = [NSURL URLWithString:@"session" relativeToURL:CIAPI_BASE_URL];
+    NSMutableURLRequest *urlRequest = [NSMutableURLRequest requestWithURL:sessionURl
+                                                           cachePolicy:NSURLRequestReloadIgnoringLocalAndRemoteCacheData
+                                                           timeoutInterval:CIAPI_REQUEST_TIMEOUT_LENGTH];
     
-    request = [[rkClient requestWithResourcePath:@"session" delegate:self] retain];
-    [request setMethod:RKRequestMethodPOST];
-    [request setParams:[RKJSONSerialization JSONSerializationWithObject:[loRequest propertiesForRequest]]];
     
-    // A little bit hacky to carry information in the request, but good enough to get off the ground prototyping with
-    [request setUserData: userName];
+    [urlRequest setHTTPMethod:@"POST"];
+    [urlRequest addValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
     
-    return request;
+    [urlRequest setHTTPBody:[[loRequest propertiesForRequest] JSONData]];
+
+    lastUsername = [userName retain];
+    
+    return urlRequest;
 }
 
-- (BOOL)_setupClientOrError:(RKResponse*)response error:(NSError**)error
+- (BOOL)_setupClientOrError:(NSHTTPURLResponse*)response withData:(NSData*)data error:(NSError**)error
 {
-    id bodyObj = [response bodyAsJSON];
+    id bodyObj = [data objectFromJSONData];
     NSString *sessionID = [bodyObj objectForKey:@"Session"];
     
     if (bodyObj == nil || sessionID == nil)
     {
-        CIAPILogAbout(CIAPILogLevelWarn, CIAPIAuthenticationModule, self, @"Authentication response INCORRECT: Reply was %@", [response bodyAsString]);
+        CIAPILogAbout(CIAPILogLevelWarn, CIAPIAuthenticationModule, self, @"Authentication response INCORRECT: Reply was %@",
+                      [[[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding] autorelease]);
         if (error)
             *error = [NSError errorWithDomain:CIAPI_ERROR_DOMAIN code:CIAPIErrorAuthenticationFailed userInfo:CIAPILogErrorDictForObject(self)];
         
@@ -147,7 +150,7 @@
     }
     
     [client release];
-    client = [[CIAPIClient alloc] initWithUsername:response.request.userData sessionID:sessionID];
+    client = [[CIAPIClient alloc] initWithUsername:lastUsername sessionID:sessionID];
 
     return YES;
 }

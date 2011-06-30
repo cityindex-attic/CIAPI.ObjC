@@ -62,14 +62,15 @@
     [requestObject release];
     [callbackDelegate release];
     [callbackBlock release];
+    [underlyingRequest release];
     
     [super dealloc];
 }
 
-- (void)setRKRequest:(id)rkRequest
+- (void)setURLRequest:(id)urlRequest
 {
-    NSAssert(rkRequest != nil, @"Cannot set a nil rkRequest");
-    underlyingRequest = rkRequest;
+    NSAssert(urlRequest != nil, @"Cannot set a nil urlRequest");
+    underlyingRequest = [urlRequest retain];
 }
 
 @end

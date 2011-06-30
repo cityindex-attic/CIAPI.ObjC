@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		07137D7113B8F258006CD1AA /* LoginButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 07137D7013B8F258006CD1AA /* LoginButton.png */; };
+		076A9C0013B8EF6C004E604C /* HeaderBar.png in Resources */ = {isa = PBXBuildFile; fileRef = 076A9BFF13B8EF6C004E604C /* HeaderBar.png */; };
+		076A9C0213B8EFE1004E604C /* LoginBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = 076A9C0113B8EFE1004E604C /* LoginBackground.png */; };
 		07DE1A1713AE9751005447CF /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07DE1A1613AE9751005447CF /* SystemConfiguration.framework */; };
 		07DE1A1913AE9758005447CF /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07DE1A1813AE9758005447CF /* MobileCoreServices.framework */; };
 		07DE1A1B13AE9787005447CF /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07DE1A1A13AE9787005447CF /* CFNetwork.framework */; };
@@ -23,10 +26,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		07137D7013B8F258006CD1AA /* LoginButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = LoginButton.png; path = CityPad/Assets/LoginButton.png; sourceTree = "<group>"; };
+		076A9BFF13B8EF6C004E604C /* HeaderBar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = HeaderBar.png; path = CityPad/Assets/HeaderBar.png; sourceTree = "<group>"; };
+		076A9C0113B8EFE1004E604C /* LoginBackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = LoginBackground.png; path = CityPad/Assets/LoginBackground.png; sourceTree = "<group>"; };
 		07DE1A1613AE9751005447CF /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		07DE1A1813AE9758005447CF /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		07DE1A1A13AE9787005447CF /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
-		07DE1A1C13AE98F5005447CF /* libRestKitJSONParserYAJL.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libRestKitJSONParserYAJL.a; path = "../../../../Library/Developer/Xcode/DerivedData/CIAPI-brcduccruwgmebaoxkzcnuyjccsy/Build/Products/Debug-iphoneos/libRestKitJSONParserYAJL.a"; sourceTree = "<group>"; };
 		07FC282813AE93E500C6C16B /* CityPad.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CityPad.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		07FC282C13AE93E500C6C16B /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		07FC282E13AE93E500C6C16B /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -61,14 +66,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		076A9BFE13B8EF58004E604C /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				07137D7013B8F258006CD1AA /* LoginButton.png */,
+				076A9C0113B8EFE1004E604C /* LoginBackground.png */,
+				076A9BFF13B8EF6C004E604C /* HeaderBar.png */,
+			);
+			name = Assets;
+			sourceTree = "<group>";
+		};
 		07FC281D13AE93E500C6C16B = {
 			isa = PBXGroup;
 			children = (
-				07DE1A1C13AE98F5005447CF /* libRestKitJSONParserYAJL.a */,
 				07DE1A1A13AE9787005447CF /* CFNetwork.framework */,
 				07DE1A1813AE9758005447CF /* MobileCoreServices.framework */,
 				07DE1A1613AE9751005447CF /* SystemConfiguration.framework */,
 				07FC285013AE943500C6C16B /* libCIAPI.a */,
+				076A9BFE13B8EF58004E604C /* Assets */,
 				07FC283213AE93E500C6C16B /* CityPad */,
 				07FC282B13AE93E500C6C16B /* Frameworks */,
 				07FC282913AE93E500C6C16B /* Products */,
@@ -167,6 +182,9 @@
 				07FC283713AE93E500C6C16B /* InfoPlist.strings in Resources */,
 				07FC283F13AE93E500C6C16B /* CityPadViewController.h in Resources */,
 				07FC284413AE93E500C6C16B /* CityPadViewController.xib in Resources */,
+				076A9C0013B8EF6C004E604C /* HeaderBar.png in Resources */,
+				076A9C0213B8EFE1004E604C /* LoginBackground.png in Resources */,
+				07137D7113B8F258006CD1AA /* LoginButton.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

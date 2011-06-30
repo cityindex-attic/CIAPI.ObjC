@@ -9,6 +9,8 @@
 #import <Foundation/Foundation.h>
 
 #import "ThrottledQueueMultiplexer.h"
+
+#import "CIAPIURLConnection.h"
 #import "CIAPIRequestToken.h"
 
 enum RequestFailureType
@@ -20,7 +22,7 @@ enum RequestFailureType
     RequestUnknownError
 };
 
-@interface RequestDispatcher : NSObject {
+@interface CIAPIRequestDispatcher : NSObject<CIAPIURLConnectionDelegate> {
 @private
     NSUInteger maximumRequestAttempts;
     NSUInteger throttleSize;
@@ -31,16 +33,14 @@ enum RequestFailureType
     NSMutableDictionary *namedQueueMap;
     ThrottledQueueMultiplexer *queueMultiplexer;    
 
-    NSMutableDictionary *rkRequestToTokenMapper;
-    
-    NSMutableArray *inflightRequests;
+    NSMutableDictionary *connectionToTokenMapper;
 }
 
 @property (readonly) NSUInteger maximumRequestAttempts;
 @property (readonly) NSUInteger throttleSize;
 @property (readonly) NSTimeInterval throttlePeriod;
 
-- (RequestDispatcher*)initWithMaximumRetryAttempts:(NSUInteger)_maximumRequestAttempts throttleSize:(NSUInteger)_throttleSize
+- (CIAPIRequestDispatcher*)initWithMaximumRetryAttempts:(NSUInteger)_maximumRequestAttempts throttleSize:(NSUInteger)_throttleSize
                                     throttlePeriod:(NSTimeInterval)_throttlePeriod;
 
 - (void)scheduleRequestToken:(CIAPIRequestToken*)token;
@@ -53,7 +53,7 @@ enum RequestFailureType
 
 @end
 
-@interface RequestDispatcher ()
+@interface CIAPIRequestDispatcher ()
 
 - (void)dispatchSuccessfulRequest:(CIAPIRequestToken*)token result:(id)result;
 - (void)rescheduleFailedRequest:(CIAPIRequestToken*)token forLastError:(enum RequestFailureType)error;

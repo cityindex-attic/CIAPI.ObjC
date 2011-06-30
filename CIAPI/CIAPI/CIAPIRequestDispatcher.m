@@ -6,25 +6,24 @@
 //  Copyright 2011 __MyCompanyName__. All rights reserved.
 //
 
-#import "RequestDispatcher.h"
+#import "CIAPIRequestDispatcher.h"
 
+#import "JSONKit.h"
 #import "ThrottledQueue.h"
 
+#import "CIAPIURLConnection.h"
 #import "CIAPIRequestToken.h"
 #import "CIAPIObjectRequest.h"
 #import "CIAPIObjectResponse.h"
-
 #import "CIAPILogging.h"
 
-#import "RestKit/RestKit.h"
-
-@implementation RequestDispatcher
+@implementation CIAPIRequestDispatcher
 
 @synthesize maximumRequestAttempts;
 @synthesize throttleSize;
 @synthesize throttlePeriod;
 
-- (RequestDispatcher*)initWithMaximumRetryAttempts:(NSUInteger)_maximumRequestAttempts throttleSize:(NSUInteger)_throttleSize
+- (CIAPIRequestDispatcher*)initWithMaximumRetryAttempts:(NSUInteger)_maximumRequestAttempts throttleSize:(NSUInteger)_throttleSize
                                     throttlePeriod:(NSTimeInterval)_throttlePeriod;
 {
     self = [super init];
@@ -40,9 +39,8 @@
         throttlePeriod = _throttlePeriod;
         
         namedQueueMap = [[NSMutableDictionary alloc] init];
-        rkRequestToTokenMapper = [[NSMutableDictionary alloc] init];
+        connectionToTokenMapper = [[NSMutableDictionary alloc] init];
         queueMultiplexer = [[ThrottledQueueMultiplexer alloc] init];
-        inflightRequests = [[NSMutableArray alloc] init];
         
         // Create one global queue
         [namedQueueMap setObject:[ThrottledQueue throttledQueueWithLimit:throttleSize overPeriod:throttlePeriod] forKey:@"global"];
@@ -55,9 +53,8 @@
 {
     CIAPILogAbout(CIAPILogLevelNote, CIAPIDispatcherModule, self, @"Destroying RequestDispatcher");
     
-    [inflightRequests release];
     [namedQueueMap release];
-    [rkRequestToTokenMapper release];
+    [connectionToTokenMapper release];
     [queueMultiplexer release];
     
     [super dealloc];
@@ -100,7 +97,11 @@
     }
     
     // De-schedule it in that queue, if we can
-    return [queue removeObject:token];
+    BOOL didRemove = [queue removeObject:token];
+    
+    // TODO: Need to cancel the request if it's in-flight
+
+    return didRemove;
 }
 
 - (void)startDispatcher
@@ -143,14 +144,16 @@
             continue;
         }
         
-        [inflightRequests addObject:requestObject];
-        
         CIAPILogAbout(CIAPILogLevelNote, CIAPIDispatcherModule, requestObject, @"Actually dispatching token %X", requestObject);
         
-        // Send the request
+
+        // Send the request        
+        CIAPIURLConnection *urlConnection = [CIAPIURLConnection CIAPIURLConnectionForRequest:requestObject.underlyingRequest delegate:self];        
+        [connectionToTokenMapper setObject:requestObject forKey:urlConnection];
+        [urlConnection start];
+
         requestObject.attemptCount = requestObject.attemptCount++;
-        [requestObject.underlyingRequest setDelegate: self];
-        [requestObject.underlyingRequest send];
+
     }
     
     [self release];
@@ -210,19 +213,21 @@
 }
 
 /*
- * RestKit delegate methods
+ * URL response delegate methods
  */
-- (void)request:(RKRequest*)rkRequest didLoadResponse:(id)rkResponse
+
+- (void)requestSucceeded:(CIAPIURLConnection*)connection request:(NSURLRequest*)request response:(NSHTTPURLResponse*)response data:(NSData*)data
 {
-    CIAPIRequestToken *token = [rkRequestToTokenMapper objectForKey:rkRequest];
+    CIAPIRequestToken *token = [connectionToTokenMapper objectForKey:connection];
     if (!token)
         NSAssert(FALSE, @"We got a response for a request we never issued?");
-    [inflightRequests removeObject:token];
     
-    if ([rkResponse isOK])
+    [connectionToTokenMapper removeObjectForKey:connection];
+    
+    if ([response statusCode] == 200)
     {
         // Decode the resultant object JSON into the response type
-        id bodyObj = [rkResponse bodyAsJSON];
+        id bodyObj = [data objectFromJSONData];
         
         CIAPIObjectResponse *responseObj = [[[token.requestObject responseClass] alloc] init];
         [responseObj setupFromDictionary:bodyObj error:nil];
@@ -237,22 +242,13 @@
     }
 }
 
-- (void)request:(RKRequest*)rkRequest didFailLoadWithError:(NSError *)error
+- (void)requestFailed:(CIAPIURLConnection*)connection request:(NSURLRequest*)request response:(NSHTTPURLResponse*)response error:(NSError*)error
 {
-    CIAPIRequestToken *token = [rkRequestToTokenMapper objectForKey:rkRequest];    
+    CIAPIRequestToken *token = [connectionToTokenMapper objectForKey:connection];    
     if (!token)
         NSAssert(FALSE, @"We got a response for a request we never issued?");
-    [inflightRequests removeObject:token];
     
-    [self rescheduleFailedRequest:token forLastError:RequestUnknownError];
-}
-
-- (void)requestDidTimeout:(RKRequest*)rkRequest
-{
-    CIAPIRequestToken *token = [rkRequestToTokenMapper objectForKey:rkRequest];    
-    if (!token)
-        NSAssert(FALSE, @"We got a response for a request we never issued?");
-    [inflightRequests removeObject:token];
+    [connectionToTokenMapper removeObjectForKey:connection];
     
     [self rescheduleFailedRequest:token forLastError:RequestUnknownError];
 }

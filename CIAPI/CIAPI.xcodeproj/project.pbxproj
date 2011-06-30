@@ -216,32 +216,14 @@
 		076AF1E1135231470049972E /* CIAPIRequestToken.m in Sources */ = {isa = PBXBuildFile; fileRef = 076AF1DF135231460049972E /* CIAPIRequestToken.m */; };
 		076AF1ED13524D590049972E /* CIAPI.h in Headers */ = {isa = PBXBuildFile; fileRef = 076AF1EB13524D570049972E /* CIAPI.h */; };
 		076AF22013524D9E0049972E /* AuthenticatorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 076AF1DB1350A8540049972E /* AuthenticatorTests.m */; };
-		079A0134134285E00056C35E /* libRestKitJSONParserYAJL.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 079A012F134285E00056C35E /* libRestKitJSONParserYAJL.a */; };
-		079A0135134285E00056C35E /* libRestKitNetwork.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 079A0130134285E00056C35E /* libRestKitNetwork.a */; };
-		079A0136134285E00056C35E /* libRestKitObjectMapping.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 079A0131134285E00056C35E /* libRestKitObjectMapping.a */; };
-		079A0137134285E00056C35E /* libRestKitSupport.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 079A0132134285E00056C35E /* libRestKitSupport.a */; };
 		079A013B134285E00056C35E /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 079A0138134285E00056C35E /* CFNetwork.framework */; };
 		079A013C134285E00056C35E /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 079A0139134285E00056C35E /* MobileCoreServices.framework */; };
 		079A013D134285E00056C35E /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 079A013A134285E00056C35E /* SystemConfiguration.framework */; };
 		079A014B134286140056C35E /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 079A0148134286140056C35E /* CFNetwork.framework */; };
 		079A014C134286140056C35E /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 079A0149134286140056C35E /* MobileCoreServices.framework */; };
 		079A014D134286140056C35E /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 079A014A134286140056C35E /* SystemConfiguration.framework */; };
-		07D54CFB1342737800DD2A60 /* LSClient.h in Headers */ = {isa = PBXBuildFile; fileRef = 07D54CEB1342737800DD2A60 /* LSClient.h */; };
-		07D54CFC1342737800DD2A60 /* LSClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 07D54CEC1342737800DD2A60 /* LSClient.m */; };
-		07D54CFD1342737800DD2A60 /* LSException.h in Headers */ = {isa = PBXBuildFile; fileRef = 07D54CED1342737800DD2A60 /* LSException.h */; };
-		07D54CFE1342737800DD2A60 /* LSException.m in Sources */ = {isa = PBXBuildFile; fileRef = 07D54CEE1342737800DD2A60 /* LSException.m */; };
-		07D54CFF1342737800DD2A60 /* LSListener.h in Headers */ = {isa = PBXBuildFile; fileRef = 07D54CEF1342737800DD2A60 /* LSListener.h */; };
-		07D54D001342737800DD2A60 /* LSMode.h in Headers */ = {isa = PBXBuildFile; fileRef = 07D54CF01342737800DD2A60 /* LSMode.h */; };
-		07D54D011342737800DD2A60 /* LSSession.h in Headers */ = {isa = PBXBuildFile; fileRef = 07D54CF11342737800DD2A60 /* LSSession.h */; };
-		07D54D021342737800DD2A60 /* LSSession.m in Sources */ = {isa = PBXBuildFile; fileRef = 07D54CF21342737800DD2A60 /* LSSession.m */; };
-		07D54D031342737800DD2A60 /* LSSession+Internals.h in Headers */ = {isa = PBXBuildFile; fileRef = 07D54CF31342737800DD2A60 /* LSSession+Internals.h */; };
-		07D54D041342737800DD2A60 /* LSSession+Internals.m in Sources */ = {isa = PBXBuildFile; fileRef = 07D54CF41342737800DD2A60 /* LSSession+Internals.m */; };
-		07D54D051342737800DD2A60 /* LSSessionOptions.h in Headers */ = {isa = PBXBuildFile; fileRef = 07D54CF51342737800DD2A60 /* LSSessionOptions.h */; };
-		07D54D061342737800DD2A60 /* LSSessionOptions.m in Sources */ = {isa = PBXBuildFile; fileRef = 07D54CF61342737800DD2A60 /* LSSessionOptions.m */; };
-		07D54D071342737800DD2A60 /* LSSessionOptions+Internals.h in Headers */ = {isa = PBXBuildFile; fileRef = 07D54CF71342737800DD2A60 /* LSSessionOptions+Internals.h */; };
-		07D54D081342737800DD2A60 /* LSSessionOptions+Internals.m in Sources */ = {isa = PBXBuildFile; fileRef = 07D54CF81342737800DD2A60 /* LSSessionOptions+Internals.m */; };
-		07D54D091342737800DD2A60 /* LSUnchangedValue.h in Headers */ = {isa = PBXBuildFile; fileRef = 07D54CF91342737800DD2A60 /* LSUnchangedValue.h */; };
-		07D54D0A1342737800DD2A60 /* LSUnchangedValue.m in Sources */ = {isa = PBXBuildFile; fileRef = 07D54CFA1342737800DD2A60 /* LSUnchangedValue.m */; };
+		07A320CC13BA74650032B0C0 /* CIAPIErrorHandling.h in Headers */ = {isa = PBXBuildFile; fileRef = 07A320CB13BA74650032B0C0 /* CIAPIErrorHandling.h */; };
+		07D28B4D13BA6C8E000B3935 /* LoggingTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 07D28B4C13BA6C8E000B3935 /* LoggingTests.m */; };
 		07DEFE461342710E00CFA705 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07DEFE451342710E00CFA705 /* Foundation.framework */; };
 		07DEFE511342710E00CFA705 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07DEFE501342710E00CFA705 /* UIKit.framework */; };
 		07DEFE521342710E00CFA705 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07DEFE451342710E00CFA705 /* Foundation.framework */; };
@@ -257,82 +239,16 @@
 		07F0E717138BD800002EB862 /* TypeDecoder.h in Headers */ = {isa = PBXBuildFile; fileRef = 07F0E715138BD800002EB862 /* TypeDecoder.h */; };
 		07F0E718138BD800002EB862 /* TypeDecoder.m in Sources */ = {isa = PBXBuildFile; fileRef = 07F0E716138BD800002EB862 /* TypeDecoder.m */; };
 		07F0E71C138BD8F0002EB862 /* ObjectDictionaryMapping.m in Sources */ = {isa = PBXBuildFile; fileRef = 07F0E71B138BD8F0002EB862 /* ObjectDictionaryMapping.m */; };
-		07FC281713AE437D00C6C16B /* RequestDispatcher.h in Headers */ = {isa = PBXBuildFile; fileRef = 07FC281513AE437D00C6C16B /* RequestDispatcher.h */; };
-		07FC281813AE437D00C6C16B /* RequestDispatcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 07FC281613AE437D00C6C16B /* RequestDispatcher.m */; };
+		07FA684C13BCD7810017B214 /* JSONKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 07FA684A13BCD7810017B214 /* JSONKit.h */; };
+		07FA684D13BCD7810017B214 /* JSONKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 07FA684B13BCD7810017B214 /* JSONKit.m */; };
+		07FA685013BCDD850017B214 /* CIAPIURLConnection.h in Headers */ = {isa = PBXBuildFile; fileRef = 07FA684E13BCDD850017B214 /* CIAPIURLConnection.h */; };
+		07FA685113BCDD850017B214 /* CIAPIURLConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = 07FA684F13BCDD850017B214 /* CIAPIURLConnection.m */; };
+		07FC281713AE437D00C6C16B /* CIAPIRequestDispatcher.h in Headers */ = {isa = PBXBuildFile; fileRef = 07FC281513AE437D00C6C16B /* CIAPIRequestDispatcher.h */; };
+		07FC281813AE437D00C6C16B /* CIAPIRequestDispatcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 07FC281613AE437D00C6C16B /* CIAPIRequestDispatcher.m */; };
 		07FC281C13AE938100C6C16B /* CIAPIRequestsAndResponses.h in Headers */ = {isa = PBXBuildFile; fileRef = 07FC281B13AE938000C6C16B /* CIAPIRequestsAndResponses.h */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		075E8E2A134271BF00C85B9B /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 075E8E16134271BF00C85B9B /* RestKit.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 253A07FC1255161B00976E89;
-			remoteInfo = RestKitNetwork;
-		};
-		075E8E2C134271BF00C85B9B /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 075E8E16134271BF00C85B9B /* RestKit.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 253A08031255162C00976E89;
-			remoteInfo = RestKitObjectMapping;
-		};
-		075E8E2E134271BF00C85B9B /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 075E8E16134271BF00C85B9B /* RestKit.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 253A080C12551D3000976E89;
-			remoteInfo = RestKitSupport;
-		};
-		075E8E30134271BF00C85B9B /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 075E8E16134271BF00C85B9B /* RestKit.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 2590E64F125231F600531FA8;
-			remoteInfo = "RestKitJSONParser+YAJL";
-		};
-		075E8E32134271BF00C85B9B /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 075E8E16134271BF00C85B9B /* RestKit.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 2590E66B1252353700531FA8;
-			remoteInfo = "RestKitJSONParser+SBJSON";
-		};
-		075E8E34134271BF00C85B9B /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 075E8E16134271BF00C85B9B /* RestKit.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 73057FD11331AD2E001908EE;
-			remoteInfo = "RestKitJSONParser+JSONKit";
-		};
-		075E8E36134271BF00C85B9B /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 075E8E16134271BF00C85B9B /* RestKit.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 25BD43BD1340315800DBACDD;
-			remoteInfo = "RestKitXMLParser+Libxml";
-		};
-		075E8E38134271BF00C85B9B /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 075E8E16134271BF00C85B9B /* RestKit.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 253A081412551D5300976E89;
-			remoteInfo = RestKitCoreData;
-		};
-		075E8E3A134271BF00C85B9B /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 075E8E16134271BF00C85B9B /* RestKit.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 2523360511E79F090048F9B4;
-			remoteInfo = RestKitThree20;
-		};
-		075E8E3C134271BF00C85B9B /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 075E8E16134271BF00C85B9B /* RestKit.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 3F6C39A510FE5C95008F47C5;
-			remoteInfo = UISpec;
-		};
 		07DEFE551342710E00CFA705 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 07DEFE391342710E00CFA705 /* Project object */;
@@ -544,7 +460,6 @@
 		07599416136D92A00040D454 /* DTORequests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DTORequests.m; sourceTree = "<group>"; };
 		0759941A136DB62C0040D454 /* CIAPIObjectListResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CIAPIObjectListResponse.h; sourceTree = "<group>"; };
 		0759941B136DB62C0040D454 /* CIAPIObjectListResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CIAPIObjectListResponse.m; sourceTree = "<group>"; };
-		075E8E16134271BF00C85B9B /* RestKit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RestKit.xcodeproj; path = ../RestKit/RestKit.xcodeproj; sourceTree = "<group>"; };
 		075E8E3F1342724900C85B9B /* CIAPIClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CIAPIClient.h; sourceTree = "<group>"; };
 		075E8E401342724900C85B9B /* CIAPIClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CIAPIClient.m; sourceTree = "<group>"; };
 		076AF1C3134FC4510049972E /* CIAPIAuthenticator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CIAPIAuthenticator.h; sourceTree = "<group>"; };
@@ -577,22 +492,9 @@
 		079A0148134286140056C35E /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		079A0149134286140056C35E /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		079A014A134286140056C35E /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
-		07D54CEB1342737800DD2A60 /* LSClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LSClient.h; path = "../Lightstreamer/Lightstreamer explorer/iStreamLight/LSClient.h"; sourceTree = "<group>"; };
-		07D54CEC1342737800DD2A60 /* LSClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LSClient.m; path = "../Lightstreamer/Lightstreamer explorer/iStreamLight/LSClient.m"; sourceTree = "<group>"; };
-		07D54CED1342737800DD2A60 /* LSException.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LSException.h; path = "../Lightstreamer/Lightstreamer explorer/iStreamLight/LSException.h"; sourceTree = "<group>"; };
-		07D54CEE1342737800DD2A60 /* LSException.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LSException.m; path = "../Lightstreamer/Lightstreamer explorer/iStreamLight/LSException.m"; sourceTree = "<group>"; };
-		07D54CEF1342737800DD2A60 /* LSListener.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LSListener.h; path = "../Lightstreamer/Lightstreamer explorer/iStreamLight/LSListener.h"; sourceTree = "<group>"; };
-		07D54CF01342737800DD2A60 /* LSMode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LSMode.h; path = "../Lightstreamer/Lightstreamer explorer/iStreamLight/LSMode.h"; sourceTree = "<group>"; };
-		07D54CF11342737800DD2A60 /* LSSession.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LSSession.h; path = "../Lightstreamer/Lightstreamer explorer/iStreamLight/LSSession.h"; sourceTree = "<group>"; };
-		07D54CF21342737800DD2A60 /* LSSession.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LSSession.m; path = "../Lightstreamer/Lightstreamer explorer/iStreamLight/LSSession.m"; sourceTree = "<group>"; };
-		07D54CF31342737800DD2A60 /* LSSession+Internals.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "LSSession+Internals.h"; path = "../Lightstreamer/Lightstreamer explorer/iStreamLight/LSSession+Internals.h"; sourceTree = "<group>"; };
-		07D54CF41342737800DD2A60 /* LSSession+Internals.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "LSSession+Internals.m"; path = "../Lightstreamer/Lightstreamer explorer/iStreamLight/LSSession+Internals.m"; sourceTree = "<group>"; };
-		07D54CF51342737800DD2A60 /* LSSessionOptions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LSSessionOptions.h; path = "../Lightstreamer/Lightstreamer explorer/iStreamLight/LSSessionOptions.h"; sourceTree = "<group>"; };
-		07D54CF61342737800DD2A60 /* LSSessionOptions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LSSessionOptions.m; path = "../Lightstreamer/Lightstreamer explorer/iStreamLight/LSSessionOptions.m"; sourceTree = "<group>"; };
-		07D54CF71342737800DD2A60 /* LSSessionOptions+Internals.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "LSSessionOptions+Internals.h"; path = "../Lightstreamer/Lightstreamer explorer/iStreamLight/LSSessionOptions+Internals.h"; sourceTree = "<group>"; };
-		07D54CF81342737800DD2A60 /* LSSessionOptions+Internals.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "LSSessionOptions+Internals.m"; path = "../Lightstreamer/Lightstreamer explorer/iStreamLight/LSSessionOptions+Internals.m"; sourceTree = "<group>"; };
-		07D54CF91342737800DD2A60 /* LSUnchangedValue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LSUnchangedValue.h; path = "../Lightstreamer/Lightstreamer explorer/iStreamLight/LSUnchangedValue.h"; sourceTree = "<group>"; };
-		07D54CFA1342737800DD2A60 /* LSUnchangedValue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LSUnchangedValue.m; path = "../Lightstreamer/Lightstreamer explorer/iStreamLight/LSUnchangedValue.m"; sourceTree = "<group>"; };
+		07A320CB13BA74650032B0C0 /* CIAPIErrorHandling.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CIAPIErrorHandling.h; sourceTree = "<group>"; };
+		07D28B4B13BA6C8E000B3935 /* LoggingTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoggingTests.h; sourceTree = "<group>"; };
+		07D28B4C13BA6C8E000B3935 /* LoggingTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoggingTests.m; sourceTree = "<group>"; };
 		07DEFE421342710E00CFA705 /* libCIAPI.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libCIAPI.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		07DEFE451342710E00CFA705 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		07DEFE491342710E00CFA705 /* CIAPI-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CIAPI-Prefix.pch"; sourceTree = "<group>"; };
@@ -615,8 +517,12 @@
 		07F0E719138BD827002EB862 /* TestControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestControl.h; sourceTree = "<group>"; };
 		07F0E71A138BD8F0002EB862 /* ObjectDictionaryMapping.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ObjectDictionaryMapping.h; sourceTree = "<group>"; };
 		07F0E71B138BD8F0002EB862 /* ObjectDictionaryMapping.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ObjectDictionaryMapping.m; sourceTree = "<group>"; };
-		07FC281513AE437D00C6C16B /* RequestDispatcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RequestDispatcher.h; sourceTree = "<group>"; };
-		07FC281613AE437D00C6C16B /* RequestDispatcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RequestDispatcher.m; sourceTree = "<group>"; };
+		07FA684A13BCD7810017B214 /* JSONKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = JSONKit.h; path = CIAPI/JSONKit/JSONKit.h; sourceTree = "<group>"; };
+		07FA684B13BCD7810017B214 /* JSONKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = JSONKit.m; path = CIAPI/JSONKit/JSONKit.m; sourceTree = "<group>"; };
+		07FA684E13BCDD850017B214 /* CIAPIURLConnection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CIAPIURLConnection.h; sourceTree = "<group>"; };
+		07FA684F13BCDD850017B214 /* CIAPIURLConnection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CIAPIURLConnection.m; sourceTree = "<group>"; };
+		07FC281513AE437D00C6C16B /* CIAPIRequestDispatcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CIAPIRequestDispatcher.h; sourceTree = "<group>"; };
+		07FC281613AE437D00C6C16B /* CIAPIRequestDispatcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CIAPIRequestDispatcher.m; sourceTree = "<group>"; };
 		07FC281B13AE938000C6C16B /* CIAPIRequestsAndResponses.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CIAPIRequestsAndResponses.h; sourceTree = "<group>"; };
 		07FC284A13AE93E500C6C16B /* CityPad.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = CityPad.xcodeproj; path = ../CityPad/CityPad.xcodeproj; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -629,10 +535,6 @@
 				079A013B134285E00056C35E /* CFNetwork.framework in Frameworks */,
 				079A013C134285E00056C35E /* MobileCoreServices.framework in Frameworks */,
 				079A013D134285E00056C35E /* SystemConfiguration.framework in Frameworks */,
-				079A0134134285E00056C35E /* libRestKitJSONParserYAJL.a in Frameworks */,
-				079A0135134285E00056C35E /* libRestKitNetwork.a in Frameworks */,
-				079A0136134285E00056C35E /* libRestKitObjectMapping.a in Frameworks */,
-				079A0137134285E00056C35E /* libRestKitSupport.a in Frameworks */,
 				07DEFE461342710E00CFA705 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -667,23 +569,6 @@
 			name = "JSON Property manager";
 			sourceTree = "<group>";
 		};
-		075E8E17134271BF00C85B9B /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				075E8E2B134271BF00C85B9B /* libRestKitNetwork.a */,
-				075E8E2D134271BF00C85B9B /* libRestKitObjectMapping.a */,
-				075E8E2F134271BF00C85B9B /* libRestKitSupport.a */,
-				075E8E31134271BF00C85B9B /* libRestKitJSONParserYAJL.a */,
-				075E8E33134271BF00C85B9B /* libRestKitJSONParserSBJSON.a */,
-				075E8E35134271BF00C85B9B /* libRestKitJSONParserJSONKit.a */,
-				075E8E37134271BF00C85B9B /* libRestKitXMLParserLibxml.a */,
-				075E8E39134271BF00C85B9B /* libRestKitCoreData.a */,
-				075E8E3B134271BF00C85B9B /* libRestKitThree20.a */,
-				075E8E3D134271BF00C85B9B /* UISpec.app */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
 		076AF1D1135093DA0049972E /* Authenticator */ = {
 			isa = PBXGroup;
 			children = (
@@ -714,41 +599,17 @@
 				076AF1DF135231460049972E /* CIAPIRequestToken.m */,
 				076AF1C9135093070049972E /* CIAPIObjectRequest.h */,
 				076AF1CA135093070049972E /* CIAPIObjectRequest.m */,
-				07FC281513AE437D00C6C16B /* RequestDispatcher.h */,
-				07FC281613AE437D00C6C16B /* RequestDispatcher.m */,
+				07FC281513AE437D00C6C16B /* CIAPIRequestDispatcher.h */,
+				07FC281613AE437D00C6C16B /* CIAPIRequestDispatcher.m */,
 			);
 			name = Client;
-			sourceTree = "<group>";
-		};
-		07D54CEA1342734D00DD2A60 /* iStreamLight */ = {
-			isa = PBXGroup;
-			children = (
-				07D54CEB1342737800DD2A60 /* LSClient.h */,
-				07D54CEC1342737800DD2A60 /* LSClient.m */,
-				07D54CED1342737800DD2A60 /* LSException.h */,
-				07D54CEE1342737800DD2A60 /* LSException.m */,
-				07D54CEF1342737800DD2A60 /* LSListener.h */,
-				07D54CF01342737800DD2A60 /* LSMode.h */,
-				07D54CF11342737800DD2A60 /* LSSession.h */,
-				07D54CF21342737800DD2A60 /* LSSession.m */,
-				07D54CF31342737800DD2A60 /* LSSession+Internals.h */,
-				07D54CF41342737800DD2A60 /* LSSession+Internals.m */,
-				07D54CF51342737800DD2A60 /* LSSessionOptions.h */,
-				07D54CF61342737800DD2A60 /* LSSessionOptions.m */,
-				07D54CF71342737800DD2A60 /* LSSessionOptions+Internals.h */,
-				07D54CF81342737800DD2A60 /* LSSessionOptions+Internals.m */,
-				07D54CF91342737800DD2A60 /* LSUnchangedValue.h */,
-				07D54CFA1342737800DD2A60 /* LSUnchangedValue.m */,
-			);
-			name = iStreamLight;
 			sourceTree = "<group>";
 		};
 		07DEFE371342710E00CFA705 = {
 			isa = PBXGroup;
 			children = (
 				07FC284A13AE93E500C6C16B /* CityPad.xcodeproj */,
-				075E8E16134271BF00C85B9B /* RestKit.xcodeproj */,
-				07D54CEA1342734D00DD2A60 /* iStreamLight */,
+				07FA684813BCD6E60017B214 /* Third Party */,
 				07DEFE471342710E00CFA705 /* CIAPI */,
 				07DEFE581342710E00CFA705 /* CIAPITests */,
 				07DEFE441342710E00CFA705 /* Frameworks */,
@@ -799,6 +660,9 @@
 				07137D7413B91C69006CD1AA /* CIAPILogging.m */,
 				076AF1D8135095370049972E /* CIAPIConfigConstants.h */,
 				076AF1EB13524D570049972E /* CIAPI.h */,
+				07A320CB13BA74650032B0C0 /* CIAPIErrorHandling.h */,
+				07FA684E13BCDD850017B214 /* CIAPIURLConnection.h */,
+				07FA684F13BCDD850017B214 /* CIAPIURLConnection.m */,
 				075993FD136C69A90040D454 /* JSON Property manager */,
 				07A65B92136B122C00B78941 /* Client */,
 				076AF1D1135093DA0049972E /* Authenticator */,
@@ -834,6 +698,8 @@
 				07F0A4E413B12D000049DFA7 /* ThrottledQueueTests.m */,
 				07F0A4E613B12D100049DFA7 /* ThrottledQueueMultiplexerTests.h */,
 				07F0A4E713B12D100049DFA7 /* ThrottledQueueMultiplexerTests.m */,
+				07D28B4B13BA6C8E000B3935 /* LoggingTests.h */,
+				07D28B4C13BA6C8E000B3935 /* LoggingTests.m */,
 			);
 			path = CIAPITests;
 			sourceTree = "<group>";
@@ -1042,6 +908,23 @@
 			path = Responses;
 			sourceTree = "<group>";
 		};
+		07FA684813BCD6E60017B214 /* Third Party */ = {
+			isa = PBXGroup;
+			children = (
+				07FA684913BCD6FA0017B214 /* JSONKit */,
+			);
+			name = "Third Party";
+			sourceTree = "<group>";
+		};
+		07FA684913BCD6FA0017B214 /* JSONKit */ = {
+			isa = PBXGroup;
+			children = (
+				07FA684A13BCD7810017B214 /* JSONKit.h */,
+				07FA684B13BCD7810017B214 /* JSONKit.m */,
+			);
+			name = JSONKit;
+			sourceTree = "<group>";
+		};
 		07FC284B13AE93E500C6C16B /* Products */ = {
 			isa = PBXGroup;
 			children = (
@@ -1058,15 +941,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				075E8E411342724900C85B9B /* CIAPIClient.h in Headers */,
-				07D54CFB1342737800DD2A60 /* LSClient.h in Headers */,
-				07D54CFD1342737800DD2A60 /* LSException.h in Headers */,
-				07D54CFF1342737800DD2A60 /* LSListener.h in Headers */,
-				07D54D001342737800DD2A60 /* LSMode.h in Headers */,
-				07D54D011342737800DD2A60 /* LSSession.h in Headers */,
-				07D54D031342737800DD2A60 /* LSSession+Internals.h in Headers */,
-				07D54D051342737800DD2A60 /* LSSessionOptions.h in Headers */,
-				07D54D071342737800DD2A60 /* LSSessionOptions+Internals.h in Headers */,
-				07D54D091342737800DD2A60 /* LSUnchangedValue.h in Headers */,
 				076AF1C5134FC4510049972E /* CIAPIAuthenticator.h in Headers */,
 				076AF1C8134FC4B90049972E /* CIAPIStreamDelegate.h in Headers */,
 				076AF1CB135093070049972E /* CIAPIObjectRequest.h in Headers */,
@@ -1174,9 +1048,12 @@
 				07364B191394551B001A5278 /* CIAPITradingAccount.h in Headers */,
 				0704146A13A523BB002F28C5 /* ThrottledQueue.h in Headers */,
 				0704146E13A52473002F28C5 /* ThrottledQueueMultiplexer.h in Headers */,
-				07FC281713AE437D00C6C16B /* RequestDispatcher.h in Headers */,
+				07FC281713AE437D00C6C16B /* CIAPIRequestDispatcher.h in Headers */,
 				07FC281C13AE938100C6C16B /* CIAPIRequestsAndResponses.h in Headers */,
 				07137D7513B91C69006CD1AA /* CIAPILogging.h in Headers */,
+				07A320CC13BA74650032B0C0 /* CIAPIErrorHandling.h in Headers */,
+				07FA684C13BCD7810017B214 /* JSONKit.h in Headers */,
+				07FA685013BCDD850017B214 /* CIAPIURLConnection.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1242,10 +1119,6 @@
 					ProductGroup = 07FC284B13AE93E500C6C16B /* Products */;
 					ProjectRef = 07FC284A13AE93E500C6C16B /* CityPad.xcodeproj */;
 				},
-				{
-					ProductGroup = 075E8E17134271BF00C85B9B /* Products */;
-					ProjectRef = 075E8E16134271BF00C85B9B /* RestKit.xcodeproj */;
-				},
 			);
 			projectRoot = "";
 			targets = (
@@ -1256,76 +1129,6 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
-		075E8E2B134271BF00C85B9B /* libRestKitNetwork.a */ = {
-			isa = PBXReferenceProxy;
-			fileType = archive.ar;
-			path = libRestKitNetwork.a;
-			remoteRef = 075E8E2A134271BF00C85B9B /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		075E8E2D134271BF00C85B9B /* libRestKitObjectMapping.a */ = {
-			isa = PBXReferenceProxy;
-			fileType = archive.ar;
-			path = libRestKitObjectMapping.a;
-			remoteRef = 075E8E2C134271BF00C85B9B /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		075E8E2F134271BF00C85B9B /* libRestKitSupport.a */ = {
-			isa = PBXReferenceProxy;
-			fileType = archive.ar;
-			path = libRestKitSupport.a;
-			remoteRef = 075E8E2E134271BF00C85B9B /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		075E8E31134271BF00C85B9B /* libRestKitJSONParserYAJL.a */ = {
-			isa = PBXReferenceProxy;
-			fileType = archive.ar;
-			path = libRestKitJSONParserYAJL.a;
-			remoteRef = 075E8E30134271BF00C85B9B /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		075E8E33134271BF00C85B9B /* libRestKitJSONParserSBJSON.a */ = {
-			isa = PBXReferenceProxy;
-			fileType = archive.ar;
-			path = libRestKitJSONParserSBJSON.a;
-			remoteRef = 075E8E32134271BF00C85B9B /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		075E8E35134271BF00C85B9B /* libRestKitJSONParserJSONKit.a */ = {
-			isa = PBXReferenceProxy;
-			fileType = archive.ar;
-			path = libRestKitJSONParserJSONKit.a;
-			remoteRef = 075E8E34134271BF00C85B9B /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		075E8E37134271BF00C85B9B /* libRestKitXMLParserLibxml.a */ = {
-			isa = PBXReferenceProxy;
-			fileType = archive.ar;
-			path = libRestKitXMLParserLibxml.a;
-			remoteRef = 075E8E36134271BF00C85B9B /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		075E8E39134271BF00C85B9B /* libRestKitCoreData.a */ = {
-			isa = PBXReferenceProxy;
-			fileType = archive.ar;
-			path = libRestKitCoreData.a;
-			remoteRef = 075E8E38134271BF00C85B9B /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		075E8E3B134271BF00C85B9B /* libRestKitThree20.a */ = {
-			isa = PBXReferenceProxy;
-			fileType = archive.ar;
-			path = libRestKitThree20.a;
-			remoteRef = 075E8E3A134271BF00C85B9B /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		075E8E3D134271BF00C85B9B /* UISpec.app */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.application;
-			path = UISpec.app;
-			remoteRef = 075E8E3C134271BF00C85B9B /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
 		07FC284F13AE93E800C6C16B /* CityPad.app */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.application;
@@ -1369,13 +1172,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				075E8E421342724900C85B9B /* CIAPIClient.m in Sources */,
-				07D54CFC1342737800DD2A60 /* LSClient.m in Sources */,
-				07D54CFE1342737800DD2A60 /* LSException.m in Sources */,
-				07D54D021342737800DD2A60 /* LSSession.m in Sources */,
-				07D54D041342737800DD2A60 /* LSSession+Internals.m in Sources */,
-				07D54D061342737800DD2A60 /* LSSessionOptions.m in Sources */,
-				07D54D081342737800DD2A60 /* LSSessionOptions+Internals.m in Sources */,
-				07D54D0A1342737800DD2A60 /* LSUnchangedValue.m in Sources */,
 				076AF1C6134FC4510049972E /* CIAPIAuthenticator.m in Sources */,
 				076AF1CC135093070049972E /* CIAPIObjectRequest.m in Sources */,
 				076AF1E1135231470049972E /* CIAPIRequestToken.m in Sources */,
@@ -1476,8 +1272,10 @@
 				07364B1A1394551B001A5278 /* CIAPITradingAccount.m in Sources */,
 				0704146B13A523BB002F28C5 /* ThrottledQueue.m in Sources */,
 				0704146F13A52473002F28C5 /* ThrottledQueueMultiplexer.m in Sources */,
-				07FC281813AE437D00C6C16B /* RequestDispatcher.m in Sources */,
+				07FC281813AE437D00C6C16B /* CIAPIRequestDispatcher.m in Sources */,
 				07137D7613B91C69006CD1AA /* CIAPILogging.m in Sources */,
+				07FA684D13BCD7810017B214 /* JSONKit.m in Sources */,
+				07FA685113BCDD850017B214 /* CIAPIURLConnection.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1491,6 +1289,7 @@
 				07F0E71C138BD8F0002EB862 /* ObjectDictionaryMapping.m in Sources */,
 				07F0A4E513B12D000049DFA7 /* ThrottledQueueTests.m in Sources */,
 				07F0A4E813B12D100049DFA7 /* ThrottledQueueMultiplexerTests.m in Sources */,
+				07D28B4D13BA6C8E000B3935 /* LoggingTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1565,10 +1364,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "CIAPI/CIAPI-Prefix.pch";
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
-				OTHER_LDFLAGS = (
-					"-ObjC",
-					"-all_load",
-				);
+				OTHER_LDFLAGS = "";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -1581,10 +1377,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "CIAPI/CIAPI-Prefix.pch";
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
-				OTHER_LDFLAGS = (
-					"-ObjC",
-					"-all_load",
-				);
+				OTHER_LDFLAGS = "";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;

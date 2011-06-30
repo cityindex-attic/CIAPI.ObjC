@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
+#import "CIAPIURLConnection.h"
 #import "CIAPIAuthenticatorDelegate.h"
 #import "CIAPIClient.h"
 
@@ -15,12 +16,12 @@
 
 typedef void(^CIAPIAuthenticatorCallback)(CIAPIAuthenticator *authenticator, NSError *error);
 
-@interface CIAPIAuthenticator : NSObject {
+@interface CIAPIAuthenticator : NSObject<CIAPIURLConnectionDelegate> {
     CIAPIClient *client;
     
     @private
-    id rkClient;
-    id request;
+    CIAPIURLConnection *urlConnection;
+    NSString *lastUsername;
 }
 
 /** Returns the current authenticated client provided by this authenticator */
@@ -53,7 +54,7 @@ typedef void(^CIAPIAuthenticatorCallback)(CIAPIAuthenticator *authenticator, NSE
 
 @interface CIAPIAuthenticator ()
 
-- (id)_buildRequestWithUsername:(NSString*)userName password:(NSString*)password;
-- (BOOL)_setupClientOrError:(id)response error:(NSError**)error;
+- (NSURLRequest*)_buildRequestWithUsername:(NSString*)userName password:(NSString*)password;
+- (BOOL)_setupClientOrError:(NSHTTPURLResponse*)response withData:(NSData*)data error:(NSError**)error;
 
 @end
