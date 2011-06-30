@@ -29,5 +29,7 @@
     return [CIAPIGetOpenPositionResponse class];
 }
 
+
+
 @end
 

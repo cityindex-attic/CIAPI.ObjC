@@ -29,15 +29,16 @@
     return @"market/market/information";
 }
 
+- (Class)responseClass
+{
+    return [CIAPIListMarketInformationResponse class];
+}
+
 - (NSString*)throttleScope
 {
     return @"data";
 }
 
-- (Class)responseClass
-{
-    return [CIAPIListMarketInformationResponse class];
-}
 
 @end
 

@@ -25,14 +25,19 @@
     return @"market/{marketId}/tickhistory?priceticks={priceTicks}";
 }
 
+- (Class)responseClass
+{
+    return [CIAPIGetPriceTickResponse class];
+}
+
 - (NSString*)throttleScope
 {
     return @"data";
 }
 
-- (Class)responseClass
+- (NSTimeInterval)cacheDuration
 {
-    return [CIAPIGetPriceTickResponse class];
+  return 10.0;
 }
 
 @end

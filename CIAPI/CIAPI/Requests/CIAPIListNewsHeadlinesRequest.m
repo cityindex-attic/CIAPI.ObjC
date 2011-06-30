@@ -25,14 +25,19 @@
     return @"news?Category={category}&MaxResults={maxResults}";
 }
 
+- (Class)responseClass
+{
+    return [CIAPIListNewsHeadlinesResponse class];
+}
+
 - (NSString*)throttleScope
 {
     return @"data";
 }
 
-- (Class)responseClass
+- (NSTimeInterval)cacheDuration
 {
-    return [CIAPIListNewsHeadlinesResponse class];
+  return 10.0;
 }
 
 @end

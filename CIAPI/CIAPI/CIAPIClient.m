@@ -44,7 +44,6 @@
     [requestDispatcher stopDispatcher];
     
     [requestDispatcher release];
-    [underlyingClient release];
     [username release];
     [sessionID release];
     
@@ -53,12 +52,19 @@
 
 - (id)makeRequest:(CIAPIObjectRequest*)request error:(NSError**)error
 {    
-    assert(request != nil);
-
-    CIAPILogAbout(CIAPILogLevelNote, CIAPICoreClientModule, self, @"Begining synchronous request %@", request);    
+    NSAssert(request != nil, @"Cannot make a nil request");
+    
+    CIAPILogAbout(CIAPILogLevelNote, CIAPICoreClientModule, self, @"Begining synchronous request %@", request);        
+    
+    if ([requestCache hasCachedResponseForRequest:request])
+    {
+        CIAPILogAbout(CIAPILogLevelNote, CIAPICoreClientModule, self, @"Synchronous request fulfilled by cache!");
+        
+        return [requestCache cachedResponseForRequest:request];
+    }
     
     // TODO: Need to use API errors properly
-    NSURLRequest *urlRequest = [self buildURLRequestFromCIAPIRequest:request error:error];
+    NSURLRequest *urlRequest = [self _buildURLRequestFromCIAPIRequest:request error:error];
     NSHTTPURLResponse *urlResponse = nil;
     
     NSData *resultData = [NSURLConnection sendSynchronousRequest:urlRequest returningResponse:&urlResponse error:error];
@@ -89,7 +95,21 @@
     CIAPIRequestToken *requestToken = [[[CIAPIRequestToken alloc] initWithRequest:request delegate:delegate] autorelease];
     CIAPILogAbout(CIAPILogLevelNote, CIAPICoreClientModule, requestToken, @"Request %@ created request token %X", request, requestToken);
     
-    NSURLRequest *urlRequest = [self buildURLRequestFromCIAPIRequest:request error:error];
+    // See if we have a cached reply already setup
+    if ([requestCache hasCachedResponseForRequest:request])
+    {
+        CIAPILogAbout(CIAPILogLevelNote, CIAPICoreClientModule, self, @"Asyncronous request fulfilled by cache!");
+        // We'll going to return this request token, preconfigured
+        requestToken.responseObject = [requestCache cachedResponseForRequest:request];
+        [requestToken retain];
+        
+        // We'll first fire the response block on the runloop, so they get a chance to look at the token first
+        [self performSelectorOnMainThread:@selector(dispatchCacheCallback:) withObject:requestToken waitUntilDone:NO];
+        
+        return requestToken;
+    }
+    
+    NSURLRequest *urlRequest = [self _buildURLRequestFromCIAPIRequest:request error:error];
     
     // TODO: Set error
     if (!urlRequest)
@@ -103,12 +123,27 @@
 }
 
 - (CIAPIRequestToken*)makeRequest:(CIAPIObjectRequest*)request block:(CIAPIRequestCallback)callbackBlock error:(NSError**)error
-{
+{    
     CIAPILogAbout(CIAPILogLevelNote, CIAPICoreClientModule, self, @"Asynchronous request %@ started, calling back to block %X", request, callbackBlock);
     CIAPIRequestToken *requestToken = [[[CIAPIRequestToken alloc] initWithRequest:request block:callbackBlock ] autorelease];
     CIAPILogAbout(CIAPILogLevelNote, CIAPICoreClientModule, requestToken, @"Request %@ created request token %X", request, requestToken);
+ 
+    // See if we have a cached reply already setup
+    if ([requestCache hasCachedResponseForRequest:request])
+    {
+        CIAPILogAbout(CIAPILogLevelNote, CIAPICoreClientModule, self, @"Asyncronous request fulfilled by cache!");
+        
+        // We're going return this request token, preconfigured
+        requestToken.responseObject = [requestCache cachedResponseForRequest:request];
+        [requestToken retain];
     
-    NSURLRequest *urlRequest = [self buildURLRequestFromCIAPIRequest:request error:error];
+        // We'll first fire the response block on the runloop, so they get a chance to look at the token first
+        [self performSelectorOnMainThread:@selector(dispatchCacheCallback:) withObject:requestToken waitUntilDone:NO];
+        
+        return requestToken;        
+    }
+    
+    NSURLRequest *urlRequest = [self _buildURLRequestFromCIAPIRequest:request error:error];
     
     // TODO: Set error
     if (!urlRequest)
@@ -168,11 +203,11 @@
  * Private members
  */
 
-- (NSURLRequest*)buildURLRequestFromCIAPIRequest:(CIAPIObjectRequest*)ciapiRequest error:(NSError**)error
+- (NSURLRequest*)_buildURLRequestFromCIAPIRequest:(CIAPIObjectRequest*)ciapiRequest error:(NSError**)error
 {
     NSMutableDictionary *parameters = [NSMutableDictionary dictionaryWithDictionary:[ciapiRequest propertiesForRequest]];
     // This call will mutable the parameters to consume the ones used in the URL. This covers POST requests that have URL parameters
-    NSString *urlStr = [self buildURLFromTemplate:[ciapiRequest urlTemplate] parameters:parameters error:error];
+    NSString *urlStr = [self _buildURLFromTemplate:[ciapiRequest urlTemplate] parameters:parameters error:error];
     
     NSURL *url = [NSURL URLWithString:urlStr relativeToURL:CIAPI_BASE_URL];
     
@@ -201,7 +236,7 @@
 }
 
 // TODO: We don't really know which URL parameters are optional, so we require them all
-- (NSString*)buildURLFromTemplate:(NSString*)urlTemplate parameters:(NSMutableDictionary*)parameters error:(NSError**)error
+- (NSString*)_buildURLFromTemplate:(NSString*)urlTemplate parameters:(NSMutableDictionary*)parameters error:(NSError**)error
 {
     NSScanner *scanner = [NSScanner scannerWithString:urlTemplate];
     NSMutableString *builtURL = [NSMutableString string];
@@ -240,6 +275,27 @@
     }
     
     return builtURL;
+}
+         
+- (void)_dispatchCacheCallback:(CIAPIRequestToken*)token
+{
+    // We retained it this far, but it's time to let it go
+    [token autorelease];
+    
+    if (token.callbackDelegate && [token.callbackDelegate respondsToSelector:@selector(requestSucceeded:result:)])
+        [token.callbackDelegate requestSucceeded:token result:token.responseObject];
+    else if (token.callbackBlock)
+        token.callbackBlock(token, token.responseObject, nil);
+}
+
+- (void)willReportSuccessfulRequest:(CIAPIRequestToken *)token
+{
+    // We can cache this!
+    [requestCache cacheResponse:token.responseObject forRequest:token.requestObject];
+}
+
+- (void)willReportFailedRequest:(CIAPIRequestToken *)token
+{
 }
 
 @end

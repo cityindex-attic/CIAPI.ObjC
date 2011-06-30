@@ -24,15 +24,16 @@
     return @"errors?errorCode={errorCode}";
 }
 
+- (Class)responseClass
+{
+    return [CIAPIErrorResponse class];
+}
+
 - (NSString*)throttleScope
 {
     return @"data";
 }
 
-- (Class)responseClass
-{
-    return [CIAPIErrorResponse class];
-}
 
 @end
 

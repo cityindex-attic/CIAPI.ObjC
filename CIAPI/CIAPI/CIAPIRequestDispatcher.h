@@ -22,6 +22,14 @@ enum RequestFailureType
     RequestUnknownError
 };
 
+@protocol CIAPIRequestDispatcherDelegate <NSObject>
+
+@optional
+- (void)willReportSuccessfulRequest:(CIAPIRequestToken*)token;
+- (void)willReportFailedRequest:(CIAPIRequestToken*)token;
+
+@end
+
 @interface CIAPIRequestDispatcher : NSObject<CIAPIURLConnectionDelegate> {
 @private
     NSUInteger maximumRequestAttempts;
@@ -34,11 +42,14 @@ enum RequestFailureType
     ThrottledQueueMultiplexer *queueMultiplexer;    
 
     NSMutableDictionary *connectionToTokenMapper;
+    
+    id<CIAPIRequestDispatcherDelegate> delegate;
 }
 
 @property (readonly) NSUInteger maximumRequestAttempts;
 @property (readonly) NSUInteger throttleSize;
 @property (readonly) NSTimeInterval throttlePeriod;
+@property (assign) id<CIAPIRequestDispatcherDelegate> delegate;
 
 - (CIAPIRequestDispatcher*)initWithMaximumRetryAttempts:(NSUInteger)_maximumRequestAttempts throttleSize:(NSUInteger)_throttleSize
                                     throttlePeriod:(NSTimeInterval)_throttlePeriod;

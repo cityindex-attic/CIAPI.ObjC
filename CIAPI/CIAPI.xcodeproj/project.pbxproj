@@ -193,6 +193,8 @@
 		07364B181394551B001A5278 /* CIAPITradeOrderResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 07364AAA1394551B001A5278 /* CIAPITradeOrderResponse.m */; };
 		07364B191394551B001A5278 /* CIAPITradingAccount.h in Headers */ = {isa = PBXBuildFile; fileRef = 07364AAB1394551B001A5278 /* CIAPITradingAccount.h */; };
 		07364B1A1394551B001A5278 /* CIAPITradingAccount.m in Sources */ = {isa = PBXBuildFile; fileRef = 07364AAC1394551B001A5278 /* CIAPITradingAccount.m */; };
+		073E217113BD095400B715CE /* CIAPIRequestCache.h in Headers */ = {isa = PBXBuildFile; fileRef = 073E216F13BD095400B715CE /* CIAPIRequestCache.h */; };
+		073E217213BD095400B715CE /* CIAPIRequestCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 073E217013BD095400B715CE /* CIAPIRequestCache.m */; };
 		07599400136C69C90040D454 /* ObjectPropertiesDictionaryMapper.h in Headers */ = {isa = PBXBuildFile; fileRef = 075993FE136C69C90040D454 /* ObjectPropertiesDictionaryMapper.h */; };
 		07599401136C69C90040D454 /* ObjectPropertiesDictionaryMapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 075993FF136C69C90040D454 /* ObjectPropertiesDictionaryMapper.m */; };
 		07599404136D8DCE0040D454 /* CIAPIObjectResponse.h in Headers */ = {isa = PBXBuildFile; fileRef = 07599402136D8DCE0040D454 /* CIAPIObjectResponse.h */; };
@@ -452,6 +454,8 @@
 		07364AAA1394551B001A5278 /* CIAPITradeOrderResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CIAPITradeOrderResponse.m; sourceTree = "<group>"; };
 		07364AAB1394551B001A5278 /* CIAPITradingAccount.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CIAPITradingAccount.h; sourceTree = "<group>"; };
 		07364AAC1394551B001A5278 /* CIAPITradingAccount.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CIAPITradingAccount.m; sourceTree = "<group>"; };
+		073E216F13BD095400B715CE /* CIAPIRequestCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CIAPIRequestCache.h; sourceTree = "<group>"; };
+		073E217013BD095400B715CE /* CIAPIRequestCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CIAPIRequestCache.m; sourceTree = "<group>"; };
 		075993FE136C69C90040D454 /* ObjectPropertiesDictionaryMapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ObjectPropertiesDictionaryMapper.h; sourceTree = "<group>"; };
 		075993FF136C69C90040D454 /* ObjectPropertiesDictionaryMapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ObjectPropertiesDictionaryMapper.m; sourceTree = "<group>"; };
 		07599402136D8DCE0040D454 /* CIAPIObjectResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CIAPIObjectResponse.h; sourceTree = "<group>"; };
@@ -601,6 +605,8 @@
 				076AF1CA135093070049972E /* CIAPIObjectRequest.m */,
 				07FC281513AE437D00C6C16B /* CIAPIRequestDispatcher.h */,
 				07FC281613AE437D00C6C16B /* CIAPIRequestDispatcher.m */,
+				073E216F13BD095400B715CE /* CIAPIRequestCache.h */,
+				073E217013BD095400B715CE /* CIAPIRequestCache.m */,
 			);
 			name = Client;
 			sourceTree = "<group>";
@@ -1054,6 +1060,7 @@
 				07A320CC13BA74650032B0C0 /* CIAPIErrorHandling.h in Headers */,
 				07FA684C13BCD7810017B214 /* JSONKit.h in Headers */,
 				07FA685013BCDD850017B214 /* CIAPIURLConnection.h in Headers */,
+				073E217113BD095400B715CE /* CIAPIRequestCache.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1276,6 +1283,7 @@
 				07137D7613B91C69006CD1AA /* CIAPILogging.m in Sources */,
 				07FA684D13BCD7810017B214 /* JSONKit.m in Sources */,
 				07FA685113BCDD850017B214 /* CIAPIURLConnection.m in Sources */,
+				073E217213BD095400B715CE /* CIAPIRequestCache.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

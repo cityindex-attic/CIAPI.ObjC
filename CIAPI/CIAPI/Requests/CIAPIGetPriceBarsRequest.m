@@ -27,14 +27,19 @@
     return @"market/{marketId}/barhistory?interval={interval}&span={span}&pricebars={priceBars}";
 }
 
+- (Class)responseClass
+{
+    return [CIAPIGetPriceBarResponse class];
+}
+
 - (NSString*)throttleScope
 {
     return @"data";
 }
 
-- (Class)responseClass
+- (NSTimeInterval)cacheDuration
 {
-    return [CIAPIGetPriceBarResponse class];
+  return 10.0;
 }
 
 @end

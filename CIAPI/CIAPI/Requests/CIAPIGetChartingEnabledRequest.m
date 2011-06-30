@@ -23,15 +23,16 @@
     return @"useraccount/UserAccount/{id}/ChartingEnabled";
 }
 
+- (Class)responseClass
+{
+    return [NSNumber class];
+}
+
 - (NSString*)throttleScope
 {
     return @"data";
 }
 
-- (Class)responseClass
-{
-    return [NSNumber class];
-}
 
 @end
 

@@ -12,6 +12,16 @@
 
 @implementation CIAPIObjectRequest
 
+- (BOOL)isEqual:(id)object
+{
+    // We can only compare against other object requests of our type
+    if ([self isKindOfClass:[object class]])
+        return NO;
+    
+    // Where the properties are identical
+    return [[object propertiesForRequest] isEqualToDictionary:[self propertiesForRequest]];
+}
+
 - (enum CIAPIRequestType)requestType
 {
     assert(FALSE);
@@ -32,6 +42,11 @@
 - (NSString*)throttleScope
 {
     return @"global";
+}
+
+- (NSTimeInterval)cacheDuration
+{
+    return 0.0;
 }
 
 - (Class)responseClass

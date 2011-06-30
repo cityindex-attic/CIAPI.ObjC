@@ -30,15 +30,16 @@
     return @"market/market/informationsearch?SearchByMarketCode={searchByMarketCode}&SearchByMarketName={searchByMarketName}&SpreadProductType={spreadProductType}&CfdProductType={cfdProductType}&BinaryProductType={binaryProductType}&Query={query}&MaxResults={maxResults}";
 }
 
+- (Class)responseClass
+{
+    return [CIAPIListMarketInformationSearchResponse class];
+}
+
 - (NSString*)throttleScope
 {
     return @"data";
 }
 
-- (Class)responseClass
-{
-    return [CIAPIListMarketInformationSearchResponse class];
-}
 
 @end
 

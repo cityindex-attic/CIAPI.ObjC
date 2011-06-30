@@ -27,15 +27,16 @@
     return @"cfd/markets?MarketName={searchByMarketName}&MarketCode={searchByMarketCode}&ClientAccountId={clientAccountId}&MaxResults={maxResults}";
 }
 
+- (Class)responseClass
+{
+    return [CIAPIListCfdMarketsResponse class];
+}
+
 - (NSString*)throttleScope
 {
     return @"data";
 }
 
-- (Class)responseClass
-{
-    return [CIAPIListCfdMarketsResponse class];
-}
 
 @end
 

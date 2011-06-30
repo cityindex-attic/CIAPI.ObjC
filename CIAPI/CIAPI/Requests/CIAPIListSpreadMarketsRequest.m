@@ -27,14 +27,19 @@
     return @"spread/markets?MarketName={searchByMarketName}&MarketCode={searchByMarketCode}&ClientAccountId={clientAccountId}&MaxResults={maxResults}";
 }
 
+- (Class)responseClass
+{
+    return [CIAPIListSpreadMarketsResponse class];
+}
+
 - (NSString*)throttleScope
 {
     return @"data";
 }
 
-- (Class)responseClass
+- (NSTimeInterval)cacheDuration
 {
-    return [CIAPIListSpreadMarketsResponse class];
+  return 10.0;
 }
 
 @end

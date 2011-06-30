@@ -30,5 +30,7 @@
     return [CIAPIListTradeHistoryResponse class];
 }
 
+
+
 @end
 

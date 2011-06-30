@@ -23,15 +23,16 @@
     return @"useraccount/UserAccount/ClientAndTradingAccount";
 }
 
+- (Class)responseClass
+{
+    return [CIAPIAccountInformationResponse class];
+}
+
 - (NSString*)throttleScope
 {
     return @"data";
 }
 
-- (Class)responseClass
-{
-    return [CIAPIAccountInformationResponse class];
-}
 
 @end
 

@@ -25,15 +25,16 @@
     return @"session/deleteSession?userName={userName}&session={session}";
 }
 
+- (Class)responseClass
+{
+    return [CIAPILogOffResponse class];
+}
+
 - (NSString*)throttleScope
 {
     return @"data";
 }
 
-- (Class)responseClass
-{
-    return [CIAPILogOffResponse class];
-}
 
 @end
 

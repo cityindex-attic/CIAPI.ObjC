@@ -28,6 +28,7 @@ enum CIAPIRequestType
 - (NSDictionary*)propertiesForRequest;
 - (NSString*)urlTemplate;
 - (NSString*)throttleScope;
+- (NSTimeInterval)cacheDuration;
 - (Class)responseClass;
 
 @end

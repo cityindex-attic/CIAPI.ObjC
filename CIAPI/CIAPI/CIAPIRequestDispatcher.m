@@ -22,6 +22,7 @@
 @synthesize maximumRequestAttempts;
 @synthesize throttleSize;
 @synthesize throttlePeriod;
+@synthesize delegate;
 
 - (CIAPIRequestDispatcher*)initWithMaximumRetryAttempts:(NSUInteger)_maximumRequestAttempts throttleSize:(NSUInteger)_throttleSize
                                     throttlePeriod:(NSTimeInterval)_throttlePeriod;
@@ -166,9 +167,13 @@
 - (void)dispatchSuccessfulRequest:(CIAPIRequestToken*)token result:(id)result
 {
     CIAPILogAbout(CIAPILogLevelNote, CIAPIDispatcherModule, token, @"Dispatch response SUCCEEDED for token %X", token);
+
+    token.responseObject = result;
+    
+    if ([delegate respondsToSelector:@selector(willDispatchSuccessfulRequest:)])
+        [delegate willReportSuccessfulRequest:token];
     
     // Dispatch onto the main thread
-    token.responseObject = result;
     [self performSelectorOnMainThread:@selector(mainThreadSuccessDispatcher:) withObject:token waitUntilDone:NO];
 }
 
@@ -181,7 +186,12 @@
     if (token.attemptCount < maximumRequestAttempts)
         [self scheduleRequestToken:token];
     else
+    {
+        if ([delegate respondsToSelector:@selector(willDispatchFailedRequest:)])
+            [delegate willReportFailedRequest:token];
+        
         [self performSelectorOnMainThread:@selector(mainThreadFailureDispatcher:) withObject:token waitUntilDone:NO];
+    }
 }
 
 - (void)mainThreadSuccessDispatcher:(CIAPIRequestToken*)token

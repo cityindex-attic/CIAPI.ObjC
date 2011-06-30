@@ -24,14 +24,19 @@
     return @"news/{storyId}";
 }
 
+- (Class)responseClass
+{
+    return [CIAPIGetNewsDetailResponse class];
+}
+
 - (NSString*)throttleScope
 {
     return @"data";
 }
 
-- (Class)responseClass
+- (NSTimeInterval)cacheDuration
 {
-    return [CIAPIGetNewsDetailResponse class];
+  return 10.0;
 }
 
 @end

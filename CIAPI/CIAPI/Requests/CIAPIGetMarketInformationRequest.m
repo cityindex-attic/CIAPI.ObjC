@@ -24,15 +24,16 @@
     return @"market/{marketId}/information";
 }
 
+- (Class)responseClass
+{
+    return [CIAPIGetMarketInformationResponse class];
+}
+
 - (NSString*)throttleScope
 {
     return @"data";
 }
 
-- (Class)responseClass
-{
-    return [CIAPIGetMarketInformationResponse class];
-}
 
 @end
 

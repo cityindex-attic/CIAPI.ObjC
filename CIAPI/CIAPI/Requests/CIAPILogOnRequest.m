@@ -25,15 +25,16 @@
     return @"session/";
 }
 
+- (Class)responseClass
+{
+    return [CIAPILogOnResponse class];
+}
+
 - (NSString*)throttleScope
 {
     return @"data";
 }
 
-- (Class)responseClass
-{
-    return [CIAPILogOnResponse class];
-}
 
 @end
 
