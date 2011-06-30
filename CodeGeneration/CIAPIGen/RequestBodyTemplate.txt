@@ -67,17 +67,24 @@
     return @"<% code.write(obj.target + obj.uriTemplate) %>";
 }
 
+- (Class)responseClass
+{
+    return [<% code.write(apiName(obj.returns["$ref"])) %> class];
+}
+
 <% if (obj.throttleScope) { %>
 - (NSString*)throttleScope
 {
     return @"<% code.write(obj.throttleScope); %>";
 }
-
 <% } %>
-- (Class)responseClass
+
+<% if (obj.cacheDuration) { %>
+- (NSTimeInterval)cacheDuration
 {
-    return [<% code.write(apiName(obj.returns["$ref"])) %> class];
+  return <% code.write(obj.cacheDuration / 1000) %>.0;
 }
+<% } %>
 
 @end
 
