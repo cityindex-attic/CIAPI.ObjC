@@ -15,6 +15,22 @@
 @synthesize maxResults;
 
 
+
+- (CIAPIListStopLimitOrderHistoryRequest*)initWithTradingAccountId:(NSInteger)_tradingAccountId maxResults:(NSInteger)_maxResults{
+  self = [super init];
+
+  if (self)
+  {
+    self.tradingAccountId = _tradingAccountId;
+    self.maxResults = _maxResults;
+  }
+
+  return self;
+}
+
+// If we have array parameters, vend the array types from a function for
+// automatic object construction
+
 - (enum CIAPIRequestType)requestType
 {
     return CIAPIRequestGET;

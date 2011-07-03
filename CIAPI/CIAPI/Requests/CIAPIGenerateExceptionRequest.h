@@ -14,10 +14,18 @@
 // Simulates an error condition.
  
 @interface CIAPIGenerateExceptionRequest : CIAPIObjectRequest {
- NSInteger errorCode;
+
+  // Instance variables for all fields
+  NSInteger errorCode;
 }
 
+// Properties for each field
 // Simulates an error condition. 
 @property  NSInteger errorCode;
 
+// Constructor for the object
+- (CIAPIGenerateExceptionRequest*)initWithErrorCode:(NSInteger)_errorCode;
+
+
 @end
+

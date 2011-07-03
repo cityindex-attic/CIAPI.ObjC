@@ -20,10 +20,18 @@
 // rmat.</p>
  
 @interface CIAPIListActiveStopLimitOrdersRequest : CIAPIObjectRequest {
- NSInteger tradingAccountId;
+
+  // Instance variables for all fields
+  NSInteger tradingAccountId;
 }
 
+// Properties for each field
 // The trading account to get orders for. 
 @property  NSInteger tradingAccountId;
 
+// Constructor for the object
+- (CIAPIListActiveStopLimitOrdersRequest*)initWithTradingAccountId:(NSInteger)_tradingAccountId;
+
+
 @end
+

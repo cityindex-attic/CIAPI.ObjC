@@ -15,6 +15,22 @@
 @synthesize Password;
 
 
+
+- (CIAPILogOnRequest*)initWithUserName:(NSString*)_UserName password:(NSString*)_Password{
+  self = [super init];
+
+  if (self)
+  {
+    self.UserName = _UserName;
+    self.Password = _Password;
+  }
+
+  return self;
+}
+
+// If we have array parameters, vend the array types from a function for
+// automatic object construction
+
 - (enum CIAPIRequestType)requestType
 {
     return CIAPIRequestPOST;

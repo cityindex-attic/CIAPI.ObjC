@@ -23,10 +23,18 @@
 // ><p>
  
 @interface CIAPIGetOpenPositionRequest : CIAPIObjectRequest {
- NSString* orderId;
+
+  // Instance variables for all fields
+  NSString* orderId;
 }
 
+// Properties for each field
 // The requested order id. 
 @property (retain) NSString* orderId;
 
+// Constructor for the object
+- (CIAPIGetOpenPositionRequest*)initWithOrderId:(NSString*)_orderId;
+
+
 @end
+

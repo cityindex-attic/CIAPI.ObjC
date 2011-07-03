@@ -16,13 +16,21 @@
 // e uri specified below</p>
  
 @interface CIAPICancelOrderRequest : CIAPIObjectRequest {
- NSInteger OrderId;
- NSInteger TradingAccountId;
+
+  // Instance variables for all fields
+  NSInteger OrderId;
+  NSInteger TradingAccountId;
 }
 
+// Properties for each field
 // The order identifier. 
 @property  NSInteger OrderId;
 // TradingAccount associated with the cancel order request. 
 @property  NSInteger TradingAccountId;
 
+// Constructor for the object
+- (CIAPICancelOrderRequest*)initWithOrderId:(NSInteger)_OrderId tradingAccountId:(NSInteger)_TradingAccountId;
+
+
 @end
+

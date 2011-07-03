@@ -17,13 +17,21 @@
 // tly no corresponding GetTradeHistory (as with ListOpenPositions).</p>
  
 @interface CIAPIListTradeHistoryRequest : CIAPIObjectRequest {
- NSInteger tradingAccountId;
- NSInteger maxResults;
+
+  // Instance variables for all fields
+  NSInteger tradingAccountId;
+  NSInteger maxResults;
 }
 
+// Properties for each field
 // The trading account to get orders for. 
 @property  NSInteger tradingAccountId;
 // The maximum results to return. 
 @property  NSInteger maxResults;
 
+// Constructor for the object
+- (CIAPIListTradeHistoryRequest*)initWithTradingAccountId:(NSInteger)_tradingAccountId maxResults:(NSInteger)_maxResults;
+
+
 @end
+

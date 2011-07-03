@@ -16,10 +16,18 @@
 // >UpdateTradeOrderRequestDTO</a> to the uri specified below</p>
  
 @interface CIAPIUpdateTradeRequest : CIAPIObjectRequest {
- NSInteger OrderId;
+
+  // Instance variables for all fields
+  NSInteger OrderId;
 }
 
+// Properties for each field
 // Order identifier of the order to update 
 @property  NSInteger OrderId;
 
+// Constructor for the object
+- (CIAPIUpdateTradeRequest*)initWithOrderId:(NSInteger)_OrderId;
+
+
 @end
+

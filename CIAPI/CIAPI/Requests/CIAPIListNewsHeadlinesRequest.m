@@ -15,6 +15,22 @@
 @synthesize maxResults;
 
 
+
+- (CIAPIListNewsHeadlinesRequest*)initWithCategory:(NSString*)_category{
+  self = [super init];
+
+  if (self)
+  {
+    self.category = _category;
+    self.maxResults = 25;
+  }
+
+  return self;
+}
+
+// If we have array parameters, vend the array types from a function for
+// automatic object construction
+
 - (enum CIAPIRequestType)requestType
 {
     return CIAPIRequestGET;

@@ -12,31 +12,37 @@
 
 <%
 
-var typeNamesForParameters = {};
-
-for (parameter in obj.parameters) {
-  var typeName = obj.parameters[parameter].type;
-  if (typeName == null) {
-    typeName = apiName(obj.parameters[parameter]["$ref"]);
+for (paramIndex in obj.parameters)
+{
+  if (obj.parameters[paramIndex].isRefType)
+  {
 %>
-#import "<% code.write(typeName)%>.h"
+#import "<% code.write(obj.parameters[paramIndex].type) %>.h"
 <%
   }
-
-  typeNamesForParameters[parameter] = schemaTypeToObjCType(typeName);
 }%>
 
 <% code.write(lineSplit(77, "// ", obj.description)) %> 
 @interface CIAPI<% code.write(objName) %>Request : CIAPIObjectRequest {
-<% for (parameter in obj.parameters) { %>
- <% code.write(typeNamesForParameters[parameter]) %> <% code.write(safeNameFor(obj.parameters[parameter].name)) %>;
+
+  // Instance variables for all fields
+<% for (paramIndex in obj.parameters) { %>
+  <% code.write(obj.parameters[paramIndex].type) %> <% code.write(obj.parameters[paramIndex].name) %>;
 <% } %>
 }
 
-<% for (parameter in obj.parameters) { %>
-// <% code.write(obj.parameters[parameter].description.replace(/\n/g, "")) %> 
-@property <% if (isObjectType(typeNamesForParameters[parameter])) {%>(retain)<% } %> <% code.write(typeNamesForParameters[parameter]) %> <% code.write(safeNameFor(obj.parameters[parameter].name)) %>;
+// Properties for each field
+<% for (paramIndex in obj.parameters) { %>
+// <% code.write(obj.parameters[paramIndex].description.replace(/\n/g, "")) %> 
+@property <% if (obj.parameters[paramIndex].isRefType || obj.parameters[paramIndex].type == "NSString*" || obj.parameters[paramIndex].type == "NSArray*") {%>(retain)<% } %> <% code.write(obj.parameters[paramIndex].type) %> <% code.write(obj.parameters[paramIndex].name) %>;
 <% } %>
 
+<% if (obj.parameters.length > 0) { %>
+// Constructor for the object
+- (<% code.write(apiName(objName)) %>Request*)initWith<% code.write(obj.constructorNameSuffix) %>;
+<% } %>
+
+
 @end
+
 <% fileName = "CIAPI" + objName + "Request.h" %>

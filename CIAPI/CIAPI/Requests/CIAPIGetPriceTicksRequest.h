@@ -15,13 +15,21 @@
 // rrent time. The length of time between each tick will be different.
  
 @interface CIAPIGetPriceTicksRequest : CIAPIObjectRequest {
- NSString* marketId;
- NSString* priceTicks;
+
+  // Instance variables for all fields
+  NSString* marketId;
+  NSString* priceTicks;
 }
 
+// Properties for each field
 // The marketId 
 @property (retain) NSString* marketId;
 // The total number of price ticks to return 
 @property (retain) NSString* priceTicks;
 
+// Constructor for the object
+- (CIAPIGetPriceTicksRequest*)initWithMarketId:(NSString*)_marketId priceTicks:(NSString*)_priceTicks;
+
+
 @end
+

@@ -24,6 +24,7 @@ exports.processSingleTemplate = function(templatePath, objName, obj,
   try
   {
     var templateScript = this.templateToScript(templatePath);
+
     var writeStream = fs.createWriteStream("/tmp/templateTmp");
     this.Global.objName = objName;
     this.Global.obj = obj;
@@ -58,7 +59,7 @@ exports.processSingleTemplate = function(templatePath, objName, obj,
   }
   catch (e)
   {
-    console.log("Templating object " + objName + " with template " + templatePath + " into " +
+    console.log("Templating object FAILED: " + objName + " with template " + templatePath + " into " +
                 targetDir + " : Error - " + e); 
                 throw e;
   }

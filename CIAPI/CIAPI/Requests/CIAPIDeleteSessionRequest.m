@@ -15,6 +15,22 @@
 @synthesize session;
 
 
+
+- (CIAPIDeleteSessionRequest*)initWithUserName:(NSString*)_userName session:(NSString*)_session{
+  self = [super init];
+
+  if (self)
+  {
+    self.userName = _userName;
+    self.session = _session;
+  }
+
+  return self;
+}
+
+// If we have array parameters, vend the array types from a function for
+// automatic object construction
+
 - (enum CIAPIRequestType)requestType
 {
     return CIAPIRequestPOST;

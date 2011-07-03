@@ -17,7 +17,13 @@
 // he uri specified below</p>
  
 @interface CIAPIUpdateOrderRequest : CIAPIObjectRequest {
+
+  // Instance variables for all fields
 }
+
+// Properties for each field
+
 
 
 @end
+

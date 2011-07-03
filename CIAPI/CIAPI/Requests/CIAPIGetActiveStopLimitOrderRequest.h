@@ -23,10 +23,18 @@
 // href="#">GetOrder</a><p>
  
 @interface CIAPIGetActiveStopLimitOrderRequest : CIAPIObjectRequest {
- NSString* orderId;
+
+  // Instance variables for all fields
+  NSString* orderId;
 }
 
+// Properties for each field
 // The requested order id. 
 @property (retain) NSString* orderId;
 
+// Constructor for the object
+- (CIAPIGetActiveStopLimitOrderRequest*)initWithOrderId:(NSString*)_orderId;
+
+
 @end
+

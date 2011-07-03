@@ -21,12 +21,15 @@
 // ory?interval=DAY&span=1&pricebars=10
  
 @interface CIAPIGetPriceBarsRequest : CIAPIObjectRequest {
- NSString* marketId;
- NSString* interval;
- NSInteger span;
- NSString* priceBars;
+
+  // Instance variables for all fields
+  NSString* marketId;
+  NSString* interval;
+  NSInteger span;
+  NSString* priceBars;
 }
 
+// Properties for each field
 // The marketId 
 @property (retain) NSString* marketId;
 // The pricebar interval 
@@ -36,4 +39,9 @@
 // The total number of pricebars to return 
 @property (retain) NSString* priceBars;
 
+// Constructor for the object
+- (CIAPIGetPriceBarsRequest*)initWithMarketId:(NSString*)_marketId interval:(NSString*)_interval span:(NSInteger)_span priceBars:(NSString*)_priceBars;
+
+
 @end
+

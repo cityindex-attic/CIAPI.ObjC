@@ -16,13 +16,21 @@
 //  href="#">ApiLogOnRequestDTO</a> to the uri specified below</p>
  
 @interface CIAPILogOnRequest : CIAPIObjectRequest {
- NSString* UserName;
- NSString* Password;
+
+  // Instance variables for all fields
+  NSString* UserName;
+  NSString* Password;
 }
 
+// Properties for each field
 // Username is case sensitive 
 @property (retain) NSString* UserName;
 // Password is case sensitive 
 @property (retain) NSString* Password;
 
+// Constructor for the object
+- (CIAPILogOnRequest*)initWithUserName:(NSString*)_UserName password:(NSString*)_Password;
+
+
 @end
+

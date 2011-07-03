@@ -14,6 +14,21 @@
 @synthesize tradingAccountId;
 
 
+
+- (CIAPIListOpenPositionsRequest*)initWithTradingAccountId:(NSInteger)_tradingAccountId{
+  self = [super init];
+
+  if (self)
+  {
+    self.tradingAccountId = _tradingAccountId;
+  }
+
+  return self;
+}
+
+// If we have array parameters, vend the array types from a function for
+// automatic object construction
+
 - (enum CIAPIRequestType)requestType
 {
     return CIAPIRequestGET;

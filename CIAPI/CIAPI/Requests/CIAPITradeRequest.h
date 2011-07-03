@@ -17,20 +17,23 @@
 // d fields when requesting a new trade, the platform will generate them.</p>
  
 @interface CIAPITradeRequest : CIAPIObjectRequest {
- NSInteger MarketId;
- NSString* Currency;
- BOOL AutoRollover;
- NSString* Direction;
- double Quantity;
- NSString* QuoteId;
- double BidPrice;
- double OfferPrice;
- NSString* AuditId;
- NSInteger TradingAccountId;
- NSArray* IfDone;
- NSArray* Close;
+
+  // Instance variables for all fields
+  NSInteger MarketId;
+  NSString* Currency;
+  BOOL AutoRollover;
+  NSString* Direction;
+  double Quantity;
+  NSString* QuoteId;
+  double BidPrice;
+  double OfferPrice;
+  NSString* AuditId;
+  NSInteger TradingAccountId;
+  NSArray* IfDone;
+  NSArray* Close;
 }
 
+// Properties for each field
 // A market's unique identifier 
 @property  NSInteger MarketId;
 // Currency to place order in 
@@ -56,4 +59,9 @@
 // List of existing order id's that require part            or full closure 
 @property (retain) NSArray* Close;
 
+// Constructor for the object
+- (CIAPITradeRequest*)initWithMarketId:(NSInteger)_MarketId currency:(NSString*)_Currency autoRollover:(BOOL)_AutoRollover direction:(NSString*)_Direction quantity:(double)_Quantity quoteId:(NSString*)_QuoteId bidPrice:(double)_BidPrice offerPrice:(double)_OfferPrice auditId:(NSString*)_AuditId tradingAccountId:(NSInteger)_TradingAccountId ifDone:(NSArray*)_IfDone close:(NSArray*)_Close;
+
+
 @end
+

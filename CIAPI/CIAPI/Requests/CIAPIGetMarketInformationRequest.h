@@ -14,10 +14,18 @@
 // <p>Get Market Information for the specified market.</p>
  
 @interface CIAPIGetMarketInformationRequest : CIAPIObjectRequest {
- NSString* marketId;
+
+  // Instance variables for all fields
+  NSString* marketId;
 }
 
+// Properties for each field
 // The marketId 
 @property (retain) NSString* marketId;
 
+// Constructor for the object
+- (CIAPIGetMarketInformationRequest*)initWithMarketId:(NSString*)_marketId;
+
+
 @end
+

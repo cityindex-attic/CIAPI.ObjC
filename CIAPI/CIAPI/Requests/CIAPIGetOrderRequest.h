@@ -17,10 +17,18 @@
 // /p>
  
 @interface CIAPIGetOrderRequest : CIAPIObjectRequest {
- NSString* orderId;
+
+  // Instance variables for all fields
+  NSString* orderId;
 }
 
+// Properties for each field
 // The requested order id. 
 @property (retain) NSString* orderId;
 
+// Constructor for the object
+- (CIAPIGetOrderRequest*)initWithOrderId:(NSString*)_orderId;
+
+
 @end
+

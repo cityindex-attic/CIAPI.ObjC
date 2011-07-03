@@ -15,7 +15,13 @@
 // are no parameters for this call.
  
 @interface CIAPIGetClientAndTradingAccountRequest : CIAPIObjectRequest {
+
+  // Instance variables for all fields
 }
+
+// Properties for each field
+
 
 
 @end
+

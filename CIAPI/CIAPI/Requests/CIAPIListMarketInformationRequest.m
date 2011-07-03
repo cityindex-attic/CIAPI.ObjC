@@ -13,6 +13,21 @@
 
 @synthesize MarketIds;
 
+
+
+- (CIAPIListMarketInformationRequest*)initWithMarketIds:(NSArray*)_MarketIds{
+  self = [super init];
+
+  if (self)
+  {
+    self.MarketIds = _MarketIds;
+  }
+
+  return self;
+}
+
+// If we have array parameters, vend the array types from a function for
+// automatic object construction
 - (Class)propertyTypeHintForName:(NSString*)name
 {
   if ([name isEqualToString:@"MarketIds"]) return [NSNumber class];

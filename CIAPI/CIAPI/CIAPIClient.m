@@ -101,7 +101,6 @@
         CIAPILogAbout(CIAPILogLevelNote, CIAPICoreClientModule, self, @"Asyncronous request fulfilled by cache!");
         // We'll going to return this request token, preconfigured
         requestToken.responseObject = [requestCache cachedResponseForRequest:request];
-        [requestToken retain];
         
         // We'll first fire the response block on the runloop, so they get a chance to look at the token first
         [self performSelectorOnMainThread:@selector(dispatchCacheCallback:) withObject:requestToken waitUntilDone:NO];
@@ -135,7 +134,6 @@
         
         // We're going return this request token, preconfigured
         requestToken.responseObject = [requestCache cachedResponseForRequest:request];
-        [requestToken retain];
     
         // We'll first fire the response block on the runloop, so they get a chance to look at the token first
         [self performSelectorOnMainThread:@selector(dispatchCacheCallback:) withObject:requestToken waitUntilDone:NO];

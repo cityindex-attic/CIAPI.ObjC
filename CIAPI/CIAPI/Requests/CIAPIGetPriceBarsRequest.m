@@ -17,6 +17,24 @@
 @synthesize priceBars;
 
 
+
+- (CIAPIGetPriceBarsRequest*)initWithMarketId:(NSString*)_marketId interval:(NSString*)_interval span:(NSInteger)_span priceBars:(NSString*)_priceBars{
+  self = [super init];
+
+  if (self)
+  {
+    self.marketId = _marketId;
+    self.interval = _interval;
+    self.span = _span;
+    self.priceBars = _priceBars;
+  }
+
+  return self;
+}
+
+// If we have array parameters, vend the array types from a function for
+// automatic object construction
+
 - (enum CIAPIRequestType)requestType
 {
     return CIAPIRequestGET;

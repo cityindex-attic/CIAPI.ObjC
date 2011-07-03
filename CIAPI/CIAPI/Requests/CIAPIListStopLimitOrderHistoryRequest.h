@@ -19,13 +19,21 @@
 // rs).</p>
  
 @interface CIAPIListStopLimitOrderHistoryRequest : CIAPIObjectRequest {
- NSInteger tradingAccountId;
- NSInteger maxResults;
+
+  // Instance variables for all fields
+  NSInteger tradingAccountId;
+  NSInteger maxResults;
 }
 
+// Properties for each field
 // The trading account to get orders for. 
 @property  NSInteger tradingAccountId;
 // the maximum results to return. 
 @property  NSInteger maxResults;
 
+// Constructor for the object
+- (CIAPIListStopLimitOrderHistoryRequest*)initWithTradingAccountId:(NSInteger)_tradingAccountId maxResults:(NSInteger)_maxResults;
+
+
 @end
+

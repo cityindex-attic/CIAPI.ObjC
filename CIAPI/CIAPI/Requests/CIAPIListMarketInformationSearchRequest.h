@@ -14,15 +14,18 @@
 // <p>Queries for market information.</p>
  
 @interface CIAPIListMarketInformationSearchRequest : CIAPIObjectRequest {
- BOOL searchByMarketCode;
- BOOL searchByMarketName;
- BOOL spreadProductType;
- BOOL cfdProductType;
- BOOL binaryProductType;
- NSString* query;
- NSInteger maxResults;
+
+  // Instance variables for all fields
+  BOOL searchByMarketCode;
+  BOOL searchByMarketName;
+  BOOL spreadProductType;
+  BOOL cfdProductType;
+  BOOL binaryProductType;
+  NSString* query;
+  NSInteger maxResults;
 }
 
+// Properties for each field
 // Should the search be done by market code 
 @property  BOOL searchByMarketCode;
 // Should the search be done by market Name 
@@ -38,4 +41,9 @@
 // The maximum number of results to return 
 @property  NSInteger maxResults;
 
+// Constructor for the object
+- (CIAPIListMarketInformationSearchRequest*)initWithSearchByMarketCode:(BOOL)_searchByMarketCode searchByMarketName:(BOOL)_searchByMarketName spreadProductType:(BOOL)_spreadProductType cfdProductType:(BOOL)_cfdProductType binaryProductType:(BOOL)_binaryProductType query:(NSString*)_query maxResults:(NSInteger)_maxResults;
+
+
 @end
+

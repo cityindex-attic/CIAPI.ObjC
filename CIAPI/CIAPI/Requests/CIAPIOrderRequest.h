@@ -19,24 +19,27 @@
 // m.</p>
  
 @interface CIAPIOrderRequest : CIAPIObjectRequest {
- NSInteger OrderId;
- NSInteger MarketId;
- NSString* Currency;
- BOOL AutoRollover;
- NSString* Direction;
- double Quantity;
- double BidPrice;
- double OfferPrice;
- NSString* AuditId;
- NSInteger TradingAccountId;
- NSArray* IfDone;
- CIAPINewStopLimitOrderRequest* OcoOrder;
- NSString* Applicability;
- NSString* ExpiryDateTimeUTC;
- BOOL Guaranteed;
- double TriggerPrice;
+
+  // Instance variables for all fields
+  NSInteger OrderId;
+  NSInteger MarketId;
+  NSString* Currency;
+  BOOL AutoRollover;
+  NSString* Direction;
+  double Quantity;
+  double BidPrice;
+  double OfferPrice;
+  NSString* AuditId;
+  NSInteger TradingAccountId;
+  NSArray* IfDone;
+  CIAPINewStopLimitOrderRequest* OcoOrder;
+  NSString* Applicability;
+  NSString* ExpiryDateTimeUTC;
+  BOOL Guaranteed;
+  double TriggerPrice;
 }
 
+// Properties for each field
 // Order identifier of the order to update 
 @property  NSInteger OrderId;
 // A market's unique identifier 
@@ -70,4 +73,9 @@
 // Price at which the order is intended to be triggered 
 @property  double TriggerPrice;
 
+// Constructor for the object
+- (CIAPIOrderRequest*)initWithOrderId:(NSInteger)_OrderId marketId:(NSInteger)_MarketId currency:(NSString*)_Currency autoRollover:(BOOL)_AutoRollover direction:(NSString*)_Direction quantity:(double)_Quantity bidPrice:(double)_BidPrice offerPrice:(double)_OfferPrice auditId:(NSString*)_AuditId tradingAccountId:(NSInteger)_TradingAccountId ifDone:(NSArray*)_IfDone ocoOrder:(CIAPINewStopLimitOrderRequest*)_OcoOrder applicability:(NSString*)_Applicability expiryDateTimeUTC:(NSString*)_ExpiryDateTimeUTC guaranteed:(BOOL)_Guaranteed triggerPrice:(double)_TriggerPrice;
+
+
 @end
+

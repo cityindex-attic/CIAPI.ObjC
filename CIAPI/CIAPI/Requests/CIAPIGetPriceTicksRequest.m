@@ -15,6 +15,22 @@
 @synthesize priceTicks;
 
 
+
+- (CIAPIGetPriceTicksRequest*)initWithMarketId:(NSString*)_marketId priceTicks:(NSString*)_priceTicks{
+  self = [super init];
+
+  if (self)
+  {
+    self.marketId = _marketId;
+    self.priceTicks = _priceTicks;
+  }
+
+  return self;
+}
+
+// If we have array parameters, vend the array types from a function for
+// automatic object construction
+
 - (enum CIAPIRequestType)requestType
 {
     return CIAPIRequestGET;

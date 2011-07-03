@@ -14,6 +14,21 @@
 @synthesize storyId;
 
 
+
+- (CIAPIGetNewsDetailRequest*)initWithStoryId:(NSString*)_storyId{
+  self = [super init];
+
+  if (self)
+  {
+    self.storyId = _storyId;
+  }
+
+  return self;
+}
+
+// If we have array parameters, vend the array types from a function for
+// automatic object construction
+
 - (enum CIAPIRequestType)requestType
 {
     return CIAPIRequestGET;

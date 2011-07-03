@@ -14,10 +14,18 @@
 // Get the detail of a specific news story
  
 @interface CIAPIGetNewsDetailRequest : CIAPIObjectRequest {
- NSString* storyId;
+
+  // Instance variables for all fields
+  NSString* storyId;
 }
 
+// Properties for each field
 // The news story Id 
 @property (retain) NSString* storyId;
 
+// Constructor for the object
+- (CIAPIGetNewsDetailRequest*)initWithStoryId:(NSString*)_storyId;
+
+
 @end
+
