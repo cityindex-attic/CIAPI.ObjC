@@ -6,7 +6,7 @@
 //  Copyright 2011 __MyCompanyName__. All rights reserved.
 //
 
-#import <objc/objc-runtime.h>
+#import <objc/runtime.h>
 
 #import "ObjectPropertiesDictionaryMapper.h"
 
