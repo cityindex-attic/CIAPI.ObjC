@@ -17,7 +17,8 @@
     NSURLRequest *underlyingRequest;
     int attemptCount;
 
-    CIAPIRequestCallback callbackBlock;
+    CIAPIRequestSuccessCallback callbackSuccessBlock;
+    CIAPIRequestFailureCallback callbackFailureBlock;
     id<CIAPIRequestDelegate> callbackDelegate;
     CIAPIObjectRequest *requestObject;
     
@@ -28,7 +29,8 @@
 @property (readonly) id underlyingRequest;
 @property int attemptCount;
 
-@property (readonly) CIAPIRequestCallback callbackBlock;
+@property (readonly) CIAPIRequestSuccessCallback callbackSuccessBlock;
+@property (readonly) CIAPIRequestFailureCallback callbackFailureBlock;
 @property (readonly) id<CIAPIRequestDelegate> callbackDelegate;
 @property (readonly) CIAPIObjectRequest *requestObject;
 
@@ -36,7 +38,8 @@
 @property (assign) id responseObject;
 
 - (CIAPIRequestToken*)initWithRequest:(CIAPIObjectRequest*)objRequest delegate:(id<CIAPIRequestDelegate>)delegate;
-- (CIAPIRequestToken*)initWithRequest:(CIAPIObjectRequest*)objRequest block:(CIAPIRequestCallback)block;
+- (CIAPIRequestToken*)initWithRequest:(CIAPIObjectRequest*)objRequest successBlock:(CIAPIRequestSuccessCallback)successBlock
+                         failureBlock:(CIAPIRequestFailureCallback)failureBlock;
 
 - (void)setURLRequest:(NSURLRequest*)urlRequest;
 

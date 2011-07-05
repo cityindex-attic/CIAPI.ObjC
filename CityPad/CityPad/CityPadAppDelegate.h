@@ -8,12 +8,12 @@
 
 #import <UIKit/UIKit.h>
 
-@class CityPadViewController;
+@class CityPadMasterViewController;
 
 @interface CityPadAppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
 
-@property (strong, nonatomic) CityPadViewController *viewController;
+@property (strong, nonatomic) CityPadMasterViewController *viewController;
 
 @end

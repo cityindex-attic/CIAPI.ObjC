@@ -20,7 +20,8 @@
 @synthesize client;
 
 @synthesize delegate;
-@synthesize block;
+@synthesize successBlock;
+@synthesize failureBlock;
 
 - (id)init
 {
@@ -34,11 +35,40 @@
     return self;
 }
 
+
+- (id)initWithDelegate:(id<CIAPIAuthenticatorDelegate>)_delegate
+{
+    self = [super init];
+    
+    if (self)
+    {
+        client = nil;
+        delegate = _delegate;
+    }
+    
+    return self;
+}
+
+- (id)initWithSuccessBlock:(CIAPIAuthenticatorSuccessCallback)_successBlock failureBlock:(CIAPIAuthenticatorFailureCallback)_failureBlock;
+{
+    self = [super init];
+    
+    if (self)
+    {
+        client = nil;
+        self.successBlock = _successBlock;
+        self.failureBlock = _failureBlock;
+    }
+    
+    return self;
+}
+
 - (void)dealloc
 {
     [client release];
 
-    [block release];
+    [successBlock release];
+    [failureBlock release];
 
     [super dealloc];
 }
@@ -63,7 +93,7 @@
     
     NSURLRequest *request = [self _buildRequestWithUsername:userName password:password];
     
-    urlConnection = [CIAPIURLConnection CIAPIURLConnectionForRequest:request delegate:self];
+    urlConnection = [[CIAPIURLConnection CIAPIURLConnectionForRequest:request delegate:self] retain];
     [urlConnection start];
 }
 
@@ -73,43 +103,53 @@
     
     NSError *error = nil;
     
-    if (![self _setupClientOrError:response withData:data error:&error])
+    if ([self _setupClientOrError:response withData:data error:&error])
     {
-        CIAPILogAbout(CIAPILogLevelWarn, CIAPIAuthenticationModule, self, @"Authentication FAILED");
-        
-        if (delegate)
-            [delegate authenticationFailed:self error:error];
-        
-        if (block)
-            block(self, error);
-    }
-    else
-    {    
         CIAPILogAbout(CIAPILogLevelWarn, CIAPIAuthenticationModule, self, @"Authentication SUCCEEDED");
         
-        if (delegate)
-            [delegate authenticationSucceeded:self];
+        dispatch_async(dispatch_get_main_queue(), ^{
+            if (delegate && [delegate respondsToSelector:@selector(authenticationSucceeded:client:)])
+                [delegate authenticationSucceeded:self client:client];
+            
+            if (successBlock)
+                successBlock(self, client);            
+        });
+    }
+    else
+    {   
+        // TODO: Pass proper error        
+        CIAPILogAbout(CIAPILogLevelWarn, CIAPIAuthenticationModule, self, @"Authentication FAILURE");
         
-        if (block)
-            block(self, nil);
+        dispatch_async(dispatch_get_main_queue(), ^{
+            if (delegate && [delegate respondsToSelector:@selector(authenticationFailed:error:)])
+                [delegate authenticationFailed:self error:error];
+            
+            if (failureBlock)
+                failureBlock(self, error);            
+        });
     }
     
-    [request release];
-    request = nil;
+    [urlConnection release];
+    urlConnection = nil;
 }
 
 - (void)requestFailed:(CIAPIURLConnection*)connection request:(NSURLRequest*)request response:(NSURLResponse*)response error:(NSError*)error
 {
     CIAPILogAbout(CIAPILogLevelNote, CIAPIAuthenticationModule, self, @"Asynchronous authentication ERROR response recieved");
+
+    // TODO: Look at the memory management of this - something not quite right
+    dispatch_async(dispatch_get_main_queue(), ^{
+        if (delegate && [delegate respondsToSelector:@selector(authenticationFailed:error:)])
+        {
+            [delegate authenticationFailed:self error:[NSError errorWithDomain:CIAPI_ERROR_DOMAIN code:CIAPIErrorAuthenticationFailed userInfo:[NSDictionary dictionaryWithObject:CIAPILogGetForObject(self) forKey:CIAPI_ERROR_LOG]]];
+        }
+        
+        if (failureBlock)
+            failureBlock(self, error);
+    });
     
-    if (delegate)
-        [delegate authenticationFailed:self error:[NSError errorWithDomain:CIAPI_ERROR_DOMAIN code:CIAPIErrorAuthenticationFailed userInfo:[NSDictionary dictionaryWithObject:CIAPILogGetForObject(self) forKey:CIAPI_ERROR_LOG]]];
-    
-    if (block)
-        block(self, error);
-    
-    [request release];
-    request = nil;
+    [urlConnection release];
+    urlConnection = nil;
 }
 
 - (NSURLRequest*)_buildRequestWithUsername:(NSString*)userName password:(NSString*)password

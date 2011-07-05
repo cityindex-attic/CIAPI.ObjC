@@ -11,12 +11,13 @@
 #import "CIAPIAuthenticator.h"
 
 @class CIAPIAuthenticator;
+@class CIAPIClient;
 
 @protocol CIAPIAuthenticatorDelegate <NSObject>
 
 @optional
 
-- (void)authenticationSucceeded:(CIAPIAuthenticator*)authenticator;
+- (void)authenticationSucceeded:(CIAPIAuthenticator*)authenticator client:(CIAPIClient*)client;
 - (void)authenticationFailed:(CIAPIAuthenticator*)authenticator error:(NSError*)error;
 
 @end

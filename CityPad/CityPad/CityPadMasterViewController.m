@@ -6,16 +6,19 @@
 //  Copyright 2011 __MyCompanyName__. All rights reserved.
 //
 
-#import "CityPadViewController.h"
+#import <QuartzCore/QuartzCore.h>
 
-#import "CIAPI.h"
 
-@implementation CityPadViewController
+#import "CityPadMasterViewController.h"
+
+@implementation CityPadMasterViewController
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
-    // Release any cached data, images, etc that aren't in use.
+
+    if (currentView == DashboardView)
+        [dashboardController didReceiveMemoryWarning];
 }
 
 #pragma mark - View lifecycle
@@ -25,45 +28,136 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
     
-    CIAPIAuthenticator *auth = [[CIAPIAuthenticator alloc] init];
+    authenticator = [[CIAPIAuthenticator alloc] initWithDelegate:self];
     
-    BOOL r = [auth authenticateWithUserNameSynchronously:@"DM189301" password:@"password" error:nil];
+    loggingInContainer.hidden = YES;
+    loggingInContainer.frame = loginControlsContainer.frame;
     
-    if (r)
-        [[[UIAlertView alloc] initWithTitle:@"Logged in OK" message:@"You are logged in" delegate:nil cancelButtonTitle:@"Great!" otherButtonTitles:nil] show];
+    dashboardController = [[CityPadDashboardViewController alloc] initWithNibName:@"CityPadDashboardViewController" bundle:nil];
+    
+    //dashboardController.view.frame = self.view.frame;
+    
+    currentView = LoginView;
 }
 
 - (void)viewDidUnload
 {
+    [password release];
+    password = nil;
+    [loginButton release];
+    loginButton = nil;
+    [loginControlsContainer release];
+    loginControlsContainer = nil;
+    [loggingInContainer release];
+    loggingInContainer = nil;
+    
+    [dashboardController release];
+    
+    [loginView release];
+    loginView = nil;
+
     [super viewDidUnload];
-    // Release any retained subviews of the main view.
-    // e.g. self.myOutlet = nil;
 }
 
 - (void)viewWillAppear:(BOOL)animated
 {
+    if (currentView == DashboardView)
+        [dashboardController viewWillAppear:animated];
+    
     [super viewWillAppear:animated];
 }
 
 - (void)viewDidAppear:(BOOL)animated
 {
+    if (currentView == DashboardView)
+        [dashboardController viewDidAppear:animated];
+    
     [super viewDidAppear:animated];
 }
 
 - (void)viewWillDisappear:(BOOL)animated
 {
+    if (currentView == DashboardView)
+        [dashboardController viewWillDisappear:animated];
+    
 	[super viewWillDisappear:animated];
 }
 
 - (void)viewDidDisappear:(BOOL)animated
 {
+    if (currentView == DashboardView)
+        [dashboardController viewDidDisappear:animated];
+    
 	[super viewDidDisappear:animated];
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
+    if (currentView == DashboardView)
+        return [dashboardController shouldAutorotateToInterfaceOrientation:interfaceOrientation];
+    
     // Return YES for supported orientations
     return YES;
+}
+
+- (void)dealloc {
+    [userName release];
+    [password release];
+    [password release];
+    [loginButton release];
+    [loginControlsContainer release];
+    [loggingInContainer release];
+    [loginView release];
+    [super dealloc];
+}
+
+- (IBAction)loginPressed:(id)sender
+{
+    // Animate out the login controls, replacing them with the progress controller
+    loggingInContainer.hidden = NO;
+    [UIView transitionFromView:loginControlsContainer toView:loggingInContainer duration:0.5 options:UIViewAnimationOptionTransitionCrossDissolve | UIViewAnimationOptionShowHideTransitionViews completion:^(BOOL finished) {
+        
+        [authenticator authenticateWithUserName:userName.text password:password.text];
+    }];
+}
+
+- (void)authenticationSucceeded:(CIAPIAuthenticator*)authenticator client:(CIAPIClient*)client
+{
+    [userName resignFirstResponder];
+    [password resignFirstResponder];
+    
+    [dashboardController viewWillAppear:YES];
+    dashboardController.client = client;
+    
+    dashboardController.view.frame = CGRectMake(dashboardController.view.frame.origin.x + dashboardController.view.frame.size.width, dashboardController.view.frame.origin.y, dashboardController.view.frame.size.width, dashboardController.view.frame.size.height);
+    
+    [self.view addSubview:dashboardController.view];
+    
+    NSLog(@"Rect %@", NSStringFromCGRect(dashboardController.view.frame));
+
+    [UIView transitionWithView:dashboardController.view duration:0.5 options:UIViewAnimationOptionCurveEaseInOut animations:^{        
+        dashboardController.view.frame = CGRectMake(dashboardController.view.frame.origin.x - dashboardController.view.frame.size.width,
+                                                    dashboardController.view.frame.origin.y,
+                                                    dashboardController.view.frame.size.width,
+                                                    dashboardController.view.frame.size.height);
+        
+        loginView.frame = CGRectMake(loginView.frame.origin.x - loginView.frame.size.width, loginView.frame.origin.y,
+                                    loginView.frame.size.width, loginView.frame.size.height);
+    } completion:^(BOOL finished) {
+        [dashboardController viewDidAppear:YES];
+        currentView = DashboardView;
+        [loginView removeFromSuperview];
+    }];
+}
+
+- (void)authenticationFailed:(CIAPIAuthenticator*)authenticator error:(NSError*)error
+{
+    [userName resignFirstResponder];    
+    [password resignFirstResponder];
+    
+    [UIView transitionFromView:loggingInContainer toView:loginControlsContainer duration:0.5 options:UIViewAnimationOptionTransitionCrossDissolve | UIViewAnimationOptionShowHideTransitionViews completion:^(BOOL finished) {
+        [[[UIAlertView alloc] initWithTitle:@"Login error" message:@"Login failed. Check your username and password" delegate:nil cancelButtonTitle:@"Dismiss" otherButtonTitles:nil] show];
+    }];
 }
 
 @end

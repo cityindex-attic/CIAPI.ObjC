@@ -8,6 +8,30 @@
 
 #import <UIKit/UIKit.h>
 
-@interface CityPadViewController : UIViewController
+#import "CIAPI.h"
+
+#import "CityPadDashboardViewController.h"
+
+enum CurrentView
+{
+    LoginView,
+    DashboardView
+};
+
+@interface CityPadMasterViewController : UIViewController<CIAPIAuthenticatorDelegate> {
+    IBOutlet UITextField *userName;
+    IBOutlet UITextField *password;
+    IBOutlet UIButton *loginButton;
+    IBOutlet UIView *loginControlsContainer;
+    IBOutlet UIView *loggingInContainer;
+    IBOutlet UIView *loginView;
+    
+    @private
+    CIAPIAuthenticator *authenticator;
+    CityPadDashboardViewController *dashboardController;
+    enum CurrentView currentView;
+}
+
+- (IBAction)loginPressed:(id)sender;
 
 @end

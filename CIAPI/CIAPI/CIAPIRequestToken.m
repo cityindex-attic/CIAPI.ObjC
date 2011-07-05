@@ -14,7 +14,8 @@
 @synthesize underlyingRequest;
 @synthesize attemptCount;
 
-@synthesize callbackBlock;
+@synthesize callbackSuccessBlock;
+@synthesize callbackFailureBlock;
 @synthesize callbackDelegate;
 @synthesize requestObject;
 
@@ -32,24 +33,26 @@
     {
         requestObject = [objRequest retain];
         callbackDelegate = delegate;
-        callbackBlock = nil;
         attemptCount = 0;
     }
     
     return self;
 }
 
-- (CIAPIRequestToken*)initWithRequest:(CIAPIObjectRequest*)objRequest block:(CIAPIRequestCallback)block
+- (CIAPIRequestToken*)initWithRequest:(CIAPIObjectRequest*)objRequest successBlock:(CIAPIRequestSuccessCallback)successBlock
+                         failureBlock:(CIAPIRequestFailureCallback)failureBlock
 {
     NSAssert(objRequest != nil, @"Cannot create a request token for a nil request");
-    NSAssert(block != nil, @"Cannot create a request token for a nil callback block");
     
     self = [super init];
     
     if (self)
     {
         requestObject = [objRequest retain];
-        callbackBlock = [block retain];
+        if (successBlock)
+            callbackSuccessBlock = Block_copy(successBlock);
+        if (failureBlock)
+            callbackFailureBlock = Block_copy(failureBlock);
         callbackDelegate = nil;
         attemptCount = 0;
     }
@@ -61,7 +64,12 @@
 {
     [requestObject release];
     [callbackDelegate release];
-    [callbackBlock release];
+
+    if (callbackSuccessBlock)
+        Block_release(callbackSuccessBlock);
+    if (callbackFailureBlock)
+        Block_release(callbackFailureBlock);
+    
     [underlyingRequest release];
     
     [super dealloc];

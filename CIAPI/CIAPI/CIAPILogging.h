@@ -96,6 +96,7 @@ enum CIAPILogModule
 #define CIAPILog(level, messageStr, ...)
 #define CIAPILogFromModule(level, moduleNo, messageStr, ...)
 #define CIAPILogAbout(level, moduleNo, obj, messageStr, ...)
+#define CIAPILogGetForObject(obj) [NSArray array]
 #define CIAPILogErrorDictForObject(obj) [NSDictionary dictionary]
 
 #endif

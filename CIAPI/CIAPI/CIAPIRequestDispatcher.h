@@ -44,12 +44,14 @@ enum RequestFailureType
     NSMutableDictionary *connectionToTokenMapper;
     
     id<CIAPIRequestDispatcherDelegate> delegate;
+    dispatch_queue_t dispatchQueue;
 }
 
 @property (readonly) NSUInteger maximumRequestAttempts;
 @property (readonly) NSUInteger throttleSize;
 @property (readonly) NSTimeInterval throttlePeriod;
 @property (assign) id<CIAPIRequestDispatcherDelegate> delegate;
+@property (nonatomic, setter = setDispatchQueue:) dispatch_queue_t dispatchQueue;
 
 - (CIAPIRequestDispatcher*)initWithMaximumRetryAttempts:(NSUInteger)_maximumRequestAttempts throttleSize:(NSUInteger)_throttleSize
                                     throttlePeriod:(NSTimeInterval)_throttlePeriod;
@@ -62,14 +64,13 @@ enum RequestFailureType
 
 - (void)dispatchThread:(id)ignore;
 
+- (void)setDispatchQueue:(dispatch_queue_t)newQueue;
+
 @end
 
 @interface CIAPIRequestDispatcher ()
 
 - (void)dispatchSuccessfulRequest:(CIAPIRequestToken*)token result:(id)result;
 - (void)rescheduleFailedRequest:(CIAPIRequestToken*)token forLastError:(enum RequestFailureType)error;
-
-- (void)mainThreadSuccessDispatcher:(CIAPIRequestToken*)token;
-- (void)mainThreadFailureDispatcher:(CIAPIRequestToken*)token;
 
 @end

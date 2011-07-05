@@ -18,6 +18,7 @@
 
 @synthesize username;
 @synthesize sessionID;
+@synthesize dispatchQueue;
 
 - (CIAPIClient*)initWithUsername:(NSString*)_username sessionID:(NSString*)_sessionID
 {
@@ -29,8 +30,9 @@
         username = [_username retain];
         sessionID = [_sessionID retain];
 
-        requestDispatcher = [[CIAPIRequestDispatcher alloc] init];
+        self.dispatchQueue = dispatch_get_main_queue();
         
+        requestDispatcher = [[CIAPIRequestDispatcher alloc] initWithMaximumRetryAttempts:3 throttleSize:10 throttlePeriod:10.0];
         [requestDispatcher startDispatcher];
     }
     
@@ -102,8 +104,9 @@
         // We'll going to return this request token, preconfigured
         requestToken.responseObject = [requestCache cachedResponseForRequest:request];
         
-        // We'll first fire the response block on the runloop, so they get a chance to look at the token first
-        [self performSelectorOnMainThread:@selector(dispatchCacheCallback:) withObject:requestToken waitUntilDone:NO];
+        dispatch_async(dispatchQueue, ^{
+            [self _dispatchCacheCallback:requestToken];
+        });
         
         return requestToken;
     }
@@ -121,10 +124,11 @@
     return requestToken;
 }
 
-- (CIAPIRequestToken*)makeRequest:(CIAPIObjectRequest*)request block:(CIAPIRequestCallback)callbackBlock error:(NSError**)error
+- (CIAPIRequestToken*)makeRequest:(CIAPIObjectRequest*)request successBlock:(CIAPIRequestSuccessCallback)callbackSuccessBlock
+                     failureBlock:(CIAPIRequestFailureCallback)callbackFailureBlock error:(NSError**)error;
 {    
-    CIAPILogAbout(CIAPILogLevelNote, CIAPICoreClientModule, self, @"Asynchronous request %@ started, calling back to block %X", request, callbackBlock);
-    CIAPIRequestToken *requestToken = [[[CIAPIRequestToken alloc] initWithRequest:request block:callbackBlock ] autorelease];
+    CIAPILogAbout(CIAPILogLevelNote, CIAPICoreClientModule, self, @"Asynchronous request %@ started, calling back to success block %X and failure block %X", request, callbackSuccessBlock, callbackFailureBlock);
+    CIAPIRequestToken *requestToken = [[[CIAPIRequestToken alloc] initWithRequest:request successBlock:callbackSuccessBlock failureBlock:callbackFailureBlock] autorelease];
     CIAPILogAbout(CIAPILogLevelNote, CIAPICoreClientModule, requestToken, @"Request %@ created request token %X", request, requestToken);
  
     // See if we have a cached reply already setup
@@ -135,8 +139,9 @@
         // We're going return this request token, preconfigured
         requestToken.responseObject = [requestCache cachedResponseForRequest:request];
     
-        // We'll first fire the response block on the runloop, so they get a chance to look at the token first
-        [self performSelectorOnMainThread:@selector(dispatchCacheCallback:) withObject:requestToken waitUntilDone:NO];
+        dispatch_async(dispatchQueue, ^{
+            [self _dispatchCacheCallback:requestToken];
+        });
         
         return requestToken;        
     }
@@ -195,6 +200,17 @@
     NSAssert(FALSE, @"Streams are not yet implemented, pending CI API changes");
     
     return NO;
+}
+
+- (void)setDispatchQueue:(dispatch_queue_t)newQueue
+{
+    // Eventually, release the old dispatch queue (we do it on the queue in case we're the last holder, and it's running)
+    if (dispatchQueue)
+        dispatch_async(dispatchQueue, ^{ dispatch_release(dispatchQueue); } );
+    
+    dispatch_retain(newQueue);
+    dispatchQueue = newQueue;
+    requestDispatcher.dispatchQueue = newQueue;
 }
 
 /*
@@ -282,8 +298,8 @@
     
     if (token.callbackDelegate && [token.callbackDelegate respondsToSelector:@selector(requestSucceeded:result:)])
         [token.callbackDelegate requestSucceeded:token result:token.responseObject];
-    else if (token.callbackBlock)
-        token.callbackBlock(token, token.responseObject, nil);
+    else if (token.callbackSuccessBlock)
+        token.callbackSuccessBlock(token, token.responseObject);
 }
 
 - (void)willReportSuccessfulRequest:(CIAPIRequestToken *)token

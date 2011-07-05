@@ -8,6 +8,15 @@
 
 #import <UIKit/UIKit.h>
 
+#import "CIAPI.h"
+
+#import "CityPadDashboardViewController.h"
+
 @interface CityPadDashboardViewController : UIViewController
+{
+    CIAPIClient *client;
+}
+
+@property (retain) CIAPIClient *client;
 
 @end

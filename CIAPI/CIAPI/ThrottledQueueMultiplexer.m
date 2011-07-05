@@ -14,9 +14,15 @@
 
 @synthesize stopDequeue;
 
+- (ThrottledQueueMultiplexer*)init
+{
+    return [self initWithQueues:[NSArray array]];
+}
+
 - (ThrottledQueueMultiplexer*)initWithQueues:(NSArray*)queues;
 {
     self = [super init];
+    
     if (self)
     {
         CIAPILogAbout(CIAPILogLevelNote, CIAPIDispatcherModule, self, @"Creating queue multiplexer");
@@ -71,6 +77,7 @@
         [allQueues addObject:queue];
         
         // Fire the wait signal, as we might have an object waiting now
+        CIAPILogAbout(CIAPILogLevelNote, CIAPIDispatcherModule, self, @"Kicking multiplexed queue, as new queue created");
         [enqueueWaitCondition lock];
         [enqueueWaitCondition signal];
         [enqueueWaitCondition unlock];

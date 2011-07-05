@@ -11,7 +11,7 @@
 
 @implementation CIAPISaveWatchlistRequest 
 
-@synthesize Watchlist;
+//@synthesize Watchlist;
 
 
 @end

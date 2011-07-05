@@ -21,4 +21,4 @@
 
 // The minimum log entry severity level to NSLog if CIAPI_LOGGING_ALSO_NS_LOG is set
 // 1 (Notes and above) 2 (Warnings and above) 3 (Errors)
-#define CIAPI_LOGGING_ALSO_NS_LOG_MIN_LEVEL 2
+#define CIAPI_LOGGING_ALSO_NS_LOG_MIN_LEVEL 1

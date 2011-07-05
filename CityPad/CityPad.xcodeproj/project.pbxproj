@@ -7,6 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0701C99A13C3BBA6009B40CD /* CityPadMasterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0701C99913C3BBA6009B40CD /* CityPadMasterViewController.xib */; };
+		070BC51D13C3A2E000C17DA3 /* CityPadDashboardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 070BC51B13C3A2E000C17DA3 /* CityPadDashboardViewController.m */; };
+		070BC51E13C3A2E000C17DA3 /* CityPadDashboardViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 070BC51C13C3A2E000C17DA3 /* CityPadDashboardViewController.xib */; };
+		070BC52113C3B10D00C17DA3 /* HeaderBarDashboard.png in Resources */ = {isa = PBXBuildFile; fileRef = 070BC51F13C3B10D00C17DA3 /* HeaderBarDashboard.png */; };
+		070BC52213C3B10D00C17DA3 /* LiveUpdates.png in Resources */ = {isa = PBXBuildFile; fileRef = 070BC52013C3B10D00C17DA3 /* LiveUpdates.png */; };
+		070BC52713C3B2C200C17DA3 /* europeanunion.png in Resources */ = {isa = PBXBuildFile; fileRef = 070BC52413C3B2C200C17DA3 /* europeanunion.png */; };
+		070BC52813C3B2C200C17DA3 /* gb.png in Resources */ = {isa = PBXBuildFile; fileRef = 070BC52513C3B2C200C17DA3 /* gb.png */; };
+		070BC52913C3B2C200C17DA3 /* us.png in Resources */ = {isa = PBXBuildFile; fileRef = 070BC52613C3B2C200C17DA3 /* us.png */; };
 		07137D7113B8F258006CD1AA /* LoginButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 07137D7013B8F258006CD1AA /* LoginButton.png */; };
 		076A9C0013B8EF6C004E604C /* HeaderBar.png in Resources */ = {isa = PBXBuildFile; fileRef = 076A9BFF13B8EF6C004E604C /* HeaderBar.png */; };
 		076A9C0213B8EFE1004E604C /* LoginBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = 076A9C0113B8EFE1004E604C /* LoginBackground.png */; };
@@ -16,16 +24,23 @@
 		07FC282D13AE93E500C6C16B /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07FC282C13AE93E500C6C16B /* UIKit.framework */; };
 		07FC282F13AE93E500C6C16B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07FC282E13AE93E500C6C16B /* Foundation.framework */; };
 		07FC283113AE93E500C6C16B /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07FC283013AE93E500C6C16B /* CoreGraphics.framework */; };
-		07FC283713AE93E500C6C16B /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 07FC283513AE93E500C6C16B /* InfoPlist.strings */; };
 		07FC283913AE93E500C6C16B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 07FC283813AE93E500C6C16B /* main.m */; };
 		07FC283D13AE93E500C6C16B /* CityPadAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 07FC283C13AE93E500C6C16B /* CityPadAppDelegate.m */; };
-		07FC283F13AE93E500C6C16B /* CityPadViewController.h in Resources */ = {isa = PBXBuildFile; fileRef = 07FC283E13AE93E500C6C16B /* CityPadViewController.h */; };
-		07FC284113AE93E500C6C16B /* CityPadViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 07FC284013AE93E500C6C16B /* CityPadViewController.m */; };
-		07FC284413AE93E500C6C16B /* CityPadViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 07FC284213AE93E500C6C16B /* CityPadViewController.xib */; };
+		07FC283F13AE93E500C6C16B /* CityPadMasterViewController.h in Resources */ = {isa = PBXBuildFile; fileRef = 07FC283E13AE93E500C6C16B /* CityPadMasterViewController.h */; };
+		07FC284113AE93E500C6C16B /* CityPadMasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 07FC284013AE93E500C6C16B /* CityPadMasterViewController.m */; };
 		07FC285113AE943500C6C16B /* libCIAPI.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 07FC285013AE943500C6C16B /* libCIAPI.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0701C99913C3BBA6009B40CD /* CityPadMasterViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CityPadMasterViewController.xib; sourceTree = "<group>"; };
+		070BC51A13C3A2E000C17DA3 /* CityPadDashboardViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CityPadDashboardViewController.h; sourceTree = "<group>"; };
+		070BC51B13C3A2E000C17DA3 /* CityPadDashboardViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CityPadDashboardViewController.m; sourceTree = "<group>"; };
+		070BC51C13C3A2E000C17DA3 /* CityPadDashboardViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CityPadDashboardViewController.xib; sourceTree = "<group>"; };
+		070BC51F13C3B10D00C17DA3 /* HeaderBarDashboard.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = HeaderBarDashboard.png; path = CityPad/Assets/HeaderBarDashboard.png; sourceTree = "<group>"; };
+		070BC52013C3B10D00C17DA3 /* LiveUpdates.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = LiveUpdates.png; path = CityPad/Assets/LiveUpdates.png; sourceTree = "<group>"; };
+		070BC52413C3B2C200C17DA3 /* europeanunion.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = europeanunion.png; path = CityPad/Assets/Flags/europeanunion.png; sourceTree = "<group>"; };
+		070BC52513C3B2C200C17DA3 /* gb.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = gb.png; path = CityPad/Assets/Flags/gb.png; sourceTree = "<group>"; };
+		070BC52613C3B2C200C17DA3 /* us.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = us.png; path = CityPad/Assets/Flags/us.png; sourceTree = "<group>"; };
 		07137D7013B8F258006CD1AA /* LoginButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = LoginButton.png; path = CityPad/Assets/LoginButton.png; sourceTree = "<group>"; };
 		076A9BFF13B8EF6C004E604C /* HeaderBar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = HeaderBar.png; path = CityPad/Assets/HeaderBar.png; sourceTree = "<group>"; };
 		076A9C0113B8EFE1004E604C /* LoginBackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = LoginBackground.png; path = CityPad/Assets/LoginBackground.png; sourceTree = "<group>"; };
@@ -37,14 +52,12 @@
 		07FC282E13AE93E500C6C16B /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		07FC283013AE93E500C6C16B /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		07FC283413AE93E500C6C16B /* CityPad-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "CityPad-Info.plist"; sourceTree = "<group>"; };
-		07FC283613AE93E500C6C16B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		07FC283813AE93E500C6C16B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		07FC283A13AE93E500C6C16B /* CityPad-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CityPad-Prefix.pch"; sourceTree = "<group>"; };
 		07FC283B13AE93E500C6C16B /* CityPadAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CityPadAppDelegate.h; sourceTree = "<group>"; };
 		07FC283C13AE93E500C6C16B /* CityPadAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CityPadAppDelegate.m; sourceTree = "<group>"; };
-		07FC283E13AE93E500C6C16B /* CityPadViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CityPadViewController.h; sourceTree = "<group>"; };
-		07FC284013AE93E500C6C16B /* CityPadViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CityPadViewController.m; sourceTree = "<group>"; };
-		07FC284313AE93E500C6C16B /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/CityPadViewController.xib; sourceTree = "<group>"; };
+		07FC283E13AE93E500C6C16B /* CityPadMasterViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CityPadMasterViewController.h; sourceTree = "<group>"; };
+		07FC284013AE93E500C6C16B /* CityPadMasterViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CityPadMasterViewController.m; sourceTree = "<group>"; };
 		07FC285013AE943500C6C16B /* libCIAPI.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libCIAPI.a; path = "../CIAPI/build/Release-iphoneos/libCIAPI.a"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -66,9 +79,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		070BC52313C3B2B200C17DA3 /* Flags */ = {
+			isa = PBXGroup;
+			children = (
+				070BC52413C3B2C200C17DA3 /* europeanunion.png */,
+				070BC52513C3B2C200C17DA3 /* gb.png */,
+				070BC52613C3B2C200C17DA3 /* us.png */,
+			);
+			name = Flags;
+			sourceTree = "<group>";
+		};
 		076A9BFE13B8EF58004E604C /* Assets */ = {
 			isa = PBXGroup;
 			children = (
+				070BC52313C3B2B200C17DA3 /* Flags */,
+				070BC51F13C3B10D00C17DA3 /* HeaderBarDashboard.png */,
+				070BC52013C3B10D00C17DA3 /* LiveUpdates.png */,
 				07137D7013B8F258006CD1AA /* LoginButton.png */,
 				076A9C0113B8EFE1004E604C /* LoginBackground.png */,
 				076A9BFF13B8EF6C004E604C /* HeaderBar.png */,
@@ -113,9 +139,12 @@
 			children = (
 				07FC283B13AE93E500C6C16B /* CityPadAppDelegate.h */,
 				07FC283C13AE93E500C6C16B /* CityPadAppDelegate.m */,
-				07FC283E13AE93E500C6C16B /* CityPadViewController.h */,
-				07FC284013AE93E500C6C16B /* CityPadViewController.m */,
-				07FC284213AE93E500C6C16B /* CityPadViewController.xib */,
+				07FC283E13AE93E500C6C16B /* CityPadMasterViewController.h */,
+				07FC284013AE93E500C6C16B /* CityPadMasterViewController.m */,
+				0701C99913C3BBA6009B40CD /* CityPadMasterViewController.xib */,
+				070BC51A13C3A2E000C17DA3 /* CityPadDashboardViewController.h */,
+				070BC51B13C3A2E000C17DA3 /* CityPadDashboardViewController.m */,
+				070BC51C13C3A2E000C17DA3 /* CityPadDashboardViewController.xib */,
 				07FC283313AE93E500C6C16B /* Supporting Files */,
 			);
 			path = CityPad;
@@ -125,7 +154,6 @@
 			isa = PBXGroup;
 			children = (
 				07FC283413AE93E500C6C16B /* CityPad-Info.plist */,
-				07FC283513AE93E500C6C16B /* InfoPlist.strings */,
 				07FC283813AE93E500C6C16B /* main.m */,
 				07FC283A13AE93E500C6C16B /* CityPad-Prefix.pch */,
 			);
@@ -179,12 +207,17 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				07FC283713AE93E500C6C16B /* InfoPlist.strings in Resources */,
-				07FC283F13AE93E500C6C16B /* CityPadViewController.h in Resources */,
-				07FC284413AE93E500C6C16B /* CityPadViewController.xib in Resources */,
+				07FC283F13AE93E500C6C16B /* CityPadMasterViewController.h in Resources */,
 				076A9C0013B8EF6C004E604C /* HeaderBar.png in Resources */,
 				076A9C0213B8EFE1004E604C /* LoginBackground.png in Resources */,
 				07137D7113B8F258006CD1AA /* LoginButton.png in Resources */,
+				070BC51E13C3A2E000C17DA3 /* CityPadDashboardViewController.xib in Resources */,
+				070BC52113C3B10D00C17DA3 /* HeaderBarDashboard.png in Resources */,
+				070BC52213C3B10D00C17DA3 /* LiveUpdates.png in Resources */,
+				070BC52713C3B2C200C17DA3 /* europeanunion.png in Resources */,
+				070BC52813C3B2C200C17DA3 /* gb.png in Resources */,
+				070BC52913C3B2C200C17DA3 /* us.png in Resources */,
+				0701C99A13C3BBA6009B40CD /* CityPadMasterViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -197,30 +230,12 @@
 			files = (
 				07FC283913AE93E500C6C16B /* main.m in Sources */,
 				07FC283D13AE93E500C6C16B /* CityPadAppDelegate.m in Sources */,
-				07FC284113AE93E500C6C16B /* CityPadViewController.m in Sources */,
+				07FC284113AE93E500C6C16B /* CityPadMasterViewController.m in Sources */,
+				070BC51D13C3A2E000C17DA3 /* CityPadDashboardViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXVariantGroup section */
-		07FC283513AE93E500C6C16B /* InfoPlist.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				07FC283613AE93E500C6C16B /* en */,
-			);
-			name = InfoPlist.strings;
-			sourceTree = "<group>";
-		};
-		07FC284213AE93E500C6C16B /* CityPadViewController.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				07FC284313AE93E500C6C16B /* en */,
-			);
-			name = CityPadViewController.xib;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		07FC284513AE93E500C6C16B /* Debug */ = {
@@ -279,6 +294,7 @@
 				GCC_PREFIX_HEADER = "CityPad/CityPad-Prefix.pch";
 				HEADER_SEARCH_PATHS = ../CIAPI/CIAPI/;
 				INFOPLIST_FILE = "CityPad/CityPad-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/../../../../Library/Developer/Xcode/DerivedData/CIAPI-brcduccruwgmebaoxkzcnuyjccsy/Build/Products/Debug-iphoneos\"",
@@ -302,6 +318,7 @@
 				GCC_PREFIX_HEADER = "CityPad/CityPad-Prefix.pch";
 				HEADER_SEARCH_PATHS = ../CIAPI/CIAPI/;
 				INFOPLIST_FILE = "CityPad/CityPad-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/../../../../Library/Developer/Xcode/DerivedData/CIAPI-brcduccruwgmebaoxkzcnuyjccsy/Build/Products/Debug-iphoneos\"",

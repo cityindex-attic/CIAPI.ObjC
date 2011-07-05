@@ -99,11 +99,11 @@ static CIAPILogging *logSingleton = nil;
     @synchronized (logEntry)
     {
         [logEntries addObject:logEntry];
+        
+        if (CIAPI_LOGGING_ALSO_NS_LOG && logEntry.logLevel >= CIAPI_LOGGING_ALSO_NS_LOG_MIN_LEVEL)
+            [logEntry dumpToNSLog];
     }
-    
-    if (CIAPI_LOGGING_ALSO_NS_LOG && logEntry.logLevel >= CIAPI_LOGGING_ALSO_NS_LOG_MIN_LEVEL)
-        [logEntry dumpToNSLog];
-    
+
     [logEntry release];
     [formattedMessage release];
 }

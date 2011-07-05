@@ -8,7 +8,7 @@
 
 #import "CityPadAppDelegate.h"
 
-#import "CityPadViewController.h"
+#import "CityPadMasterViewController.h"
 
 @implementation CityPadAppDelegate
 
@@ -19,7 +19,10 @@
 {
     // Override point for customization after application launch.
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    self.viewController = [[CityPadViewController alloc] initWithNibName:@"CityPadViewController" bundle:nil]; 
+    self.viewController = [[CityPadMasterViewController alloc] initWithNibName:@"CityPadMasterViewController" bundle:nil];
+    
+    NSLog(@"Path %@", [[NSBundle mainBundle] bundlePath]);
+    
     self.window.rootViewController = self.viewController;
     [self.window makeKeyAndVisible];
     return YES;

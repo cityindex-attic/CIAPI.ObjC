@@ -12,7 +12,8 @@
 
 @class CIAPIRequestToken;
 
-typedef void(^CIAPIRequestCallback)(CIAPIRequestToken *request, id response, NSError *error);
+typedef void(^CIAPIRequestSuccessCallback)(CIAPIRequestToken *request, id response);
+typedef void(^CIAPIRequestFailureCallback)(CIAPIRequestToken *request, NSError* error);
 
 enum CIAPIRequestType
 {

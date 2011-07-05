@@ -23,6 +23,14 @@
 @synthesize throttleSize;
 @synthesize throttlePeriod;
 @synthesize delegate;
+@synthesize dispatchQueue;
+
+- (id)init
+{
+    NSAssert(FALSE, @"Please use initWithMaximumRetryAttempts:throttleSize:throttlePeriod:");
+    
+    return nil;
+}
 
 - (CIAPIRequestDispatcher*)initWithMaximumRetryAttempts:(NSUInteger)_maximumRequestAttempts throttleSize:(NSUInteger)_throttleSize
                                     throttlePeriod:(NSTimeInterval)_throttlePeriod;
@@ -45,6 +53,8 @@
         
         // Create one global queue
         [namedQueueMap setObject:[ThrottledQueue throttledQueueWithLimit:throttleSize overPeriod:throttlePeriod] forKey:@"global"];
+        
+        self.dispatchQueue = dispatch_get_main_queue();
     }
     
     return self;
@@ -77,6 +87,7 @@
                           @"Creating a new request queue for throttle scope %@", token.requestObject.throttleScope);
             queue = [ThrottledQueue throttledQueueWithLimit:throttleSize overPeriod:throttlePeriod];
             [namedQueueMap setObject:queue forKey:token.requestObject.throttleScope];
+            [queueMultiplexer addQueue:queue];
         }
     }
     
@@ -148,7 +159,9 @@
         CIAPILogAbout(CIAPILogLevelNote, CIAPIDispatcherModule, requestObject, @"Actually dispatching token %X", requestObject);
         
 
-        // Send the request        
+        // Send the request
+        
+        // BUGBUG: urlConnection doesn't (and cannot) implement NSCopying. We need to change the connection to token mapping mechanism (dual arrays, I guess)
         CIAPIURLConnection *urlConnection = [CIAPIURLConnection CIAPIURLConnectionForRequest:requestObject.underlyingRequest delegate:self];        
         [connectionToTokenMapper setObject:requestObject forKey:urlConnection];
         [urlConnection start];
@@ -158,6 +171,16 @@
     }
     
     [self release];
+}
+
+- (void)setDispatchQueue:(dispatch_queue_t)newQueue
+{
+    // Eventually, release the old dispatch queue (we do it on the queue in case we're the last holder, and it's running)
+    if (dispatchQueue)
+        dispatch_async(dispatchQueue, ^{ dispatch_release(dispatchQueue); } );
+    
+    dispatch_retain(newQueue);
+    dispatchQueue = newQueue;
 }
 
 /*
@@ -174,7 +197,16 @@
         [delegate willReportSuccessfulRequest:token];
     
     // Dispatch onto the main thread
-    [self performSelectorOnMainThread:@selector(mainThreadSuccessDispatcher:) withObject:token waitUntilDone:NO];
+    dispatch_async(dispatchQueue, ^{
+        CIAPILogAbout(CIAPILogLevelWarn, CIAPIDispatcherModule, token, @"Main thread callback happening for token %X", token);
+        
+        if (token.callbackDelegate)
+            [token.callbackDelegate requestSucceeded:token result:token.responseObject];
+        else if (token.callbackSuccessBlock)
+            token.callbackSuccessBlock(token, token.responseObject);
+        else
+            NSAssert(FALSE, @"Trying to dispatch a result, but was given neither delegate or block!");
+    });
 }
 
 - (void)rescheduleFailedRequest:(CIAPIRequestToken*)token forLastError:(enum RequestFailureType)failureType
@@ -190,36 +222,19 @@
         if ([delegate respondsToSelector:@selector(willDispatchFailedRequest:)])
             [delegate willReportFailedRequest:token];
         
-        [self performSelectorOnMainThread:@selector(mainThreadFailureDispatcher:) withObject:token waitUntilDone:NO];
+        dispatch_async(dispatchQueue, ^{
+            CIAPILogAbout(CIAPILogLevelWarn, CIAPIDispatcherModule, token, @"Main thread callback happening for token %X", token);
+            
+            if (token.callbackDelegate)
+                [token.callbackDelegate requestFailed:token error:token.responseError];
+            else if (token.callbackFailureBlock)
+                token.callbackFailureBlock(token, token.responseError);
+            else
+                NSAssert(FALSE, @"Trying to dispatch a result, but was given neither delegate or block!");
+            
+            // TODO: Remove the token from the token mapping dictionary (the only thing keeping it alive)            
+        });
     }
-}
-
-- (void)mainThreadSuccessDispatcher:(CIAPIRequestToken*)token
-{
-    CIAPILogAbout(CIAPILogLevelWarn, CIAPIDispatcherModule, token, @"Main thread callback happening for token %X", token);
-    
-    if (token.callbackDelegate)
-        [token.callbackBlock requestSucceeded:token result:token.responseObject];
-    else if (token.callbackBlock)
-        token.callbackBlock(token, token.responseObject, nil);
-    else
-        NSAssert(FALSE, @"Trying to dispatch a result, but was given neither delegate or block!");
-    
-    // TODO: Remove the token from the token mapping dictionary (the only thing keeping it alive)
-}
-
-- (void)mainThreadFailureDispatcher:(CIAPIRequestToken*)token
-{
-    CIAPILogAbout(CIAPILogLevelWarn, CIAPIDispatcherModule, token, @"Main thread callback happening for token %X", token);
-    
-    if (token.callbackDelegate)
-        [token.callbackDelegate requestFailed:token error:token.responseError];
-    else if (token.callbackBlock)
-        token.callbackBlock(token, nil, token.responseError);
-    else
-        NSAssert(FALSE, @"Trying to dispatch a result, but was given neither delegate or block!");
-    
-    // TODO: Remove the token from the token mapping dictionary (the only thing keeping it alive)
 }
 
 /*

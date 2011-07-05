@@ -14,7 +14,8 @@
 
 @class CIAPIAuthenticator;
 
-typedef void(^CIAPIAuthenticatorCallback)(CIAPIAuthenticator *authenticator, NSError *error);
+typedef void(^CIAPIAuthenticatorSuccessCallback)(CIAPIAuthenticator *authenticator, CIAPIClient *client);
+typedef void(^CIAPIAuthenticatorFailureCallback)(CIAPIAuthenticator *authenticator, NSError *error);
 
 @interface CIAPIAuthenticator : NSObject<CIAPIURLConnectionDelegate> {
     CIAPIClient *client;
@@ -22,6 +23,9 @@ typedef void(^CIAPIAuthenticatorCallback)(CIAPIAuthenticator *authenticator, NSE
     @private
     CIAPIURLConnection *urlConnection;
     NSString *lastUsername;
+    
+    CIAPIAuthenticatorSuccessCallback successBlock;
+    CIAPIAuthenticatorFailureCallback failureBlock;
 }
 
 /** Returns the current authenticated client provided by this authenticator */
@@ -31,7 +35,11 @@ typedef void(^CIAPIAuthenticatorCallback)(CIAPIAuthenticator *authenticator, NSE
 @property (assign) id<CIAPIAuthenticatorDelegate> delegate;
 
 /** Gets or sets the block that will be invoked for responses to asynchronous authentication */
-@property (copy) CIAPIAuthenticatorCallback block;
+@property (copy) CIAPIAuthenticatorSuccessCallback successBlock;
+@property (copy) CIAPIAuthenticatorFailureCallback failureBlock;
+
+- (id)initWithDelegate:(id<CIAPIAuthenticatorDelegate>)_delegate;
+- (id)initWithSuccessBlock:(CIAPIAuthenticatorSuccessCallback)_successBlock failureBlock:(CIAPIAuthenticatorFailureCallback)_failureBlock;
 
 /** Synchronously attempts to authenticate with the CIAPI servers using the given credientials.
  

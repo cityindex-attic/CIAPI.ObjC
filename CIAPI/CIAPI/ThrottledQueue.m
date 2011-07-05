@@ -35,6 +35,13 @@
 @synthesize throttlePeriod;
 @synthesize delegate;
 
+- (id)init
+{
+    NSAssert(FALSE, @"Please use initWithLimit:overPeriod");
+    
+    return nil;
+}
+
 - (ThrottledQueue*)initWithLimit:(NSUInteger)limit overPeriod:(NSTimeInterval)period
 {
     self = [super init];

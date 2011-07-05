@@ -73,7 +73,8 @@
 - (void)connectionDidFinishLoading:(NSURLConnection *)connection
 {
     CIAPILogAbout(CIAPILogLevelNote, CIAPIHTTPModule, self, @"CIAPIURLConnection finished OK");
-    if ([delegate respondsToSelector:@selector(requestSucceeded:response:data:)])
+    
+    if ([delegate respondsToSelector:@selector(requestSucceeded:request:response:data:)])
         [delegate requestSucceeded:self request:request response:(NSHTTPURLResponse*)response data:allData] ;
 }
 
@@ -82,7 +83,7 @@
     CIAPILogAbout(CIAPILogLevelWarn, CIAPIHTTPModule, self, @"CIAPIURLConnection failed with error %@", error);
     
     // TODO: Cut down error space to just CIAPI errors for people
-    if ([delegate respondsToSelector:@selector(requestFailed:response:error:)])
+    if ([delegate respondsToSelector:@selector(requestFailed:request:response:error:)])
         [delegate requestFailed:self request:request response:(NSHTTPURLResponse*)response error:error];
 }
 
@@ -124,7 +125,7 @@
 
 - (NSURLRequest *)connection:(NSURLConnection *)connection willSendRequest:(NSURLRequest *)_request redirectResponse:(NSURLResponse *)redirectResponse
 {
-    return request;
+    return _request;
 }
 
 - (BOOL)connectionShouldUseCredentialStorage:(NSURLConnection *)connection
