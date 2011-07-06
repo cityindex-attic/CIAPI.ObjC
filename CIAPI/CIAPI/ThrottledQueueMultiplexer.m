@@ -109,6 +109,7 @@
     
     while (dequeuedObj == nil && !stopDequeue)
     {
+        [enqueueWaitCondition lock];        
         @synchronized (allQueues)
         {
             for (ThrottledQueue *queue in allQueues)
@@ -124,9 +125,9 @@
                     waitTime = thisQueuesWaitTime;
             }
         }
-        
+                
         if (dequeuedObj == nil)
-        {            
+        {
             if (waitTime != THROTTLED_QUEUE_CANNOT_WAIT_TIME)
             {
                 // If we know how long we'll have to wait for the next object, just wait
@@ -138,13 +139,12 @@
             {
                 // Otherwise, we need to wait for the notification that an object has been enqueued
                 CIAPILogAbout(CIAPILogLevelNote, CIAPIDispatcherModule, self, @"Multiplexed queue is sleeping until enqueue condition is met");
-                
-                [enqueueWaitCondition lock];
-                [enqueueWaitCondition wait];
-                [enqueueWaitCondition unlock];
+                                
+                [enqueueWaitCondition wait];                
             }
                 
         }
+        [enqueueWaitCondition unlock];
     }
     
     if (stopDequeue)

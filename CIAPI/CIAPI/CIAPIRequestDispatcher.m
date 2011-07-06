@@ -162,7 +162,7 @@
         
 
         // Send the request
-        CIAPIURLConnection *urlConnection = [CIAPIURLConnection CIAPIURLConnectionForRequest:requestToken.underlyingRequest delegate:self];        
+        CIAPIURLConnection *urlConnection = [CIAPIURLConnection CIAPIURLConnectionForRequest:requestToken.underlyingRequest delegate:self];
         
         // Invariant: Both lists always have the same number of items
         @synchronized (requestList)

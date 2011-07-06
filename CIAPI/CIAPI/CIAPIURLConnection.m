@@ -41,7 +41,8 @@
     {        
         request = [_request retain];
         
-        connection = [[NSURLConnection connectionWithRequest:request delegate:self] retain];
+        connection = [[NSURLConnection alloc] initWithRequest:request delegate:self startImmediately:NO];
+        [connection scheduleInRunLoop:[NSRunLoop mainRunLoop] forMode:NSDefaultRunLoopMode];
     }
     
     return self;
@@ -61,11 +62,14 @@
 
 - (void)start
 {
+    CIAPILogAbout(CIAPILogLevelNote, CIAPIHTTPModule, self, @"Sending HTTP request to %@", [request URL]);
     [connection start];
 }
 
 - (void)cancel
 {
+    CIAPILogAbout(CIAPILogLevelNote, CIAPIHTTPModule, self, @"Cancelling HTTP request to %@", [request URL]);
+    
     [connection cancel];
 }
 
@@ -89,27 +93,35 @@
 
 - (void)connection:(NSURLConnection *)connection didReceiveData:(NSData *)data
 {
+    CIAPILogAbout(CIAPILogLevelNote, CIAPIHTTPModule, self, @"Data chunk of length %u received", [data length]);
+    
     [allData appendData:data];
 }
 
 - (void)connection:(NSURLConnection *)connection didReceiveResponse:(NSURLResponse *)_response
 {
+    CIAPILogAbout(CIAPILogLevelNote, CIAPIHTTPModule, self, @"Got initial response from request");
+    
     response = [_response retain];
     allData = [[NSMutableData alloc] init];
 }
 
 - (BOOL)connection:(NSURLConnection *)connection canAuthenticateAgainstProtectionSpace:(NSURLProtectionSpace *)protectionSpace
 {
+    CIAPILogAbout(CIAPILogLevelError, CIAPIHTTPModule, self, @"Was asked to authenticate, but I declined. Sorry!");
+    
     return NO;
 }
 
 - (void)connection:(NSURLConnection *)connection didCancelAuthenticationChallenge:(NSURLAuthenticationChallenge *)challenge
 {
+    CIAPILogAbout(CIAPILogLevelWarn, CIAPIHTTPModule, self, @"Cancelled authentication challenge");
     // We don't care, at the moment
 }
 
 - (void)connection:(NSURLConnection *)connection didReceiveAuthenticationChallenge:(NSURLAuthenticationChallenge *)challenge
 {
+    CIAPILogAbout(CIAPILogLevelWarn, CIAPIHTTPModule, self, @"Received an authentication challenge!");
     // We don't care, at the moment
 }
 
@@ -120,11 +132,13 @@
 
 - (NSCachedURLResponse *)connection:(NSURLConnection *)connection willCacheResponse:(NSCachedURLResponse *)cachedResponse
 {
+    CIAPILogAbout(CIAPILogLevelNote, CIAPIHTTPModule, self, @"Declining to cache HTTP response");
     return nil;
 }
 
 - (NSURLRequest *)connection:(NSURLConnection *)connection willSendRequest:(NSURLRequest *)_request redirectResponse:(NSURLResponse *)redirectResponse
 {
+    CIAPILogAbout(CIAPILogLevelNote, CIAPIHTTPModule, self, @"Accepting redirect to HTTP request to %@", [_request URL]);
     return _request;
 }
 

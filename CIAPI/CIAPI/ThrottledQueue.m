@@ -48,7 +48,7 @@
     
     if (self)
     {
-        CIAPILogAbout(CIAPILogLevelNote, CIAPIDispatcherModule, self, @"Creating throttled queue with limit %u over period %d", limit, period);
+        CIAPILogAbout(CIAPILogLevelNote, CIAPIDispatcherModule, self, @"Creating throttled queue with limit %u over period %f", limit, period);
         
         NSAssert(limit > 0, @"Throttles must have positive, non-zero limits");
         NSAssert(period > 0.0, @"Throttles must have positive, non-zero periods");
@@ -91,7 +91,7 @@
 
 - (void)enqueueObject:(id)object withMinimumWaitTime:(NSTimeInterval)minimumWaitTime
 {
-    CIAPILogAbout(CIAPILogLevelNote, CIAPIDispatcherModule, self, @"Adding item %@ to throttled queue with minimum wait time %d", object, minimumWaitTime);
+    CIAPILogAbout(CIAPILogLevelNote, CIAPIDispatcherModule, self, @"Adding item %@ to throttled queue with minimum wait time %f", object, minimumWaitTime);
     
     EnqueuedThrottledObject *obj = [[EnqueuedThrottledObject alloc] init];
     obj.object = object;
@@ -139,7 +139,7 @@
         if (waitTime == THROTTLED_QUEUE_CANNOT_WAIT_TIME)
             return nil;
         
-        CIAPILogAbout(CIAPILogLevelNote, CIAPIDispatcherModule, self, @"Dequeuing item synchronously, so sleeping %d", waitTime);
+        CIAPILogAbout(CIAPILogLevelNote, CIAPIDispatcherModule, self, @"Dequeuing item synchronously, so sleeping %f", waitTime);
         [NSThread sleepForTimeInterval:waitTime];
     }
     
@@ -183,7 +183,7 @@
                     *waitTime = timeToWait;
                 
                 CIAPILogAbout(CIAPILogLevelNote, CIAPIDispatcherModule, self,
-                              @"Dequeuing item from throttled queue failed due to throttled limit (wait %d)", timeToWait);
+                              @"Dequeuing item from throttled queue failed due to throttle limit (wait %d)", timeToWait);
                 
                 return nil;
             }

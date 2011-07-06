@@ -72,6 +72,9 @@
     
     [underlyingRequest release];
     
+    [responseError release];
+    [responseObject release];
+    
     [super dealloc];
 }
 

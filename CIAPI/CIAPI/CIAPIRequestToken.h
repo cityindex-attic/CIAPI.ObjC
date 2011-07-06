@@ -34,8 +34,8 @@
 @property (readonly) id<CIAPIRequestDelegate> callbackDelegate;
 @property (readonly) CIAPIObjectRequest *requestObject;
 
-@property (assign) NSError *responseError;
-@property (assign) id responseObject;
+@property (retain) NSError *responseError;
+@property (retain) id responseObject;
 
 - (CIAPIRequestToken*)initWithRequest:(CIAPIObjectRequest*)objRequest delegate:(id<CIAPIRequestDelegate>)delegate;
 - (CIAPIRequestToken*)initWithRequest:(CIAPIObjectRequest*)objRequest successBlock:(CIAPIRequestSuccessCallback)successBlock
