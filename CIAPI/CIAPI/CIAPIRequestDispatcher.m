@@ -48,7 +48,8 @@
         throttlePeriod = _throttlePeriod;
         
         namedQueueMap = [[NSMutableDictionary alloc] init];
-        connectionToTokenMapper = [[NSMutableDictionary alloc] init];
+        requestList = [[NSMutableArray alloc] init];        
+        connectionList = [[NSMutableArray alloc] init];
         queueMultiplexer = [[ThrottledQueueMultiplexer alloc] init];
         
         // Create one global queue
@@ -65,7 +66,8 @@
     CIAPILogAbout(CIAPILogLevelNote, CIAPIDispatcherModule, self, @"Destroying RequestDispatcher");
     
     [namedQueueMap release];
-    [connectionToTokenMapper release];
+    [requestList release];
+    [connectionList release];
     [queueMultiplexer release];
     
     [super dealloc];
@@ -141,7 +143,7 @@
     
     while (dispatcherShouldRun)
     {
-        CIAPIRequestToken *requestObject = [queueMultiplexer dequeueObject];
+        CIAPIRequestToken *requestToken = [queueMultiplexer dequeueObject];
         
         // We might have broken out of the multiplexer due to a stop request
         if (!dispatcherShouldRun)
@@ -150,23 +152,28 @@
             break;
         }
         
-        if (!requestObject)
+        if (!requestToken)
         {
             // The multiplexer has quit, hopefully due to user request, so we'll spin until we're asked to do the same
             continue;
         }
         
-        CIAPILogAbout(CIAPILogLevelNote, CIAPIDispatcherModule, requestObject, @"Actually dispatching token %X", requestObject);
+        CIAPILogAbout(CIAPILogLevelNote, CIAPIDispatcherModule, requestToken, @"Actually dispatching token %X", requestToken);
         
 
         // Send the request
+        CIAPIURLConnection *urlConnection = [CIAPIURLConnection CIAPIURLConnectionForRequest:requestToken.underlyingRequest delegate:self];        
         
-        // BUGBUG: urlConnection doesn't (and cannot) implement NSCopying. We need to change the connection to token mapping mechanism (dual arrays, I guess)
-        CIAPIURLConnection *urlConnection = [CIAPIURLConnection CIAPIURLConnectionForRequest:requestObject.underlyingRequest delegate:self];        
-        [connectionToTokenMapper setObject:requestObject forKey:urlConnection];
+        // Invariant: Both lists always have the same number of items
+        @synchronized (requestList)
+        {
+            [requestList addObject:requestToken];
+            [connectionList addObject:urlConnection];
+        }
+        
         [urlConnection start];
 
-        requestObject.attemptCount = requestObject.attemptCount++;
+        requestToken.attemptCount = requestToken.attemptCount++;
 
     }
     
@@ -230,9 +237,7 @@
             else if (token.callbackFailureBlock)
                 token.callbackFailureBlock(token, token.responseError);
             else
-                NSAssert(FALSE, @"Trying to dispatch a result, but was given neither delegate or block!");
-            
-            // TODO: Remove the token from the token mapping dictionary (the only thing keeping it alive)            
+                NSAssert(FALSE, @"Trying to dispatch a result, but was given neither delegate or block!");            
         });
     }
 }
@@ -242,12 +247,19 @@
  */
 
 - (void)requestSucceeded:(CIAPIURLConnection*)connection request:(NSURLRequest*)request response:(NSHTTPURLResponse*)response data:(NSData*)data
-{
-    CIAPIRequestToken *token = [connectionToTokenMapper objectForKey:connection];
+{    
+    CIAPIRequestToken *token = nil;
+    @synchronized (requestList)
+    {        
+        int connectionIndex = [connectionList indexOfObject:connection];
+        token = [[[requestList objectAtIndex:connectionIndex] retain] autorelease];
+        
+        [requestList removeObjectAtIndex:connectionIndex];
+        [connectionList removeObjectAtIndex:connectionIndex];        
+    }
+    
     if (!token)
         NSAssert(FALSE, @"We got a response for a request we never issued?");
-    
-    [connectionToTokenMapper removeObjectForKey:connection];
     
     if ([response statusCode] == 200)
     {
@@ -269,11 +281,15 @@
 
 - (void)requestFailed:(CIAPIURLConnection*)connection request:(NSURLRequest*)request response:(NSHTTPURLResponse*)response error:(NSError*)error
 {
-    CIAPIRequestToken *token = [connectionToTokenMapper objectForKey:connection];    
-    if (!token)
-        NSAssert(FALSE, @"We got a response for a request we never issued?");
-    
-    [connectionToTokenMapper removeObjectForKey:connection];
+    CIAPIRequestToken *token = nil;
+    @synchronized (requestList)
+    {        
+        int connectionIndex = [connectionList indexOfObject:connection];
+        token = [[[requestList objectAtIndex:connectionIndex] retain] autorelease];
+        
+        [requestList removeObjectAtIndex:connectionIndex];
+        [connectionList removeObjectAtIndex:connectionIndex];        
+    }
     
     [self rescheduleFailedRequest:token forLastError:RequestUnknownError];
 }

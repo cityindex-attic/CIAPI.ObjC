@@ -41,7 +41,9 @@ enum RequestFailureType
     NSMutableDictionary *namedQueueMap;
     ThrottledQueueMultiplexer *queueMultiplexer;    
 
-    NSMutableDictionary *connectionToTokenMapper;
+    // We store connections and their associated request in a pair of arrays, with the correspondence being array indices
+    NSMutableArray *requestList;    
+    NSMutableArray *connectionList;
     
     id<CIAPIRequestDispatcherDelegate> delegate;
     dispatch_queue_t dispatchQueue;
