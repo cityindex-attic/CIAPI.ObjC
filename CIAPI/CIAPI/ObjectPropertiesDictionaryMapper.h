@@ -10,6 +10,12 @@
 
 #import "PropertyDescriptionDecoder.h"
 
+@protocol DictionaryDecodeSupporter <NSObject>
+
+- (Class)propertyTypeHintForName:(NSString*)propertyName;
+
+@end
+
 @interface ObjectPropertiesDictionaryMapper : NSObject {
     
 }
