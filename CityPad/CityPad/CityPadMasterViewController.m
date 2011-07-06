@@ -126,6 +126,7 @@
     [userName resignFirstResponder];
     [password resignFirstResponder];
     
+    // Do we need this? Seems the adding of a view from a controller might do it?
     [dashboardController viewWillAppear:YES];
     dashboardController.client = client;
     
@@ -144,7 +145,6 @@
         loginView.frame = CGRectMake(loginView.frame.origin.x - loginView.frame.size.width, loginView.frame.origin.y,
                                     loginView.frame.size.width, loginView.frame.size.height);
     } completion:^(BOOL finished) {
-        [dashboardController viewDidAppear:YES];
         currentView = DashboardView;
         [loginView removeFromSuperview];
     }];

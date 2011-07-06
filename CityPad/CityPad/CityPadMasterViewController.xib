@@ -51,7 +51,7 @@
 							<object class="IBUIImageView" id="239781129">
 								<reference key="NSNextResponder" ref="385139344"/>
 								<int key="NSvFlags">274</int>
-								<string key="NSFrame">{{362, 215}, {300, 200}}</string>
+								<string key="NSFrame">{{362, 161}, {300, 200}}</string>
 								<reference key="NSSuperview" ref="385139344"/>
 								<reference key="NSWindow"/>
 								<reference key="NSNextKeyView" ref="811364800"/>
@@ -65,7 +65,7 @@
 							<object class="IBUILabel" id="811364800">
 								<reference key="NSNextResponder" ref="385139344"/>
 								<int key="NSvFlags">292</int>
-								<string key="NSFrame">{{381, 238}, {162, 21}}</string>
+								<string key="NSFrame">{{381, 184}, {162, 21}}</string>
 								<reference key="NSSuperview" ref="385139344"/>
 								<reference key="NSWindow"/>
 								<reference key="NSNextKeyView" ref="7996164"/>
@@ -225,7 +225,7 @@
 										</object>
 									</object>
 								</object>
-								<string key="NSFrame">{{393, 262}, {239, 137}}</string>
+								<string key="NSFrame">{{393, 208}, {239, 137}}</string>
 								<reference key="NSSuperview" ref="385139344"/>
 								<reference key="NSWindow"/>
 								<reference key="NSNextKeyView" ref="226971109"/>
@@ -299,7 +299,6 @@
 								<string key="NSFrame">{{61, 642}, {902, 111}}</string>
 								<reference key="NSSuperview" ref="385139344"/>
 								<reference key="NSWindow"/>
-								<reference key="NSNextKeyView"/>
 								<bool key="IBUIOpaque">NO</bool>
 								<bool key="IBUIClipsSubviews">YES</bool>
 								<int key="IBUIContentMode">7</int>
@@ -4847,12 +4846,12 @@ AAgAAAAIAAIACAACAAAAAgAAAAEAAQABAAE</bytes>
 						<reference key="object" ref="385139344"/>
 						<object class="NSMutableArray" key="children">
 							<bool key="EncodedWithXMLCoder">YES</bool>
-							<reference ref="239781129"/>
-							<reference ref="811364800"/>
 							<reference ref="260327475"/>
-							<reference ref="7996164"/>
 							<reference ref="671004642"/>
 							<reference ref="66109322"/>
+							<reference ref="239781129"/>
+							<reference ref="811364800"/>
+							<reference ref="7996164"/>
 						</object>
 						<reference key="parent" ref="766721923"/>
 						<string key="objectName">View</string>
@@ -4917,6 +4916,7 @@ AAgAAAAIAAIACAACAAAAAgAAAAEAAQABAAE</bytes>
 						<int key="objectID">4</int>
 						<reference key="object" ref="239781129"/>
 						<reference key="parent" ref="385139344"/>
+						<string key="objectName">Image View - LoginBackground.png</string>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">9</int>

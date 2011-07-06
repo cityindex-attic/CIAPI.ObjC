@@ -11,12 +11,23 @@
 #import "CIAPI.h"
 
 #import "CityPadDashboardViewController.h"
+#import "TradingAccountListViewController.h"
+
 
 @interface CityPadDashboardViewController : UIViewController
 {
     CIAPIClient *client;
+    IBOutlet UILabel *userNameLabel;
+    IBOutlet UILabel *tradingInLabel;
+    IBOutlet UIButton *yourAccountsButton;
+    
+    CIAPIAccountInformationResponse *tradingAccountInfo;
+    TradingAccountListViewController *tradingAccountsPopover;
 }
 
 @property (retain) CIAPIClient *client;
+
+- (IBAction)yourAccountsPressed:(id)sender;
+- (IBAction)addAMarketButtonPressed:(id)sender;
 
 @end
