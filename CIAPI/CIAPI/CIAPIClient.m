@@ -280,9 +280,10 @@
             
             [builtURL appendFormat:@"%@", paramValue];
             
-            if (![scanner scanString:@"}" intoString:nil] && error)
+            if (![scanner scanString:@"}" intoString:nil])
             {
-                *error = [NSError errorWithDomain:@"TODO" code:0 userInfo:nil];
+                if (error)
+                    *error = [NSError errorWithDomain:@"TODO" code:0 userInfo:nil];
                 return nil;
             }
         }
