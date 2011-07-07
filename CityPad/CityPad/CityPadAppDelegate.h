@@ -12,8 +12,8 @@
 
 @interface CityPadAppDelegate : UIResponder <UIApplicationDelegate>
 
-@property (strong, nonatomic) UIWindow *window;
+@property (nonatomic, retain) UIWindow *window;
 
-@property (strong, nonatomic) CityPadMasterViewController *viewController;
+@property (nonatomic, retain) CityPadMasterViewController *viewController;
 
 @end

@@ -115,7 +115,7 @@
 {
     // Animate out the login controls, replacing them with the progress controller
     loggingInContainer.hidden = NO;
-    [UIView transitionFromView:loginControlsContainer toView:loggingInContainer duration:0.5 options:UIViewAnimationOptionTransitionCrossDissolve | UIViewAnimationOptionShowHideTransitionViews completion:^(BOOL finished) {
+    [UIView transitionFromView:loginControlsContainer toView:loggingInContainer duration:0.5 options:UIViewAnimationOptionTransitionFlipFromRight | UIViewAnimationOptionShowHideTransitionViews completion:^(BOOL finished) {
         
         [authenticator authenticateWithUserName:userName.text password:password.text];
     }];
@@ -155,7 +155,7 @@
     [userName resignFirstResponder];    
     [password resignFirstResponder];
     
-    [UIView transitionFromView:loggingInContainer toView:loginControlsContainer duration:0.5 options:UIViewAnimationOptionTransitionCrossDissolve | UIViewAnimationOptionShowHideTransitionViews completion:^(BOOL finished) {
+    [UIView transitionFromView:loggingInContainer toView:loginControlsContainer duration:0.5 options:UIViewAnimationOptionTransitionFlipFromLeft | UIViewAnimationOptionShowHideTransitionViews completion:^(BOOL finished) {
         [[[UIAlertView alloc] initWithTitle:@"Login error" message:@"Login failed. Check your username and password" delegate:nil cancelButtonTitle:@"Dismiss" otherButtonTitles:nil] show];
     }];
 }
